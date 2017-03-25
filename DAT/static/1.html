@@ -8,7 +8,7 @@
     <title>Goals-of-Care after Traumatic Brain Injury Decision Aid Prototype</title>
 
     <!-- Bootstrap -->
-    <link href="css/bootstrap.min.css" rel="stylesheet">
+    <link href="{{ url_for('template', filename = 'css/bootstarp.min.css')}}" rel="stylesheet">
 
     <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
     <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
@@ -108,7 +108,7 @@
 
         <!--the text box to put the main context-->
         <div class="jumbotron">
-            <p class="text-center">WELCOME</p>
+            <p class="text-center">{{testvar}}</p>
             <p>
                 Your loved one has a serious traumatic brain injury (TBI) and has been in the Intensive Care Unit (ICU) for several days now.
             </p>
