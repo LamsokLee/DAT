@@ -59,8 +59,9 @@
   <!--container of the whole content of the tool-->
   <div class="container">
         <h2 class = "text-center">
-            Goals-of-Care after Traumatic Brain Injury Decision Aid Prototype<br/><br/>
+            Goals-of-Care after Traumatic Brain Injury Decision Aid Prototype
         </h2>
+        <br/>
         <div class="">
             <!--the navigation bar-->
             <ul class="nav nav-pills nav-justified">
@@ -110,11 +111,25 @@
 
         <!--the text box to put the main context-->
         <div class="jumbotron">
+            <!--button division-->
+            <div class="row">
+                <div class="col-md-6">
+                    <button type="button" onclick="previous_page()" class="btn btn-primary pull-left" style="margin-bottom: 5%">
+                    <span class="glyphicon glyphicon glyphicon-menu-left" aria-hidden="true"></span>
+                    </button>
+                </div>
+                <div class="col-md-6">
+                    <button type="button" onclick="next_page()" class="btn btn-primary pull-right" style="margin-bottom: 5%">
+                    <span class="glyphicon glyphicon glyphicon-menu-right" aria-hidden="true"></span>
+                    </button>
+                </div>
+            </div>
             <!--the head of this page-->
             <h3 class="text-center">HOW CERTAIN OR UNCERTAIN IS THE OUTLOOK FOR MY LOVED ONE?</h3>
             <!--the paragraph in this page-->
             <p>
-                It is important to know that every patient is different. It is very difficult to tell exactly how your loved one will do.            </p>
+                It is important to know that every patient is different. It is very difficult to tell exactly how your loved one will do.
+            </p>
             <p>
                 Based on the outcomes of over 8,000 other TBI patients, a formula was made. It is called “IMPACT-model”. With it doctors can try to compare some of the factors from your loved one to those from the 8,000 other TBI patients to give an estimation of the outlook. However, this model does not take every patient factor into account, leaving a large degree of uncertainty.
             </p>
@@ -140,11 +155,11 @@
     <script>
         function previous_page()
     {
-        location.href = "5.html";
+        location.href = "6.html";
     }
     function next_page()
     {
-        location.href = "7.html";
+        location.href = "8.html";
     }
     </script>
     <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->

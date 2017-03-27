@@ -108,6 +108,7 @@
             </ul>
         </div>
 
+
         <!--the text box to put the main context-->
         <div class="jumbotron">
             <!--button division-->
@@ -123,41 +124,73 @@
                     </button>
                 </div>
             </div>
-            <!--<button type="button" onclick="previous_page()" class="btn btn-primary pull-left" style="margin-bottom: 5%">-->
-            <!--<span class="glyphicon glyphicon glyphicon-menu-left" aria-hidden="true"></span>-->
-            <!--</button>-->
-            <!--<button type="button" onclick="next_page()" class="btn btn-primary pull-right" style="margin-bottom: 5%">-->
-            <!--<span class="glyphicon glyphicon glyphicon-menu-right" aria-hidden="true"></span>-->
-            <!--</button>-->
-            <!--<br/>-->
             <!--the head of this page-->
-
+            <h3 class="text-center">COMPARING AND SUMMARIZING DIFFERENT TREATMENT OPTIONS</h3>
             <!--the paragraph in this page-->
-            <div class="row">
-                <br/>
-                <div class="col-xs-12 col-md-7">
-                <h3 class="text-center">WHAT IS A MECHANICAL VENTILATOR?</h3>
-                <p>
-                    A mechanical ventilator is a breathing machine that provides artificial breathing support. The ventilator pumps air and oxygen into the lungs through a breathing tube. This breathing tube goes through the mouth into the windpipe. It is also called “life support”.
-                </p>
-                <p>
-                    The ventilator supports a patient while treatments are given for their medical problem, like TBI. <b>The ventilator itself does not cure the injury.</b>
-                </p>
-                <br/>
-                <br/>
-                <h3 class="text-center">WHAT IS IT LIKE TO BE ON A VENTILATOR?</h3>
-                    <!--the paragraph in this page-->
-                <p>
-                    It is uncomfortable to be on a ventilator. Patients often need medicines for pain and to help them relax while they are on it. Patients cannot eat or drink by mouth while on a ventilator because of the tubes in their mouth. Patients cannot make a sound when on a ventilator.
-                </p>
-                <p>
-                    Patients who are on a ventilator are very sick. They are usually on them for several days or weeks. Many TBI patients cannot breathe or swallow on their own for many weeks or months. Therefore, the doctor will ask you to make an important decision.
-                </p>
+            <p>
+                After the trach and feeding tube placement, the doctor decides when your loved one is ready to leave the ICU. They need additional care to get better, which is not provided in the ICU. They will not be able to go home because they need further medical care and rehabilitation. There are different types of places specialized in caring for people recovering from TBI. Different places provide different levels of care. Your loved one’s medical and nursing needs determine which type of place they go to after the ICU:
+            </p>
+            <div class="panel-group" id="accordion">
+              <div class="panel panel-default">
+                <div class="panel-heading">
+                  <h4 class="panel-title">
+                    <a data-toggle="collapse" data-parent="#accordion" href="#collapse1">
+                    Acute Rehabilitation Hospital</a>
+                  </h4>
                 </div>
-                <div class="col-xs-6 col-md-5">
-                    <br/>
-                    <img class="img-responsive" src="img/Ventilator.JPG" alt="Ventilator">
+                <div id="collapse1" class="panel-collapse collapse in">
+                  <div class="panel-body">
+                      Very few serious TBI patients go here directly. Patients who go here are generally very stable and wide awake. They must be able to take part in at least 3 hours of therapy per day for 5-7 days per week. It is focused on providing intense physical, occupational, and speech therapies. Patients who still require a breathing machine, or frequent suctioning through the trach, or are too sleepy, cannot go here until they get better. Patients are treated here for several weeks.
+                      <div class="row">
+                        <div class="col-md-4">
+                            <img src="img/speech_therapy.jpg" class="img-responsive">
+                        </div>
+                        <div class="col-md-4">
+                            <img src="img/speech_therapy_2.jpg" class="img-responsive">
+                        </div>
+                        <div class="col-md-4">
+                            <img src="img/PTon_bars.jpg" class="img-responsive">
+                        </div>
+                      </div>
+                  </div>
                 </div>
+              </div>
+              <div class="panel panel-default">
+                <div class="panel-heading">
+                  <h4 class="panel-title">
+                    <a data-toggle="collapse" data-parent="#accordion" href="#collapse2">
+                    Long-Term Acute Care Hospital (LTACH)</a>
+                  </h4>
+                </div>
+                <div id="collapse2" class="panel-collapse collapse">
+                  <div class="panel-body">
+                      This place is able to provide more complex medical care than an acute rehabilitation hospital. Patients are sicker and dependent on help, and for this reason therapy sessions are usually fewer and less intense. Those patients who get better can be transferred to an acute rehabilitation hospital later.
+                      <img src="img/Vented_pt_Vibra.jpg" class="img-responsive">
+                  </div>
+                </div>
+              </div>
+              <div class="panel panel-default">
+                <div class="panel-heading">
+                  <h4 class="panel-title">
+                    <a data-toggle="collapse" data-parent="#accordion" href="#collapse3">
+                    Skilled Nursing Facility (SNF)</a>
+                  </h4>
+                </div>
+                <div id="collapse3" class="panel-collapse collapse">
+                  <div class="panel-body">
+                      This place is different from a hospital and patients are usually quite stable but need full nursing care due to the effects from their injuries. Patients may be here for a long period of time, or even the rest of their lives. Patients are too ill to take part in several hours of therapy per day. Transition to LTACH or acute rehabilitation hospital is possible, but less likely due to the patient’s high level of sickness and dependence on others.
+                      <div class="row">
+                          <div class="col-md-6">
+                              <img src="img/Trach_Mask_pt_Vibra.jpg" class="img-responsive">
+                          </div>
+                          <div class="col-md-6">
+                              <img src="img/Nursing_home.jpg" class="img-responsive">
+                          </div>
+                      </div>
+
+                  </div>
+                </div>
+              </div>
             </div>
         </div>
         <button type="button" onclick="previous_page()" class="btn btn-primary btn-lg pull-left" style="margin-bottom: 5%">
@@ -168,14 +201,14 @@
         </button>
     </div>
 
-        <script>
+    <script>
         function previous_page()
     {
-        location.href = "2.html";
+        location.href = "11.html";
     }
     function next_page()
     {
-        location.href = "4.html";
+        location.href = "13.html";
     }
     </script>
     <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
