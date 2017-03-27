@@ -61,6 +61,7 @@
         <h2 class = "text-center">
             Goals-of-Care after Traumatic Brain Injury Decision Aid Prototype<br/><br/>
         </h2>
+
         <div class="">
             <!--the navigation bar-->
             <ul class="nav nav-pills nav-justified">
@@ -109,35 +110,59 @@
 
 
         <!--the text box to put the main context-->
+
         <div class="jumbotron">
-            <h3 class="text-center">Welcome</h3>
+            <!--the head of this page-->
+            <div class="progress">
+              <div class="progress-bar" role="progressbar" aria-valuenow="20" aria-valuemin="0" aria-valuemax="100" style="width: 20%">
+                <span class="sr-only">20% Complete</span>
+              </div>
+            </div>
+            <h3 class="text-center">WHAT DECISION AM I BEING ASKED TO MAKE?</h3>
+            <!--the paragraph in this page-->
+
             <p>
-                Your loved one has a serious traumatic brain injury (TBI) and has been in the Intensive Care Unit (ICU) for several days now.
+                Your loved one is still on a ventilator, and despite the best care from the doctors and nurses, your loved one is unable to come off the ventilator and breathe on his/her own.            </p>
+            <p>
+                At this point, there are 2 different treatment goals.
             </p>
             <p>
-                He/She is currently not able to make medical decisions. Because your loved one cannot tell us what treatment plan he/she would want, your help is needed. We have arrived at a point at which you are asked to make a very important decision for him/her, called the
-                <b>
-                    “goals of care” decision
-                </b>
+                <b>You are being asked to make a decision: which of these 2 treatment goals best aligns with your loved one’s goals, values and preferences.</b>
             </p>
             <p>
-                This decision is easy for some, but difficult for most. We have created this tool (decision aid) to help you understand the decision and the choices, and to help you decide on the
-                <i>
-                    best choice for your loved one.
-                </i>
+                The treatment goal that you choose will affect what kinds of procedures and care are done for your loved one while they are in the ICU and afterwards.
             </p>
-            <p>This tool was made with input from people like you who have made this decision in the past.
-                <b>
-                    This tool will NOT replace the meeting with the doctor but will help you when you talk to the doctor about the decision and the choices.
-                </b>
+
+            <h3 class="text-center">WHAT IS MOST IMPORTANT FOR YOUR LOVED ONE RIGHT NOW?</h3>
+            <p>
+                 What do you think is most important treatment for your loved one right now? What is most important to you? Write it down.
             </p>
-                <ul>
-                    <li>This will take about 20 minutes.</li>
-                    <li>Please read each page.</li>
-                    <li>Please fill out the worksheet in the end.</li>
-                    <li>This will help when you talk about the choices with the doctor.</li>
-                    <li>Write down any additional questions you may still have in the feedback box.</li>
-                </ul>
+            <p>
+                Examples: “not to suffer”, “to make it out of the hospital”, “to be able to talk to family”, “to be back to normal like before”, “to go back to work”, “have no pain”, etc.
+            </p>
+            <!--two columns asking two questions.-->
+            <div class="row">
+                <div class="col-xs-6 col-md-6">
+                    <div class="form-group">
+                        <h4 class="text-center">What is most important for your loved one right now?</h4>
+                        <textarea class="form-control" rows="1" id="comment"></textarea>
+                        <br/>
+                        <textarea class="form-control" rows="1" id="comment"></textarea>
+                        <br/>
+                        <textarea class="form-control" rows="1" id="comment"></textarea>
+                    </div>
+                </div>
+                <div class="col-xs-6 col-md-6">
+                    <div class="form-group">
+                        <h4 class="text-center">What is most important for your loved one right now?</h4>
+                        <textarea class="form-control" rows="1" id="comment"></textarea>
+                        <br/>
+                        <textarea class="form-control" rows="1" id="comment"></textarea>
+                        <br/>
+                        <textarea class="form-control" rows="1" id="comment"></textarea>
+                    </div>
+                </div>
+            </div>
             <button type="button" onclick="next_page()" class="btn btn-primary btn-md" >Next Page</button>
         </div>
     </div>
@@ -145,8 +170,8 @@
     <script>
     function next_page()
     {
-        location.href = "2.html";
-    } 
+        location.href = "input.html";
+    }
     </script>
     <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
