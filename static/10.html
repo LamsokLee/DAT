@@ -110,46 +110,62 @@
 
         <!--the text box to put the main context-->
         <div class="jumbotron">
-            <h3 class="text-center">Welcome</h3>
+            <!--the head of this page-->
+            <h3 class="text-center">WHAT IS TREATMENT THAT FOCUSES ON MAXIMIZING SURVIVAL?</h3>
+            <!--the paragraph in this page-->
             <p>
-                Your loved one has a serious traumatic brain injury (TBI) and has been in the Intensive Care Unit (ICU) for several days now.
-            </p>
-            <p>
-                He/She is currently not able to make medical decisions. Because your loved one cannot tell us what treatment plan he/she would want, your help is needed. We have arrived at a point at which you are asked to make a very important decision for him/her, called the
-                <b>
-                    “goals of care” decision
-                </b>
+                When the goal of care is survival, doctors do whatever it takes to keep a person alive. Patients will require additional procedures to improve the chance that they survive. Patients usually need these two procedures:
             </p>
             <p>
-                This decision is easy for some, but difficult for most. We have created this tool (decision aid) to help you understand the decision and the choices, and to help you decide on the
-                <i>
-                    best choice for your loved one.
-                </i>
+                1. Tracheostomy (“trach”): For the first several days after a major TBI, patients are unable to breathe on their own. They depend on a breathing tube placed through the mouth and hooked up to the ventilator. When patients are still unable to breathe on their own after several days, a procedure called a tracheostomy (short: “trach”) is done to avoid serious long-term damage to the windpipe that can be caused by a breathing tube when kept too long.
             </p>
-            <p>This tool was made with input from people like you who have made this decision in the past.
-                <b>
-                    This tool will NOT replace the meeting with the doctor but will help you when you talk to the doctor about the decision and the choices.
-                </b>
+            <p>
+                For a trach, a surgeon makes a hole in the front of the patient’s neck to directly access the windpipe.
             </p>
-                <ul>
-                    <li>This will take about 20 minutes.</li>
-                    <li>Please read each page.</li>
-                    <li>Please fill out the worksheet in the end.</li>
-                    <li>This will help when you talk about the choices with the doctor.</li>
-                    <li>Write down any additional questions you may still have in the feedback box.</li>
-                </ul>
+            <p>
+                A shorter tube is then placed through this hole, and the ventilator is hooked up to it to help the patient breathe. Over time most patients can slowly come off the ventilator but they will keep the trach for several weeks to months. Then they breathe oxygen or regular air through the trach.
+            </p>
+            <p>
+                Patients can’t speak with a trach until they are well enough to place a cap over the opening. Many but not all patients can have their trach removed after weeks or months. A small scar remains where the hole was.
+            </p>
+            <div class="thumbnail">
+              <a href="img/Trach_strip.jpg">
+                <img src="img/Trach_strip.jpg" alt="Lights" style="width:100%">
+                <div class="caption">
+                  <p>
+                      This patient has a tracheostomy (“trach”). On the left side is the trach without an oxygen mask (“trach mask”); on the right side is the same patient with a trach mask through which he breathes oxygen or air.
+                  </p>
+                </div>
+              </a>
+            </div>
+            <div class="col-md-6">
+                <p>
+                    2. Feeding Tube: (also called a “PEG” or “G-tube”). A patient can’t eat by mouth when on a ventilator or with a trach. Therefore, a surgeon places a feeding tube through the skin directly into the stomach. Liquid nutrition and medications are given through the feeding tube. Usually, the trach and feeding tube placement are done together. Even if patients are eventually able to be without a trach, the feeding tube may stay in for a longer time, sometimes for the rest of the person’s life, depending on whether they recover enough to eat on their own.
+                </p>
+            </div>
+            <div class="col-md-6">
+                <p>
+                    This is the img
+                </p>
+            </div>
         </div>
+        <button type="button" onclick="previous_page()" class="btn btn-primary btn-lg pull-left" style="margin-bottom: 5%">
+            <span class="glyphicon glyphicon glyphicon-menu-left" aria-hidden="true"></span>Previous
+        </button>
         <button type="button" onclick="next_page()" class="btn btn-primary btn-lg pull-right" style="margin-bottom: 5%">Next
             <span class="glyphicon glyphicon glyphicon-menu-right" aria-hidden="true"></span>
         </button>
-
     </div>
 
     <script>
+        function previous_page()
+    {
+        location.href = "5.html";
+    }
     function next_page()
     {
-        location.href = "2.html";
-    } 
+        location.href = "7.html";
+    }
     </script>
     <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>

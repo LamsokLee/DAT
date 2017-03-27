@@ -113,43 +113,52 @@
             <!--the head of this page-->
 
             <!--the paragraph in this page-->
-                <div class="row">
-                    <div class="col-xs-12 col-md-7">
-                        <h3 class="text-center">WHAT IS A MECHANICAL VENTILATOR?</h3>
-                        <p>
-                            A mechanical ventilator is a breathing machine that provides artificial breathing support. The ventilator pumps air and oxygen into the lungs through a breathing tube. This breathing tube goes through the mouth into the windpipe. It is also called “life support”.
-                        </p>
-                        <p>
-                            The ventilator supports a patient while treatments are given for their medical problem, like TBI. <b>The ventilator itself does not cure the injury.</b>
-                        </p>
-                        <br/>
-                        <br/>
-                        <h3 class="text-center">WHAT IS IT LIKE TO BE ON A VENTILATOR?</h3>
-                            <!--the paragraph in this page-->
-                        <p>
-                            It is uncomfortable to be on a ventilator. Patients often need medicines for pain and to help them relax while they are on it. Patients cannot eat or drink by mouth while on a ventilator because of the tubes in their mouth. Patients cannot make a sound when on a ventilator.
-                        </p>
-                        <p>
-                            Patients who are on a ventilator are very sick. They are usually on them for several days or weeks. Many TBI patients cannot breathe or swallow on their own for many weeks or months. Therefore, the doctor will ask you to make an important decision.
-                        </p>
-                    </div>
-                    <div class="col-xs-6 col-md-5">
-                        <a href="#" class="thumbnail">
-                            <img class="img-responsive" src="img/Ventilator%20for%20DA.JPG" alt="Ventilator">
-                        </a>
-                    </div>
+            <div class="row">
+            <!--the progress bar-->
+            <div class="progress">
+              <div class="progress-bar" role="progressbar" aria-valuenow="20" aria-valuemin="0" aria-valuemax="100" style="width: 20%">
+                <span class="sr-only">20% Complete</span>
+              </div>
+            </div>
+                <div class="col-xs-12 col-md-7">
+                    <h3 class="text-center">WHAT IS A MECHANICAL VENTILATOR?</h3>
+                    <p>
+                        A mechanical ventilator is a breathing machine that provides artificial breathing support. The ventilator pumps air and oxygen into the lungs through a breathing tube. This breathing tube goes through the mouth into the windpipe. It is also called “life support”.
+                    </p>
+                    <p>
+                        The ventilator supports a patient while treatments are given for their medical problem, like TBI. <b>The ventilator itself does not cure the injury.</b>
+                    </p>
+                    <br/>
+                    <br/>
+                    <h3 class="text-center">WHAT IS IT LIKE TO BE ON A VENTILATOR?</h3>
+                        <!--the paragraph in this page-->
+                    <p>
+                        It is uncomfortable to be on a ventilator. Patients often need medicines for pain and to help them relax while they are on it. Patients cannot eat or drink by mouth while on a ventilator because of the tubes in their mouth. Patients cannot make a sound when on a ventilator.
+                    </p>
+                    <p>
+                        Patients who are on a ventilator are very sick. They are usually on them for several days or weeks. Many TBI patients cannot breathe or swallow on their own for many weeks or months. Therefore, the doctor will ask you to make an important decision.
+                    </p>
                 </div>
-
-
-
-            <!--TODO: Make the img align to the right of the text -->
-
-
-            <button type="button" onclick="next_page()" class="btn btn-primary btn-md" >Next Page</button>
+                <div class="col-xs-6 col-md-5">
+                    <a href="#" class="thumbnail">
+                        <img class="img-responsive" src="img/Ventilator%20for%20DA.JPG" alt="Ventilator">
+                    </a>
+                </div>
+            </div>
         </div>
+        <button type="button" onclick="previous_page()" class="btn btn-primary btn-lg pull-left" style="margin-bottom: 5%">
+            <span class="glyphicon glyphicon glyphicon-menu-left" aria-hidden="true"></span>Previous
+        </button>
+        <button type="button" onclick="next_page()" class="btn btn-primary btn-lg pull-right" style="margin-bottom: 5%">Next
+            <span class="glyphicon glyphicon glyphicon-menu-right" aria-hidden="true"></span>
+        </button>
     </div>
 
-    <script>
+        <script>
+        function previous_page()
+    {
+        location.href = "2.html";
+    }
     function next_page()
     {
         location.href = "4.html";

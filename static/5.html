@@ -110,46 +110,41 @@
 
         <!--the text box to put the main context-->
         <div class="jumbotron">
-            <h3 class="text-center">Welcome</h3>
+            <!--the head of this page-->
+            <h3 class="text-center">WHAT ARE DIFFERENT TREATMENT GOALS FOR MY LOVED ONE?</h3>
+            <!--the paragraph in this page-->
             <p>
-                Your loved one has a serious traumatic brain injury (TBI) and has been in the Intensive Care Unit (ICU) for several days now.
-            </p>
-            <p>
-                He/She is currently not able to make medical decisions. Because your loved one cannot tell us what treatment plan he/she would want, your help is needed. We have arrived at a point at which you are asked to make a very important decision for him/her, called the
-                <b>
-                    “goals of care” decision
-                </b>
+                There are two different treatment goals that you will be asked to choose between.
             </p>
             <p>
-                This decision is easy for some, but difficult for most. We have created this tool (decision aid) to help you understand the decision and the choices, and to help you decide on the
-                <i>
-                    best choice for your loved one.
-                </i>
+                One treatment goal is survival of your loved one, no matter what it takes.
             </p>
-            <p>This tool was made with input from people like you who have made this decision in the past.
-                <b>
-                    This tool will NOT replace the meeting with the doctor but will help you when you talk to the doctor about the decision and the choices.
-                </b>
+            <p>
+                The other treatment goal is maximizing comfort for your loved one, so that they do not suffer.
             </p>
-                <ul>
-                    <li>This will take about 20 minutes.</li>
-                    <li>Please read each page.</li>
-                    <li>Please fill out the worksheet in the end.</li>
-                    <li>This will help when you talk about the choices with the doctor.</li>
-                    <li>Write down any additional questions you may still have in the feedback box.</li>
-                </ul>
+            <img src="img/choose_bar.png" class="img-responsive center-block">
+            <br/>
+            <p>
+                We will explain both options in more detail over the next few pages.
+            </p>
         </div>
+        <button type="button" onclick="previous_page()" class="btn btn-primary btn-lg pull-left" style="margin-bottom: 5%">
+            <span class="glyphicon glyphicon glyphicon-menu-left" aria-hidden="true"></span>Previous
+        </button>
         <button type="button" onclick="next_page()" class="btn btn-primary btn-lg pull-right" style="margin-bottom: 5%">Next
             <span class="glyphicon glyphicon glyphicon-menu-right" aria-hidden="true"></span>
         </button>
-
     </div>
 
     <script>
+        function previous_page()
+    {
+        location.href = "4.html";
+    }
     function next_page()
     {
-        location.href = "2.html";
-    } 
+        location.href = "6.html";
+    }
     </script>
     <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>

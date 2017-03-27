@@ -110,46 +110,46 @@
 
         <!--the text box to put the main context-->
         <div class="jumbotron">
-            <h3 class="text-center">Welcome</h3>
+            <!--the head of this page-->
+            <h3 class="text-center">WHAT DOES IT MEAN TO HAVE COMFORT AS THE GOAL OF CARE?</h3>
+            <!--the paragraph in this page-->
             <p>
-                Your loved one has a serious traumatic brain injury (TBI) and has been in the Intensive Care Unit (ICU) for several days now.
-            </p>
+                Some people feel that their family member has gone through enough in the ICU at this point. Others may be too sick to have any chance of survival. Some have said before that they would not want to endure the things necessary to be kept alive. Or you know that your loved one would not want a lower quality of life after the TBI.
             <p>
-                He/She is currently not able to make medical decisions. Because your loved one cannot tell us what treatment plan he/she would want, your help is needed. We have arrived at a point at which you are asked to make a very important decision for him/her, called the
-                <b>
-                    “goals of care” decision
-                </b>
+                When comfort is the treatment goal:
             </p>
-            <p>
-                This decision is easy for some, but difficult for most. We have created this tool (decision aid) to help you understand the decision and the choices, and to help you decide on the
-                <i>
-                    best choice for your loved one.
-                </i>
-            </p>
-            <p>This tool was made with input from people like you who have made this decision in the past.
-                <b>
-                    This tool will NOT replace the meeting with the doctor but will help you when you talk to the doctor about the decision and the choices.
-                </b>
-            </p>
-                <ul>
-                    <li>This will take about 20 minutes.</li>
-                    <li>Please read each page.</li>
-                    <li>Please fill out the worksheet in the end.</li>
-                    <li>This will help when you talk about the choices with the doctor.</li>
-                    <li>Write down any additional questions you may still have in the feedback box.</li>
-                </ul>
+            <ul>
+                <li>
+                    The bedside team will provide the safe and careful removal of medications (other than those preventing suffering). IV fluids, artificial feeding and machines, including the breathing tube and ventilator, which are keeping your loved one alive will also be stopped. This is done when the family is ready.
+                </li>
+                <li>
+                    The patient usually dies within a day to several days afterward.
+                </li>
+                <li>
+                    The patient will get medicines and nursing care to prevent pain and suffering, but the natural dying process will not be hastened.
+                </li>
+                <li>
+                    Family members and friends can stay with their loved ones during this time.
+                </li>
+            </ul>
         </div>
+        <button type="button" onclick="previous_page()" class="btn btn-primary btn-lg pull-left" style="margin-bottom: 5%">
+            <span class="glyphicon glyphicon glyphicon-menu-left" aria-hidden="true"></span>Previous
+        </button>
         <button type="button" onclick="next_page()" class="btn btn-primary btn-lg pull-right" style="margin-bottom: 5%">Next
             <span class="glyphicon glyphicon glyphicon-menu-right" aria-hidden="true"></span>
         </button>
-
     </div>
 
     <script>
+        function previous_page()
+    {
+        location.href = "5.html";
+    }
     function next_page()
     {
-        location.href = "2.html";
-    } 
+        location.href = "7.html";
+    }
     </script>
     <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>

@@ -163,11 +163,20 @@
             <h4>
                 Ready? Let’s get started.
             </h4>
-            <button type="button" onclick="next_page()" class="btn btn-primary btn-md" >Start!</button>
         </div>
+        <button type="button" onclick="previous_page()" class="btn btn-primary btn-lg pull-left" style="margin-bottom: 5%">
+            <span class="glyphicon glyphicon glyphicon-menu-left" aria-hidden="true"></span>Previous
+        </button>
+        <button type="button" onclick="next_page()" class="btn btn-primary btn-lg pull-right" style="margin-bottom: 5%">Next
+            <span class="glyphicon glyphicon glyphicon-menu-right" aria-hidden="true"></span>
+        </button>
     </div>
 
-    <script>
+        <script>
+        function previous_page()
+    {
+        location.href = "1.html";
+    }
     function next_page()
     {
         location.href = "3.html";
