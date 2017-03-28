@@ -141,10 +141,11 @@
             </ul>
         </div>
 
-
-
         <!--the text box to put the main context-->
         <div class="jumbotron">
+            <!--the head of this page-->
+            <h3 class="text-center">YOUR OWN WORKSHEET:<br/><br/>HOW TO MAKE A DECISION FOR YOUR LOVED ONE<br/>
+            </h3>
             <!--button division-->
             <div class="row">
                 <div class="col-md-6">
@@ -158,62 +159,160 @@
                     </button>
                 </div>
             </div>
-            <!--the head of this page-->
-            <h3 class="text-center">WHAT IS MY LOVED ONE’S OUTLOOK?</h3>
-            <h3 class="text-center">WHAT ARE THE POSSIBLE LONG-TERM EFFECTS FROM THE TBI?</h3>
-            <!--the paragraph in this page-->
-            <p>
-                In order to make a decision, many families want and need to know about their loved one’s outlook (“prognosis”) and the possible long-term effects from TBI.
-            </p>
-            <p>
-                There is a wide range of possible long-term effects after TBI. This depends on many factors, including:
-                <ul>
-                    <li>
-                        Severity of the initial brain injury
-                    </li>
-                    <li>
-                        Age of the person at the time of injury
-                    </li>
-                    <li>
-                        How healthy they were before the brain injury
-                    </li>
-                    <li>
-                        Baseline memory and thinking before the brain injury
-                    </li>
-                    <li>
-                        Oxygen and blood pressure levels immediately after the brain injury before getting to the ICU, and in the ICU.
-                    </li>
-                    <li>
-                        Certain types of blood collections in the brain
-                    </li>
-                    <li>
-                        Other serious injuries to other organs (lung, belly, etc.)
-                    </li>
-                    <li>
-                        Complications in the ICU, such as serious infections or brain swelling etc.
-                    </li>
-                    <li>
-                        Other unknown factors.
-                    </li>
-                </ul>
-            </p>
+            <div class="alert alert-success text-center">
+                Please complete this worksheet as best as you can. Bring it to the meeting with the doctor.
+            </div>
+
+            <!--the dropdown box-->
+            <div class="panel-group" id="accordion">
+              <div class="panel panel-default">
+                <div class="panel-heading">
+                  <h4 class="panel-title">
+                    <a data-toggle="collapse" data-parent="#accordion" href="#collapse1">
+                    1) What do you understand about the outlook of your loved one, and the options?</a>
+                  </h4>
+                </div>
+                <div id="collapse1" class="panel-collapse collapse">
+                  <div class="panel-body">
+                      <div class="form-group"> 
+                          <label for="comment">
+                              What is your loved one’s outlook for getting better and how independent will he/she be with further medical care after the ICU?
+                          </label> 
+                          <textarea class="form-control" rows="3" id="comment">
+
+                          </textarea> 
+                      </div>
+                       <div class="form-group">
+                          <label for="comment">
+                              Do you understand what your loved one’s life will be like based on the two different treatment goals?
+                          </label> 
+                          <textarea class="form-control" rows="3" id="comment">
+                          </textarea> </div> <div class="form-group">
+                            <label for="comment">
+                                Is this quality of life acceptable to your loved one?
+                            </label> 
+                          <textarea class="form-control" rows="3" id="comment">
+                          </textarea>
+                           </div> 
+                      <div class="form-group"> 
+                          <label for="comment">
+                              Do you understand the pros and cons of the two treatment goals/choices?
+                          </label>
+                           <textarea class="form-control" rows="3" id="comment">
+                          </textarea> 
+                      </div>
+                  </div>
+                </div>
+              </div>
+              <div class="panel panel-default">
+                <div class="panel-heading">
+                  <h4 class="panel-title">
+                    <a data-toggle="collapse" data-parent="#accordion" href="#collapse2">
+                        2) What would your loved one want?
+                    </a>
+                  </h4>
+                </div>
+                <div id="collapse2" class="panel-collapse collapse">
+                  <div class="panel-body">
+                      <div class="form-group"> 
+                          <label for="comment">
+                              What is your loved one’s outlook for getting better and how independent will he/she be with further medical care after the ICU?
+                          </label> 
+                          <textarea class="form-control" rows="3" id="comment">
+
+                          </textarea> 
+                      </div>
+                       <div class="form-group">
+                          <label for="comment">
+                              What are their wishes for medical treatments when illness is severe or possibly leave them disabled? Have they mentioned it to you? Do they have a living will?
+                          </label> 
+                          <textarea class="form-control" rows="3" id="comment">
+                          </textarea> </div> <div class="form-group">
+                            <label for="comment">
+                                If your loved one could look at the choices right now, what would they choose?
+                            </label> 
+                          <textarea class="form-control" rows="3" id="comment">
+                          </textarea>
+                           </div> 
+                      <div class="form-group"> 
+                          <label for="comment">
+                              Do you understand the pros and cons of the two treatment goals/choices?
+                          </label>
+                           <textarea class="form-control" rows="3" id="comment">
+                          </textarea> 
+                      </div>
+                  </div>
+                </div>
+              </div>
+              <div class="panel panel-default">
+                <div class="panel-heading">
+                  <h4 class="panel-title">
+                    <a data-toggle="collapse" data-parent="#accordion" href="#collapse3">
+                        3) How is this choice making you feel?
+                    </a>
+                  </h4>
+                </div>
+                <div id="collapse3" class="panel-collapse collapse">
+                  <div class="panel-body">
+                     <textarea class="form-control" rows="3" id="comment">
+                     </textarea> 
+                  </div>
+                </div>
+              </div>
+              <div class="panel panel-default">
+                <div class="panel-heading">
+                  <h4 class="panel-title">
+                    <a data-toggle="collapse" data-parent="#accordion" href="#collapse4">
+                    4) What questions do you need answered before you can decide?</a>
+                  </h4>
+                </div>
+                <div id="collapse4" class="panel-collapse collapse">
+                  <div class="panel-body">
+                      <label for="comment">
+                            Make a list and ask. Bring the list of questions to the meeting with the doctor, too.
+                      </label>
+                      <textarea class="form-control" rows="6" id="comment">
+                      </textarea>
+                  </div>
+                </div>
+              </div>
+              <div class="panel panel-default">
+                <div class="panel-heading">
+                  <h4 class="panel-title">
+                    <a data-toggle="collapse" data-parent="#accordion" href="#collapse5">
+                          5) Comfort or survival
+                    </a>
+                  </h4>
+                </div>
+                <div id="collapse5" class="panel-collapse collapse">
+                  <div class="panel-body text-center">
+                      Imagine a line where the right side is comfort care and the left side is doing everything possible for survival.
+                      <br/>
+                      Where do you think your loved one would put themselves on the line below?
+                      <!--TODO: the choosing bar in this place-->
+                  </div>
+                </div>
+              </div>
+
+            </div>
         </div>
-        <button type="button" onclick="previous_page()" class="btn btn-primary btn-lg pull-left" style="margin-bottom: 5%">
-            <span class="glyphicon glyphicon glyphicon-menu-left" aria-hidden="true"></span>Previous
-        </button>
-        <button type="button" onclick="next_page()" class="btn btn-primary btn-lg pull-right" style="margin-bottom: 5%">Next
-            <span class="glyphicon glyphicon glyphicon-menu-right" aria-hidden="true"></span>
-        </button>
-    </div>
+        <!--TODO: Choose bar-->
+            <button type="button" onclick="previous_page()" class="btn btn-primary btn-lg pull-left" style="margin-bottom: 5%">
+                <span class="glyphicon glyphicon glyphicon-menu-left" aria-hidden="true"></span>Previous
+            </button>
+            <button type="button" onclick="next_page()" class="btn btn-primary btn-lg pull-right" style="margin-bottom: 5%">Submit
+                <span class="glyphicon glyphicon glyphicon glyphicon-ok" aria-hidden="true"></span>
+            </button>
+  </div>
 
     <script>
         function previous_page()
     {
-        location.href = "5.html";
+        location.href = "17.html";
     }
     function next_page()
     {
-        location.href = "7.html";
+        location.href = "Finish.html";
     }
     </script>
     <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
