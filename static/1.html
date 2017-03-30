@@ -62,8 +62,8 @@
             Goals-of-Care after Traumatic Brain Injury Decision Aid Prototype
         </h2>
         <br/>
+        <!--the navigation bar-->
         <div class="">
-            <!--the navigation bar-->
             <ul class="nav nav-pills nav-justified">
                 <li class="dropdown active">
                     <a class="dropdown-toggle" data-toggle="dropdown" href="#">Overview<br/><br/>
@@ -126,7 +126,7 @@
                         <li><a href="17.html">Example 2</a></li>
                     </ul>
                 </li>
-                <li class="dropdown">                                                           
+                <li class="dropdown">
                     <a class="dropdown-toggle" data-toggle="dropdown" href="#">Worksheet & Questions<br/>
                         <span class="caret"></span></a>
                     <ul class="dropdown-menu">
@@ -136,8 +136,8 @@
                         <li><a href="18.html">3) How is this choice making you feel?</a></li>
                         <li><a href="18.html">4) What questions do you need answered before you can decide?</a></li>
                         <li><a href="18.html">5) Comfort or survival</a></li>
-                    </ul>                                                                       
-                </li>                                                                           
+                    </ul>
+                </li>
             </ul>
         </div>
 
@@ -169,19 +169,25 @@
                 <i>
                     best choice for your loved one.
                 </i>
-            </p>
-            <p>This tool was made with input from people like you who have made this decision in the past.
+                This tool was made with input from people like you who have made this decision in the past.
                 <b>
                     This tool will NOT replace the meeting with the doctor but will help you when you talk to the doctor about the decision and the choices.
                 </b>
             </p>
-                <ul>
+            <p>
+            </p>
+                <div>
+                    <ul>
                     <li>This will take about 20 minutes.</li>
                     <li>Please read each page.</li>
                     <li>Please fill out the worksheet in the end.</li>
                     <li>This will help when you talk about the choices with the doctor.</li>
                     <li>Write down any additional questions you may still have in the feedback box.</li>
-                </ul>
+                    </ul>
+                </div>
+                <!--TODO: add a check-->
+            <p><b>Bring the completed worksheet and a list of questions to the meeting with the doctor.</b></p>
+
         </div>
         <button type="button" onclick="next_page()" class="btn btn-primary btn-lg pull-right" style="margin-bottom: 5%">Next
             <span class="glyphicon glyphicon glyphicon-menu-right" aria-hidden="true"></span>
@@ -195,6 +201,7 @@
         location.href = "2.html";
     } 
     </script>
+    <script src="js/loadparts.js"></script>
     <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
     <!-- Include all compiled plugins (below), or include individual files as needed -->
