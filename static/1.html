@@ -11,7 +11,13 @@
     <!--<link href="{{ url_for ('static', filename = 'css/bootstrap.min.css') }}" rel="stylesheet">-->
     <!--Bootstrap on local-->
     <link href="css/bootstrap.min.css" rel="stylesheet">
-
+    <script src="https://code.jquery.com/jquery-1.10.2.js"></script>
+    <script>
+        $(function(){
+            $("#navbar").load("navbar.html");
+            $("#tab").load("tab.html");
+        });
+    </script>
     <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
     <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
     <!--[if lt IE 9]>
@@ -21,40 +27,7 @@
   </head>
   <body>
   <!--the head navbar of the website-->
-  <nav class="navbar navbar-default">
-      <div class="container-fluid">
-          <!-- Brand and toggle get grouped for better mobile display -->
-          <div class="navbar-header">
-              <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
-                  <span class="sr-only">Toggle navigation</span>
-                  <span class="icon-bar"></span>
-                  <span class="icon-bar"></span>
-                  <span class="icon-bar"></span>
-              </button>
-              <a class="navbar-brand" href="#">Brand</a>
-          </div>
-
-          <!-- Collect the nav links, forms, and other content for toggling -->
-          <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
-              <ul class="nav navbar-nav">
-                  <li class="active"><a href="#">Link <span class="sr-only">(current)</span></a></li>
-                  <li><a href="#">Link</a></li>
-                  <li class="dropdown">
-                      <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Dropdown <span class="caret"></span></a>
-                      <ul class="dropdown-menu">
-                          <li><a href="#">Action</a></li>
-                          <li><a href="#">Another action</a></li>
-                          <li><a href="#">Something else here</a></li>
-                          <li role="separator" class="divider"></li>
-                          <li><a href="#">Separated link</a></li>
-                          <li role="separator" class="divider"></li>
-                          <li><a href="#">One more separated link</a></li>
-                      </ul>
-                  </li>
-              </ul>
-          </div><!-- /.navbar-collapse -->
-      </div><!-- /.container-fluid -->
-  </nav>
+  <div id="navbar"></div>
 
   <!--container of the whole content of the tool-->
   <div class="container">
@@ -63,83 +36,84 @@
         </h2>
         <br/>
         <!--the navigation bar-->
-        <div class="">
-            <ul class="nav nav-pills nav-justified">
-                <li class="dropdown active">
-                    <a class="dropdown-toggle" data-toggle="dropdown" href="#">Overview<br/><br/>
-                        <span class="caret"></span></a>
-                    <ul class="dropdown-menu">
-                        <li><a href="1.html">Welcome</a></li>
-                        <li><a href="2.html">Aims & Contents</a></li>
-                    </ul>
-                </li>
-                <li class="dropdown">
-                    <a class="dropdown-toggle" data-toggle="dropdown" href="#">Mechanical Ventilator<br/>
-                        <span class="caret"></span></a>
-                    <ul class="dropdown-menu">
-                        <li><a href="3.html">What is a mechanical ventilator?</a></li>
-                        <li><a href="3.html">What is like to be on a ventilator?</a></li>
-                    </ul>
-                </li>
-                <li class="dropdown">
-                    <a class="dropdown-toggle" data-toggle="dropdown" href="#">What should you decide?<br/>
-                        <span class="caret"></span></a>
-                    <ul class="dropdown-menu">
-                        <li><a href="4.html">What decision am I being asked to make?</a></li>
-                        <li><a href="4.html">What is the most important for your loved one right now?</a></li>
-                        <li><a href="5.html">What are the different treatment goals for my loved one?</a></li>
-                    </ul>
-                </li>
-                <li class="dropdown">
-                    <a class="dropdown-toggle" data-toggle="dropdown" href="#">Patient Outlook<br/><br/>
-                        <span class="caret"></span></a>
-                    <ul class="dropdown-menu">
-                        <li><a href="6.html">What is my loved one's outlook?<br/>What are the long-term effects from the TBI?</a></li>
-                        <li><a href="7.html">How certain or uncertain is the outlook for my loved one?</a></li>
-                    </ul>
-                </li>
-                <li class="dropdown">
-                    <a class="dropdown-toggle" data-toggle="dropdown" href="#">Treatment Options<br/><br/>
-                        <span class="caret"></span></a>
-                    <ul class="dropdown-menu">
-                        <li><a href="8.html">Introduction</a></li>
-                        <li><a href="9.html">What does it mean to have comfort at the goal of care?</a></li>
-                        <li><a href="10.html">What is the treatment that focuses on Maxine survival?</a></li>
-                        <li><a href="11.html">If I choose survival as the goal of care, what happens with my loved one after they leave the ICU?</a></li>
-                        <li><a href="12.html">Comparing and summarizing different treatment options</a></li>
-                    </ul>
-                </li>
-                <li class="dropdown">
-                    <a class="dropdown-toggle" data-toggle="dropdown" href="#">Making Decision<br/><br/>
-                        <span class="caret"></span></a>
-                    <ul class="dropdown-menu">
-                        <li><a href="13.html">How do I make this decision?</a></li>
-                        <li><a href="14.html">Are you still unsure?</a></li>
-                    </ul>
-                </li>
-                <li class="dropdown">
-                    <a class="dropdown-toggle" data-toggle="dropdown" href="#">Patient Examples<br/><br/>
-                        <span class="caret"></span></a>
-                    <ul class="dropdown-menu">
-                        <li><a href="15.html">Patient Examples</a></li>
-                        <li><a href="16.html">Example 1</a></li>
-                        <li><a href="17.html">Example 2</a></li>
-                    </ul>
-                </li>
-                <li class="dropdown">
-                    <a class="dropdown-toggle" data-toggle="dropdown" href="#">Worksheet & Questions<br/>
-                        <span class="caret"></span></a>
-                    <ul class="dropdown-menu">
-                        <!--TODO: Click the dropdown and open the collaspse-->
-                        <li><a href="18.html">1) What do you understand about the outlook of your loved one, and the options?</a></li>
-                        <li><a href="18.html">2) What would your loved one want?</a></li>
-                        <li><a href="18.html">3) How is this choice making you feel?</a></li>
-                        <li><a href="18.html">4) What questions do you need answered before you can decide?</a></li>
-                        <li><a href="18.html">5) Comfort or survival</a></li>
-                    </ul>
-                </li>
-            </ul>
-        </div>
+        <div id="tab"></div>
+        <!--<div class="">-->
+            <!--<ul class="nav nav-pills nav-justified">-->
+                <!--<li class="dropdown active">-->
+                    <!--<a class="dropdown-toggle" data-toggle="dropdown" href="#">Overview<br/><br/>-->
+                        <!--<span class="caret"></span></a>-->
+                    <!--<ul class="dropdown-menu">-->
+                        <!--<li><a href="1.html">Welcome</a></li>-->
+                        <!--<li><a href="2.html">Aims & Contents</a></li>-->
+                    <!--</ul>-->
+                <!--</li>-->
+                <!--<li class="dropdown">-->
+                    <!--<a class="dropdown-toggle" data-toggle="dropdown" href="#">Mechanical Ventilator<br/>-->
+                        <!--<span class="caret"></span></a>-->
+                    <!--<ul class="dropdown-menu">-->
+                        <!--<li><a href="3.html">What is a mechanical ventilator?</a></li>-->
+                        <!--<li><a href="3.html">What is like to be on a ventilator?</a></li>-->
+                    <!--</ul>-->
+                <!--</li>-->
+                <!--<li class="dropdown">-->
+                    <!--<a class="dropdown-toggle" data-toggle="dropdown" href="#">What should you decide?<br/>-->
+                        <!--<span class="caret"></span></a>-->
+                    <!--<ul class="dropdown-menu">-->
+                        <!--<li><a href="4.html">What decision am I being asked to make?</a></li>-->
+                        <!--<li><a href="4.html">What is the most important for your loved one right now?</a></li>-->
+                        <!--<li><a href="5.html">What are the different treatment goals for my loved one?</a></li>-->
+                    <!--</ul>-->
+                <!--</li>-->
+                <!--<li class="dropdown">-->
+                    <!--<a class="dropdown-toggle" data-toggle="dropdown" href="#">Patient Outlook<br/><br/>-->
+                        <!--<span class="caret"></span></a>-->
+                    <!--<ul class="dropdown-menu">-->
+                        <!--<li><a href="6.html">What is my loved one's outlook?<br/>What are the long-term effects from the TBI?</a></li>-->
+                        <!--<li><a href="7.html">How certain or uncertain is the outlook for my loved one?</a></li>-->
+                    <!--</ul>-->
+                <!--</li>-->
+                <!--<li class="dropdown">-->
+                    <!--<a class="dropdown-toggle" data-toggle="dropdown" href="#">Treatment Options<br/><br/>-->
+                        <!--<span class="caret"></span></a>-->
+                    <!--<ul class="dropdown-menu">-->
+                        <!--<li><a href="8.html">Introduction</a></li>-->
+                        <!--<li><a href="9.html">What does it mean to have comfort at the goal of care?</a></li>-->
+                        <!--<li><a href="10.html">What is the treatment that focuses on Maxine survival?</a></li>-->
+                        <!--<li><a href="11.html">If I choose survival as the goal of care, what happens with my loved one after they leave the ICU?</a></li>-->
+                        <!--<li><a href="12.html">Comparing and summarizing different treatment options</a></li>-->
+                    <!--</ul>-->
+                <!--</li>-->
+                <!--<li class="dropdown">-->
+                    <!--<a class="dropdown-toggle" data-toggle="dropdown" href="#">Making Decision<br/><br/>-->
+                        <!--<span class="caret"></span></a>-->
+                    <!--<ul class="dropdown-menu">-->
+                        <!--<li><a href="13.html">How do I make this decision?</a></li>-->
+                        <!--<li><a href="14.html">Are you still unsure?</a></li>-->
+                    <!--</ul>-->
+                <!--</li>-->
+                <!--<li class="dropdown">-->
+                    <!--<a class="dropdown-toggle" data-toggle="dropdown" href="#">Patient Examples<br/><br/>-->
+                        <!--<span class="caret"></span></a>-->
+                    <!--<ul class="dropdown-menu">-->
+                        <!--<li><a href="15.html">Patient Examples</a></li>-->
+                        <!--<li><a href="16.html">Example 1</a></li>-->
+                        <!--<li><a href="17.html">Example 2</a></li>-->
+                    <!--</ul>-->
+                <!--</li>-->
+                <!--<li class="dropdown">-->
+                    <!--<a class="dropdown-toggle" data-toggle="dropdown" href="#">Worksheet & Questions<br/>-->
+                        <!--<span class="caret"></span></a>-->
+                    <!--<ul class="dropdown-menu">-->
+                        <!--&lt;!&ndash;TODO: Click the dropdown and open the collaspse&ndash;&gt;-->
+                        <!--<li><a href="18.html">1) What do you understand about the outlook of your loved one, and the options?</a></li>-->
+                        <!--<li><a href="18.html">2) What would your loved one want?</a></li>-->
+                        <!--<li><a href="18.html">3) How is this choice making you feel?</a></li>-->
+                        <!--<li><a href="18.html">4) What questions do you need answered before you can decide?</a></li>-->
+                        <!--<li><a href="18.html">5) Comfort or survival</a></li>-->
+                    <!--</ul>-->
+                <!--</li>-->
+            <!--</ul>-->
+        <!--</div>-->
 
 
         <!--the text box to put the main context-->
