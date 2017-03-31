@@ -19,3 +19,18 @@ print(row)
 
 #closing the function
 cur.close()
+
+import MySQLdb
+conn = MySQLdb.connect(host= "104.131.52.198.",
+                  user="root",
+                  passwd="84519851",
+                  db="DP")
+x = conn.cursor()
+
+try:
+   x.execute("""INSERT INTO anooog1 VALUES (%s,%s)""",(188,90))
+   conn.commit()
+except:
+   conn.rollback()
+
+conn.close()
