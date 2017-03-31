@@ -52,14 +52,14 @@
       <Position>6</Position>
       <DataType>tinyint(1)|0</DataType>
     </column>
-    <index id="19" parent="8" name="PK_Session">
+    <index id="19" parent="8" name="ans_id">
       <ColNames>ans_id</ColNames>
     </index>
     <key id="20" parent="8" name="PRIMARY">
       <ColNames>ref_num</ColNames>
       <Primary>1</Primary>
     </key>
-    <foreign-key id="21" parent="8" name="PK_Session">
+    <foreign-key id="21" parent="8" name="ans_id">
       <ColNames>ans_id</ColNames>
       <RefSchemaName>DP</RefSchemaName>
       <RefTableName>answers</RefTableName>
@@ -69,6 +69,7 @@
       <Position>1</Position>
       <DataType>int(20)|0</DataType>
       <NotNull>1</NotNull>
+      <SequenceIdentity>1</SequenceIdentity>
     </column>
     <column id="23" parent="9" name="ans1">
       <Position>2</Position>
