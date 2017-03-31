@@ -7,4 +7,23 @@
 .progress{
     width: 80%;
 }
+p {
+    font-family: "Times New Roman";
+}
+
+h3 {
+    font-family: Arial, Times, serif;
+    font-weight: bold;
+    background-color:#bed6ed;
+}
+
+ul{
+    font-family: "Times New Roman",Arial, Times, serif;
+    font-size: large;
+
+}
+.nav{
+    font-family: "Helvetica Neue",Helvetica,Arial,sans-serif;
+    font-size: small;
+}
 /*# sourceMappingURL=bootstrap.min.css.map */
