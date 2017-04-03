@@ -1,3 +1,4 @@
+# all the functions are written here
 from flask import *
 
 from main import putDB
