@@ -1,5 +1,4 @@
-# import db as db
-from flask import *
+
 from model import *
 
 

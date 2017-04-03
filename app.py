@@ -1,13 +1,13 @@
 from flask import *
 
-from main import putDB
+from main import *
 
-app = Flask(__name__)
+from model import app
 
 
 @app.route('/')
 def worksheet1():
-    return current_app.send_static_file('input.html')
+    return current_app.send_static_file('18.html')
 
 
 @app.route('/worksheet2', methods=['POST'])
@@ -28,5 +28,5 @@ if __name__ == '__main__':
 #     """
 #     if not hasattr(g, 'sqlite_db'):
 #         g.sqlite_db = connect_db()
-#     return g.sqlite_db
+#     return g.sql1b
 
