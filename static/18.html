@@ -8,9 +8,11 @@
     <title>Goals-of-Care after Traumatic Brain Injury Decision Aid Prototype</title>
 
     <!--Bootstrap on server-->
-    <link href="{{ url_for ('static', filename = 'css/bootstrap.min.css') }}" rel="stylesheet">
+    <!--<link href="{{ url_for ('static', filename = 'css/bootstrap.min.css') }}" rel="stylesheet">-->
     <!--Bootstrap on local-->
     <!--<link href="css/bootstrap.min.css" rel="stylesheet">-->
+    <!--Bootstrap on CDN-->
+    <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet">
 
     <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
     <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
@@ -165,137 +167,136 @@
 
             <!--the dropdown box-->
             <form action="/worksheet2" method="post">
-            <div class="panel-group" id="accordion">
-              <div class="panel panel-default">
-                <div class="panel-heading">
-                  <h4 class="panel-title">
-                    <a data-toggle="collapse" data-parent="#accordion" href="#collapse1">
-                    1) What do you understand about the outlook of your loved one, and the options?</a>
-                  </h4>
-                </div>
-                <div id="collapse1" class="panel-collapse collapse">
-                  <div class="panel-body">
-                      <div class="form-group"> 
-                          <label for="comment1">
-                              What is your loved one’s outlook for getting better and how independent will he/she be with further medical care after the ICU?
-                          </label> 
+                <div class="panel-group" id="accordion">
+                  <div class="panel panel-default">
+                    <div class="panel-heading">
+                      <h4 class="panel-title">
+                        <a data-toggle="collapse" data-parent="#accordion" href="#collapse1">
+                        1) What do you understand about the outlook of your loved one, and the options?</a>
+                      </h4>
+                    </div>
+                    <div id="collapse1" class="panel-collapse collapse">
+                      <div class="panel-body">
+                          <div class="form-group"> 
+                              <label for="comment1">
+                                  What is your loved one’s outlook for getting better and how independent will he/she be with further medical care after the ICU?
+                              </label> 
+                              <textarea name ="comment1" class="form-control" rows="3" id="comment1">
+                              </textarea> 
+                          </div>
+                           <div class="form-group">
+                              <label for="comment2">
+                                  Do you understand what your loved one’s life will be like based on the two different treatment goals?
+                              </label> 
+                              <textarea name = "comment2" class="form-control" rows="3" id="comment2">
+                              </textarea> </div> <div class="form-group">
+                                <label for="comment3">
+                                    Is this quality of life acceptable to your loved one?
+                                </label> 
+                              <textarea name="comment3" class="form-control" rows="3" id="comment3">
+                              </textarea>
+                               </div> 
+                          <div class="form-group"> 
+                              <label for="comment4">
+                                  Do you understand the pros and cons of the two treatment goals/choices?
+                              </label>
+                               <textarea name="comment4" class="form-control" rows="3" id="comment4">
+                              </textarea> 
+                          </div>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="panel panel-default">
+                    <div class="panel-heading">
+                      <h4 class="panel-title">
+                        <a data-toggle="collapse" data-parent="#accordion" href="#collapse2">
+                            2) What would your loved one want?
+                        </a>
+                      </h4>
+                    </div>
+                    <div id="collapse2" class="panel-collapse collapse">
+                      <div class="panel-body">
+                          <div class="form-group"> 
+                              <label for="comment5">
+                                  What is your loved one’s outlook for getting better and how independent will he/she be with further medical care after the ICU?
+                              </label> 
+                              <textarea name="comments5" class="form-control" rows="3" id="comment5">
 
-                          <textarea name ="comment1" class="form-control" rows="3" id="comment1">
-                          </textarea> 
+                              </textarea> 
+                          </div>
+                           <div class="form-group">
+                              <label for="comment6">
+                                  What are their wishes for medical treatments when illness is severe or possibly leave them disabled? Have they mentioned it to you? Do they have a living will?
+                              </label> 
+                              <textarea name="comment6" class="form-control" rows="3" id="comment6">
+                              </textarea> </div> <div class="form-group">
+                                <label for="comment7">
+                                    If your loved one could look at the choices right now, what would they choose?
+                                </label> 
+                              <textarea name="comment7" class="form-control" rows="3" id="comment7">
+                              </textarea>
+                               </div> 
+                          <div class="form-group"> 
+                              <label for="comment8">
+                                  Do you understand the pros and cons of the two treatment goals/choices?
+                              </label>
+                               <textarea name="comment8" class="form-control" rows="3" id="comment8">
+                              </textarea> 
+                          </div>
                       </div>
-                       <div class="form-group">
-                          <label for="comment2">
-                              Do you understand what your loved one’s life will be like based on the two different treatment goals?
-                          </label> 
-                          <textarea name = "comment2" class="form-control" rows="3" id="comment2">
-                          </textarea> </div> <div class="form-group">
-                            <label for="comment3">
-                                Is this quality of life acceptable to your loved one?
-                            </label> 
-                          <textarea name="comment3" class="form-control" rows="3" id="comment3">
-                          </textarea>
-                           </div> 
-                      <div class="form-group"> 
-                          <label for="comment4">
-                              Do you understand the pros and cons of the two treatment goals/choices?
+                    </div>
+                  </div>
+                  <div class="panel panel-default">
+                    <div class="panel-heading">
+                      <h4 class="panel-title">
+                        <a data-toggle="collapse" data-parent="#accordion" href="#collapse3">
+                            3) How is this choice making you feel?
+                        </a>
+                      </h4>
+                    </div>
+                    <div id="collapse3" class="panel-collapse collapse">
+                      <div class="panel-body">
+                         <textarea name="comment9"class="form-control" rows="3" id="comment9">
+                         </textarea> 
+                      </div>
+                    </div>
+                  </div>
+                  <div class="panel panel-default">
+                    <div class="panel-heading">
+                      <h4 class="panel-title">
+                        <a data-toggle="collapse" data-parent="#accordion" href="#collapse4">
+                        4) What questions do you need answered before you can decide?</a>
+                      </h4>
+                    </div>
+                    <div id="collapse4" class="panel-collapse collapse">
+                      <div class="panel-body">
+                          <label for="comment10">
+                                Make a list and ask. Bring the list of questions to the meeting with the doctor, too.
                           </label>
-                           <textarea name="comment4" class="form-control" rows="3" id="comment4">
-                          </textarea> 
-                      </div>
-                  </div>
-                </div>
-              </div>
-              <div class="panel panel-default">
-                <div class="panel-heading">
-                  <h4 class="panel-title">
-                    <a data-toggle="collapse" data-parent="#accordion" href="#collapse2">
-                        2) What would your loved one want?
-                    </a>
-                  </h4>
-                </div>
-                <div id="collapse2" class="panel-collapse collapse">
-                  <div class="panel-body">
-                      <div class="form-group"> 
-                          <label for="comment5">
-                              What is your loved one’s outlook for getting better and how independent will he/she be with further medical care after the ICU?
-                          </label> 
-                          <textarea name="comments5" class="form-control" rows="3" id="comment5">
-
-                          </textarea> 
-                      </div>
-                       <div class="form-group">
-                          <label for="comment6">
-                              What are their wishes for medical treatments when illness is severe or possibly leave them disabled? Have they mentioned it to you? Do they have a living will?
-                          </label> 
-                          <textarea name="comment6" class="form-control" rows="3" id="comment6">
-                          </textarea> </div> <div class="form-group">
-                            <label for="comment7">
-                                If your loved one could look at the choices right now, what would they choose?
-                            </label> 
-                          <textarea name="comment7" class="form-control" rows="3" id="comment7">
+                          <textarea name="comment10" class="form-control" rows="6" id="comment10">
                           </textarea>
-                           </div> 
-                      <div class="form-group"> 
-                          <label for="comment8">
-                              Do you understand the pros and cons of the two treatment goals/choices?
-                          </label>
-                           <textarea name="comment8" class="form-control" rows="3" id="comment8">
-                          </textarea> 
                       </div>
+                    </div>
+                  </div>
+                  <div class="panel panel-default">
+                    <div class="panel-heading">
+                      <h4 class="panel-title">
+                        <a data-toggle="collapse" data-parent="#accordion" href="#collapse5">
+                              5) Comfort or survival
+                        </a>
+                      </h4>
+                    </div>
+                    <div id="collapse5" class="panel-collapse collapse">
+                      <div class="panel-body text-center">
+                          Imagine a line where the right side is comfort care and the left side is doing everything possible for survival.
+                          <br/>
+                          <i>Where do you think your loved one would put themselves on the line below?</i>
+                          <!--TODO: the choosing bar in this place-->
+                      </div>
+                    </div>
                   </div>
                 </div>
-              </div>
-              <div class="panel panel-default">
-                <div class="panel-heading">
-                  <h4 class="panel-title">
-                    <a data-toggle="collapse" data-parent="#accordion" href="#collapse3">
-                        3) How is this choice making you feel?
-                    </a>
-                  </h4>
-                </div>
-                <div id="collapse3" class="panel-collapse collapse">
-                  <div class="panel-body">
-                     <textarea name="comment9"class="form-control" rows="3" id="comment9">
-                     </textarea> 
-                  </div>
-                </div>
-              </div>
-              <div class="panel panel-default">
-                <div class="panel-heading">
-                  <h4 class="panel-title">
-                    <a data-toggle="collapse" data-parent="#accordion" href="#collapse4">
-                    4) What questions do you need answered before you can decide?</a>
-                  </h4>
-                </div>
-                <div id="collapse4" class="panel-collapse collapse">
-                  <div class="panel-body">
-                      <label for="comment10">
-                            Make a list and ask. Bring the list of questions to the meeting with the doctor, too.
-                      </label>
-                      <textarea name="comment10" class="form-control" rows="6" id="comment10">
-                      </textarea>
-                  </div>
-                </div>
-              </div>
-              <div class="panel panel-default">
-                <div class="panel-heading">
-                  <h4 class="panel-title">
-                    <a data-toggle="collapse" data-parent="#accordion" href="#collapse5">
-                          5) Comfort or survival
-                    </a>
-                  </h4>
-                </div>
-                <div id="collapse5" class="panel-collapse collapse">
-                  <div class="panel-body text-center">
-                      Imagine a line where the right side is comfort care and the left side is doing everything possible for survival.
-                      <br/>
-                      <i>Where do you think your loved one would put themselves on the line below?</i>
-                      <!--TODO: the choosing bar in this place-->
-                  </div>
-                </div>
-              </div>
-            </div>
-                <input type="submit">
+                    <input type="submit">
             </form>
         </div>
 
