@@ -1,9 +1,7 @@
-# For testing
-from flask import Flask
 from flask_sqlalchemy import SQLAlchemy
+from config import app
 
-app = Flask(__name__)
-app.config['SQLALCHEMY_DATABASE_URI'] = 'mysql://root:84519851@104.131.52.198/DP'
+
 db = SQLAlchemy(app)
 
 class answers(db.Model):
