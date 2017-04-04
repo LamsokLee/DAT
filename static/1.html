@@ -10,9 +10,9 @@
     <!--Bootstrap on server-->
     <!--<link href="{{ url_for ('static', filename = 'css/bootstrap.min.css') }}" rel="stylesheet">-->
     <!--Bootstrap on local-->
-    <!--<link href="css/bootstrap.min.css" rel="stylesheet">-->
+    <link href="css/bootstrap.min.css" rel="stylesheet">
     <!--Bootstrap on CDN-->
-    <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet">
+    <!--<link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet">-->
     <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
     <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
     <!--[if lt IE 9]>
@@ -148,13 +148,20 @@
         <div class="jumbotron">
             <!--button division-->
             <div class="row">
-                <div class="col-md-6">
-                </div>
-                <div class="col-md-6">
-                    <button type="button" onclick="next_page()" class="btn btn-primary pull-right" style="margin-bottom: 5%">
-                    <span class="glyphicon glyphicon glyphicon-menu-right" aria-hidden="true"></span>
-                    </button>
-                </div>
+                <a href="">
+                    <div class="col-md-6">
+                        <!--<button type="button" class="btn btn-primary pull-left" style="margin-bottom: 5%">-->
+                        <!--<span class="glyphicon glyphicon glyphicon-menu-left" aria-hidden="true"></span>-->
+                        <!--</button>-->
+                    </div>
+                </a>
+                <a href="2.html">
+                    <div class="col-md-6">
+                        <button type="button" class="btn btn-primary pull-right" style="margin-bottom: 5%">
+                            <span class="glyphicon glyphicon glyphicon-menu-right" aria-hidden="true"></span>
+                        </button>
+                    </div>
+                </a>
             </div>
             <h3 class="text-center">Welcome</h3>
             <p>
@@ -196,7 +203,7 @@
         <!--</button>-->
         <a href="2.html">
             <button type="button" class="btn btn-primary btn-lg pull-right" style="margin-bottom: 5%">Next
-                <span class="glyphicon glyphicon glyphicon-menu-right" aria-hidden="true"></span>
+                <span class="glyphicon glyphicon-menu-right" aria-hidden="true"></span>
             </button>
         </a>
 

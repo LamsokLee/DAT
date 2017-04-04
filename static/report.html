@@ -10,9 +10,9 @@
     <!--Bootstrap on server-->
     <!--<link href="{{ url_for ('static', filename = 'css/bootstrap.min.css') }}" rel="stylesheet">-->
     <!--Bootstrap on local-->
-    <link href="css/bootstrap.min.css" rel="stylesheet">
+    <!--<link href="css/bootstrap.min.css" rel="stylesheet">-->
     <!--Bootstrap on CDN-->
-    <!--<link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet">-->
+    <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet">
 
     <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
     <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
@@ -90,25 +90,19 @@
                     </button>
             </div>
         </div>
-        <button type="button" onclick="previous_page()" class="btn btn-primary btn-lg pull-left" style="margin-bottom: 5%">
-            <span class="glyphicon glyphicon-home" aria-hidden="true"></span>&nbsp;Home
-        </button>
-        <button type="button" onclick="next_page()" class="btn btn-primary btn-lg pull-right" style="margin-bottom: 5%">
-            <span class="glyphicon  glyphicon-off" aria-hidden="true"></span>&nbsp;Exit
-        </button>
+        <a href="1.html">
+            <button type="button" class="btn btn-primary btn-lg pull-left" style="margin-bottom: 5%">
+                <span class="glyphicon glyphicon-home" aria-hidden="true"></span>Home
+            </button>
+            </a>
+        <a href="report.html">
+            <button type="button" class="btn btn-primary btn-lg pull-right" style="margin-bottom: 5%">
+                <span class="glyphicon glyphicon-floppy-disk" aria-hidden="true"></span>Exit
+            </button>
+        </a>
 
   </div>
 
-    <script>
-        function previous_page()
-    {
-        location.href = "17.html";
-    }
-    function next_page()
-    {
-        location.href = "Finish.html";
-    }
-    </script>
     <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
     <!-- Include all compiled plugins (below), or include individual files as needed -->

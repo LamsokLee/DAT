@@ -10,9 +10,9 @@
     <!--Bootstrap on server-->
     <!--<link href="{{ url_for ('static', filename = 'css/bootstrap.min.css') }}" rel="stylesheet">-->
     <!--Bootstrap on local-->
-    <!--<link href="css/bootstrap.min.css" rel="stylesheet">-->
+    <link href="css/bootstrap.min.css" rel="stylesheet">
     <!--Bootstrap on CDN-->
-    <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet">
+    <!--<link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet">-->
 
     <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
     <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
@@ -149,16 +149,20 @@
         <div class="jumbotron">
             <!--button division-->
             <div class="row">
-                <div class="col-md-6">
-                    <button type="button" onclick="previous_page()" class="btn btn-primary pull-left" style="margin-bottom: 5%">
-                    <span class="glyphicon glyphicon glyphicon-menu-left" aria-hidden="true"></span>
-                    </button>
-                </div>
-                <div class="col-md-6">
-                    <button type="button" onclick="next_page()" class="btn btn-primary pull-right" style="margin-bottom: 5%">
-                    <span class="glyphicon glyphicon glyphicon-menu-right" aria-hidden="true"></span>
-                    </button>
-                </div>
+                <a href="4.html">
+                    <div class="col-md-6">
+                        <button type="button" class="btn btn-primary pull-left" style="margin-bottom: 5%">
+                        <span class="glyphicon glyphicon glyphicon-menu-left" aria-hidden="true"></span>
+                        </button>
+                    </div>
+                </a>
+                <a href="6.html">
+                    <div class="col-md-6">
+                        <button type="button" class="btn btn-primary pull-right" style="margin-bottom: 5%">
+                            <span class="glyphicon glyphicon glyphicon-menu-right" aria-hidden="true"></span>
+                        </button>
+                    </div>
+                </a>
             </div>
             <!--the head of this page-->
             <h3 class="text-center">WHAT ARE DIFFERENT TREATMENT GOALS FOR MY LOVED ONE?</h3>
@@ -185,24 +189,18 @@
                 We will explain both options in more detail over the next few pages.
             </p>
         </div>
-        <button type="button" onclick="previous_page()" class="btn btn-primary btn-lg pull-left" style="margin-bottom: 5%">
-            <span class="glyphicon glyphicon glyphicon-menu-left" aria-hidden="true"></span>Previous
-        </button>
-        <button type="button" onclick="next_page()" class="btn btn-primary btn-lg pull-right" style="margin-bottom: 5%">Next
-            <span class="glyphicon glyphicon glyphicon-menu-right" aria-hidden="true"></span>
-        </button>
+        <a href="4.html">
+            <button type="button" class="btn btn-primary btn-lg pull-left" style="margin-bottom: 5%">
+                <span class="glyphicon glyphicon-menu-left" aria-hidden="true"></span>Previous
+            </button>
+        </a>
+        <a href="6.html">
+            <button type="button" class="btn btn-primary btn-lg pull-right" style="margin-bottom: 5%">Next
+                <span class="glyphicon glyphicon-menu-right" aria-hidden="true"></span>
+            </button>
+        </a>
     </div>
 
-    <script>
-        function previous_page()
-    {
-        location.href = "4.html";
-    }
-    function next_page()
-    {
-        location.href = "6.html";
-    }
-    </script>
     <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
     <!-- Include all compiled plugins (below), or include individual files as needed -->
