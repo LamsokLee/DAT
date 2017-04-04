@@ -10,7 +10,7 @@
     <!--Bootstrap on server-->
     <link href="{{ url_for ('static', filename = 'css/bootstrap.min.css') }}" rel="stylesheet">
     <!--Bootstrap on local-->
-    <!--<link href="css/bootstrap.min.css" rel="stylesheet">-->
+    <!--<link href="static/css/bootstrap.min.css" rel="stylesheet">-->
     <!--Bootstrap on CDN-->
     <!--<link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet">-->
 
@@ -60,6 +60,7 @@
 
   <!--container of the whole content of the tool-->
   <div class="container">
+      <form action="/worksheet2" method="post">
         <h2 class = "text-center">
             Goals-of-Care after Traumatic Brain Injury Decision Aid Prototype
         </h2>
@@ -170,7 +171,6 @@
             </div>
 
             <!--the dropdown box-->
-            <form action="/worksheet2" method="post">
                 <div class="panel-group" id="accordion">
                   <div class="panel panel-default">
                     <div class="panel-heading">
@@ -290,8 +290,6 @@
                     </div>
                   </div>
                 </div>
-            <input type="submit">
-            </form>
         </div>
 
         <!--TODO: Choose bar-->
@@ -300,11 +298,10 @@
                 <span class="glyphicon glyphicon-menu-left" aria-hidden="true"></span>Previous
             </button>
             </a>
-            <a href="preview.html">
-                <button type="button" class="btn btn-primary btn-lg pull-right" style="margin-bottom: 5%">Preview
-                    <span class="glyphicon glyphicon-menu-right" aria-hidden="true"></span>
-                </button>
-            </a>
+            <input type="submit" class="btn btn-primary btn-lg pull-right" style="margin-bottom: 5%">
+                <span class="glyphicon" aria-hidden="true"></span>
+            </input>
+      </form>
   </div>
 
     <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
