@@ -1,6 +1,12 @@
 from flask import Flask, render_template
 
-app = Flask(__name__)
+from flask import *
+
+from main import *
+
+from model import app
+
+# app = Flask(__name__)
 
 @app.route('/')
 def homepage():
@@ -78,6 +84,16 @@ def page_17():
 def page_18():
     return render_template("18.html")
 
+
+@app.route('/preview', methods=['POST'])
+def preview():
+    # print(request.form.get('comment1'))
+    putDB(request.form.get('ans8'),request.form.get('ans9'),
+          request.form.get('ans10'),request.form.get('ans11'),
+          request.form.get('ans12'),request.form.get('ans13'),
+          request.form.get('ans14'),request.form.get('ans15'))
+
+    return render_template('preview.html')
 
 if __name__ == "__main__":
     app.run()
