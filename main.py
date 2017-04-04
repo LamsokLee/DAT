@@ -4,8 +4,8 @@ from flask import *
 from model import *
 
 
-def putDB(comments1,comments2,comments3,comments4,comments5,comments6,comments7,comments8,comments9,comments10):
+def putDB(ans8,ans9,ans10,ans11,ans12,ans13,ans14,ans15):
 
-    admin = answers(comments1, comments2,comments3, comments4, comments5, comments6, comments7, comments8,comments9,comments10)
+    admin = answers(ans8,ans9,ans10,ans11,ans12,ans13,ans14,ans15)
     db.session.add(admin)
     db.session.commit()

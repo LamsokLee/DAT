@@ -74,7 +74,6 @@
     <column id="23" parent="9" name="ans1">
       <Position>2</Position>
       <DataType>varchar(150)|0</DataType>
-      <NotNull>1</NotNull>
       <DefaultExpression>&apos;No answer submitted&apos;</DefaultExpression>
     </column>
     <column id="24" parent="9" name="ans2">
