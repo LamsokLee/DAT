@@ -14,7 +14,11 @@ p {
 h3 {
     font-family: Arial, Times, serif;
     font-weight: bold;
+}
+
+.section-head{
     background-color:#bed6ed;
+    padding: 5px;
 }
 
 ul{
