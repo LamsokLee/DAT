@@ -4,8 +4,17 @@ from flask import *
 from model import *
 
 
-def putDB(ans8,ans9,ans10,ans11,ans12,ans13,ans14,ans15):
+# def saveData3(ans8, ans9, ans10, ans11, ans12, ans13, ans14, ans15):
+#     vans8 = ans8
+#     vans9 = ans9
+#     vans10 = ans10
+#     vans11 = ans11
+#     vans12 = ans12
+#     vans13 = ans13
+#     vans14 = ans14
+#     vans15 = ans15
 
-    admin = answers(ans8,ans9,ans10,ans11,ans12,ans13,ans14,ans15)
-    db.session.add(admin)
+
+def putDB(data):
+    db.session.add(data)
     db.session.commit()

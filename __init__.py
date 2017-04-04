@@ -7,6 +7,7 @@ from main import *
 from model import app
 
 # app = Flask(__name__)
+data = answers()
 
 @app.route('/')
 def homepage():
@@ -87,11 +88,15 @@ def page_18():
 
 @app.route('/preview', methods=['POST'])
 def preview():
-    # print(request.form.get('comment1'))
-    putDB(request.form.get('ans8'),request.form.get('ans9'),
-          request.form.get('ans10'),request.form.get('ans11'),
-          request.form.get('ans12'),request.form.get('ans13'),
-          request.form.get('ans14'),request.form.get('ans15'))
+    data.ans8=request.form.get('ans8')
+    data.ans9=request.form.get('ans9')
+    data.ans10=request.form.get('ans10')
+    data.ans11=request.form.get('ans11')
+    data.ans12=request.form.get('ans12')
+    data.ans13=request.form.get('ans13')
+    data.ans14=request.form.get('ans14')
+    data.ans15=request.form.get('ans15')
+    putDB(data)
 
     return render_template('preview.html')
 
