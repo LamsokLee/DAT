@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <dataSource name="@104.131.52.198">
-  <database-model serializer="dbm" rdbms="MYSQL" format-version="4.0">
+  <database-model serializer="dbm" rdbms="MYSQL" format-version="4.1">
     <root id="1"/>
     <schema id="2" parent="1" name="DP">
       <Current>1</Current>
@@ -23,6 +23,7 @@
       <DataType>varchar(1000)|0</DataType>
     </column>
     <key id="12" parent="7" name="PRIMARY">
+      <NameSurrogate>1</NameSurrogate>
       <ColNames>con_id</ColNames>
       <Primary>1</Primary>
     </key>
@@ -56,6 +57,7 @@
       <ColNames>ans_id</ColNames>
     </index>
     <key id="20" parent="8" name="PRIMARY">
+      <NameSurrogate>1</NameSurrogate>
       <ColNames>ref_num</ColNames>
       <Primary>1</Primary>
     </key>
@@ -156,6 +158,7 @@
       <DefaultExpression>&apos;No answer submitted&apos;</DefaultExpression>
     </column>
     <key id="40" parent="9" name="PRIMARY">
+      <NameSurrogate>1</NameSurrogate>
       <ColNames>ans_id</ColNames>
       <Primary>1</Primary>
     </key>
