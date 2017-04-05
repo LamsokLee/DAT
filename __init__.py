@@ -31,6 +31,12 @@ def page_4():
 
 @app.route('/5')
 def page_5():
+    data.ans1=request.form.get('ans1')
+    data.ans2=request.form.get('ans2')
+    data.ans3=request.form.get('ans3')
+    data.ans4=request.form.get('ans4')
+    data.ans5=request.form.get('ans5')
+    data.ans6=request.form.get('ans6')
     return render_template("5.html")
 
 @app.route('/6')
@@ -98,7 +104,9 @@ def preview():
     data.ans15=request.form.get('ans15')
     putDB(data)
 
-    return render_template('preview.html')
+    return render_template('preview.html', a1=data.ans1, a2=data.ans2, a3=data.ans3, a4=data.ans4, a5=data.ans5, a6=data.ans6, a8=data.ans8, a9=data.ans9, a10=data.ans10,
+                           a11=data.ans11, a12=data.ans12, a13=data.ans13, a14=data.ans14, a15=data.ans15)
+
 
 if __name__ == "__main__":
     app.run()
