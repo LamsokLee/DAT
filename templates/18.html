@@ -155,7 +155,7 @@
                         </button>
                     </div>
                 </a>
-                <a href="preview.html">
+                <a href="{{url_for('page_preview')}}">
                     <div class="col-md-6">
                         <button type="button" class="btn btn-primary pull-right" style="margin-bottom: 5%">
                             <span class="glyphicon glyphicon glyphicon-menu-right" aria-hidden="true"></span>
@@ -298,8 +298,8 @@
                     <span class="glyphicon glyphicon-menu-left" aria-hidden="true"></span>Previous
                 </button>
             </a>
-            <input type="submit" class="btn btn-primary btn-lg pull-right" style="margin-bottom: 5%">
-                <span class="glyphicon" aria-hidden="true"></span>
+            <input type="submit" class="btn btn-primary btn-lg pull-right" style="margin-bottom: 5%" value="Preview">
+                <span class="glyphicon glyphicon-file" aria-hidden="true"></span>
             </input>
       </form>
   </div>
