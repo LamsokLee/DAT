@@ -33,31 +33,19 @@
                   <span class="icon-bar"></span>
                   <span class="icon-bar"></span>
               </button>
-              <a class="navbar-brand" href="#">Brand</a>
+              <a class="navbar-brand" href="https://www.umassmed.edu/">UMass Medical School</a>
           </div>
 
           <!-- Collect the nav links, forms, and other content for toggling -->
           <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
               <ul class="nav navbar-nav">
-                  <li class="active"><a href="#">Link <span class="sr-only">(current)</span></a></li>
-                  <li><a href="#">Link</a></li>
-                  <li class="dropdown">
-                      <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Dropdown <span class="caret"></span></a>
-                      <ul class="dropdown-menu">
-                          <li><a href="#">Action</a></li>
-                          <li><a href="#">Another action</a></li>
-                          <li><a href="#">Something else here</a></li>
-                          <li role="separator" class="divider"></li>
-                          <li><a href="#">Separated link</a></li>
-                          <li role="separator" class="divider"></li>
-                          <li><a href="#">One more separated link</a></li>
-                      </ul>
-                  </li>
+                  <li><a href="{{url_for('homepage')}}">Home<span class="sr-only">(current)</span></a></li>
+                  <li><a href="#">Introduction</a></li>
+                  <li><a href="#">Contact Us</a></li>
               </ul>
           </div><!-- /.navbar-collapse -->
       </div><!-- /.container-fluid -->
   </nav>
-
   <!--container of the whole content of the tool-->
   <div class="container">
       <form action="/preview" method="post">
@@ -291,16 +279,15 @@
                   </div>
                 </div>
         </div>
-
-        <!--TODO: Choose bar-->
             <a href="{{url_for('page_17')}}">
                 <button type="button" class="btn btn-primary btn-lg pull-left" style="margin-bottom: 5%">
                     <span class="glyphicon glyphicon-menu-left" aria-hidden="true"></span>Previous
                 </button>
             </a>
-            <input type="submit" class="btn btn-primary btn-lg pull-right" style="margin-bottom: 5%" value="Preview">
-                <span class="glyphicon glyphicon-file" aria-hidden="true"></span>
-            </input>
+                <input type="submit" class="btn btn-primary btn-lg pull-right" style="margin-bottom: 5%" value="Preview">
+                <!--TODO: the icon of submit button -->
+                <!--<span class="glyphicon glyphicon-file" aria-hidden="true"></span>-->
+                </input>
       </form>
   </div>
 

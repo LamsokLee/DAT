@@ -32,13 +32,13 @@
                   <span class="icon-bar"></span>
                   <span class="icon-bar"></span>
               </button>
-              <a class="navbar-brand" href="#">UMass Medical School</a>
+              <a class="navbar-brand" href="https://www.umassmed.edu/">UMass Medical School</a>
           </div>
 
           <!-- Collect the nav links, forms, and other content for toggling -->
           <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
               <ul class="nav navbar-nav">
-                  <li><a href="#">Home<span class="sr-only">(current)</span></a></li>
+                  <li><a href="{{url_for('homepage')}}">Home<span class="sr-only">(current)</span></a></li>
                   <li><a href="#">Introduction</a></li>
                   <li><a href="#">Contact Us</a></li>
               </ul>
@@ -57,26 +57,27 @@
   </div>
   <div class="container">
       <!--the container for the main content-->
-        <div class="col-md-8" style="padding-top: 100px">
-            <h1 class="text-center">WELCOME CONTENT<!--TODO: welcome pages content--></h1>
+        <div class="col-md-8" style="padding-top: 30px">
+            <!--<h1 class="text-center">WELCOME CONTENT&lt;!&ndash;TODO: welcome pages content&ndash;&gt;</h1>-->
+            <img src="static/img/speech_therapy.jpg" class="img-responsive img-thumbnail">
         </div>
-        <div class="col-md-4" style="padding-top: 100px">
+        <div class="col-md-4" style="padding-top: 30px">
             <!--TODO: Start button and retrieve data form.    -->
             <div class="form-group well well-bg">
                 <form action="/report" method="post">
                 <!--TODO: the form of box to retrieve old session-->
                     <label for="ref">Reference Number:</label>
                     <input type="text" class="form-control" id="ref">
-                    <a href="{{url_for('page_1')}}">
+                    <label for="ref">Email:</label>
+                    <input type="text" class="form-control" id="ref">
                         <div style="margin-top:20px;margin-bottom: 20px;padding-bottom: 20px">
                             <button type="button" class="btn btn-primary pull-right">
-                                <span class="glyphicon glyphicon-save-file" aria-hidden="true"></span>Get My Report
+                                <span class="glyphicon glyphicon-save-file" aria-hidden="true"></span>Get Report
                             </button>
                             <button type="button" class="btn btn-primary pull-left">
-                            <span class="glyphicon glyphicon-question-sign" aria-hidden="true"></span>Forget my number?
+                                <span class="glyphicon glyphicon-question-sign" aria-hidden="true"></span>Forget Number?
                             </button>
                         </div>
-                    </a>
                 </form>
             </div>
         </div>

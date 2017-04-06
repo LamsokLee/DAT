@@ -33,20 +33,19 @@
                   <span class="icon-bar"></span>
                   <span class="icon-bar"></span>
               </button>
-              <a class="navbar-brand" href="http://umassmed.edu/">UMass Medical School</a>
+              <a class="navbar-brand" href="https://www.umassmed.edu/">UMass Medical School</a>
           </div>
 
           <!-- Collect the nav links, forms, and other content for toggling -->
           <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
               <ul class="nav navbar-nav">
-                  <li><a href="#">Home<span class="sr-only">(current)</span></a></li>
+                  <li><a href="{{url_for('homepage')}}">Home<span class="sr-only">(current)</span></a></li>
                   <li><a href="#">Introduction</a></li>
                   <li><a href="#">Contact Us</a></li>
               </ul>
           </div><!-- /.navbar-collapse -->
       </div><!-- /.container-fluid -->
   </nav>
-
   <!--container of the whole content of the tool-->
   <div class="container">
         <h2 class = "text-center">
@@ -150,36 +149,42 @@
             <!--the head of this page-->
             <div class = "section-head"><h3 class="text-center">Report Preview
             </h3></div><br>
-            <p>
+            <div class="container">
+                <ul>
+                    <p>
                 <!--<br><br><br><br>Report content<br><br><br><br>-->
-                <br> 1. What is most important for your loved one right now?
-                <br>1).{{a1}}
-                <br>2).{{a2}}
-                <br>3).{{a3}}
-                <br>2. What is most important for you right now?
-                <br>4).{{a4}}
-                <br>5).{{a5}}
-                <br>6).{{a6}}
-                <br> 8. What is your loved one’s outlook for getting better and how independent will he/she be with further medical care after the ICU?
-                <br>{{a8}}
-                <br> 9. Do you understand what your loved one’s life will be like based on the two different treatment goals?
-
-                <br>{{a9}}
-                <br> 10. Is this quality of life acceptable to your loved one?
-
-                <br>{{a10}}
-                <br> 11. Do you understand the pros and cons of the two treatment goals/choices?
-                <br>{{a11}}
-                <br> 12. What are their wishes for medical treatments when illness is severe or possibly leave them disabled? Have they mentioned it to you? Do they have a living will?
-                <br>{{a12}}
-                <br> 13. If your loved one could look at the choices right now, what would they choose?
-                <br>{{a13}}
-                <br> 14. How is this choice making you feel?
-                <br>{{a14}}
-                <br> 15. Make a list and ask. Bring the list of questions to the meeting with the doctor, too.
-                <br>{{a15}}
-                <br>
-            </p>
+                        <li>What is most important for your loved one right now?</li>
+                            <ul>
+                                <li><i>{{a1}}</i></li>
+                                <li><i>{{a2}}</i></li>
+                                <li><i>{{a3}}</i></li>
+                            </ul>
+                        <li>What is most important for you right now?</li>
+                            <ul>
+                                <li><i>{{a4}}</i></li>
+                                <li><i>{{a5}}</i></li>
+                                <li><i>{{a6}}</i></li>
+                            </ul>
+                        <li>What is your loved one’s outlook for getting better and how independent will he/she be with further medical care after the ICU?</li>
+                            <ul><li><i>{{a8}}</i></li></ul>
+                        <li>Do you understand what your loved one’s life will be like based on the two different treatment goals?</li>
+                            <ul><li><i>{{a9}}</i></li></ul>
+                        <li>Is this quality of life acceptable to your loved one?</li>
+                            <ul><li><i>{{a10}}</i></li></ul>
+                        <li>Do you understand the pros and cons of the two treatment goals/choices?</li>
+                            <ul><li><i>{{a11}}</i></li></ul>
+                        <li>What are their wishes for medical treatments when illness is severe or possibly leave them disabled? Have they mentioned it to you? Do they have a living will?</li>
+                            <ul><li><i>{{a12}}</i></li></ul>
+                        <li>If your loved one could look at the choices right now, what would they choose?</li>
+                            <ul><li><i>{{a13}}</i></li></ul>
+                        <li>How is this choice making you feel?</li>
+                            <ul><li><i>{{a14}}</i></li></ul>
+                        <li>Make a list and ask. Bring the list of questions to the meeting with the doctor, too.</li>
+                            <ul><li><i>{{a15}}</i></li></ul>
+                        <br>
+                </p>
+                </ul>
+            </div>
             <div class="alert alert-success text-center">
                 Once you move forward, you cannot edit your answers.
             </div>
