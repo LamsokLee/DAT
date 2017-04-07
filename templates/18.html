@@ -23,10 +23,8 @@
   </head>
   <body>
   <!--the head navbar of the website-->
-<nav class="navbar navbar-default">   <div class="container-fluid">       <!-- Brand and toggle get grouped for better mobile display -->       <div class="navbar-header">           <a href="https://www.umassmed.edu/">               <img src="static/icon/logo-trans.png" class="img-responsive" width="130" height="40">           </a>       </div>       <!-- Collect the nav links, forms, and other content for toggling -->       <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">           <ul class="nav navbar-nav">               <li><a href="{{url_for('homepage')}}">Home<span class="sr-only">(current)</span></a></li>               <li><a href="#">Introduction</a></li>               <li><a href="#">Contact Us</a></li>           </ul>       </div><!-- /.navbar-collapse -->   </div><!-- /.container-fluid --> </nav>
-  <!--container of the whole content of the tool-->
+<nav class="navbar navbar-default">  <div class="container-fluid">      <!-- Brand and toggle get grouped for better mobile display -->      <div class="navbar-header">          <a href="https://www.umassmed.edu/">              <img src="static/icon/logo-trans.png" class="img-responsive" width="130" height="40">          </a>      </div>      <!-- Collect the nav links, forms, and other content for toggling -->      <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">          <ul class="nav navbar-nav">              <li><a href="{{url_for('homepage')}}">Home<span class="sr-only">(current)</span></a></li>              <li><a href="#">Introduction</a></li>              <li><a href="#">Contact Us</a></li>          </ul>      </div><!-- /.navbar-collapse -->  </div><!-- /.container-fluid --></nav>  <!--container of the whole content of the tool-->
   <div class="container">
-      <form action="/preview" method="post">
         <h2 class = "text-center">
             Goals-of-Care after Traumatic Brain Injury Decision Aid Prototype
         </h2>
@@ -114,20 +112,13 @@
         <div class="jumbotron">
             <!--button division-->
             <div class="row">
-                <a href="{{url_for('page_17')}}">
-                    <div class="col-md-6">
+                <div class="col-md-6">
+                    <a href="{{url_for('page_17')}}">
                         <button type="button" class="btn btn-primary pull-left" style="margin-bottom: 5%">
-                        <span class="glyphicon glyphicon glyphicon-menu-left" aria-hidden="true"></span>
+                            <span class="glyphicon glyphicon glyphicon-menu-left" aria-hidden="true"></span>
                         </button>
-                    </div>
-                </a>
-                <a href="{{url_for('page_preview')}}">
-                    <div class="col-md-6">
-                        <button type="button" class="btn btn-primary pull-right" style="margin-bottom: 5%">
-                            <span class="glyphicon glyphicon glyphicon-menu-right" aria-hidden="true"></span>
-                        </button>
-                    </div>
-                </a>
+                    </a>
+                </div>
             </div>
             <!--the head of this page-->
             <div class="section-head">
@@ -139,6 +130,7 @@
             </div>
 
             <!--the dropdown box-->
+            <form action="/preview" method="post">
                 <div class="panel-group" id="accordion">
                   <div class="panel panel-default">
                     <div class="panel-heading">
@@ -242,7 +234,6 @@
                           Imagine a line where the right side is comfort care and the left side is doing everything possible for survival.
                           <br/>
                           <i>Where do you think your loved one would put themselves on the line below?</i><br><br>
-                          <!--TODO: the choosing bar in this place-->
                           <div class = "col-md-1 text-center">
                             <h4>Survival</h4>
                           </div>
@@ -256,17 +247,19 @@
                     </div>
                   </div>
                 </div>
+                <input type="submit" id="submit-answer" class="hidden">
+             </form>
         </div>
             <a href="{{url_for('page_17')}}">
                 <button type="button" class="btn btn-primary btn-lg pull-left" style="margin-bottom: 5%">
                     <span class="glyphicon glyphicon-menu-left" aria-hidden="true"></span>Previous
                 </button>
             </a>
-                <input type="submit" class="btn btn-primary btn-lg pull-right" style="margin-bottom: 5%" value="Preview">
+                <label for="submit-answer" class="btn btn-primary btn-lg pull-right" style="margin-bottom: 5%">
                 <!--TODO: the icon of submit button -->
-                <!--<span class="glyphicon glyphicon-file" aria-hidden="true"></span>-->
-                </input>
-      </form>
+                    Submit
+                </label>
+
   </div>
 
     <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->

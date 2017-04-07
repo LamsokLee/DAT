@@ -23,10 +23,8 @@
   </head>
   <body>
   <!--the head navbar of the website-->
-<nav class="navbar navbar-default">   <div class="container-fluid">       <!-- Brand and toggle get grouped for better mobile display -->       <div class="navbar-header">           <a href="https://www.umassmed.edu/">               <img src="static/icon/logo-trans.png" class="img-responsive" width="130" height="40">           </a>       </div>       <!-- Collect the nav links, forms, and other content for toggling -->       <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">           <ul class="nav navbar-nav">               <li><a href="{{url_for('homepage')}}">Home<span class="sr-only">(current)</span></a></li>               <li><a href="#">Introduction</a></li>               <li><a href="#">Contact Us</a></li>           </ul>       </div><!-- /.navbar-collapse -->   </div><!-- /.container-fluid --> </nav>
-
+<nav class="navbar navbar-default">  <div class="container-fluid">      <!-- Brand and toggle get grouped for better mobile display -->      <div class="navbar-header">          <a href="https://www.umassmed.edu/">              <img src="static/icon/logo-trans.png" class="img-responsive" width="130" height="40">          </a>      </div>      <!-- Collect the nav links, forms, and other content for toggling -->      <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">          <ul class="nav navbar-nav">              <li><a href="{{url_for('homepage')}}">Home<span class="sr-only">(current)</span></a></li>              <li><a href="#">Introduction</a></li>              <li><a href="#">Contact Us</a></li>          </ul>      </div><!-- /.navbar-collapse -->  </div><!-- /.container-fluid --></nav>
   <!--container of the whole content of the tool-->
-  <!--<form action="/5" method="post">-->
   <div class="container">
         <h2 class = "text-center">
             Goals-of-Care after Traumatic Brain Injury Decision Aid Prototype
@@ -118,34 +116,27 @@
         <div class="jumbotron">
             <!--button division-->
             <div class="row">
-                <a href="{{url_for('page_3')}}">
-                    <div class="col-md-6">
+                <div class="col-md-6">
+                    <a href="{{url_for('page_3')}}">
                         <button type="button" class="btn btn-primary pull-left" style="margin-bottom: 5%">
-                        <span class="glyphicon glyphicon glyphicon-menu-left" aria-hidden="true"></span>
+                            <span class="glyphicon glyphicon glyphicon-menu-left" aria-hidden="true"></span>
                         </button>
-                    </div>
-                </a>
-                <a href="{{url_for('page_5')}}">
-                    <div class="col-md-6">
-                        <button type="button" class="btn btn-primary pull-right" style="margin-bottom: 5%">
+                    </a>
+                </div>
+                <div class="col-md-6">
+                    <a href="{{url_for('page_5')}}">
+                        <label for="submit_page_4" class="btn btn-primary pull-right" style="margin-bottom: 5%">
                             <span class="glyphicon glyphicon glyphicon-menu-right" aria-hidden="true"></span>
-                        </button>
-                    </div>
-                </a>
+                        </label>
+                    </a>
+                </div>
             </div>
 
             <!--the head of this page-->
             <div class = "section-head"><h3 class="text-center">WHAT DECISION AM I BEING ASKED TO MAKE?</h3></div><br>
-            <!--the progress bar-->
-            <!--<div class="progress center-block">-->
-              <!--<div class="progress-bar" role="progressbar" aria-valuenow="20" aria-valuemin="0" aria-valuemax="100" style="width: 20%">-->
-                <!--<span class="sr-only">20% Complete</span>-->
-              <!--</div>-->
-            <!--</div>-->
-            <!--the paragraph in this page-->
 
             <p>
-                Your loved one is still on a ventilator, and despite the best care from the doctors and nurses, your loved one is unable to come off the ventilator and breathe on his/her own.            </p>
+                Your loved one is still on a ventilator, and despite the best care from the doctors and nurses, your loved one is unable to come off the ventilator and breathe on his/her own.</p>
             <p>
                 At this point, there are <b>2 different treatment goals.</b>
             </p>
@@ -164,6 +155,8 @@
                 Examples: “not to suffer”, “to make it out of the hospital”, “to be able to talk to family”, “to be back to normal like before”, “to go back to work”, “have no pain”, etc.
             </i></p>
             <!--two columns asking two questions.-->
+            <!--TODO: make the number of rows changeable.-->
+            <form action = "/5" method="post" id="form_page_4">
                 <div class="row">
                     <div class="col-xs-6 col-md-6">
                         <div class="form-group">
@@ -186,6 +179,8 @@
                         </div>
                     </div>
                 </div>
+                <input type="submit" id="submit_page_4" class="hidden">
+            </form>
         </div>
         <a href="{{url_for('page_3')}}">
             <button type="button" class="btn btn-primary btn-lg pull-left" style="margin-bottom: 5%">
@@ -197,13 +192,23 @@
                 <!--<span class="glyphicon glyphicon-menu-right" aria-hidden="true"></span>-->
             <!--</button>-->
         <!--</a>-->
-        <input type="submit" class="btn btn-primary btn-lg pull-right" style="margin-bottom: 5%" value="Preview">
-        <!--TODO: the icon of submit button -->
-        <!--<span class="glyphicon glyphicon-file" aria-hidden="true"></span>-->
-        </input>
-    </div>
-  <!--</form>-->
 
+        <label for="submit_page_4" class="btn btn-primary btn-lg pull-right" style="margin-bottom: 5%">
+            Next<span class="glyphicon glyphicon-menu-right" aria-hidden="true"></span>
+        </label>
+    </div>
+
+    <!--<script>-->
+         <!--window.onbeforeunload = function () {-->
+        <!--return "You are about to leave this order form. You will lose any information...";-->
+    <!--}-->
+    <!--</script>-->
+
+    <script>
+        window.onbeforeunload = function(){
+            document.getElementById("form_page_4").submit();
+        };
+    </script>
 
     <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>

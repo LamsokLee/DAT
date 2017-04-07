@@ -1,14 +1,11 @@
-from flask import Flask, render_template
-
+# all the import
 from flask import *
-
 from main import *
-
 from model import app
-
-# app = Flask(__name__)
+import datetime
+# create the answers instance, which takes all the value of answers.
 data = answers()
-
+sess = session()
 
 @app.route('/')
 def homepage():
@@ -17,6 +14,7 @@ def homepage():
 
 @app.route('/1')
 def page_1():
+    sess.start_time = datetime.datetime.now().time()
     return render_template("1.html")
 
 
@@ -35,7 +33,7 @@ def page_4():
     return render_template("4.html")
 
 
-@app.route('/5')
+@app.route('/5', methods=['POST'])
 def page_5():
     data.ans1 = request.form.get('ans1')
     data.ans2 = request.form.get('ans2')
@@ -122,7 +120,7 @@ def page_preview():
     data.ans14 = request.form.get('ans14')
     data.ans15 = request.form.get('ans15')
     data.ans16 = request.form.get('ans16')
-    putDB(data)
+
 
     return render_template('preview.html', a1=data.ans1, a2=data.ans2, a3=data.ans3, a4=data.ans4, a5=data.ans5,
                            a6=data.ans6, a8=data.ans8, a9=data.ans9, a10=data.ans10,
@@ -132,8 +130,10 @@ def page_preview():
 @app.route('/report')
 def page_report():
     # TODO: commit all the data into the database
+    putDB(data,sess)
     # TODO: retrieve the reference number from database and show it on this page.
-    return render_template("report.html")
+    # , ref_num = sess.ans_id, start = sess.start_time, ans1 = data.ans1
+    return render_template("test.html", ans_id = data.ans_id)
 
 
 if __name__ == "__main__":
