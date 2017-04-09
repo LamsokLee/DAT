@@ -3,8 +3,9 @@ from flask import *
 from main import *
 from model import app
 import datetime
+
 # create the answers instance, which takes all the value of answers.
-data = answers()
+data = answer()
 sess = session()
 
 @app.route('/')
@@ -131,9 +132,10 @@ def page_preview():
 def page_report():
     # TODO: commit all the data into the database
     putDB(data,sess)
+    print('commit to data base')
     # TODO: retrieve the reference number from database and show it on this page.
     # , ref_num = sess.ans_id, start = sess.start_time, ans1 = data.ans1
-    return render_template("test.html", ans_id = data.ans_id)
+    return render_template("test.html", ans_id = sess.ref_num)
 
 
 if __name__ == "__main__":
