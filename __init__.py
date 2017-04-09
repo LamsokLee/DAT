@@ -5,8 +5,20 @@ from model import app
 import datetime
 
 # create the answers instance, which takes all the value of answers.
-data = answer()
 sess = session()
+# db.session.add(sess)
+# db.session.commit()
+data = answer()
+
+#Use the reference number from session table
+data.ref_num = sess.ref_num
+
+print("sess.ref_num:" + str(sess.ref_num))
+print("data.ref_num:" + str(data.ref_num))
+
+db.session.add(data)
+db.session.commit()
+
 
 @app.route('/')
 def homepage():
@@ -15,7 +27,11 @@ def homepage():
 
 @app.route('/1')
 def page_1():
-    sess.start_time = datetime.datetime.now().time()
+    # for testing
+    print("print out the value of session object")
+    print("session reference number:" + str(sess.ref_num))
+    print("session answer sheet number" + str(answer.ans_id))
+
     return render_template("1.html")
 
 
@@ -42,6 +58,8 @@ def page_5():
     data.ans4 = request.form.get('ans4')
     data.ans5 = request.form.get('ans5')
     data.ans6 = request.form.get('ans6')
+
+    print("data from ans1 to ans6:" + data.ans1, data.ans2, data.ans3, data.ans4, data.ans5, data.ans6)
     return render_template("5.html")
 
 
@@ -131,11 +149,11 @@ def page_preview():
 @app.route('/report')
 def page_report():
     # TODO: commit all the data into the database
-    putDB(data,sess)
-    print('commit to data base')
+    db.session.add(data)
+    print('commit the answer instance to database')
     # TODO: retrieve the reference number from database and show it on this page.
-    # , ref_num = sess.ans_id, start = sess.start_time, ans1 = data.ans1
-    return render_template("test.html", ans_id = sess.ref_num)
+    # ref_num = sess.ans_id, start = sess.start_time, ans1 = data.ans1
+    return render_template("test.html", ref_num = sess.ref_num)
 
 
 if __name__ == "__main__":

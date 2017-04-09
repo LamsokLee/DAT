@@ -6,7 +6,7 @@ db = SQLAlchemy(app)
 
 # the class to store all the attribute of one session
 class session(db.Model):
-    ref_num     = db.Column(db.Integer, primary_key=True)
+    ref_num     = db.Column(db.Integer, primary_key=True, autoincrement=True)
     email       = db.Column(db.String(254))
     start_time  = db.Column(db.DateTime)
     is_finished = db.Column(db.Boolean)
@@ -20,7 +20,7 @@ class session(db.Model):
 
 # the class to store all the answers from user
 class answer(db.Model):
-    ans_id  = db.Column(db.Integer, primary_key=True)
+    ans_id  = db.Column(db.Integer, primary_key=True, autoincrement=True)
     ans1    = db.Column(db.String(150))
     ans2    = db.Column(db.String(150))
     ans3    = db.Column(db.String(150))
@@ -30,6 +30,7 @@ class answer(db.Model):
     ans7    = db.Column(db.Integer)
     ans8    = db.Column(db.String(150))
     ans9    = db.Column(db.String(150))
+
     ans11   = db.Column(db.String(150))
     ans12   = db.Column(db.String(150))
     ans13   = db.Column(db.String(150))
