@@ -150,10 +150,10 @@ def page_preview():
 def page_report():
     # TODO: commit all the data into the database
     db.session.add(data)
-    print('commit the answer instance to database')
+    db.session.commit()
+    print("session reference number:" + sess.ref_num)
     # TODO: retrieve the reference number from database and show it on this page.
-    # ref_num = sess.ans_id, start = sess.start_time, ans1 = data.ans1
-    return render_template("test.html", ref_num = sess.ref_num)
+    return render_template("report.html", ref_num = sess.ref_num)
 
 
 if __name__ == "__main__":
