@@ -1,17 +1,62 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <title>Title</title>
+  <title>Bootstrap Example</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.0/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
 </head>
 <body>
-    <ul>
-        <li>Reference Number: {{ref_num}}</li>
-        <li>Start Time:{{start}}</li>
-        <li>End Time:{{end}}</li>
-        <li>E-mail:{{email}}</li>
-        <li>answers:{{ans1}}</li>
-    </ul>
+
+<div class="container">
+  <!-- Modal -->
+  <div class="modal fade" id="myModal" role="dialog">
+    <div class="modal-dialog">
+
+      <!-- Modal content-->
+      <div class="modal-content">
+        <div class="modal-header">
+          <button type="button" class="close" data-dismiss="modal">&times;</button>
+          <h4 class="modal-title">Reminder:</h4>
+        </div>
+        <div class="modal-body">
+        <h4>
+        Following are what you said before:
+        </h4>
+            <ul>
+              <li>My feeling about the decision: {{ans7}}
+
+              </li>
+              <li>
+                  What is most important for my loved one right now?
+                    <ul>
+                        <li>{{ans1}}	{{ans2}}	{{ans3}}</li>
+                    </ul>
+              </li>
+              <li>
+                  What is most important for my loved one right now?
+                    <ul>
+                        <li>{{ans4}}	{{ans5}}	{{ans6}}</li>
+                    </ul>
+              </li>
+            </ul>
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-default" data-dismiss="modal">Continue</button>
+        </div>
+      </div>
+
+    </div>
+  </div>
+
+</div>
 
 </body>
+
+<script type="text/javascript">
+$('#myModal').modal('show');
+</script>
+
 </html>

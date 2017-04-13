@@ -28,7 +28,7 @@ class answer(db.Model):
     ans4    = db.Column(db.String(1000))
     ans5    = db.Column(db.String(1000))
     ans6    = db.Column(db.String(1000))
-    ans7    = db.Column(db.Integer)
+    ans7    = db.Column(db.String(30))
     ans8    = db.Column(db.String(1000))
     ans9    = db.Column(db.String(1000))
     ans10   = db.Column(db.String(1000))

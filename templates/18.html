@@ -20,8 +20,53 @@
       <script src="https://oss.maxcdn.com/html5shiv/3.7.3/html5shiv.min.js"></script>
       <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
     <![endif]-->
+      <!--<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.0/jquery.min.js"></script>-->
   </head>
   <body>
+
+  <!--the pop out window-->
+  <div class="container">
+  <!-- Modal -->
+  <div class="modal fade" id="myModal" role="dialog">
+    <div class="modal-dialog">
+
+      <!-- Modal content-->
+      <div class="modal-content">
+        <div class="modal-header">
+          <button type="button" class="close" data-dismiss="modal">&times;</button>
+          <h4 class="modal-title">Following are what you said before:</h4>
+        </div>
+        <div class="modal-body">
+            <ul>
+              <li>
+                  What is most important for my loved one right now?
+                    <ul>
+                        <li>{{ans1}}	{{ans2}}	{{ans3}}</li>
+                    </ul>
+              </li>
+              <li>
+                  What is most important for my loved one right now?
+                    <ul>
+                        <li>{{ans4}}	{{ans5}}	{{ans6}}</li>
+                    </ul>
+              </li>
+              <li>My feeling about the decision:
+                  <ul>
+                      <li>{{ans7}}</li>
+                  </ul>
+              </li>
+            </ul>
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-default" data-dismiss="modal">Continue</button>
+        </div>
+      </div>
+
+    </div>
+  </div>
+
+</div>
+
   <!--the head navbar of the website-->
 <nav class="navbar navbar-default">  <div class="container-fluid">      <!-- Brand and toggle get grouped for better mobile display -->      <div class="navbar-header">          <a href="https://www.umassmed.edu/">              <img src="static/icon/logo-trans.png" class="img-responsive" width="130" height="40">          </a>      </div>      <!-- Collect the nav links, forms, and other content for toggling -->      <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">          <ul class="nav navbar-nav">              <li><a href="{{url_for('homepage')}}">Home<span class="sr-only">(current)</span></a></li>              <li><a href="#">Introduction</a></li>              <li><a href="#">Contact Us</a></li>          </ul>      </div><!-- /.navbar-collapse -->  </div><!-- /.container-fluid --></nav>  <!--container of the whole content of the tool-->
   <div class="container">
@@ -130,7 +175,7 @@
             </div>
 
             <!--the dropdown box-->
-            <form action="/preview" method="post">
+            <form action="/postpreview" method="post">
                 <div class="panel-group" id="accordion">
                   <div class="panel panel-default">
                     <div class="panel-heading">
@@ -266,9 +311,14 @@
 
   </div>
 
+
+
     <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.0/jquery.min.js"></script>
     <!-- Include all compiled plugins (below), or include individual files as needed -->
     <script src="static/js/bootstrap.min.js"></script>
+    <script type="text/javascript">
+        $('#myModal').modal('show');
+    </script>
   </body>
 </html>

@@ -50,7 +50,7 @@
     </column>
     <column id="16" parent="7" name="ans7">
       <Position>8</Position>
-      <DataType>int(1)|0</DataType>
+      <DataType>varchar(30)|0</DataType>
     </column>
     <column id="17" parent="7" name="ans8">
       <Position>9</Position>

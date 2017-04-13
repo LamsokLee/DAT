@@ -40,24 +40,25 @@
         <div class="col-md-4" style="padding-top: 30px">
             <!--TODO: Start button and retrieve data form.    -->
             <div class="form-group well well-bg">
-                <form action="/print" method="post">
+                <form action="/printable" method="post">
                 <!--TODO: the form of box to retrieve old session-->
                     <label for="ref">Reference Number:</label>
                     <input type="text" class="form-control" name="ref" id="ref">
                     <label for="input_email">Email:</label>
                     <input type="text" class="form-control" name="input_email" id="input_email">
-                        <div style="margin-top:20px;margin-bottom: 20px;padding-bottom: 20px">
+                        <div style="margin-top:20px;padding-bottom: 20px">
                             <input type="submit" class="hidden" id="submit">
                             </input>
                             <label for="submit">
                                 <button class="btn btn-primary pull-right">
                                      <span class="glyphicon glyphicon-save-file" aria-hidden="true"></span>Get Report
                                 </button>
-                            </label>
-                            <button type="button" class="btn btn-primary pull-left">
-                                <span class="glyphicon glyphicon-question-sign" aria-hidden="true"></span>Forget Number?
-                            </button>
+                            <!--</label>-->
+                            <!--<button type="button" class="btn btn-primary pull-left">-->
+                                <!--<span class="glyphicon glyphicon-question-sign" aria-hidden="true"></span>Forget Number?-->
+                            <!--</button>-->
                         </div>
+                    <!--TODO: Alert when user's input doens't match.-->
                 </form>
             </div>
         </div>
