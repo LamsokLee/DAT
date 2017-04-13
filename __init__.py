@@ -230,11 +230,6 @@ def page_preview():
         data.ans15  = request.form.get('ans15')
         data.ans16  = request.form.get('ans16')
         sess.email  = request.form.get('email')
-        # for testing
-        print(request.form.get('ans8'))
-        print(data.ans8)
-        print(request.form.get('email'))
-        print(sess.email)
 
         return render_template('preview.html',
                                ans1     =   data.ans1,
@@ -273,7 +268,7 @@ def page_report():
         # test code
         session.pop('logged')
         # TODO: retrieve the reference number from database and show it on this page.
-        return render_template("report.html", ref_num = data.ans_id, email = sess.email)
+        return render_template("report.html", ref_num = data.ref_num, email = sess.email)
     else:
         return redirect('/')
 
@@ -284,6 +279,37 @@ def page_report():
 #                                         #
 #                                         #
 # # # # # # # # # # # # # # # # # # # # # #
+
+@app.route('/print', methods=['POST'])
+def print():
+    # TODO: if the reference number and email match, then retrive data
+    visitquery = visit.query.filter_by(ref_num = request.form.get('ref'), email = request.form.get('input_email')).first()
+    try:
+        visitquery
+        answerquery = answer.query.filter_by(ref_num = request.form.get('ref')).first()
+        return render_template("printable.html",
+                               start    = visitquery.start_time,
+                               end      = visitquery.end_time,
+                               email    = visitquery.email,
+                               ans1     = answerquery.ans1,
+                               ans2     = answerquery.ans2,
+                               ans3     = answerquery.ans3,
+                               ans4     = answerquery.ans4,
+                               ans5     = answerquery.ans5,
+                               ans6     = answerquery.ans6,
+                               ans7     = answerquery.ans7,
+                               ans8     = answerquery.ans8,
+                               ans9     = answerquery.ans9,
+                               ans10    = answerquery.ans10,
+                               ans11    = answerquery.ans11,
+                               ans12    = answerquery.ans12,
+                               ans13    = answerquery.ans13,
+                               ans14    = answerquery.ans14,
+                               ans15    = answerquery.ans15,
+                               ans16    = answerquery.ans16)
+
+    except:
+        return redirect('/')
 
 @app.route('/admin_login')
 def admin_login():

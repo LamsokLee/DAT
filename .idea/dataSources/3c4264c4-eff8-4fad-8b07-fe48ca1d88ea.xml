@@ -20,81 +20,81 @@
     </column>
     <column id="10" parent="7" name="ans1">
       <Position>2</Position>
-      <DataType>varchar(150)|0</DataType>
+      <DataType>varchar(1000)|0</DataType>
       <DefaultExpression>&apos;No answer submitted&apos;</DefaultExpression>
     </column>
     <column id="11" parent="7" name="ans2">
       <Position>3</Position>
-      <DataType>varchar(150)|0</DataType>
+      <DataType>varchar(1000)|0</DataType>
       <DefaultExpression>&apos;No answer submitted&apos;</DefaultExpression>
     </column>
     <column id="12" parent="7" name="ans3">
       <Position>4</Position>
-      <DataType>varchar(150)|0</DataType>
+      <DataType>varchar(1000)|0</DataType>
       <DefaultExpression>&apos;No answer submitted&apos;</DefaultExpression>
     </column>
     <column id="13" parent="7" name="ans4">
       <Position>5</Position>
-      <DataType>varchar(150)|0</DataType>
+      <DataType>varchar(1000)|0</DataType>
       <DefaultExpression>&apos;No answer submitted&apos;</DefaultExpression>
     </column>
     <column id="14" parent="7" name="ans5">
       <Position>6</Position>
-      <DataType>varchar(150)|0</DataType>
+      <DataType>varchar(1000)|0</DataType>
       <DefaultExpression>&apos;No answer submitted&apos;</DefaultExpression>
     </column>
     <column id="15" parent="7" name="ans6">
       <Position>7</Position>
-      <DataType>varchar(150)|0</DataType>
+      <DataType>varchar(1000)|0</DataType>
       <DefaultExpression>&apos;No answer submitted&apos;</DefaultExpression>
     </column>
     <column id="16" parent="7" name="ans7">
       <Position>8</Position>
-      <DataType>int(11)|0</DataType>
+      <DataType>int(1)|0</DataType>
     </column>
     <column id="17" parent="7" name="ans8">
       <Position>9</Position>
-      <DataType>varchar(150)|0</DataType>
+      <DataType>varchar(1000)|0</DataType>
       <DefaultExpression>&apos;No answer submitted&apos;</DefaultExpression>
     </column>
     <column id="18" parent="7" name="ans9">
       <Position>10</Position>
-      <DataType>varchar(150)|0</DataType>
+      <DataType>varchar(1000)|0</DataType>
       <DefaultExpression>&apos;No answer submitted&apos;</DefaultExpression>
     </column>
     <column id="19" parent="7" name="ans10">
       <Position>11</Position>
-      <DataType>varchar(150)|0</DataType>
+      <DataType>varchar(1000)|0</DataType>
       <DefaultExpression>&apos;No answer submitted&apos;</DefaultExpression>
     </column>
     <column id="20" parent="7" name="ans11">
       <Position>12</Position>
-      <DataType>varchar(150)|0</DataType>
+      <DataType>varchar(1000)|0</DataType>
       <DefaultExpression>&apos;No answer submitted&apos;</DefaultExpression>
     </column>
     <column id="21" parent="7" name="ans12">
       <Position>13</Position>
-      <DataType>varchar(150)|0</DataType>
+      <DataType>varchar(1000)|0</DataType>
       <DefaultExpression>&apos;No answer submitted&apos;</DefaultExpression>
     </column>
     <column id="22" parent="7" name="ans13">
       <Position>14</Position>
-      <DataType>varchar(150)|0</DataType>
+      <DataType>varchar(1000)|0</DataType>
       <DefaultExpression>&apos;No answer submitted&apos;</DefaultExpression>
     </column>
     <column id="23" parent="7" name="ans14">
       <Position>15</Position>
-      <DataType>varchar(150)|0</DataType>
+      <DataType>varchar(1000)|0</DataType>
       <DefaultExpression>&apos;No answer submitted&apos;</DefaultExpression>
     </column>
     <column id="24" parent="7" name="ans15">
       <Position>16</Position>
-      <DataType>varchar(150)|0</DataType>
+      <DataType>varchar(1000)|0</DataType>
       <DefaultExpression>&apos;No answer submitted&apos;</DefaultExpression>
     </column>
     <column id="25" parent="7" name="ans16">
       <Position>17</Position>
-      <DataType>int(11)|0</DataType>
+      <DataType>int(3)|0</DataType>
       <DefaultExpression>&apos;50&apos;</DefaultExpression>
     </column>
     <column id="26" parent="7" name="ref_num">
