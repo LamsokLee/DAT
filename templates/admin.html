@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" xmlns="http://www.w3.org/1999/html">
   <head>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -8,11 +8,11 @@
     <title>Goals-of-Care after Traumatic Brain Injury Decision Aid Prototype</title>
 
     <!--Bootstrap on server-->
-    <link href="{{ url_for ('static', filename = 'css/bootstrap.min.css') }}" rel="stylesheet">
+    <!--<link href="{{ url_for ('static', filename = 'css/bootstrap.min.css') }}" rel="stylesheet">-->
     <!--Bootstrap on local-->
     <!--<link href="/css/bootstrap.min.css" rel="stylesheet">-->
     <!--Bootstrap on CDN-->
-    <!--<link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet">-->
+    <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet">
     <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
     <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
     <!--[if lt IE 9]>
@@ -34,36 +34,31 @@
   </div>
   <div class="container">
       <!--the container for the main content-->
-        <div class="col-md-8" style="padding-top: 30px">
-            <img src="static/img/speech_therapy.jpg" class="img-responsive img-thumbnail">
-        </div>
-        <div class="col-md-4" style="padding-top: 30px">
+      <div class="col-md-4" style="padding-top: 30px"></div>
+
+      <div class="col-md-4" style="padding-top: 30px">
             <!--TODO: Start button and retrieve data form.    -->
-            <div class="form-group well well-bg">
-                <form action="/report" method="post">
-                <!--TODO: the form of box to retrieve old session-->
-                    <label for="ref">Reference Number:</label>
-                    <input type="text" class="form-control" id="ref">
-                    <label for="email">Email:</label>
-                    <input type="text" class="form-control" id="email">
-                        <div style="margin-top:20px;margin-bottom: 20px;padding-bottom: 20px">
-                            <button type="button" class="btn btn-primary pull-right">
-                                <span class="glyphicon glyphicon-save-file" aria-hidden="true"></span>Get Report
+        <div class="form-group well well-bg">
+            <form action="/admin" method="post">
+            <!--TODO: the form of box to retrieve old session-->
+                <label for="username">Admin ID:</label>
+                <input type="text" class="form-control" id="username">
+                <label for="password">Password:</label>
+                <input type="password" class="form-control" id="password">
+                    <div style="margin-top:20px;margin-bottom: 20px;padding-bottom: 20px">
+                        <input type="submit" id="submit" class="hidden">
+                        </input>
+                        <label for="submit">
+                            <button type="button" class="btn btn-primary btn-lg">
+                                <span class="glyphicon glyphicon-question-sign" aria-hidden="true"></span>Login
                             </button>
-                            <button type="button" class="btn btn-primary pull-left">
-                                <span class="glyphicon glyphicon-question-sign" aria-hidden="true"></span>Forget Number?
-                            </button>
-                        </div>
-                </form>
-            </div>
+                        </label>
+                    </div>
+            </form>
         </div>
-  </div>
-  <div class="container" >
-      <a href="{{url_for('page_1')}}" class="text-center">
-            <button type="button" class="btn btn-primary btn-lg btn-block pull-right" style="margin-top:60px;margin-bottom: 5%">Start
-                <span class="glyphicon glyphicon-menu-right" aria-hidden="true"></span>
-            </button>
-      </a>
+      </div>
+
+      <div class="col-md-4" style="padding-top: 30px"></div>
   </div>
 
 

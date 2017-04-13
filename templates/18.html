@@ -145,24 +145,24 @@
                               <label for="ans8">
                                   What is your loved one’s outlook for getting better and how independent will he/she be with further medical care after the ICU?
                               </label> 
-                              <textarea name ="ans8" class="form-control" rows="3" id="ans8"></textarea> 
+                              <textarea name ="ans8" class="form-control" rows="3" id="ans8">{{ans8}}</textarea> 
                           </div>
                            <div class="form-group">
                               <label for="ans9">
                                   Do you understand what your loved one’s life will be like based on the two different treatment goals?
                               </label> 
-                              <textarea name = "ans9" class="form-control" rows="3" id="ans9"></textarea>
+                              <textarea name = "ans9" class="form-control" rows="3" id="ans9">{{ans9}}</textarea>
                            </div> <div class="form-group">
                                 <label for="ans10">
                                     Is this quality of life acceptable to your loved one?
                                 </label> 
-                              <textarea name="ans10" class="form-control" rows="3" id="ans10"></textarea>
+                              <textarea name="ans10" class="form-control" rows="3" id="ans10">{{ans10}}</textarea>
                                </div> 
                           <div class="form-group"> 
                               <label for="ans11">
                                   Do you understand the pros and cons of the two treatment goals/choices?
                               </label>
-                               <textarea name="ans11" class="form-control" rows="3" id="ans11"></textarea> 
+                               <textarea name="ans11" class="form-control" rows="3" id="ans11">{{ans11}}</textarea> 
                           </div>
                       </div>
                     </div>
@@ -181,13 +181,13 @@
                               <label for="ans12">
                                  What are their wishes for medical treatments when illness is severe or possibly leave them disabled? Have they mentioned it to you? Do they have a living will?
                               </label> 
-                              <textarea name="ans12" class="form-control" rows="3" id="ans12"></textarea> 
+                              <textarea name="ans12" class="form-control" rows="3" id="ans12">{{ans12}}</textarea> 
                           </div>
                            <div class="form-group">
                               <label for="ans13">
                               If your loved one could look at the choices right now, what would they choose?
                               </label> 
-                              <textarea name="ans13" class="form-control" rows="3" id="ans13"></textarea> </div> 
+                              <textarea name="ans13" class="form-control" rows="3" id="ans13">{{ans13}}</textarea> </div> 
                       </div>
                     </div>
                   </div>
@@ -201,7 +201,7 @@
                     </div>
                     <div id="collapse3" class="panel-collapse collapse">
                       <div class="panel-body">
-                         <textarea name="ans14"class="form-control" rows="3" id="ans14"></textarea> 
+                         <textarea name="ans14"class="form-control" rows="3" id="ans14">{{ans14}}</textarea> 
                       </div>
                     </div>
                   </div>
@@ -217,7 +217,7 @@
                           <label for="ans15">
                                 Make a list and ask. Bring the list of questions to the meeting with the doctor, too.
                           </label>
-                          <textarea name="ans15" class="form-control" rows="6" id="ans15"></textarea>
+                          <textarea name="ans15" class="form-control" rows="6" id="ans15">{{ans15}}</textarea>
                       </div>
                     </div>
                   </div>
@@ -238,7 +238,7 @@
                             <h4>Survival</h4>
                           </div>
                           <div class = "col-md-10"><br>
-                            <input type="range" name="ans16" min="0" max="100" id="ans16">
+                            <input type="range" name="ans16" min="0" max="100" id="ans16" value={{ans16}}>
                           </div>
                           <div class = "col-md-1 text-center">
                             <h4>Comfort</h4>
@@ -248,6 +248,10 @@
                   </div>
                 </div>
                 <input type="submit" id="submit-answer" class="hidden">
+                <div class="form-group">
+                      <label for="email">Your E-mail address:</label>
+                      <input type="email" aria-describedby="emailHelp" placeholder="Enter email" class="form-control" name = "email" value="{{email}}" id="email">
+                </div>
              </form>
         </div>
             <a href="{{url_for('page_17')}}">
@@ -257,7 +261,7 @@
             </a>
                 <label for="submit-answer" class="btn btn-primary btn-lg pull-right" style="margin-bottom: 5%">
                 <!--TODO: the icon of submit button -->
-                    Submit
+                    Review
                 </label>
 
   </div>

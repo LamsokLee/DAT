@@ -124,9 +124,9 @@
                 </div>
                 <div class="col-md-6">
                     <a href="{{url_for('page_15')}}">
-                        <button type="button" class="btn btn-primary pull-right" style="margin-bottom: 5%">
+                        <label for="submit_page_14" class="btn btn-primary pull-right" style="margin-bottom: 5%">
                             <span class="glyphicon glyphicon glyphicon-menu-right" aria-hidden="true"></span>
-                        </button>
+                        </label>
                     </a>
                 </div>
             </div>
@@ -134,40 +134,42 @@
             <h4 class="text-center">After reading the prior pages, how do you feel about making a decision?</h4>
             <h4 class="text-center">Make an X on the line based on how you feel:</h4>
             <div class="container well well-lg">
-              <form>
+              <form action="/15" method="post" id="form_page_14">
                 <div class = "col-md-2 text-center">
                     <h4>Please Choose your feeling:</h4>
                 </div>
                 <div class = "col-md-2 text-center">
                     <label class="radio-inline">
-                      <input type="radio" name="optradio">
+                      <input type="radio" value="1" name="option">
                     </label>
                     <h5>Not at all ready</h5>
                 </div>
                 <div class = "col-md-2 text-center">
                     <label class="radio-inline">
-                      <input type="radio" name="optradio">
+                      <input type="radio" value="2" name="option">
                     </label>
                     <h5>Somewhat not ready</h5>
                 </div>
                 <div class = "col-md-2 text-center">
                     <label class="radio-inline">
-                      <input type="radio" name="optradio">
+                      <input type="radio" value="3" name="option">
                     </label>
                     <h5>Unsure</h5>
                 </div>
                 <div class = "col-md-2 text-center">
                     <label class="radio-inline">
-                      <input type="radio" name="optradio">
+                      <input type="radio" value="4" name="option">
                     </label>
                     <h5>Somewhat ready</h5>
                 </div>
-                        <div class = "col-md-2 text-center">
+                <div class = "col-md-2 text-center">
                     <label class="radio-inline">
-                      <input type="radio" name="optradio">
+                      <input type="radio" value="5" name="option">
                     </label>
                     <h5>Ready</h5>
                 </div>
+                  <!--submit input button for the radio buttons-->
+                  <input type="submit" id="submit_page_14" class="hidden">
               </form>
             </div>
             <p>
@@ -196,9 +198,9 @@
             </button>
         </a>
         <a href="{{url_for('page_15')}}">
-            <button type="button" class="btn btn-primary btn-lg pull-right" style="margin-bottom: 5%">Next
-                <span class="glyphicon glyphicon glyphicon-menu-right" aria-hidden="true"></span>
-            </button>
+            <label for="submit_page_14" class="btn btn-primary btn-lg pull-right" style="margin-bottom: 5%">
+                Next<span class="glyphicon glyphicon-menu-right" aria-hidden="true"></span>
+            </label>
         </a>
     </div>
 

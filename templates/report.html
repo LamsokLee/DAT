@@ -34,35 +34,30 @@
                     Your reference number is : {{ref_num}}
                     <br><br>
                 </h4>
-                <p class="text-center">
-                    You need to
-                    <button type="button" onclick="previous_page()" class="btn btn-primary btn-lg">
-                        <span class="glyphicon glyphicon glyphicon glyphicon glyphicon-print" aria-hidden="true"></span>Print
-                    </button>
-                    your work sheet and bring it to the family meeting with the doctor.
+            </div>
+            <div class="text-center">
+                <p>You need to
+                <button type="button"  class="btn btn-primary btn-md">
+                    <span class="glyphicon glyphicon glyphicon glyphicon glyphicon-print" aria-hidden="true"></span>Print
+                </button>
+                your work sheet and bring it to the family meeting with the doctor.
                 </p>
             </div>
-            <div>
-                <p class="text-center">
-                    We can send the worksheet to your E-mail.
-                </p>
-                <div class="form-group">
-                  <label for="email">E-mail:</label>
-                  <input type="text" class="form-control" id="email">
-                </div>
-                    <button type="button" onclick="previous_page()" class="btn btn-primary btn-lg">
-                        <span class="glyphicon glyphicon glyphicon glyphicon-envelope" aria-hidden="true"></span>Send
-                    </button>
-            </div>
+            <div class="text-center">
+                <p>We can
+                <button type="button" class="btn btn-primary btn-md">
+                    <span class="glyphicon glyphicon glyphicon glyphicon-envelope" aria-hidden="true"></span>Send
+                </button>
+                the worksheet to your E-mail <b>{{email}}</b></p>
+            </divtext-center>
+        </div>
         </div>
         <a href="{{url_for('homepage')}}">
             <button type="button" class="btn btn-primary btn-lg pull-right" style="margin-bottom: 5%">
                 <span class="glyphicon glyphicon-home" aria-hidden="true"></span>Home
             </button>
         </a>
-
   </div>
-
     <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
     <!-- Include all compiled plugins (below), or include individual files as needed -->

@@ -5,18 +5,19 @@ from config import app
 db = SQLAlchemy(app)
 
 # the class to store all the attribute of one session
-class session(db.Model):
+class visit(db.Model):
     ref_num     = db.Column(db.Integer, primary_key=True, autoincrement=True)
     email       = db.Column(db.String(254))
     start_time  = db.Column(db.DateTime)
+    end_time    = db.Column(db.DateTime)
     is_finished = db.Column(db.Boolean)
-    answers  = db.relationship('answer', backref='session',lazy='dynamic')
+    answers     = db.relationship('answer', backref='visit',lazy='dynamic')
 
     def __init__(self):
         return
 
     def __repr__(self):
-        return '<session %r>' % self.ref_num
+        return '<visit %r>' % self.ref_num
 
 # the class to store all the answers from user
 class answer(db.Model):
@@ -30,14 +31,14 @@ class answer(db.Model):
     ans7    = db.Column(db.Integer)
     ans8    = db.Column(db.String(150))
     ans9    = db.Column(db.String(150))
-
+    ans10   = db.Column(db.String(150))
     ans11   = db.Column(db.String(150))
     ans12   = db.Column(db.String(150))
     ans13   = db.Column(db.String(150))
     ans14   = db.Column(db.String(150))
     ans15   = db.Column(db.String(150))
     ans16   = db.Column(db.Integer)
-    ref_num = db.Column(db.Integer, db.ForeignKey('session.ref_num'))
+    ref_num = db.Column(db.Integer, db.ForeignKey('visit.ref_num'))
 
     def __init__(self):
         return

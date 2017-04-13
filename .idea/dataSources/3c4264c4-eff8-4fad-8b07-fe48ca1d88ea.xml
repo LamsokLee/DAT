@@ -11,7 +11,7 @@
     <schema id="5" parent="1" name="performance_schema"/>
     <schema id="6" parent="1" name="sys"/>
     <table id="7" parent="2" name="answer"/>
-    <table id="8" parent="2" name="session"/>
+    <table id="8" parent="2" name="visit"/>
     <column id="9" parent="7" name="ans_id">
       <Position>1</Position>
       <DataType>int(20)|0</DataType>
@@ -95,6 +95,7 @@
     <column id="25" parent="7" name="ans16">
       <Position>17</Position>
       <DataType>int(11)|0</DataType>
+      <DefaultExpression>&apos;50&apos;</DefaultExpression>
     </column>
     <column id="26" parent="7" name="ref_num">
       <Position>18</Position>
@@ -111,7 +112,7 @@
     <foreign-key id="29" parent="7" name="answer_session_ref_num_fk">
       <ColNames>ref_num</ColNames>
       <RefSchemaName>DP</RefSchemaName>
-      <RefTableName>session</RefTableName>
+      <RefTableName>visit</RefTableName>
       <RefColNames>ref_num</RefColNames>
     </foreign-key>
     <column id="30" parent="8" name="ref_num">
