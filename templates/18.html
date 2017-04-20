@@ -34,20 +34,44 @@
       <div class="modal-content">
         <div class="modal-header">
           <button type="button" class="close" data-dismiss="modal">&times;</button>
-          <h4 class="modal-title">Following are what you said before:</h4>
+          <h4 class="modal-title">Followings are what you said before:</h4>
         </div>
         <div class="modal-body">
             <ul>
               <li>
                   What is most important for my loved one right now?
                     <ul>
-                        <li>{{ans1}}	{{ans2}}	{{ans3}}</li>
+                        {% if (ans1 == '') and (ans2 == '') and (ans3 == '') %}
+                            <li>No answer submitted</li>
+                        {% else %}
+                            {% if ans1 != '' %}
+                                <li>{{ans1}}</li>
+                            {% endif %}
+                            {% if ans2 != '' %}
+                                <li>{{ans2}}</li>
+                            {% endif %}
+                            {% if ans3 != '' %}
+                                <li>{{ans3}}</li>
+                            {% endif %}
+                        {% endif %}
                     </ul>
               </li>
               <li>
-                  What is most important for my loved one right now?
+                  What is most important for you right now?
                     <ul>
-                        <li>{{ans4}}	{{ans5}}	{{ans6}}</li>
+                        {% if (ans4 == '') and (ans5 == '') and (ans6 == '') %}
+                            <li>No answer submitted</li>
+                        {% else %}
+                            {% if ans4 != '' %}
+                                <li>{{ans1}}</li>
+                            {% endif %}
+                            {% if ans5 != '' %}
+                                <li>{{ans2}}</li>
+                            {% endif %}
+                            {% if ans6 != '' %}
+                                <li>{{ans3}}</li>
+                            {% endif %}
+                        {% endif %}
                     </ul>
               </li>
               <li>My feeling about the decision:
@@ -68,91 +92,15 @@
 </div>
 
   <!--the head navbar of the website-->
-<nav class="navbar navbar-default">  <div class="container-fluid">      <!-- Brand and toggle get grouped for better mobile display -->      <div class="navbar-header">          <a href="https://www.umassmed.edu/">              <img src="static/icon/logo-trans.png" class="img-responsive" width="130" height="40">          </a>      </div>      <!-- Collect the nav links, forms, and other content for toggling -->      <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">          <ul class="nav navbar-nav">              <li><a href="{{url_for('homepage')}}">Home<span class="sr-only">(current)</span></a></li>              <li><a href="#">Introduction</a></li>              <li><a href="#">Contact Us</a></li>          </ul>      </div><!-- /.navbar-collapse -->  </div><!-- /.container-fluid --></nav>  <!--container of the whole content of the tool-->
+{% include 'navbar.html' %}
+  <!--container of the whole content of the tool-->
   <div class="container">
         <h2 class = "text-center">
             Goals-of-Care after Traumatic Brain Injury Decision Aid Prototype
         </h2>
         <br/>
-        <div class="">
-            <!--the navigation bar-->
-            <ul class="nav nav-pills nav-justified">
-                <li class="dropdown">
-                    <a class="dropdown-toggle" data-toggle="dropdown" href="#">Overview<br/><br/>
-                        <span class="caret"></span></a>
-                    <ul class="dropdown-menu">
-                        <li><a href="{{url_for('page_1')}}">Welcome</a></li>
-                        <li><a href="{{url_for('page_2')}}">Aims & Contents</a></li>
-                    </ul>
-                </li>
-                <li class="dropdown">
-                    <a class="dropdown-toggle" data-toggle="dropdown" href="#">Mechanical Ventilator<br/>
-                        <span class="caret"></span></a>
-                    <ul class="dropdown-menu">
-                        <li><a href="{{url_for('page_3')}}">What is a mechanical ventilator?</a></li>
-                        <li><a href="{{url_for('page_3')}}">What is like to be on a ventilator?</a></li>
-                    </ul>
-                </li>
-                <li class="dropdown">
-                    <a class="dropdown-toggle" data-toggle="dropdown" href="#">What should you decide?<br/>
-                        <span class="caret"></span></a>
-                    <ul class="dropdown-menu">
-                        <li><a href="{{url_for('page_4')}}">What decision am I being asked to make?</a></li>
-                        <li><a href="{{url_for('page_4')}}">What is the most important for your loved one right now?</a></li>
-                        <li><a href="{{url_for('page_5')}}">What are the different treatment goals for my loved one?</a></li>
-                    </ul>
-                </li>
-                <li class="dropdown">
-                    <a class="dropdown-toggle" data-toggle="dropdown" href="#">Patient Outlook<br/><br/>
-                        <span class="caret"></span></a>
-                    <ul class="dropdown-menu">
-                        <li><a href="{{url_for('page_6')}}">What is my loved one's outlook?<br/>What are the long-term effects from the TBI?</a></li>
-                        <li><a href="{{url_for('page_7')}}">How certain or uncertain is the outlook for my loved one?</a></li>
-                    </ul>
-                </li>
-                <li class="dropdown">
-                    <a class="dropdown-toggle" data-toggle="dropdown" href="#">Treatment Options<br/><br/>
-                        <span class="caret"></span></a>
-                    <ul class="dropdown-menu">
-                        <li><a href="{{url_for('page_8')}}">Introduction</a></li>
-                        <li><a href="{{url_for('page_9')}}">What does it mean to have comfort at the goal of care?</a></li>
-                        <li><a href="{{url_for('page_10')}}">What is the treatment that focuses on Maxine survival?</a></li>
-                        <li><a href="{{url_for('page_11')}}">If I choose survival as the goal of care, what happens with my loved one after they leave the ICU?</a></li>
-                        <li><a href="{{url_for('page_12')}}">Comparing and summarizing different treatment options</a></li>
-                    </ul>
-                </li>
-                <li class="dropdown">
-                    <a class="dropdown-toggle" data-toggle="dropdown" href="#">Making Decision<br/><br/>
-                        <span class="caret"></span></a>
-                    <ul class="dropdown-menu">
-                        <li><a href="{{url_for('page_13')}}">How do I make this decision?</a></li>
-                        <li><a href="{{url_for('page_14')}}">Are you still unsure?</a></li>
-                    </ul>
-                </li>
-                <li class="dropdown">
-                    <a class="dropdown-toggle" data-toggle="dropdown" href="#">Patient Examples<br/><br/>
-                        <span class="caret"></span></a>
-                    <ul class="dropdown-menu">
-                        <li><a href="{{url_for('page_15')}}">Patient Examples</a></li>
-                        <li><a href="{{url_for('page_16')}}">Example 1</a></li>
-                        <li><a href="{{url_for('page_17')}}">Example 2</a></li>
-                    </ul>
-                </li>
-                <li class="dropdown active">
-                    <a class="dropdown-toggle" data-toggle="dropdown" href="#">Worksheet & Questions<br/>
-                        <span class="caret"></span></a>
-                    <ul class="dropdown-menu">
-                        <!--TODO: Click the dropdown and open the collaspse-->
-                        <li><a href="{{url_for('page_18')}}">1) What do you understand about the outlook of your loved one, and the options?</a></li>
-                        <li><a href="{{url_for('page_18')}}">2) What would your loved one want?</a></li>
-                        <li><a href="{{url_for('page_18')}}">3) How is this choice making you feel?</a></li>
-                        <li><a href="{{url_for('page_18')}}">4) What questions do you need answered before you can decide?</a></li>
-                        <li><a href="{{url_for('page_18')}}">5) Comfort or survival</a></li>
-                    </ul>
-                </li>
-            </ul>
-        </div>
-
+<!--the tabs-->
+{% include 'tab.html' %}
         <!--the text box to put the main context-->
         <div class="jumbotron">
             <!--button division-->

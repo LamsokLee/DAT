@@ -50,7 +50,7 @@ def homepage():
 @app.route('/1')
 def page_1():
     if 'logged' in session:
-        return render_template("1.html")
+        return render_template("1.html", page = 1)
     else:
         return redirect('/')
 
@@ -59,7 +59,7 @@ def page_1():
 @app.route('/2')
 def page_2():
     if 'logged' in session:
-        return render_template("2.html")
+        return render_template("2.html", page = 2)
     else:
         return redirect('/')
 
@@ -69,7 +69,7 @@ def page_3():
     # TODO: When user click start, the session starts.
     # TODO: Set the session time
     if 'logged' in session:
-        return render_template("3.html")
+        return render_template("3.html", page = 3)
     else:
         return redirect('/')
 
@@ -78,6 +78,7 @@ def page_3():
 def page_4():
     if 'logged' in session:
         return render_template("4.html",
+                           page =   4,
                            ans1 =   data.ans1,
                            ans2 =   data.ans2,
                            ans3 =   data.ans3,
@@ -98,14 +99,14 @@ def post_5():
         data.ans4 = request.form.get('ans4')
         data.ans5 = request.form.get('ans5')
         data.ans6 = request.form.get('ans6')
-        return render_template("5.html")
+        return render_template("5.html", page = 5)
     else:
         return redirect('/')
 
 @app.route('/5')
 def page_5():
     if 'logged' in session:
-        return render_template("5.html")
+        return render_template("5.html", page = 5)
     else:
         return redirect('/')
 
@@ -113,7 +114,7 @@ def page_5():
 @app.route('/6')
 def page_6():
     if 'logged' in session:
-        return render_template("6.html")
+        return render_template("6.html", page = 6)
     else:
         return redirect('/')
 
@@ -121,7 +122,7 @@ def page_6():
 @app.route('/7')
 def page_7():
     if 'logged' in session:
-        return render_template("7.html")
+        return render_template("7.html", page = 7)
     else:
         return redirect('/')
 
@@ -129,49 +130,49 @@ def page_7():
 @app.route('/8')
 def page_8():
     if 'logged' in session:
-        return render_template("8.html")
+        return render_template("8.html", page = 8)
     else:
         return redirect('/')
 
 @app.route('/9')
 def page_9():
     if 'logged' in session:
-        return render_template("9.html")
+        return render_template("9.html", page = 9)
     else:
         return redirect('/')
 
 @app.route('/10')
 def page_10():
     if 'logged' in session:
-        return render_template("10.html")
+        return render_template("10.html", page = 10)
     else:
         return redirect('/')
 
 @app.route('/11')
 def page_11():
     if 'logged' in session:
-        return render_template("11.html")
+        return render_template("11.html", page = 11)
     else:
         return redirect('/')
 
 @app.route('/12')
 def page_12():
     if 'logged' in session:
-        return render_template("12.html")
+        return render_template("12.html", page = 12)
     else:
         return redirect('/')
 
 @app.route('/13')
 def page_13():
     if 'logged' in session:
-        return render_template("13.html")
+        return render_template("13.html", page = 13)
     else:
         return redirect('/')
 
 @app.route('/14')
 def page_14():
     if 'logged' in session:
-        return render_template("14.html")
+        return render_template("14.html", page = 14)
     else:
         return redirect('/')
 
@@ -179,28 +180,28 @@ def page_14():
 def post_15():
     if 'logged' in session:
         data.ans7 = request.form.get('option')
-        return render_template("15.html")
+        return render_template("15.html", page = 15)
     else:
         return redirect('/')
 
 @app.route('/15')
 def page_15():
     if 'logged' in session:
-        return render_template("15.html")
+        return render_template("15.html", page = 15)
     else:
         return redirect('/')
 
 @app.route('/16')
 def page_16():
     if 'logged' in session:
-        return render_template("16.html")
+        return render_template("16.html", page = 16)
     else:
         return redirect('/')
 
 @app.route('/17')
 def page_17():
     if 'logged' in session:
-        return render_template("17.html")
+        return render_template("17.html", page = 17)
     else:
         return redirect('/')
 
@@ -209,6 +210,7 @@ def page_17():
 def page_18():
     if 'logged' in session:
         return render_template("18.html",
+                               page     =   18,
                                ans1     =   data.ans1,
                                ans2     =   data.ans2,
                                ans3     =   data.ans3,
@@ -311,35 +313,36 @@ def page_report():
 
 @app.route('/printable', methods=['POST'])
 def printable():
-    # TODO: if the reference number and email match, then retrive data
     visitquery = visit.query.filter_by(ref_num=request.form.get('ref'),
                                        email=request.form.get('input_email')).first()
-    try:
-        visitquery
+    if visitquery:
         answerquery = answer.query.filter_by(ref_num=request.form.get('ref')).first()
         return render_template("printable.html",
-                               start=visitquery.start_time,
-                               end=visitquery.end_time,
-                               email=visitquery.email,
-                               ans1=answerquery.ans1,
-                               ans2=answerquery.ans2,
-                               ans3=answerquery.ans3,
-                               ans4=answerquery.ans4,
-                               ans5=answerquery.ans5,
-                               ans6=answerquery.ans6,
-                               ans7=answerquery.ans7,
-                               ans8=answerquery.ans8,
-                               ans9=answerquery.ans9,
-                               ans10=answerquery.ans10,
-                               ans11=answerquery.ans11,
-                               ans12=answerquery.ans12,
-                               ans13=answerquery.ans13,
-                               ans14=answerquery.ans14,
-                               ans15=answerquery.ans15,
-                               ans16=answerquery.ans16)
+                               start    =   visitquery.start_time,
+                               end      =   visitquery.end_time,
+                               email    =   visitquery.email,
+                               ans1     =   answerquery.ans1,
+                               ans2     =   answerquery.ans2,
+                               ans3     =   answerquery.ans3,
+                               ans4     =   answerquery.ans4,
+                               ans5     =   answerquery.ans5,
+                               ans6     =   answerquery.ans6,
+                               ans7     =   answerquery.ans7,
+                               ans8     =   answerquery.ans8,
+                               ans9     =   answerquery.ans9,
+                               ans10    =   answerquery.ans10,
+                               ans11    =   answerquery.ans11,
+                               ans12    =   answerquery.ans12,
+                               ans13    =   answerquery.ans13,
+                               ans14    =   answerquery.ans14,
+                               ans15    =   answerquery.ans15,
+                               ans16    =   answerquery.ans16)
 
-    except:
-        return redirect('/')
+    else:
+        msg = 'No matched record'
+        return render_template('home.html', msg=msg)
+
+
 
 # # # # # # # # # # # # # # # # # # # # # #
 #                                         #
@@ -349,19 +352,40 @@ def printable():
 #                                         #
 # # # # # # # # # # # # # # # # # # # # # #
 
-# @app.route('/admin_login')
-# def admin_login():
-#     # TODO: if the username matches the password, then login on the admin interface
-#     return render_template("admin.html")
-#
-# @app.route('/admin_main')
-# def admin_main():
-#     return
+@app.route('/admin')
+def admin_login():
+    return render_template("admin.html")
 
-@app.route('/test')
-def test_page():
-    return render_template('test.html')
+@app.route('/admin/main', methods=['POST'])
+def admin_main():
+        if (request.form.get('username') == 'admin') & (request.form.get('password') == 'umass'):
+            session['adminlogged'] = 'y'
+            # TODO: Show the SQL query results of all the data
+            return render_template('admin_main.html', tablelist = visit.query.all())
+        else:
+            return redirect('/admin')
 
+@app.route('/admin/main')
+def admin_return_main():
+    if 'adminlogged' in session:
+        return render_template('admin_main.html', tablelist = visit.query.all())
+    else:
+        return redirect('/admin')
+    # , tablelist = visit.query.filter_by(ref_num=ref_post).all()
+
+
+@app.route('/admin/main/result', methods=['POST'])
+def search_result():
+    if (request.form.get('ref_num') != '') and (request.form.get('email') == ''):
+        # only ref_num input
+        return render_template('admin_main.html', tablelist = visit.query.filter_by(ref_num = request.form.get('ref_num')).all())
+    elif (request.form.get('ref_num') == '') and (request.form.get('email') != ''):
+        # only email input
+        return render_template('admin_main.html', tablelist = visit.query.filter_by(email = request.form.get('email')).all())
+    elif (request.form.get('ref_num') != '') and (request.form.get('email') != ''):
+        return render_template('admin_main.html', tablelist = visit.query.filter_by(ref_num = request.form.get('ref_num'), email = request.form.get('email')).all())
+    else:
+        return render_template('admin_main.html', no_result = True)
 
 if __name__ == "__main__":
     app.secret_key = os.urandom(32)

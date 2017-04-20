@@ -50,35 +50,98 @@
                     <hr>
                         <li>What is most important for your loved one right now?</li>
                             <ul>
-                                <li><i>{{ans1}}</i></li>
-                                <li><i>{{ans2}}</i></li>
-                                <li><i>{{ans3}}</i></li>
+                                {% if (ans1 == '') and (ans2 == '') and (ans3 == '') %}
+                                    <li><i>No answer submitted</i></li>
+                                {% else %}
+                                    {% if ans1 != '' %}
+                                        <li><i>{{ans1}}</i></li>
+                                    {% endif %}
+                                    {% if ans2 != '' %}
+                                        <li><i>{{ans2}}</i></li>
+                                    {% endif %}
+                                    {% if ans3 != '' %}
+                                        <li><i>{{ans3}}</i></li>
+                                    {% endif %}
+                                {% endif %}
                             </ul>
                         <li>What is most important for you right now?</li>
                             <ul>
-                                <li><i>{{ans4}}</i></li>
-                                <li><i>{{ans5}}</i></li>
-                                <li><i>{{ans6}}</i></li>
+                                {% if (ans4 == '') and (ans5 == '') and (ans6 == '') %}
+                                    <li><i>No answer submitted</i></li>
+                                {% else %}
+                                    {% if ans4 != '' %}
+                                        <li><i>{{ans4}}</i></li>
+                                    {% endif %}
+                                    {% if ans5 != '' %}
+                                        <li><i>{{ans5}}</i></li>
+                                    {% endif %}
+                                    {% if ans6 != '' %}
+                                        <li><i>{{ans6}}</i></li>
+                                    {% endif %}
+                                {% endif %}
                             </ul>
                         <li>What is your loved one’s outlook for getting better and how independent will he/she be with further medical care after the ICU?</li>
-                            <ul><li><i>{{ans8}}</i></li></ul>
+                            {% if ans8 != '' %}
+                                <ul><li><i>{{ans8}}</i></li></ul>
+                            {% else %}
+                                <ul><li><i>No answer submitted</i></li></ul>
+                            {% endif %}
                         <li>Do you understand what your loved one’s life will be like based on the two different treatment goals?</li>
-                            <ul><li><i>{{ans9}}</i></li></ul>
+                            {% if ans9 != '' %}
+                                <ul><li><i>{{ans9}}</i></li></ul>
+                            {% else %}
+                                <ul><li><i>No answer submitted</i></li></ul>
+                            {% endif %}
                         <li>Is this quality of life acceptable to your loved one?</li>
-                            <ul><li><i>{{ans10}}</i></li></ul>
+                            {% if ans10 != '' %}
+                                <ul><li><i>{{ans10}}</i></li></ul>
+                            {% else %}
+                                <ul><li><i>No answer submitted</i></li></ul>
+                            {% endif %}
                         <li>Do you understand the pros and cons of the two treatment goals/choices?</li>
-                            <ul><li><i>{{ans11}}</i></li></ul>
+                            {% if ans11 != '' %}
+                                <ul><li><i>{{ans11}}</i></li></ul>
+                            {% else %}
+                                <ul><li><i>No answer submitted</i></li></ul>
+                            {% endif %}
                         <li>What are their wishes for medical treatments when illness is severe or possibly leave them disabled? Have they mentioned it to you? Do they have a living will?</li>
-                            <ul><li><i>{{ans12}}</i></li></ul>
+                            {% if ans12 != '' %}
+                                <ul><li><i>{{ans12}}</i></li></ul>
+                            {% else %}
+                                <ul><li><i>No answer submitted</i></li></ul>
+                            {% endif %}
                         <li>If your loved one could look at the choices right now, what would they choose?</li>
-                            <ul><li><i>{{ans13}}</i></li></ul>
+                            {% if ans13 != '' %}
+                                <ul><li><i>{{ans13}}</i></li></ul>
+                            {% else %}
+                                <ul><li><i>No answer submitted</i></li></ul>
+                            {% endif %}
                         <li>How is this choice making you feel?</li>
-                            <ul><li><i>{{ans14}}</i></li></ul>
+                            {% if ans14 != '' %}
+                                <ul><li><i>{{ans14}}</i></li></ul>
+                            {% else %}
+                                <ul><li><i>No answer submitted</i></li></ul>
+                            {% endif %}
                         <li>Make a list and ask. Bring the list of questions to the meeting with the doctor, too.</li>
-                            <ul><li><i>{{ans15}}</i></li></ul>
-                        <br>
-                </p>
+                            {% if ans15 != '' %}
+                                <ul><li><i>{{ans15}}</i></li></ul>
+                            {% else %}
+                                <ul><li><i>No answer submitted</i></li></ul>
+                            {% endif %}
+                        <li>Where do you think your loved one would put themselves on the line below?</li>
                 </ul>
+                <div style="margin-top:10px; padding-top:20px;margin-bottom: 10px; padding-bottom: 50px">
+                    <div class = "col-md-1 text-center">
+                       <h4>Survival</h4>
+                    </div>
+                    <div class = "col-md-10"><br>
+                      <input type="range" name="ans16" min="0" max="100" id="ans16" value={{ans16}} disabled>
+                    </div>
+                    <div class = "col-md-1 text-center">
+                      <h4>Comfort</h4>
+                    </div>
+                </div>
+                <hr>
             </div>
 
             <!--the dropdown box-->
