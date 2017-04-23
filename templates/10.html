@@ -95,7 +95,8 @@
               <div class="panel panel-default">
                 <div class="panel-heading">
                   <h4 class="panel-title">
-                    <a data-toggle="collapse" data-parent="#accordion" href="#collapse2">
+                    <a data-toggle="collapse" data-parent="#accordion" href="#collapse2" id="block4">
+                        <span class="glyphicon glyphicon-ok" aria-hidden="true" style="display: none" id="css4"></span>
                     2. Feeding Tube (“PEG” or “G-tube”)</a>
                   </h4>
                 </div>
@@ -148,5 +149,11 @@
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
     <!-- Include all compiled plugins (below), or include individual files as needed -->
     <script src="static/js/bootstrap.min.js"></script>
+    <script type="text/javascript">
+        $("#block4").click(function(){
+            $("#css4").css("display","inline-block")
+        })
+    </script>
+
   </body>
 </html>

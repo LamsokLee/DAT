@@ -62,7 +62,9 @@
                 <div class="panel-heading">
                   <h4 class="panel-title">
                     <a data-toggle="collapse" data-parent="#accordion" href="#collapse1">
-                    Acute Rehabilitation Hospital</a>
+                        <span class="glyphicon glyphicon-ok" aria-hidden="true"></span>
+                    Acute Rehabilitation Hospital
+                    </a>
                   </h4>
                 </div>
                 <div id="collapse1" class="panel-collapse collapse in">
@@ -85,7 +87,8 @@
               <div class="panel panel-default">
                 <div class="panel-heading">
                   <h4 class="panel-title">
-                    <a data-toggle="collapse" data-parent="#accordion" href="#collapse2">
+                    <a data-toggle="collapse" data-parent="#accordion" href="#collapse2" id="block2">
+                    <span class="glyphicon glyphicon-ok" aria-hidden="true" id="c2" style="display: none;"></span>
                     Long-Term Acute Care Hospital (LTACH)</a>
                   </h4>
                 </div>
@@ -99,7 +102,8 @@
               <div class="panel panel-default">
                 <div class="panel-heading">
                   <h4 class="panel-title">
-                    <a data-toggle="collapse" data-parent="#accordion" href="#collapse3">
+                    <a data-toggle="collapse" data-parent="#accordion" href="#collapse3" id="block3">
+                        <span class="glyphicon glyphicon-ok" aria-hidden="true" id="c3" style="display: none;"></span>
                     Skilled Nursing Facility (SNF)</a>
                   </h4>
                 </div>
@@ -125,16 +129,31 @@
                 <span class="glyphicon glyphicon glyphicon-menu-left" aria-hidden="true"></span>Previous
             </button>
         </a>
-        <a href="{{url_for('page_12')}}">
-            <button type="button" class="btn btn-primary btn-lg pull-right" style="margin-bottom: 5%">Next
+        <!--<a href="{{url_for('page_12')}}">-->
+            <button type="button" class="btn btn-primary btn-lg pull-right" style="margin-bottom: 5%" id="btn1">Next
                 <span class="glyphicon glyphicon glyphicon-menu-right" aria-hidden="true"></span>
             </button>
-        </a>
+        <!--</a>-->
     </div>
 
     <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
     <!-- Include all compiled plugins (below), or include individual files as needed -->
     <script src="static/js/bootstrap.min.js"></script>
+    <script type="text/javascript">
+        $("#block2").click(function () {
+            $("#c2").css("display","inline-block")
+        });
+        $("#block3").click(function () {
+            $("#c3").css("display","inline-block")
+        });
+        $("#btn1").click(function() {
+            if ($("#c2").css("display") == "inline-block" && $("#c3").css("display") == "inline-block") {
+            window.location.href = "/12";
+            }else{
+                alert("You have section not be finished on this page, pelase check it")
+            }
+        });
+    </script>
   </body>
 </html>
