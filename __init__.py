@@ -18,7 +18,8 @@ def homepage():
     # initialize the objects in current session
     global sess
     global data
-    global read
+    # global read
+    # read = read()
     sess = visit()
     data = answer()
     # default value of data attributes
@@ -45,6 +46,16 @@ def homepage():
     sess.is_finished = False
     # mark the session as logged
     session['logged'] = 'y'
+    session['accordion1'] = False;
+    session['accordion2'] = False;
+    session['accordion3'] = False;
+    session['accordion4'] = False;
+    session['accordion5'] = False;
+    session['accordion6'] = False;
+    session['accordion7'] = False;
+    session['accordion8'] = False;
+    session['accordion9'] = False;
+    session['accordion10'] = False;
     return render_template("home.html")
 
 
@@ -260,6 +271,7 @@ def post_preview():
         sess.email = request.form.get('email')
 
         return render_template('preview.html',
+                               page="review",
                                ans1=data.ans1,
                                ans2=data.ans2,
                                ans3=data.ans3,
@@ -284,6 +296,7 @@ def post_preview():
 def page_preview():
     if 'logged' in session:
         return render_template('preview.html',
+                               page="review",
                                ans1=data.ans1,
                                ans2=data.ans2,
                                ans3=data.ans3,
@@ -320,24 +333,26 @@ def page_report():
         # test code
         session.pop('logged')
         # TODO: retrieve the reference number from database and show it on this page.
-        return render_template("report.html", ref_num=data.ref_num, email=sess.email,
-                               ans1=data.ans1,
-                               ans2=data.ans2,
-                               ans3=data.ans3,
-                               ans4=data.ans4,
-                               ans5=data.ans5,
-                               ans6=data.ans6,
-                               ans8=data.ans8,
-                               ans9=data.ans9,
-                               ans10=data.ans10,
-                               ans11=data.ans11,
-                               ans12=data.ans12,
-                               ans13=data.ans13,
-                               ans14=data.ans14,
-                               ans15=data.ans15,
-                               ans16=data.ans16,
-                               starttime=sess.start_time,
-                               endtime=sess.end_time)
+        return render_template("report.html",
+                               ref_num  =data.ref_num,
+                               start    =sess.start_time,
+                               end      =sess.end_time,
+                               email    =sess.email,
+                               ans1     =data.ans1,
+                               ans2     =data.ans2,
+                               ans3     =data.ans3,
+                               ans4     =data.ans4,
+                               ans5     =data.ans5,
+                               ans6     =data.ans6,
+                               ans8     =data.ans8,
+                               ans9     =data.ans9,
+                               ans10    =data.ans10,
+                               ans11    =data.ans11,
+                               ans12    =data.ans12,
+                               ans13    =data.ans13,
+                               ans14    =data.ans14,
+                               ans15    =data.ans15,
+                               ans16    =data.ans16)
     else:
         return redirect('/')
 

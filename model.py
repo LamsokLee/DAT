@@ -40,6 +40,18 @@ class answer(db.Model):
     ans16   = db.Column(db.Integer)
     ref_num = db.Column(db.Integer, db.ForeignKey('visit.ref_num'))
 
+class read():
+    accordion1 = False
+    accordion2 = False
+    accordion3 = False
+    accordion4 = False
+    accordion5 = False
+    accordion6 = False
+    accordion7 = False
+    accordion8 = False
+    accordion9 = False
+    accordion10 = False
+
     def __init__(self):
         return
 

@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<body lang="en">
+<html lang="en">
 <head>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -12,7 +12,7 @@
     <!--Bootstrap on local-->
     <!--<link href="css/bootstrap.min.css" rel="stylesheet">-->
     <!--Bootstrap on CDN-->
-    <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet">
+    <!--<link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet">-->
 
     <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
     <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
@@ -26,10 +26,6 @@
     <!--the head navbar of the website-->
     {% include 'navbar.html' %}
     <!--container of the whole content of the tool-->
-    <div id="print" style="display: none;">
-        {% include 'printable.html' %}
-    </div>
-
 
     <div class="container">
         <div class="jumbotron">
@@ -44,11 +40,9 @@
             </div>
             <div class="text-center">
                 <p>You need to
-
-                    <button type="button"  class="btn btn-primary btn-md" onclick="printDiv('print')">
-                    <span class="glyphicon glyphicon glyphicon glyphicon glyphicon-print" aria-hidden="true"></span>Print
+                    <button type="button" class="btn btn-primary btn-md" onclick="printDiv('printable')">
+                        <span class="glyphicon glyphicon-print" aria-hidden="true"></span>Print
                     </button>
-
                 your work sheet and bring it to the family meeting with the doctor.
                 </p>
             </div>
@@ -67,21 +61,24 @@
             </button>
         </a>
     </div>
+
+    <div id="printable" style="display: none;">
+        {% include 'printable.html' %}
+    </div>
     <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
     <!-- Include all compiled plugins (below), or include individual files as needed -->
     <script src="static/js/bootstrap.min.js"></script>
 
-    <script function printDiv(print) {
-            var printContents=document.getElementById(print).innerHTML;
+    <script>
+        function printDiv(printable) {
+            var printContents=document.getElementById(printable).innerHTML;
             var originalContents=document.body.innerHTML;
-
             document.body.innerHTML=printContents;
-
             window.print();
-
             document.body.innerHTML=originalContents;
-            }></script>
+            }
+    </script>
 </div>
     </body>
 </html>
