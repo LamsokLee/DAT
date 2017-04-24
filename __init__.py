@@ -18,6 +18,7 @@ def homepage():
     # initialize the objects in current session
     global sess
     global data
+    global read
     sess = visit()
     data = answer()
     # default value of data attributes
