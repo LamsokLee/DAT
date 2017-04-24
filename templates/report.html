@@ -1,6 +1,6 @@
 <!DOCTYPE html>
-<html lang="en">
-  <head>
+<body lang="en">
+<head>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -17,18 +17,24 @@
     <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
     <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
     <!--[if lt IE 9]>
-      <script src="https://oss.maxcdn.com/html5shiv/3.7.3/html5shiv.min.js"></script>
-      <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+    <script src="https://oss.maxcdn.com/html5shiv/3.7.3/html5shiv.min.js"></script>
+    <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
     <![endif]-->
-  </head>
-  <body>
-  <!--the head navbar of the website-->
-{% include 'navbar.html' %}
-  <!--container of the whole content of the tool-->
-  <div class="container">
+</head>
+<body>
+<div>
+    <!--the head navbar of the website-->
+    {% include 'navbar.html' %}
+    <!--container of the whole content of the tool-->
+    <div id="print" style="display: none;">
+        {% include 'printable.html' %}
+    </div>
+
+
+    <div class="container">
         <div class="jumbotron">
             <div>
-                <h2 class = "text-center">
+                <h2 class="text-center">
                     Your worksheet has been saved!
                 </h2>
                 <h4 class="text-center">
@@ -38,30 +44,44 @@
             </div>
             <div class="text-center">
                 <p>You need to
-                <button type="button"  class="btn btn-primary btn-md">
+
+                    <button type="button"  class="btn btn-primary btn-md" onclick="printDiv('print')">
                     <span class="glyphicon glyphicon glyphicon glyphicon glyphicon-print" aria-hidden="true"></span>Print
-                </button>
+                    </button>
+
                 your work sheet and bring it to the family meeting with the doctor.
                 </p>
             </div>
             <div class="text-center">
                 <p>We can
-                <button type="button" class="btn btn-primary btn-md">
-                    <span class="glyphicon glyphicon glyphicon glyphicon-envelope" aria-hidden="true"></span>Send
-                </button>
-                the worksheet to your E-mail <b>{{email}}</b></p>
-            </divtext-center>
-        </div>
+                    <button type="button" class="btn btn-primary btn-md">
+                        <span class="glyphicon glyphicon glyphicon glyphicon-envelope" aria-hidden="true"></span>Send
+                    </button>
+                    the worksheet to your E-mail <b>{{email}}</b></p>
+                </divtext-center>
+            </div>
         </div>
         <a href="{{url_for('homepage')}}">
             <button type="button" class="btn btn-primary btn-lg pull-right" style="margin-bottom: 5%">
                 <span class="glyphicon glyphicon-home" aria-hidden="true"></span>Home
             </button>
         </a>
-  </div>
+    </div>
     <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
     <!-- Include all compiled plugins (below), or include individual files as needed -->
     <script src="static/js/bootstrap.min.js"></script>
-  </body>
+
+    <script function printDiv(print) {
+            var printContents=document.getElementById(print).innerHTML;
+            var originalContents=document.body.innerHTML;
+
+            document.body.innerHTML=printContents;
+
+            window.print();
+
+            document.body.innerHTML=originalContents;
+            }></script>
+</div>
+    </body>
 </html>
