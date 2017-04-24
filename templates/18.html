@@ -258,7 +258,7 @@
                     <span class="glyphicon glyphicon-menu-left" aria-hidden="true"></span>Previous
                 </button>
             </a>
-                <label for="submit-answer" class="btn btn-primary btn-lg pull-right" style="margin-bottom: 5%">
+                <label for="submit-answer" class="btn btn-primary btn-lg pull-right" style="margin-bottom: 5%" id="btn3">
                 <!--TODO: the icon of submit button -->
                     Review
                 </label>
@@ -290,6 +290,14 @@
         $('#block9').click(function () {
             $('#css9').css("display", "inline-block")
         });
+
+        $("#btn3").click(function () {
+          if ($("#css5").css("display") == "inline-block" && $("#css6").css("display") == "inline-block" && $("#css7").css("display") == "inline-block"
+             && $("#css8").css("display") == "inline-block" && $("#css9").css("display") == "inline-block") {
+            window.location.href = "/preview";
+        } else {
+            alert("You have section not be finished on this page, pelase check it")
+        }});
     </script>
   </body>
 </html>

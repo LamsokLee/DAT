@@ -1,6 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
+<head>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -17,143 +17,176 @@
     <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
     <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
     <!--[if lt IE 9]>
-      <script src="https://oss.maxcdn.com/html5shiv/3.7.3/html5shiv.min.js"></script>
-      <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+    <script src="https://oss.maxcdn.com/html5shiv/3.7.3/html5shiv.min.js"></script>
+    <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
     <![endif]-->
-  </head>
-  <body>
-  <!--the head navbar of the website-->
+</head>
+<body>
+<!--the head navbar of the website-->
 {% include 'navbar.html' %}
-  <!--container of the whole content of the tool-->
-  <div class="container">
-        <h2 class = "text-center">
-            Goals-of-Care after Traumatic Brain Injury Decision Aid Prototype
-        </h2>
-        <br/>
-<!--the tabs-->
-{% include 'tab.html' %}
-        <!--the text box to put the main context-->
-        <div class="jumbotron">
-            <!--button division-->
-            <div class="row">
-                <div class="col-md-6">
-                    <a href="{{url_for('page_9')}}">
-                        <button type="button" class="btn btn-primary pull-left" style="margin-bottom: 5%">
-                            <span class="glyphicon glyphicon glyphicon-menu-left" aria-hidden="true"></span>
-                        </button>
-                    </a>
-                </div>
-                <div class="col-md-6">
-                    <a href="{{url_for('page_11')}}">
-                        <button type="button" class="btn btn-primary pull-right" style="margin-bottom: 5%">
-                            <span class="glyphicon glyphicon glyphicon-menu-right" aria-hidden="true"></span>
-                        </button>
-                    </a>
-                </div>
+<!--container of the whole content of the tool-->
+<div class="container">
+    <h2 class="text-center">
+        Goals-of-Care after Traumatic Brain Injury Decision Aid Prototype
+    </h2>
+    <br/>
+    <!--the tabs-->
+    {% include 'tab.html' %}
+    <!--the text box to put the main context-->
+    <div class="jumbotron">
+        <!--button division-->
+        <div class="row">
+            <div class="col-md-6">
+                <a href="{{url_for('page_9')}}">
+                    <button type="button" class="btn btn-primary pull-left" style="margin-bottom: 5%">
+                        <span class="glyphicon glyphicon glyphicon-menu-left" aria-hidden="true"></span>
+                    </button>
+                </a>
             </div>
-            <!--the head of this page-->
-            <div class = "section-head"><h3 class="text-center">WHAT IS TREATMENT THAT FOCUSES ON MAXIMIZING <u>SURVIVAL</u>?</h3></div><br>
-            <!--the paragraph in this page-->
-            <p>
-                When the goal of care is <b>survival</b>, doctors do whatever it takes to keep a person alive. Patients will require additional procedures to improve the chance that they survive. <u>Patients usually need these two procedures:</u>
-            </p>
-
-            <!--test -->
-            <div class="panel-group" id="accordion">
-              <div class="panel panel-default">
-                <div class="panel-heading">
-                  <h4 class="panel-title">
-                    <a data-toggle="collapse" data-parent="#accordion" href="#collapse1">
-                     1. Tracheostomy (“trach”)</a>
-                  </h4>
-                </div>
-                <div id="collapse1" class="panel-collapse collapse in">
-                  <div class="panel-body">
-                      <p>
-                          For the first several days after a major TBI, patients are unable to breathe on their own. They depend on a breathing tube placed through the mouth and hooked up to the ventilator. When patients are still unable to breathe on their own after several days, a procedure called a <b>tracheostomy (short: “trach”)</b> is done to avoid serious long-term damage to the windpipe that can be caused by a breathing tube when kept too long.
-                      </p>
-                      <p>
-                          For a <b>trach</b>, a surgeon makes a hole in the front of the patient’s neck to directly access the windpipe.
-                      </p>
-                      <p>
-                          A shorter tube is then placed through this hole, and the ventilator is hooked up to it to help the patient breathe. Over time most patients can slowly come off the ventilator but they will keep the trach for several weeks to months. Then they breathe oxygen or regular air through the trach.
-                      </p>
-                      <p><b>
-                          Patients can’t speak with a trach until they are well enough to place a cap over the opening. Many but not all patients can have their trach removed after weeks or months. A small scar remains where the hole was.
-                      </b></p>
-                      <div class="thumbnail">
-                          <img src="static/img/Trach_strip.jpg" alt="Lights" style="width:100%">
-                            <div class="caption">
-                              <p style="font-family: Arial, Times, serif; font-size: medium">
-                                  This patient has a <b>tracheostomy (“trach”)</b>. On the left side is the trach without an oxygen mask (“trach mask”); on the right side is the same patient with a trach mask through which he breathes oxygen or air.
-                              </p>
-                            </div>
-                      </div>
-                  </div>
-                </div>
-              </div>
-              <div class="panel panel-default">
-                <div class="panel-heading">
-                  <h4 class="panel-title">
-                    <a data-toggle="collapse" data-parent="#accordion" href="#collapse2" id="block4">
-                        <span class="glyphicon glyphicon-ok" aria-hidden="true" style="display: none" id="css4"></span>
-                    2. Feeding Tube (“PEG” or “G-tube”)</a>
-                  </h4>
-                </div>
-                <div id="collapse2" class="panel-collapse collapse">
-                  <div class="panel-body">
-                      <div class="row">
-                        <div class="col-xs-12 col-md-6">
-                            <p>
-                                A patient can’t eat by mouth when on a ventilator or with a trach. Therefore, a surgeon places a feeding tube through the skin directly into the stomach. Liquid nutrition and medications are given through the feeding tube. Usually, the trach and feeding tube placement are done together. Even if patients are eventually able to be without a trach, the feeding tube may stay in for a longer time, sometimes for the rest of the person’s life, depending on whether they recover enough to eat on their own.
-                            </p>
-                        </div>
-                        <div class="col-xs-12 col-md-6">
-                            <img class="img-responsive" src="static/img/PEG.jpg" alt="PEG">
-                        </div>
-                      </div>
-                      <br/>
-                      <div>
-                          <div class="alert alert-success">
-                              <p>
-                                  <b>Both the trach and the feeding tube are removable</b> if the patient recovers enough.
-                              </p>
-                              <p>
-                                  <b>They can also be removed if your loved one does not recover the way you have hoped</b>, despite the highest level of care.
-                              </p>
-                          </div>
-                          <div class="alert alert-success">
-                              <p>
-                                  <b>Some patients still die</b>, despite the best efforts of the doctors and medical team, and despite additional procedures to keep them alive.
-                              </p>
-                          </div>
-                      </div>
-                      </div>
-                  </div>
-              </div>
+            <div class="col-md-6">
+                <a href="{{url_for('page_11')}}">
+                    <button type="button" class="btn btn-primary pull-right" style="margin-bottom: 5%">
+                        <span class="glyphicon glyphicon glyphicon-menu-right" aria-hidden="true"></span>
+                    </button>
+                </a>
             </div>
         </div>
-        <a href="{{url_for('page_9')}}">
-            <button type="button" class="btn btn-primary btn-lg pull-left" style="margin-bottom: 5%">
-                <span class="glyphicon glyphicon glyphicon-menu-left" aria-hidden="true"></span>Previous
-            </button>
-        </a>
-        <a href="{{url_for('page_11')}}">
-            <button type="button" class="btn btn-primary btn-lg pull-right" style="margin-bottom: 5%">Next
-                <span class="glyphicon glyphicon glyphicon-menu-right" aria-hidden="true"></span>
-            </button>
-        </a>
+        <!--the head of this page-->
+        <div class="section-head"><h3 class="text-center">WHAT IS TREATMENT THAT FOCUSES ON MAXIMIZING <u>SURVIVAL</u>?
+        </h3></div>
+        <br>
+        <!--the paragraph in this page-->
+        <p>
+            When the goal of care is <b>survival</b>, doctors do whatever it takes to keep a person alive. Patients will
+            require additional procedures to improve the chance that they survive. <u>Patients usually need these two
+            procedures:</u>
+        </p>
+
+        <!--test -->
+        <div class="panel-group" id="accordion">
+            <div class="panel panel-default">
+                <div class="panel-heading">
+                    <h4 class="panel-title">
+                        <a data-toggle="collapse" data-parent="#accordion" href="#collapse1">
+                            1. Tracheostomy (“trach”)</a>
+                    </h4>
+                </div>
+                <div id="collapse1" class="panel-collapse collapse in">
+                    <div class="panel-body">
+                        <p>
+                            For the first several days after a major TBI, patients are unable to breathe on their own.
+                            They depend on a breathing tube placed through the mouth and hooked up to the ventilator.
+                            When patients are still unable to breathe on their own after several days, a procedure
+                            called a <b>tracheostomy (short: “trach”)</b> is done to avoid serious long-term damage to
+                            the windpipe that can be caused by a breathing tube when kept too long.
+                        </p>
+                        <p>
+                            For a <b>trach</b>, a surgeon makes a hole in the front of the patient’s neck to directly
+                            access the windpipe.
+                        </p>
+                        <p>
+                            A shorter tube is then placed through this hole, and the ventilator is hooked up to it to
+                            help the patient breathe. Over time most patients can slowly come off the ventilator but
+                            they will keep the trach for several weeks to months. Then they breathe oxygen or regular
+                            air through the trach.
+                        </p>
+                        <p><b>
+                            Patients can’t speak with a trach until they are well enough to place a cap over the
+                            opening. Many but not all patients can have their trach removed after weeks or months. A
+                            small scar remains where the hole was.
+                        </b></p>
+                        <div class="thumbnail">
+                            <img src="static/img/Trach_strip.jpg" alt="Lights" style="width:100%">
+                            <div class="caption">
+                                <p style="font-family: Arial, Times, serif; font-size: medium">
+                                    This patient has a <b>tracheostomy (“trach”)</b>. On the left side is the trach
+                                    without an oxygen mask (“trach mask”); on the right side is the same patient with a
+                                    trach mask through which he breathes oxygen or air.
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="panel panel-default">
+                <div class="panel-heading">
+                    <h4 class="panel-title">
+                        <a data-toggle="collapse" data-parent="#accordion" href="#collapse2" id="block4">
+                            <span class="glyphicon glyphicon-ok" aria-hidden="true" style="display: none"
+                                  id="css4"></span>
+                            2. Feeding Tube (“PEG” or “G-tube”)</a>
+                    </h4>
+                </div>
+                <div id="collapse2" class="panel-collapse collapse">
+                    <div class="panel-body">
+                        <div class="row">
+                            <div class="col-xs-12 col-md-6">
+                                <p>
+                                    A patient can’t eat by mouth when on a ventilator or with a trach. Therefore, a
+                                    surgeon places a feeding tube through the skin directly into the stomach. Liquid
+                                    nutrition and medications are given through the feeding tube. Usually, the trach and
+                                    feeding tube placement are done together. Even if patients are eventually able to be
+                                    without a trach, the feeding tube may stay in for a longer time, sometimes for the
+                                    rest of the person’s life, depending on whether they recover enough to eat on their
+                                    own.
+                                </p>
+                            </div>
+                            <div class="col-xs-12 col-md-6">
+                                <img class="img-responsive" src="static/img/PEG.jpg" alt="PEG">
+                            </div>
+                        </div>
+                        <br/>
+                        <div>
+                            <div class="alert alert-success">
+                                <p>
+                                    <b>Both the trach and the feeding tube are removable</b> if the patient recovers
+                                    enough.
+                                </p>
+                                <p>
+                                    <b>They can also be removed if your loved one does not recover the way you have
+                                        hoped</b>, despite the highest level of care.
+                                </p>
+                            </div>
+                            <div class="alert alert-success">
+                                <p>
+                                    <b>Some patients still die</b>, despite the best efforts of the doctors and medical
+                                    team, and despite additional procedures to keep them alive.
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
     </div>
+    <a href="{{url_for('page_9')}}">
+        <button type="button" class="btn btn-primary btn-lg pull-left" style="margin-bottom: 5%">
+            <span class="glyphicon glyphicon glyphicon-menu-left" aria-hidden="true"></span>Previous
+        </button>
+    </a>
+    <!--<a href="{{url_for('page_11')}}">-->
+    <button type="button" class="btn btn-primary btn-lg pull-right" style="margin-bottom: 5%" id="btn2">Next
+        <span class="glyphicon glyphicon glyphicon-menu-right" aria-hidden="true"></span>
+    </button>
+    </a>
+</div>
 
-    <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
-    <!-- Include all compiled plugins (below), or include individual files as needed -->
-    <script src="static/js/bootstrap.min.js"></script>
-    <script type="text/javascript">
-        $("#block4").click(function(){
-            $("#css4").css("display","inline-block")
-        })
-    </script>
+<!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+<!-- Include all compiled plugins (below), or include individual files as needed -->
+<script src="static/js/bootstrap.min.js"></script>
+<script type="text/javascript">
+    $("#block4").click(function () {
+        $("#css4").css("display", "inline-block")
+    })
 
-  </body>
+    $("#btn2").click(function () {
+        if ($("#css4").css("display") == "inline-block") {
+            window.location.href = "/11";
+        } else {
+            alert("You have section not be finished on this page, pelase check it")
+        }});
+</script>
+
+</body>
 </html>
