@@ -43,10 +43,8 @@
         <div class="col-md-4" style="padding-top: 30px; padding-bottom: 200px">
             <!--TODO: Start button and retrieve data form.    -->
             <div class="form-group well well-bg">
-                <form action="/printable" method="post">
+                <form action="/mailid" method="post">
                 <!--TODO: the form of box to retrieve old session-->
-                    <label for="ref">Report ID:</label>
-                    <input type="text" class="form-control" name="ref" id="ref">
                     <label for="input_email">Email:</label>
                     <input type="text" class="form-control" name="input_email" id="input_email">
                         <div style="margin-top:20px">
@@ -54,12 +52,12 @@
                             </input>
                             <label for="retrieve">
                                 <button class="btn btn-primary pull-left">
-                                     <span class="glyphicon glyphicon-save-file" aria-hidden="true"></span>Get Report
+                                     <span class="glyphicon glyphicon-save-file" aria-hidden="true"></span>Send Report ID to my E-mail
                                 </button>
                             </label>
                         </div>
                 </form>
-                <a class="text-center" href="{{url_for('forgetid')}}">Forget your Report ID?</a>
+                <a class="text-center" href="{{url_for('homepage')}}">Return to Home</a>
                     {% if alertmsg %}
                         <div class="alert alert-warning text-center" role="alert">
                         {{ alertmsg }}

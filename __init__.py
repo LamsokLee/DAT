@@ -59,6 +59,7 @@ def homepage():
     # default value of sess attributes
     sess.email = ''
     session['start_time'] = datetime.datetime.now()
+    sess.start_time = session['start_time']
     # TODO: Is_finish is not funcitoning
     sess.is_finished = False
     # mark the session as logged
@@ -339,6 +340,7 @@ def page_preview():
 def page_report():
     if 'logged' in session:
         session['end_time'] = datetime.datetime.now()
+        sess.end_time = session['end_time']
         sess.is_finished = True
         db.session.add(data)
         db.session.add(sess)
@@ -388,21 +390,23 @@ def sendmail():
     print(session['email'])
     if session['email'] != '':
         msg = Message(
-            'Your report from Traumatic Brain Injury Decision Aid Tool -- Report ID:' + str(session['ref_num']),
+            'Your report from Traumatic Brain Injury Decision Aid Tool -- Report ID: ' + str(session['ref_num']),
             sender='mis573wpi@gmail.com',
             recipients=
             [session['email']])
-        msg.body = "1) What is most important for your loved one right now?"
-        msg.html =  "<div style='line-height:20px'><p>Hello,</p><p>This is an auto-generate report from Goals-of-Care after Traumatic Brain Injury Decision Aid Prototype.</p> <p>Start Time:" + str(session['start_time']) + "<p>End Time: " + str(session['end_time']) + "<ol><li>What is your loved one’s outlook for getting better and how independent will he/she be with further medical care after the ICU?</li><ul><li>" + data.ans8 + "</li></ul><li> Do you understand what your loved one’s life will be like based on the two different treatment goals?</li><ul><li>" + data.ans9 + "</li></ul><li>Is this quality of life acceptable to your loved one?</li><ul><li>" + data.ans10 + "</li></ul><li> Do you understand the pros and cons of the two treatment goals/choices?</li><ul><li>" + data.ans11 + "</li></ul><li>What are their wishes for medical treatments when illness is severe or possibly leave them disabled? Have they mentioned it to you? Do they have a living will?</li><ul><li>" + data.ans12 + "</li></ul><li>If your loved one could look at the choices right now, what would they choose?</li><ul><li>" + data.ans13 + "</li></ul><li>How is this choice making you feel?</li><ul><li>" + data.ans14 + "</li></ul><li>Make a list and ask. Bring the list of questions to the meeting with the doctor, too.</li><ul><li>" + data.ans15 + "</li></ul><li> Where do you think your loved one would put themselves on the line below?</li></div>"
+        # msg.body = "1) What is most important for your loved one right now?"
+        msg.html = "<div style='line-height:20px'><p>Hello,</p><p>This is an auto-generate report from Goals-of-Care after Traumatic Brain Injury Decision Aid Prototype.</p> <p>Start Time:" + str(
+            session['start_time']) + "<p>End Time: " + str(session[
+                                                               'end_time']) + "<ol><li>What is your loved one’s outlook for getting better and how independent will he/she be with further medical care after the ICU?</li><ul><li>" + data.ans8 + "</li></ul><li> Do you understand what your loved one’s life will be like based on the two different treatment goals?</li><ul><li>" + data.ans9 + "</li></ul><li>Is this quality of life acceptable to your loved one?</li><ul><li>" + data.ans10 + "</li></ul><li> Do you understand the pros and cons of the two treatment goals/choices?</li><ul><li>" + data.ans11 + "</li></ul><li>What are their wishes for medical treatments when illness is severe or possibly leave them disabled? Have they mentioned it to you? Do they have a living will?</li><ul><li>" + data.ans12 + "</li></ul><li>If your loved one could look at the choices right now, what would they choose?</li><ul><li>" + data.ans13 + "</li></ul><li>How is this choice making you feel?</li><ul><li>" + data.ans14 + "</li></ul><li>Make a list and ask. Bring the list of questions to the meeting with the doctor, too.</li><ul><li>" + data.ans15 + "</li></ul><li> Where do you think your loved one would put themselves on the line below?</li></div>"
         session['mailsent'] = True
         mail.send(msg)
         alertmsg = 'The report has been sent.'
         print(session['mailsent'])
         print("mail has been sent")
         return render_template("report.html",
-                               ref_num = session['ref_num'],
-                               email = session['email'],
-                               alertmsg = alertmsg)
+                               ref_num=session['ref_num'],
+                               email=session['email'],
+                               alertmsg=alertmsg)
     else:
         alertmsg = "You didn't input your E-mail address"
         return render_template("report.html",
@@ -411,6 +415,48 @@ def sendmail():
                                alertmsg=alertmsg)
 
 
+@app.route("/forgetid")
+def forgetid():
+    return render_template("forgetid.html")
+
+
+@app.route("/mailid", methods=['POST'])
+def mailid():
+    if request.form.get('input_email') != '':
+        tablelist = visit.query.filter_by(email=request.form.get('input_email')).first()
+        # testing
+        if tablelist:
+            print(type(tablelist))
+            print(type(tablelist.ref_num))
+            print(type(str(tablelist.ref_num)))
+            print(str(tablelist.ref_num))
+            print(str(tablelist.start_time))
+            print(str(tablelist.end_time))
+            msg = Message(
+                'Your report ID from Traumatic Brain Injury Decision Aid Tool',
+                sender='mis573wpi@gmail.com',
+                recipients=
+                request.form.get('input_email'))
+            # msg.html = "<p>Hello, <p>You sent a request to request your report ID from Traumatic Brain Injury Decision Aid Tool. These are the reports you finished before: </p><p>Report ID: " + str(
+            #     tablelist.ref_num) + "</p><p>Start Time: " + str(tablelist.start_time) + "</p><p>End Time: " + str(
+            #     tablelist.end_time)
+            # msg.html = "Your Report ID is: "
+            # msg.body = 'test'
+            # mail.send(msg)
+            alertmsg = 'The Report ID has been sent to your E-mail.'
+            print("mail has been sent")
+            return render_template("home.html",
+                                   alertmsg=alertmsg)
+        else:
+            alertmsg = "No matched record"
+            return render_template("forgetid.html",
+                                   alertmsg=alertmsg)
+    else:
+        alertmsg = "You have to input your E-mail address"
+        return render_template("forgetid.html",
+                               alertmsg=alertmsg)
+
+# if user click the retrieve report button
 @app.route('/printable', methods=['POST'])
 def printable():
     visitquery = visit.query.filter_by(ref_num=request.form.get('ref'),
@@ -439,8 +485,9 @@ def printable():
                                ans16=answerquery.ans16)
 
     else:
-        msg = 'No matched record'
-        return render_template('home.html', msg=msg)
+        alertmsg = 'No matched record'
+        return render_template('home.html', alertmsg=alertmsg)
+    return render_template('home.html', alertmsg=alertmsg)
 
 
 # # # # # # # # # # # # # # # # # # # # # #
