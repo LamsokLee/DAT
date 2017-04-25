@@ -23,7 +23,14 @@
 </head>
 <body>
 <!--the head navbar of the website-->
-<div class="container">
+{% include 'navbar.html' %}
+<div style="text-align: center">
+    <button type="button" class="btn btn-primary btn-md" onclick="printDiv('printable')">
+        <span class="glyphicon glyphicon-print" aria-hidden="true"></span>Print this report
+    </button>
+</div>
+
+<div id="printable" class="container">
     <h2 class="text-center">
         Goals-of-Care after Traumatic Brain Injury Decision Aid Prototype
     </h2>
@@ -222,7 +229,15 @@
 </div>
 
 <!--the dropdown box-->
-
+<script>
+    function printDiv(printable) {
+        var printContents = document.getElementById(printable).innerHTML;
+        var originalContents = document.body.innerHTML;
+        document.body.innerHTML = printContents;
+        window.print();
+        document.body.innerHTML = originalContents;
+    }
+</script>
 <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
 <!-- Include all compiled plugins (below), or include individual files as needed -->

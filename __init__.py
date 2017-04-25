@@ -75,7 +75,7 @@ def homepage():
     session['accordion8'] = False;
     session['accordion9'] = False;
     session['accordion10'] = False;
-    return render_template("home.html")
+    return render_template("home.html", page = "homepage")
 
 
 @app.route('/1')
@@ -436,9 +436,6 @@ def mailid():
                 'Your report ID from Traumatic Brain Injury Decision Aid Tool',
                 sender='mis573wpi@gmail.com',
                 recipients=[request.form.get('input_email')])
-            # retrieve_mail = Message('a', sender='mis573wpi@gmail.com', recipients='lilinshuo1110@gmail.com')
-            # retrieve_mail.body = "testing"
-            # mail.send(retrieve_mail)
             retrieve_mail.html = "<p>Hello, <p>You sent a request to request your report ID from Traumatic Brain Injury Decision Aid Tool. These are the reports you finished before: </p><p>Report ID: " + str(
                 tablelist.ref_num) + "</p><p>Start Time: " + str(tablelist.start_time) + "</p><p>End Time: " + str(
                 tablelist.end_time)
@@ -539,7 +536,10 @@ def search_result():
     else:
         return render_template('admin_main.html', no_result=True)
 
+@app.route('/getreport')
+def getreport():
 
+    return render_template('home.html', page = "getreport")
 if __name__ == "__main__":
     app.secret_key = os.urandom(32)
     app.run()
