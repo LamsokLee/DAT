@@ -8,12 +8,27 @@ import os
 
 app.debug = True
 
+mail = Mail(app)
+
+app.config.update(
+    DEBUG=True,
+    # EMAIL SETTINGS
+    MAIL_SERVER='smtp.gmail.com',
+    MAIL_PORT=465,
+    MAIL_USE_SSL=True,
+    MAIL_USERNAME='mis573wpi@gmail.com',
+    MAIL_PASSWORD='Mis573umass'
+)
+
+mail = Mail(app)
+
 
 # TODO: If session is running, kill it
 # TODO: To test if the session exists.
+# This is the test for email server
+
 
 # create the answers instance, which takes all the value of answers.
-
 @app.route('/')
 def homepage():
     # initialize the objects in current session
@@ -40,13 +55,15 @@ def homepage():
     data.ans14 = ''
     data.ans15 = ''
     data.ans16 = 50
+
     # default value of sess attributes
     sess.email = ''
-    sess.start_time = datetime.datetime.now()
+    session['start_time'] = datetime.datetime.now()
     # TODO: Is_finish is not funcitoning
     sess.is_finished = False
     # mark the session as logged
     session['logged'] = 'y'
+    session['mailsent'] = False
     session['accordion1'] = False;
     session['accordion2'] = False;
     session['accordion3'] = False;
@@ -321,23 +338,26 @@ def page_preview():
 @app.route('/report')
 def page_report():
     if 'logged' in session:
-        sess.end_time = datetime.datetime.now()
+        session['end_time'] = datetime.datetime.now()
         sess.is_finished = True
         db.session.add(data)
         db.session.add(sess)
         db.session.commit()
         # test code
         data.ref_num = sess.ref_num
+        session['ref_num'] = data.ref_num
+        session['email'] = sess.email
         db.session.add(data)
         db.session.add(sess)
         db.session.commit()
         # test code
         session.pop('logged')
-        # TODO: retrieve the reference number from database and show it on this page.
+        print("the session ends")
+        print(session['mailsent'])
         return render_template("report.html",
                                ref_num=data.ref_num,
-                               start=sess.start_time,
-                               end=sess.end_time,
+                               start=session['start_time'],
+                               end=session['end_time'],
                                email=sess.email,
                                ans1=data.ans1,
                                ans2=data.ans2,
@@ -356,6 +376,39 @@ def page_report():
                                ans16=data.ans16)
     else:
         return redirect('/')
+
+
+@app.route("/test")
+def test():
+    return render_template('test.html')
+
+
+@app.route("/mail")
+def sendmail():
+    print(session['email'])
+    if session['email'] != '':
+        msg = Message(
+            'Your report from Traumatic Brain Injury Decision Aid Tool -- Report ID:' + str(session['ref_num']),
+            sender='mis573wpi@gmail.com',
+            recipients=
+            [session['email']])
+        msg.body = "1) What is most important for your loved one right now?"
+        msg.html =  "<div style='line-height:20px'><p>Hello,</p><p>This is a report auto-generate report from Goals-of-Care after Traumatic Brain Injury Decision Aid Prototype.</p> <p>Start Time:" + str(session['start_time']) + "<p>End Time: " + str(session['end_time']) + "<ol><li>What is your loved one’s outlook for getting better and how independent will he/she be with further medical care after the ICU?</li><ul><li>" + data.ans8 + "</li></ul><li> Do you understand what your loved one’s life will be like based on the two different treatment goals?</li><ul><li>" + data.ans9 + "</li></ul><li>Is this quality of life acceptable to your loved one?</li><ul><li>" + data.ans10 + "</li></ul><li> Do you understand the pros and cons of the two treatment goals/choices?</li><ul><li>" + data.ans11 + "</li></ul><li>What are their wishes for medical treatments when illness is severe or possibly leave them disabled? Have they mentioned it to you? Do they have a living will?</li><ul><li>" + data.ans12 + "</li></ul><li>If your loved one could look at the choices right now, what would they choose?</li><ul><li>" + data.ans13 + "</li></ul><li>How is this choice making you feel?</li><ul><li>" + data.ans14 + "</li></ul><li>Make a list and ask. Bring the list of questions to the meeting with the doctor, too.</li><ul><li>" + data.ans15 + "</li></ul><li> Where do you think your loved one would put themselves on the line below?</li></div>"
+        session['mailsent'] = True
+        mail.send(msg)
+        alertmsg = 'The report has been sent.'
+        print(session['mailsent'])
+        print("mail has been sent")
+        return render_template("report.html",
+                               ref_num = session['ref_num'],
+                               email = session['email'],
+                               alertmsg = alertmsg)
+    else:
+        alertmsg = "You didn't input your E-mail address"
+        return render_template("report.html",
+                               ref_num=session['ref_num'],
+                               email=session['email'],
+                               alertmsg=alertmsg)
 
 
 @app.route('/printable', methods=['POST'])
@@ -419,7 +472,6 @@ def admin_return_main():
         return render_template('admin_main.html', tablelist=visit.query.all())
     else:
         return redirect('/admin')
-        # , tablelist = visit.query.filter_by(ref_num=ref_post).all()
 
 
 @app.route('/admin/main/result', methods=['POST'])
