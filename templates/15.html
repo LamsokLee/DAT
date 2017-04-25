@@ -1,6 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
+<head>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -17,68 +17,72 @@
     <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
     <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
     <!--[if lt IE 9]>
-      <script src="https://oss.maxcdn.com/html5shiv/3.7.3/html5shiv.min.js"></script>
-      <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+    <script src="https://oss.maxcdn.com/html5shiv/3.7.3/html5shiv.min.js"></script>
+    <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
     <![endif]-->
-  </head>
-  <body>
-  <!--the head navbar of the website-->
+</head>
+<body>
+<!--the head navbar of the website-->
 {% include 'navbar.html' %}
-  <!--container of the whole content of the tool-->
-  <div class="container">
-        <h2 class = "text-center">
-            Goals-of-Care after Traumatic Brain Injury Decision Aid Prototype
-        </h2>
-        <br/>
-<!--the tabs-->
-{% include 'tab.html' %}
-        <!--the text box to put the main context-->
-        <div class="jumbotron">
-            <!--the head of this page-->
-            <!--button division-->
-            <div class="row">
-                <div class="col-md-6">
-                    <a href="{{url_for('page_14')}}">
-                        <button type="button" class="btn btn-primary pull-left" style="margin-bottom: 5%">
-                            <span class="glyphicon glyphicon glyphicon-menu-left" aria-hidden="true"></span>
-                        </button>
-                    </a>
-                </div>
-                <div class="col-md-6">
-                    <a href="{{url_for('page_16')}}">
-                        <button type="button" class="btn btn-primary pull-right" style="margin-bottom: 5%">
-                            <span class="glyphicon glyphicon glyphicon-menu-right" aria-hidden="true"></span>
-                        </button>
-                    </a>
-                </div>
+<!--container of the whole content of the tool-->
+<div class="container">
+    <h2 class="text-center">
+        Goals-of-Care after Traumatic Brain Injury Decision Aid Prototype
+    </h2>
+    <br/>
+    <!--the tabs-->
+    {% include 'tab.html' %}
+    <!--the text box to put the main context-->
+    <div class="jumbotron">
+        <!--the head of this page-->
+        <!--button division-->
+        <div class="row">
+            <div class="col-md-6">
+                <a href="{{url_for('page_14')}}">
+                    <button type="button" class="btn btn-primary pull-left" style="margin-bottom: 5%">
+                        <span class="glyphicon glyphicon glyphicon-menu-left" aria-hidden="true"></span>
+                    </button>
+                </a>
             </div>
-            <div class = "section-head"><h3 class="text-center">PATIENT EXAMPLES</h3></div><br>
-            <!--the paragraph in this page-->
-            <p>
-                Family members like you have told us that examples of other patients and their families are helpful to them for understanding the choices.
-            <p>
-                We will now take a look at two patient examples, who are in the ICU for treatment of their brain injury. These two patients have many differences. Their families will have to think about these differences when making a decision about the goal of care (survival or comfort).
-            </p>
-            <p>
-                As you read these examples, try to think about what your family member might want in each situation.
-            </p>
+            <div class="col-md-6">
+                <a href="{{url_for('page_16')}}">
+                    <button type="button" class="btn btn-primary pull-right" style="margin-bottom: 5%">
+                        <span class="glyphicon glyphicon glyphicon-menu-right" aria-hidden="true"></span>
+                    </button>
+                </a>
+            </div>
         </div>
-        <a href="{{url_for('page_14')}}">
-            <button type="button" class="btn btn-primary btn-lg pull-left" style="margin-bottom: 5%">
-                <span class="glyphicon glyphicon glyphicon-menu-left" aria-hidden="true"></span>Previous
-            </button>
-        </a>
-        <a href="{{url_for('page_16')}}">
-            <button type="button" class="btn btn-primary btn-lg pull-right" style="margin-bottom: 5%">Next
-                <span class="glyphicon glyphicon glyphicon-menu-right" aria-hidden="true"></span>
-            </button>
-        </a>
+        <div class="section-head"><h3 class="text-center">PATIENT EXAMPLES</h3></div>
+        <br>
+        <!--the paragraph in this page-->
+        <p>
+            Family members like you have told us that examples of other patients and their families are helpful to them
+            for understanding the choices.
+        <p>
+            We will now take a look at two patient examples, who are in the ICU for treatment of their brain injury.
+            These two patients have many differences. Their families will have to think about these differences when
+            making a decision about the goal of care (survival or comfort).
+        </p>
+        <p>
+            As you read these examples, try to think about what your family member might want in each situation.
+        </p>
     </div>
+    <a href="{{url_for('page_14')}}">
+        <button type="button" class="btn btn-primary btn-lg pull-left" style="margin-bottom: 5%">
+            <span class="glyphicon glyphicon glyphicon-menu-left" aria-hidden="true"></span>Previous
+        </button>
+    </a>
+    <a href="{{url_for('page_16')}}">
+        <button type="button" class="btn btn-primary btn-lg pull-right" style="margin-bottom: 5%">Next
+            <span class="glyphicon glyphicon glyphicon-menu-right" aria-hidden="true"></span>
+        </button>
+    </a>
+</div>
 
 
-    <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
-    <!-- Include all compiled plugins (below), or include individual files as needed -->
-    <script src="static/js/bootstrap.min.js"></script>
-  </body>
+<!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+<!-- Include all compiled plugins (below), or include individual files as needed -->
+<script src="static/js/bootstrap.min.js"></script>
+</body>
 </html>

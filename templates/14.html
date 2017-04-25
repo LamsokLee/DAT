@@ -1,6 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
+<head>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -17,118 +17,122 @@
     <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
     <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
     <!--[if lt IE 9]>
-      <script src="https://oss.maxcdn.com/html5shiv/3.7.3/html5shiv.min.js"></script>
-      <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+    <script src="https://oss.maxcdn.com/html5shiv/3.7.3/html5shiv.min.js"></script>
+    <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
     <![endif]-->
-  </head>
-  <body>
-  <!--the head navbar of the website-->
+</head>
+<body>
+<!--the head navbar of the website-->
 {% include 'navbar.html' %}
-  <!--container of the whole content of the tool-->
-  <div class="container">
-        <h2 class = "text-center">
-            Goals-of-Care after Traumatic Brain Injury Decision Aid Prototype
-        </h2>
-        <br/>
-<!--the tabs-->
-{% include 'tab.html' %}
-        <!--the text box to put the main context-->
-        <div class="jumbotron">
-            <!--the head of this page-->
-            <!--button division-->
-            <div class="row">
-                <div class="col-md-6">
-                    <a href="{{url_for('page_13')}}">
-                        <button type="button" class="btn btn-primary pull-left" style="margin-bottom: 5%">
-                            <span class="glyphicon glyphicon glyphicon-menu-left" aria-hidden="true"></span>
-                        </button>
-                    </a>
-                </div>
-                <div class="col-md-6">
-                    <a href="{{url_for('page_15')}}">
-                        <label for="submit_page_14" class="btn btn-primary pull-right" style="margin-bottom: 5%">
-                            <span class="glyphicon glyphicon glyphicon-menu-right" aria-hidden="true"></span>
-                        </label>
-                    </a>
-                </div>
+<!--container of the whole content of the tool-->
+<div class="container">
+    <h2 class="text-center">
+        Goals-of-Care after Traumatic Brain Injury Decision Aid Prototype
+    </h2>
+    <br/>
+    <!--the tabs-->
+    {% include 'tab.html' %}
+    <!--the text box to put the main context-->
+    <div class="jumbotron">
+        <!--the head of this page-->
+        <!--button division-->
+        <div class="row">
+            <div class="col-md-6">
+                <a href="{{url_for('page_13')}}">
+                    <button type="button" class="btn btn-primary pull-left" style="margin-bottom: 5%">
+                        <span class="glyphicon glyphicon glyphicon-menu-left" aria-hidden="true"></span>
+                    </button>
+                </a>
             </div>
-            <div class = "section-head"><h3 class="text-center">ARE YOU STILL UNSURE?</h3></div><br>
-            <h4 class="text-center">After reading the prior pages, how do you feel about making a decision?</h4>
-            <h4 class="text-center">Make an X on the line based on how you feel:</h4>
-            <div class="container well well-lg">
-              <form action="/post15" method="post" id="form_page_14">
-                <div class = "col-md-2 text-center">
+            <div class="col-md-6">
+                <a href="{{url_for('page_15')}}">
+                    <label for="submit_page_14" class="btn btn-primary pull-right" style="margin-bottom: 5%">
+                        <span class="glyphicon glyphicon glyphicon-menu-right" aria-hidden="true"></span>
+                    </label>
+                </a>
+            </div>
+        </div>
+        <div class="section-head"><h3 class="text-center">ARE YOU STILL UNSURE?</h3></div>
+        <br>
+        <h4 class="text-center">After reading the prior pages, how do you feel about making a decision?</h4>
+        <h4 class="text-center">Make an X on the line based on how you feel:</h4>
+        <div class="container well well-lg">
+            <form action="/post15" method="post" id="form_page_14">
+                <div class="col-md-2 text-center">
                     <h4>Please Choose your feeling:</h4>
                 </div>
-                <div class = "col-md-2 text-center">
+                <div class="col-md-2 text-center">
                     <label class="radio-inline">
-                      <input type="radio" value="Not ready at all" name="option">
+                        <input type="radio" value="Not ready at all" name="option">
                     </label>
                     <h5>Not ready at all</h5>
                 </div>
-                <div class = "col-md-2 text-center">
+                <div class="col-md-2 text-center">
                     <label class="radio-inline">
-                      <input type="radio" value="Somewhat not ready" name="option">
+                        <input type="radio" value="Somewhat not ready" name="option">
                     </label>
                     <h5>Somewhat not ready</h5>
                 </div>
-                <div class = "col-md-2 text-center">
+                <div class="col-md-2 text-center">
                     <label class="radio-inline">
-                      <input type="radio" value="Unsure" name="option">
+                        <input type="radio" value="Unsure" name="option">
                     </label>
                     <h5>Unsure</h5>
                 </div>
-                <div class = "col-md-2 text-center">
+                <div class="col-md-2 text-center">
                     <label class="radio-inline">
-                      <input type="radio" value="Somewhat ready" name="option">
+                        <input type="radio" value="Somewhat ready" name="option">
                     </label>
                     <h5>Somewhat ready</h5>
                 </div>
-                <div class = "col-md-2 text-center">
+                <div class="col-md-2 text-center">
                     <label class="radio-inline">
-                      <input type="radio" value="Ready" name="option">
+                        <input type="radio" value="Ready" name="option">
                     </label>
                     <h5>Ready</h5>
                 </div>
-                  <!--submit input button for the radio buttons-->
-                  <input type="submit" id="submit_page_14" class="hidden">
-              </form>
-            </div>
-            <p>
-                Even after thinking about the decision and options, you may still not be sure what is best for your loved one. Many people in this situation feel this way.
-            <p>
-                Some of the reasons may be:
-            </p>
-            <ul>
-                <li>
-                    You need to talk with others first.
-                </li>
-                <li>
-                    You may still have questions about the treatment choices.
-                </li>
-                <li>
-                    You need a little more time to think about things.
-                </li>
-            </ul>
-            <p class="alert alert-info">
-                It is very important to discuss your decision with your loved one’s doctor and ask any questions you may still have. There are many people here to help and support you. This includes doctors, nurses, palliative care specialists, chaplains, social workers and case managers.
-            </p>
+                <!--submit input button for the radio buttons-->
+                <input type="submit" id="submit_page_14" class="hidden">
+            </form>
         </div>
-        <a href="{{url_for('page_13')}}">
-            <button type="button" class="btn btn-primary btn-lg pull-left" style="margin-bottom: 5%">
-                <span class="glyphicon glyphicon glyphicon-menu-left" aria-hidden="true"></span>Previous
-            </button>
-        </a>
-        <a href="{{url_for('page_15')}}">
-            <label for="submit_page_14" class="btn btn-primary btn-lg pull-right" style="margin-bottom: 5%">
-                Next<span class="glyphicon glyphicon-menu-right" aria-hidden="true"></span>
-            </label>
-        </a>
+        <p>
+            Even after thinking about the decision and options, you may still not be sure what is best for your loved
+            one. Many people in this situation feel this way.
+        <p>
+            Some of the reasons may be:
+        </p>
+        <ul>
+            <li>
+                You need to talk with others first.
+            </li>
+            <li>
+                You may still have questions about the treatment choices.
+            </li>
+            <li>
+                You need a little more time to think about things.
+            </li>
+        </ul>
+        <p class="alert alert-info">
+            It is very important to discuss your decision with your loved one’s doctor and ask any questions you may
+            still have. There are many people here to help and support you. This includes doctors, nurses, palliative
+            care specialists, chaplains, social workers and case managers.
+        </p>
     </div>
+    <a href="{{url_for('page_13')}}">
+        <button type="button" class="btn btn-primary btn-lg pull-left" style="margin-bottom: 5%">
+            <span class="glyphicon glyphicon glyphicon-menu-left" aria-hidden="true"></span>Previous
+        </button>
+    </a>
+    <a href="{{url_for('page_15')}}">
+        <label for="submit_page_14" class="btn btn-primary btn-lg pull-right" style="margin-bottom: 5%">
+            Next<span class="glyphicon glyphicon-menu-right" aria-hidden="true"></span>
+        </label>
+    </a>
+</div>
 
-    <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
-    <!-- Include all compiled plugins (below), or include individual files as needed -->
-    <script src="static/js/bootstrap.min.js"></script>
-  </body>
+<!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+<!-- Include all compiled plugins (below), or include individual files as needed -->
+<script src="static/js/bootstrap.min.js"></script>
+</body>
 </html>

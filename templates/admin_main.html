@@ -1,6 +1,6 @@
 <!DOCTYPE html>
 <html lang="en" xmlns="http://www.w3.org/1999/html">
-  <head>
+<head>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -16,71 +16,71 @@
     <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
     <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
     <!--[if lt IE 9]>
-      <script src="https://oss.maxcdn.com/html5shiv/3.7.3/html5shiv.min.js"></script>
-      <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+    <script src="https://oss.maxcdn.com/html5shiv/3.7.3/html5shiv.min.js"></script>
+    <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
     <![endif]-->
-  </head>
-  <body>
-  <!--the head navbar of the website-->
-  {% include 'navbar_admin.html' %}
-  <form action="/admin/main/result" method="post">
+</head>
+<body>
+<!--the head navbar of the website-->
+{% include 'navbar_admin.html' %}
+<form action="/admin/main/result" method="post">
     <div class="row">
-      <div class="col-md-2">
-      </div>
-      <div class="col-md-3">
-        <label for="ref_num">Search by Reference Number:</label>
-        <input type="number" class="form-control" id="ref_num" name="ref_num">
-      </div>
-      <div class="col-md-3">
-        <label for="ref_num">Search by E-mail:</label>
-        <input type="email" class="form-control" id="email" name="email">
-      </div>
-      <div class="col-md-4">
-        <input type="submit" class="hidden" name="submit" id="submit">
-          <label for="submit" type="button" class="btn btn-primary btn-lg" style="margin-top: 5%" >Submit
-          <span class="glyphicon glyphicon" aria-hidden="true"></span>
-        </label>
-        <a href="{{url_for('admin_return_main')}}">
-          <button type="button" class="btn btn-primary btn-lg" style="margin-top: 5%">List all
-            <span class="glyphicon glyphicon" aria-hidden="true"></span>
-          </button>
-        </a>
-      </div>
+        <div class="col-md-2">
+        </div>
+        <div class="col-md-3">
+            <label for="ref_num">Search by Reference Number:</label>
+            <input type="number" class="form-control" id="ref_num" name="ref_num">
+        </div>
+        <div class="col-md-3">
+            <label for="ref_num">Search by E-mail:</label>
+            <input type="email" class="form-control" id="email" name="email">
+        </div>
+        <div class="col-md-4">
+            <input type="submit" class="hidden" name="submit" id="submit">
+            <label for="submit" type="button" class="btn btn-primary btn-lg" style="margin-top: 5%">Submit
+                <span class="glyphicon" aria-hidden="true"></span>
+            </label>
+            <a href="{{url_for('admin_return_main')}}">
+                <button type="button" class="btn btn-primary btn-lg" style="margin-top: 5%">List all
+                    <span class="glyphicon glyphicon" aria-hidden="true"></span>
+                </button>
+            </a>
+        </div>
     </div>
-  </form>
+</form>
 
 
-  <!--container of the table-->
-  <div class="container">
+<!--container of the table-->
+<div class="container">
     <table class="table table-striped">
-      <thead>
+        <thead>
         <tr>
-          <th>Reference Number</th>
-          <th>User E-mail</th>
-          <th>Start Time</th>
-          <th>End Time</th>
+            <th>Reference Number</th>
+            <th>User E-mail</th>
+            <th>Start Time</th>
+            <th>End Time</th>
         </tr>
-      </thead>
-      <tbody>
+        </thead>
+        <tbody>
         {% for rows in tablelist %}
         <tr>
-          <td>{{rows.ref_num}}</td>
-          <td>{{rows.email}}</td>
-          <td>{{rows.start_time}}</td>
-          <td>{{rows.end_time}}</td>
+            <td>{{rows.ref_num}}</td>
+            <td>{{rows.email}}</td>
+            <td>{{rows.start_time}}</td>
+            <td>{{rows.end_time}}</td>
         </tr>
         {% endfor %}
-      </tbody>
+        </tbody>
     </table>
-  </div>
-    {% if no_result == True %}
-    <div class="text-center">
-      No matched result
-    </div>
-    {% endif %}
-    <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
-    <!-- Include all compiled plugins (below), or include individual files as needed -->
-    <script src="static/js/bootstrap.min.js"></script>
-  </body>
+</div>
+{% if no_result == True %}
+<div class="text-center">
+    No matched result
+</div>
+{% endif %}
+<!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+<!-- Include all compiled plugins (below), or include individual files as needed -->
+<script src="static/js/bootstrap.min.js"></script>
+</body>
 </html>

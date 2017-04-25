@@ -1,6 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
+<head>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -17,287 +17,307 @@
     <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
     <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
     <!--[if lt IE 9]>
-      <script src="https://oss.maxcdn.com/html5shiv/3.7.3/html5shiv.min.js"></script>
-      <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+    <script src="https://oss.maxcdn.com/html5shiv/3.7.3/html5shiv.min.js"></script>
+    <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
     <![endif]-->
-      <!--<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.0/jquery.min.js"></script>-->
-  </head>
-  <body>
+    <!--<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.0/jquery.min.js"></script>-->
+</head>
+<body>
 
-  <!--the pop out window-->
-  <div class="container">
-  <!-- Modal -->
-  <div class="modal fade" id="myModal" role="dialog">
-    <div class="modal-dialog">
+<!--the pop out window-->
+<div class="container">
+    <!-- Modal -->
+    <div class="modal fade" id="myModal" role="dialog">
+        <div class="modal-dialog">
 
-      <!-- Modal content-->
-      <div class="modal-content">
-        <div class="modal-header">
-          <button type="button" class="close" data-dismiss="modal">&times;</button>
-          <h4 class="modal-title">Followings are what you said before:</h4>
-        </div>
-        <div class="modal-body">
-            <ul>
-              <li>
-                  What is most important for my loved one right now?
+            <!-- Modal content-->
+            <div class="modal-content">
+                <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal">&times;</button>
+                    <h4 class="modal-title">This is what you have said before:</h4>
+                </div>
+                <div class="modal-body">
                     <ul>
-                        {% if (ans1 == '') and (ans2 == '') and (ans3 == '') %}
-                            <li>No answer submitted</li>
-                        {% else %}
-                            {% if ans1 != '' %}
+                        <li>
+                            <b>What is most important for my loved one right now?</b>
+                            <ul>
+                                {% if (ans1 == '') and (ans2 == '') and (ans3 == '') %}
+                                <li>No answer submitted</li>
+                                {% else %}
+                                {% if ans1 != '' %}
                                 <li>{{ans1}}</li>
-                            {% endif %}
-                            {% if ans2 != '' %}
+                                {% endif %}
+                                {% if ans2 != '' %}
                                 <li>{{ans2}}</li>
-                            {% endif %}
-                            {% if ans3 != '' %}
+                                {% endif %}
+                                {% if ans3 != '' %}
                                 <li>{{ans3}}</li>
-                            {% endif %}
-                        {% endif %}
+                                {% endif %}
+                                {% endif %}
+                            </ul>
+                        </li>
+                        <li>
+                            <b>What is most important for you right now?</b>
+                            <ul>
+                                {% if (ans4 == '') and (ans5 == '') and (ans6 == '') %}
+                                <li>No answer submitted</li>
+                                {% else %}
+                                {% if ans4 != '' %}
+                                <li>{{ans4}}</li>
+                                {% endif %}
+                                {% if ans5 != '' %}
+                                <li>{{ans5}}</li>
+                                {% endif %}
+                                {% if ans6 != '' %}
+                                <li>{{ans6}}</li>
+                                {% endif %}
+                                {% endif %}
+                            </ul>
+                        </li>
+                        <li>
+                            <b>My feeling about the decision:</b>
+                            <ul>
+                                <li>{{ans7}}</li>
+                            </ul>
+                        </li>
                     </ul>
-              </li>
-              <li>
-                  What is most important for you right now?
-                    <ul>
-                        {% if (ans4 == '') and (ans5 == '') and (ans6 == '') %}
-                            <li>No answer submitted</li>
-                        {% else %}
-                            {% if ans4 != '' %}
-                                <li>{{ans1}}</li>
-                            {% endif %}
-                            {% if ans5 != '' %}
-                                <li>{{ans2}}</li>
-                            {% endif %}
-                            {% if ans6 != '' %}
-                                <li>{{ans3}}</li>
-                            {% endif %}
-                        {% endif %}
-                    </ul>
-              </li>
-              <li>My feeling about the decision:
-                  <ul>
-                      <li>{{ans7}}</li>
-                  </ul>
-              </li>
-            </ul>
-        </div>
-        <div class="modal-footer">
-          <button type="button" class="btn btn-default" data-dismiss="modal">Continue</button>
-        </div>
-      </div>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-default" data-dismiss="modal">Continue</button>
+                </div>
+            </div>
 
+        </div>
     </div>
-  </div>
 
 </div>
 
-  <!--the head navbar of the website-->
+<!--the head navbar of the website-->
 {% include 'navbar.html' %}
-  <!--container of the whole content of the tool-->
-  <div class="container">
-        <h2 class = "text-center">
-            Goals-of-Care after Traumatic Brain Injury Decision Aid Prototype
-        </h2>
-        <br/>
-<!--the tabs-->
-{% include 'tab.html' %}
-        <!--the text box to put the main context-->
-        <div class="jumbotron">
-            <!--button division-->
-            <div class="row">
-                <div class="col-md-6">
-                    <a href="{{url_for('page_17')}}">
-                        <button type="button" class="btn btn-primary pull-left" style="margin-bottom: 5%">
-                            <span class="glyphicon glyphicon glyphicon-menu-left" aria-hidden="true"></span>
-                        </button>
-                    </a>
-                </div>
+<!--container of the whole content of the tool-->
+<div class="container">
+    <h2 class="text-center">
+        Goals-of-Care after Traumatic Brain Injury Decision Aid Prototype
+    </h2>
+    <br/>
+    <!--the tabs-->
+    {% include 'tab.html' %}
+    <!--the text box to put the main context-->
+    <div class="jumbotron">
+        <!--button division-->
+        <div class="row">
+            <div class="col-md-6">
+                <a href="{{url_for('page_17')}}">
+                    <button type="button" class="btn btn-primary pull-left" style="margin-bottom: 5%">
+                        <span class="glyphicon glyphicon glyphicon-menu-left" aria-hidden="true"></span>
+                    </button>
+                </a>
             </div>
-            <!--the head of this page-->
-            <div class="section-head">
-                <h3 class="text-center">YOUR OWN WORKSHEET:<br/><br/>HOW TO MAKE A DECISION FOR YOUR LOVED ONE</h3>
-            </div>
-            <br>
-            <div class="alert alert-success text-center">
-                Please complete this worksheet as best as you can. Bring it to the meeting with the doctor.
-            </div>
+        </div>
+        <!--the head of this page-->
+        <div class="section-head">
+            <h3 class="text-center">YOUR OWN WORKSHEET:<br/><br/>HOW TO MAKE A DECISION FOR YOUR LOVED ONE</h3>
+        </div>
+        <br>
+        <div class="alert alert-info text-center">
+            Please complete this worksheet as best as you can. Bring it to the meeting with the doctor.
+        </div>
 
-            <!--the dropdown box-->
-            <form action="/postpreview" method="post">
-                <div class="panel-group" id="accordion">
-                  <div class="panel panel-default">
+        <!--the dropdown box-->
+        <form action="/postpreview" method="post">
+            <div class="panel-group" id="accordion">
+                <div class="panel panel-default">
                     <div class="panel-heading">
-                      <h4 class="panel-title">
-                        <a data-toggle="collapse" data-parent="#accordion" href="#collapse1" id="block5">
-                            <span class="glyphicon glyphicon-ok" aria-hidden="true" id="css5" style="display: none;"></span>
-                        1) What do you understand about the outlook of your loved one, and the options?</a>
-                      </h4>
+                        <h4 class="panel-title">
+                            <a data-toggle="collapse" data-parent="#accordion" href="#collapse1" id="block5">
+                                <span class="glyphicon glyphicon-ok" aria-hidden="true" id="css5"
+                                      style="display: none;"></span>
+                                1) What do you understand about the outlook of your loved one, and the options?</a>
+                        </h4>
                     </div>
                     <div id="collapse1" class="panel-collapse collapse">
-                      <div class="panel-body">
-                          <div class="form-group"> 
-                              <label for="ans8">
-                                  What is your loved one’s outlook for getting better and how independent will he/she be with further medical care after the ICU?
-                              </label> 
-                              <textarea name ="ans8" class="form-control" rows="3" id="ans8">{{ans8}}</textarea> 
-                          </div>
-                           <div class="form-group">
-                              <label for="ans9">
-                                  Do you understand what your loved one’s life will be like based on the two different treatment goals?
-                              </label> 
-                              <textarea name = "ans9" class="form-control" rows="3" id="ans9">{{ans9}}</textarea>
-                           </div> <div class="form-group">
+                        <div class="panel-body">
+                            <div class="form-group"> 
+                                <label for="ans8">
+                                    What is your loved one’s outlook for getting better and how independent will he/she
+                                    be with further medical care after the ICU?
+                                </label> 
+                                <textarea name="ans8" class="form-control" rows="3" id="ans8">{{ans8}}</textarea> 
+                            </div>
+                             
+                            <div class="form-group">
+                                <label for="ans9">
+                                    Do you understand what your loved one’s life will be like based on the two different
+                                    treatment goals?
+                                </label> 
+                                <textarea name="ans9" class="form-control" rows="3" id="ans9">{{ans9}}</textarea>
+                                 
+                            </div>
+                             
+                            <div class="form-group">
                                 <label for="ans10">
                                     Is this quality of life acceptable to your loved one?
                                 </label> 
-                              <textarea name="ans10" class="form-control" rows="3" id="ans10">{{ans10}}</textarea>
-                               </div> 
-                          <div class="form-group"> 
-                              <label for="ans11">
-                                  Do you understand the pros and cons of the two treatment goals/choices?
-                              </label>
-                               <textarea name="ans11" class="form-control" rows="3" id="ans11">{{ans11}}</textarea> 
-                          </div>
-                      </div>
+                                <textarea name="ans10" class="form-control" rows="3" id="ans10">{{ans10}}</textarea>
+                                 
+                            </div>
+                             
+                            <div class="form-group"> 
+                                <label for="ans11">
+                                    Do you understand the pros and cons of the two treatment goals/choices?
+                                </label>
+                                 <textarea name="ans11" class="form-control" rows="3" id="ans11">{{ans11}}</textarea> 
+                            </div>
+                        </div>
                     </div>
-                  </div>
-                  <div class="panel panel-default">
+                </div>
+                <div class="panel panel-default">
                     <div class="panel-heading">
-                      <h4 class="panel-title">
-                        <a data-toggle="collapse" data-parent="#accordion" href="#collapse2" id="block6">
-                            <span class="glyphicon glyphicon-ok" aria-hidden="true" id="css6" style="display: none;"></span>
-                            2) What would your loved one want?
-                        </a>
-                      </h4>
+                        <h4 class="panel-title">
+                            <a data-toggle="collapse" data-parent="#accordion" href="#collapse2" id="block6">
+                                <span class="glyphicon glyphicon-ok" aria-hidden="true" id="css6"
+                                      style="display: none;"></span>
+                                2) What would your loved one want?
+                            </a>
+                        </h4>
                     </div>
                     <div id="collapse2" class="panel-collapse collapse">
-                      <div class="panel-body">
-                          <div class="form-group"> 
-                              <label for="ans12">
-                                 What are their wishes for medical treatments when illness is severe or possibly leave them disabled? Have they mentioned it to you? Do they have a living will?
-                              </label> 
-                              <textarea name="ans12" class="form-control" rows="3" id="ans12">{{ans12}}</textarea> 
-                          </div>
-                           <div class="form-group">
-                              <label for="ans13">
-                              If your loved one could look at the choices right now, what would they choose?
-                              </label> 
-                              <textarea name="ans13" class="form-control" rows="3" id="ans13">{{ans13}}</textarea> </div> 
-                      </div>
+                        <div class="panel-body">
+                            <div class="form-group"> 
+                                <label for="ans12">
+                                    What are their wishes for medical treatments when illness is severe or possibly
+                                    leave them disabled? Have they mentioned it to you? Do they have a living will?
+                                </label> 
+                                <textarea name="ans12" class="form-control" rows="3" id="ans12">{{ans12}}</textarea> 
+                            </div>
+                             
+                            <div class="form-group">
+                                <label for="ans13">
+                                    If your loved one could look at the choices right now, what would they choose?
+                                </label> 
+                                <textarea name="ans13" class="form-control" rows="3" id="ans13">{{ans13}}</textarea> 
+                            </div>
+                             
+                        </div>
                     </div>
-                  </div>
-                  <div class="panel panel-default">
+                </div>
+                <div class="panel panel-default">
                     <div class="panel-heading">
-                      <h4 class="panel-title">
-                        <a data-toggle="collapse" data-parent="#accordion" href="#collapse3" id="block7">
-                            <span class="glyphicon glyphicon-ok" aria-hidden="true" id="css7" style="display: none;"></span>
-                            3) How is this choice making you feel?
-                        </a>
-                      </h4>
+                        <h4 class="panel-title">
+                            <a data-toggle="collapse" data-parent="#accordion" href="#collapse3" id="block7">
+                                <span class="glyphicon glyphicon-ok" aria-hidden="true" id="css7"
+                                      style="display: none;"></span>
+                                3) How is this choice making you feel?
+                            </a>
+                        </h4>
                     </div>
                     <div id="collapse3" class="panel-collapse collapse">
-                      <div class="panel-body">
-                         <textarea name="ans14"class="form-control" rows="3" id="ans14">{{ans14}}</textarea> 
-                      </div>
+                        <div class="panel-body">
+                            <textarea name="ans14" class="form-control" rows="3" id="ans14">{{ans14}}</textarea> 
+                        </div>
                     </div>
-                  </div>
-                  <div class="panel panel-default">
+                </div>
+                <div class="panel panel-default">
                     <div class="panel-heading">
-                      <h4 class="panel-title">
-                        <a data-toggle="collapse" data-parent="#accordion" href="#collapse4" id="block8">
-                            <span class="glyphicon glyphicon-ok" aria-hidden="true" id="css8" style="display: none;"></span>
-                        4) What questions do you need answered before you can decide?</a>
-                      </h4>
+                        <h4 class="panel-title">
+                            <a data-toggle="collapse" data-parent="#accordion" href="#collapse4" id="block8">
+                                <span class="glyphicon glyphicon-ok" aria-hidden="true" id="css8"
+                                      style="display: none;"></span>
+                                4) What questions do you need answered before you can decide?</a>
+                        </h4>
                     </div>
                     <div id="collapse4" class="panel-collapse collapse">
-                      <div class="panel-body">
-                          <label for="ans15">
+                        <div class="panel-body">
+                            <label for="ans15">
                                 Make a list and ask. Bring the list of questions to the meeting with the doctor, too.
-                          </label>
-                          <textarea name="ans15" class="form-control" rows="6" id="ans15">{{ans15}}</textarea>
-                      </div>
+                            </label>
+                            <textarea name="ans15" class="form-control" rows="6" id="ans15">{{ans15}}</textarea>
+                        </div>
                     </div>
-                  </div>
-                  <div class="panel panel-default">
+                </div>
+                <div class="panel panel-default">
                     <div class="panel-heading">
-                      <h4 class="panel-title">
-                        <a data-toggle="collapse" data-parent="#accordion" href="#collapse5" id="block9">
-                            <span class="glyphicon glyphicon-ok" aria-hidden="true" id="css9" style="display: none;"></span>
+                        <h4 class="panel-title">
+                            <a data-toggle="collapse" data-parent="#accordion" href="#collapse5" id="block9">
+                                <span class="glyphicon glyphicon-ok" aria-hidden="true" id="css9"
+                                      style="display: none;"></span>
 
-                              5) Comfort or survival
-                        </a>
-                      </h4>
+                                5) Comfort or survival
+                            </a>
+                        </h4>
                     </div>
                     <div id="collapse5" class="panel-collapse collapse">
-                      <div class="panel-body text-center">
-                          Imagine a line where the right side is comfort care and the left side is doing everything possible for survival.
-                          <br/>
-                          <i>Where do you think your loved one would put themselves on the line below?</i><br><br>
-                          <div class = "col-md-1 text-center">
-                            <h4>Survival</h4>
-                          </div>
-                          <div class = "col-md-10"><br>
-                            <input type="range" name="ans16" min="0" max="100" id="ans16" value={{ans16}}>
-                          </div>
-                          <div class = "col-md-1 text-center">
-                            <h4>Comfort</h4>
-                          </div>
-                      </div>
+                        <div class="panel-body text-center">
+                            Imagine a line where the right side is comfort care and the left side is doing everything
+                            possible for survival.
+                            <br/>
+                            <i>Where do you think your loved one would put themselves on the line below?</i><br><br>
+                            <div class="col-md-1 text-center">
+                                <h4>Survival</h4>
+                            </div>
+                            <div class="col-md-10"><br>
+                                <input type="range" name="ans16" min="0" max="100" id="ans16" value={{ans16}}>
+                            </div>
+                            <div class="col-md-1 text-center">
+                                <h4>Comfort</h4>
+                            </div>
+                        </div>
                     </div>
-                  </div>
                 </div>
-                <input type="submit" id="submit-answer" class="hidden">
-                <div class="form-group">
-                      <label for="email">Your E-mail address:</label>
-                      <input type="email" aria-describedby="emailHelp" placeholder="Enter email" class="form-control" name = "email" value="{{email}}" id="email">
-                </div>
-             </form>
-        </div>
-            <a href="{{url_for('page_17')}}">
-                <button type="button" class="btn btn-primary btn-lg pull-left" style="margin-bottom: 5%">
-                    <span class="glyphicon glyphicon-menu-left" aria-hidden="true"></span>Previous
-                </button>
-            </a>
-                <label for="submit-answer" class="btn btn-primary btn-lg pull-right" style="margin-bottom: 5%" id="btn3">
-                <!--TODO: the icon of submit button -->
-                    Review
-                </label>
+            </div>
+            <input type="submit" id="submit-answer" class="hidden">
+            <div class="form-group">
+                <label for="email">Your E-mail address:</label>
+                <input type="email" aria-describedby="emailHelp" placeholder="Enter email" class="form-control"
+                       name="email" value="{{email}}" id="email">
+            </div>
+        </form>
+    </div>
+    <a href="{{url_for('page_17')}}">
+        <button type="button" class="btn btn-primary btn-lg pull-left" style="margin-bottom: 5%">
+            <span class="glyphicon glyphicon-menu-left" aria-hidden="true"></span>Previous
+        </button>
+    </a>
+    <label for="submit-answer" class="btn btn-primary btn-lg pull-right" style="margin-bottom: 5%" id="btn3">
+        <!--TODO: the icon of submit button -->
+        Review
+    </label>
 
-  </div>
+</div>
 
 
+<!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.0/jquery.min.js"></script>
+<!-- Include all compiled plugins (below), or include individual files as needed -->
+<script src="static/js/bootstrap.min.js"></script>
+<script type="text/javascript">
+    $('#myModal').modal('show');
+</script>
+<script type="text/javascript">
+    $('#block5').click(function () {
+        $('#css5').css("display", "inline-block")
+    });
+    $('#block6').click(function () {
+        $('#css6').css("display", "inline-block")
+    });
+    $('#block7').click(function () {
+        $('#css7').css("display", "inline-block")
+    });
+    $('#block8').click(function () {
+        $('#css8').css("display", "inline-block")
+    });
+    $('#block9').click(function () {
+        $('#css9').css("display", "inline-block")
+    });
 
-    <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.0/jquery.min.js"></script>
-    <!-- Include all compiled plugins (below), or include individual files as needed -->
-    <script src="static/js/bootstrap.min.js"></script>
-    <script type="text/javascript">
-        $('#myModal').modal('show');
-    </script>
-     <script type="text/javascript">
-        $('#block5').click(function () {
-            $('#css5').css("display", "inline-block")
-        });
-        $('#block6').click(function () {
-            $('#css6').css("display", "inline-block")
-        });
-        $('#block7').click(function () {
-            $('#css7').css("display", "inline-block")
-        });
-        $('#block8').click(function () {
-            $('#css8').css("display", "inline-block")
-        });
-        $('#block9').click(function () {
-            $('#css9').css("display", "inline-block")
-        });
-
-        $("#btn3").click(function () {
-          if ($("#css5").css("display") == "inline-block" && $("#css6").css("display") == "inline-block" && $("#css7").css("display") == "inline-block"
-             && $("#css8").css("display") == "inline-block" && $("#css9").css("display") == "inline-block") {
+    $("#btn3").click(function () {
+        if ($("#css5").css("display") == "inline-block" && $("#css6").css("display") == "inline-block" && $("#css7").css("display") == "inline-block"
+            && $("#css8").css("display") == "inline-block" && $("#css9").css("display") == "inline-block") {
             window.location.href = "/preview";
         } else {
             alert("You have section not be finished on this page, pelase check it")
-        }});
-    </script>
-  </body>
+        }
+    });
+</script>
+</body>
 </html>

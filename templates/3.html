@@ -1,6 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
+<head>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -17,92 +17,102 @@
     <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
     <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
     <!--[if lt IE 9]>
-      <script src="https://oss.maxcdn.com/html5shiv/3.7.3/html5shiv.min.js"></script>
-      <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+    <script src="https://oss.maxcdn.com/html5shiv/3.7.3/html5shiv.min.js"></script>
+    <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
     <![endif]-->
-  </head>
-  <body>
-  <!--the head navbar of the website-->
+</head>
+<body>
+<!--the head navbar of the website-->
 {% include 'navbar.html' %}
-  <!--container of the whole content of the tool-->
-  <div class="container">
-        <h2 class = "text-center">
-            Goals-of-Care after Traumatic Brain Injury Decision Aid Prototype
-        </h2>
-        <br/>
+<!--container of the whole content of the tool-->
+<div class="container">
+    <h2 class="text-center">
+        Goals-of-Care after Traumatic Brain Injury Decision Aid Prototype
+    </h2>
+    <br/>
     <!--the tabs-->
     {% include 'tab.html' %}
-        <!--the text box to put the main context-->
-        <div class="jumbotron">
-            <!--button division-->
-            <div class="row">
-                <div class="col-md-6">
-                    <a href="{{url_for('page_2')}}">
-                        <button type="button" class="btn btn-primary pull-left" style="margin-bottom: 5%">
-                            <span class="glyphicon glyphicon glyphicon-menu-left" aria-hidden="true"></span>
-                        </button>
-                    </a>
-                </div>
-                <div class="col-md-6">
-                    <a href="{{url_for('page_4')}}">
-                        <button type="button" class="btn btn-primary pull-right" style="margin-bottom: 5%">
-                            <span class="glyphicon glyphicon glyphicon-menu-right" aria-hidden="true"></span>
-                        </button>
-                    </a>
-                </div>
+    <!--the text box to put the main context-->
+    <div class="jumbotron">
+        <!--button division-->
+        <div class="row">
+            <div class="col-md-6">
+                <a href="{{url_for('page_2')}}">
+                    <button type="button" class="btn btn-primary pull-left" style="margin-bottom: 5%">
+                        <span class="glyphicon glyphicon glyphicon-menu-left" aria-hidden="true"></span>
+                    </button>
+                </a>
             </div>
-            <!--<button type="button" onclick="previous_page()" class="btn btn-primary pull-left" style="margin-bottom: 5%">-->
-            <!--<span class="glyphicon glyphicon glyphicon-menu-left" aria-hidden="true"></span>-->
-            <!--</button>-->
-            <!--<button type="button" onclick="next_page()" class="btn btn-primary pull-right" style="margin-bottom: 5%">-->
-            <!--<span class="glyphicon glyphicon glyphicon-menu-right" aria-hidden="true"></span>-->
-            <!--</button>-->
-            <!--<br/>-->
-            <!--the head of this page-->
-
-            <!--the paragraph in this page-->
-            <div class="row">
-                <br/>
-                <div class="col-xs-12 col-md-7">
-                <div class = "section-head"><h3 class="text-center">WHAT IS A MECHANICAL VENTILATOR?</h3></div><br>
-                <p>
-                    A mechanical ventilator is a breathing machine that provides artificial breathing support. The ventilator pumps air and oxygen into the lungs through a breathing tube. This breathing tube goes through the mouth into the windpipe. It is also called “life support”.
-                </p>
-                <p>
-                    The ventilator supports a patient while treatments are given for their medical problem, like TBI. <b>The ventilator itself does not cure the injury.</b>
-                </p>
-                <br/>
-                <br/>
-                <div class = "section-head"><h3 class="text-center">WHAT IS IT LIKE TO BE ON A VENTILATOR?</h3></div><br>
-                    <!--the paragraph in this page-->
-                <p>
-                    It is uncomfortable to be on a ventilator. Patients often need medicines for pain and to help them relax while they are on it. Patients cannot eat or drink by mouth while on a ventilator because of the tubes in their mouth. Patients cannot make a sound when on a ventilator.
-                </p>
-                <p>
-                    Patients who are on a ventilator are very sick. They are usually on them for several days or weeks. Many TBI patients cannot breathe or swallow on their own for many weeks or months. <b>Therefore, the doctor will ask you to make an important decision.</b>
-                </p>
-                </div>
-                <div class="col-xs-6 col-md-5">
-                    <br/>
-                    <img class="img-responsive" src="{{url_for('static', filename = 'img/Ventilator.JPG')}}" alt="Ventilator">
-                </div>
+            <div class="col-md-6">
+                <a href="{{url_for('page_4')}}">
+                    <button type="button" class="btn btn-primary pull-right" style="margin-bottom: 5%">
+                        <span class="glyphicon glyphicon glyphicon-menu-right" aria-hidden="true"></span>
+                    </button>
+                </a>
             </div>
         </div>
-        <a href="{{url_for('page_2')}}">
-            <button type="button" class="btn btn-primary btn-lg pull-left" style="margin-bottom: 5%">
-                <span class="glyphicon glyphicon-menu-left" aria-hidden="true"></span>Previous
-            </button>
-        </a>
-        <a href="{{url_for('page_4')}}">
-            <button type="button" class="btn btn-primary btn-lg pull-right" style="margin-bottom: 5%">Next
-                <span class="glyphicon glyphicon-menu-right" aria-hidden="true"></span>
-            </button>
-        </a>
-    </div>
+        <!--<button type="button" onclick="previous_page()" class="btn btn-primary pull-left" style="margin-bottom: 5%">-->
+        <!--<span class="glyphicon glyphicon glyphicon-menu-left" aria-hidden="true"></span>-->
+        <!--</button>-->
+        <!--<button type="button" onclick="next_page()" class="btn btn-primary pull-right" style="margin-bottom: 5%">-->
+        <!--<span class="glyphicon glyphicon glyphicon-menu-right" aria-hidden="true"></span>-->
+        <!--</button>-->
+        <!--<br/>-->
+        <!--the head of this page-->
 
-    <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
-    <!-- Include all compiled plugins (below), or include individual files as needed -->
-    <script src="static/js/bootstrap.min.js"></script>
-  </body>
+        <!--the paragraph in this page-->
+        <div class="row">
+            <br/>
+            <div class="col-xs-12 col-md-7">
+                <div class="section-head"><h3 class="text-center">WHAT IS A MECHANICAL VENTILATOR?</h3></div>
+                <br>
+                <p>
+                    A mechanical ventilator is a breathing machine that provides artificial breathing support. The
+                    ventilator pumps air and oxygen into the lungs through a breathing tube. This breathing tube goes
+                    through the mouth into the windpipe. It is also called “life support”.
+                </p>
+                <p>
+                    The ventilator supports a patient while treatments are given for their medical problem, like TBI.
+                    <b>The ventilator itself does not cure the injury.</b>
+                </p>
+                <br/>
+                <br/>
+                <div class="section-head"><h3 class="text-center">WHAT IS IT LIKE TO BE ON A VENTILATOR?</h3></div>
+                <br>
+                <!--the paragraph in this page-->
+                <p>
+                    It is uncomfortable to be on a ventilator. Patients often need medicines for pain and to help them
+                    relax while they are on it. Patients cannot eat or drink by mouth while on a ventilator because of
+                    the tubes in their mouth. Patients cannot make a sound when on a ventilator.
+                </p>
+                <p>
+                    Patients who are on a ventilator are very sick. They are usually on them for several days or weeks.
+                    Many TBI patients cannot breathe or swallow on their own for many weeks or months. <b>Therefore, the
+                    doctor will ask you to make an important decision.</b>
+                </p>
+            </div>
+            <div class="col-xs-6 col-md-5">
+                <br/>
+                <img class="img-responsive" src="{{url_for('static', filename = 'img/Ventilator.JPG')}}"
+                     alt="Ventilator">
+            </div>
+        </div>
+    </div>
+    <a href="{{url_for('page_2')}}">
+        <button type="button" class="btn btn-primary btn-lg pull-left" style="margin-bottom: 5%">
+            <span class="glyphicon glyphicon-menu-left" aria-hidden="true"></span>Previous
+        </button>
+    </a>
+    <a href="{{url_for('page_4')}}">
+        <button type="button" class="btn btn-primary btn-lg pull-right" style="margin-bottom: 5%">Next
+            <span class="glyphicon glyphicon-menu-right" aria-hidden="true"></span>
+        </button>
+    </a>
+</div>
+
+<!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+<!-- Include all compiled plugins (below), or include individual files as needed -->
+<script src="static/js/bootstrap.min.js"></script>
+</body>
 </html>

@@ -3,9 +3,9 @@
     <ul class="nav nav-pills nav-justified">
         {% if page == 1 or page == 2 %}
         <li class="dropdown active">
-        {% else %}
+            {% else %}
         <li class="dropdown">
-        {% endif %}
+            {% endif %}
             <a class="dropdown-toggle" data-toggle="dropdown" href="#">Overview<br/><br/>
                 <span class="caret"></span></a>
             <ul class="dropdown-menu">
@@ -15,9 +15,9 @@
         </li>
         {% if page == 3 %}
         <li class="dropdown active">
-        {% else %}
+            {% else %}
         <li class="dropdown">
-        {% endif %}
+            {% endif %}
             <a class="dropdown-toggle" data-toggle="dropdown" href="#">Mechanical Ventilator<br/>
                 <span class="caret"></span></a>
             <ul class="dropdown-menu">
@@ -27,9 +27,9 @@
         </li>
         {% if page == 4 or page == 5 %}
         <li class="dropdown active">
-        {% else %}
+            {% else %}
         <li class="dropdown">
-        {% endif %}
+            {% endif %}
             <a class="dropdown-toggle" data-toggle="dropdown" href="#">What should you decide?<br/>
                 <span class="caret"></span></a>
             <ul class="dropdown-menu">
@@ -40,38 +40,40 @@
         </li>
         {% if page == 6 or page == 7 %}
         <li class="dropdown active">
-        {% else %}
+            {% else %}
         <li class="dropdown">
-        {% endif %}
+            {% endif %}
             <a class="dropdown-toggle" data-toggle="dropdown" href="#">Patient Outlook<br/><br/>
                 <span class="caret"></span></a>
             <ul class="dropdown-menu">
-                <li><a href="{{url_for('page_6')}}">What is my loved one's outlook?<br/>What are the long-term effects from the TBI?</a></li>
+                <li><a href="{{url_for('page_6')}}">What is my loved one's outlook?<br/>What are the long-term effects
+                    from the TBI?</a></li>
                 <li><a href="{{url_for('page_7')}}">How certain or uncertain is the outlook for my loved one?</a></li>
             </ul>
         </li>
         {% if page == 8 or page == 9 or page == 10 or page == 11 or page == 12%}
         <li class="dropdown active">
-        {% else %}
+            {% else %}
         <li class="dropdown">
-        {% endif %}
-        <a class="dropdown-toggle" data-toggle="dropdown" href="#">Treatment Options<br/><br/>
+            {% endif %}
+            <a class="dropdown-toggle" data-toggle="dropdown" href="#">Treatment Options<br/><br/>
                 <span class="caret"></span></a>
             <ul class="dropdown-menu">
                 <li><a href="{{url_for('page_8')}}">Introduction</a></li>
                 <li><a href="{{url_for('page_9')}}">What does it mean to have comfort at the goal of care?</a></li>
                 <li><a href="{{url_for('page_10')}}">What is the treatment that focuses on Maxine survival?</a></li>
-                <li><a href="{{url_for('page_11')}}">If I choose survival as the goal of care, what happens with my loved one after they leave the ICU?</a></li>
+                <li><a href="{{url_for('page_11')}}">If I choose survival as the goal of care, what happens with my
+                    loved one after they leave the ICU?</a></li>
                 <li><a href="{{url_for('page_12')}}">Comparing and summarizing different treatment options</a></li>
             </ul>
         </li>
         </li>
         {% if page == 13 or page == 14 %}
         <li class="dropdown active">
-        {% else %}
+            {% else %}
         <li class="dropdown">
-        {% endif %}
-        <a class="dropdown-toggle" data-toggle="dropdown" href="#">Making Decision<br/><br/>
+            {% endif %}
+            <a class="dropdown-toggle" data-toggle="dropdown" href="#">Making Decision<br/><br/>
                 <span class="caret"></span></a>
             <ul class="dropdown-menu">
                 <li><a href="{{url_for('page_13')}}">How do I make this decision?</a></li>
@@ -80,10 +82,10 @@
         </li>
         {% if page == 15 or page == 16 or page == 17%}
         <li class="dropdown active">
-        {% else %}
+            {% else %}
         <li class="dropdown">
-        {% endif %}
-        <a class="dropdown-toggle" data-toggle="dropdown" href="#">Patient Examples<br/><br/>
+            {% endif %}
+            <a class="dropdown-toggle" data-toggle="dropdown" href="#">Patient Examples<br/><br/>
                 <span class="caret"></span></a>
             <ul class="dropdown-menu">
                 <li><a href="{{url_for('page_15')}}">Patient Examples</a></li>
@@ -93,10 +95,10 @@
         </li>
         {% if page == 18 or page == "review" %}
         <li class="dropdown active">
-        {% else %}
+            {% else %}
         <li class="dropdown">
-        {% endif %}
-        <a class="dropdown-toggle" data-toggle="dropdown" href="#">Worksheet & Review<br/><br/>
+            {% endif %}
+            <a class="dropdown-toggle" data-toggle="dropdown" href="#">Worksheet & Review<br/><br/>
                 <span class="caret"></span></a>
             <ul class="dropdown-menu">
                 <!--TODO: Click the dropdown and open the collaspse-->

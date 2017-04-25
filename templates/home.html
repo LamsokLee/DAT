@@ -35,17 +35,17 @@
         <!--the navigation bar-->
         <div id="tab"></div>
   </div>
-  <div class="container">
+  <div class="container" style="background-image: url(/static/img/landing_page.png); background-size:100%">
       <!--the container for the main content-->
-        <div class="col-md-8" style="padding-top: 30px">
-            <img src="static/img/speech_therapy.jpg" class="img-responsive img-thumbnail">
-        </div>
-        <div class="col-md-4" style="padding-top: 30px">
+        <!--<div class="col-md-8" style="padding-top: 30px">-->
+            <!--<img src="static/img/landing_page.png" class="img-responsive img-thumbnail">-->
+        <!--</div>-->
+        <div class="col-md-4" style="padding-top: 30px; padding-bottom: 200px">
             <!--TODO: Start button and retrieve data form.    -->
             <div class="form-group well well-bg">
                 <form action="/printable" method="post">
                 <!--TODO: the form of box to retrieve old session-->
-                    <label for="ref">Reference Number:</label>
+                    <label for="ref">Report ID:</label>
                     <input type="text" class="form-control" name="ref" id="ref">
                     <label for="input_email">Email:</label>
                     <input type="text" class="form-control" name="input_email" id="input_email">
@@ -69,14 +69,15 @@
                     {% endif %}
             </div>
         </div>
+      <div class="container" >
+          <a href="{{url_for('page_1')}}" class="text-center">
+                <button type="button" class="btn btn-primary btn-lg btn-block pull-right" style="margin-top:60px;margin-bottom: 5%">Start
+                    <span class="glyphicon glyphicon-menu-right" aria-hidden="true"></span>
+                </button>
+          </a>
+      </div>
   </div>
-  <div class="container" >
-      <a href="{{url_for('page_1')}}" class="text-center">
-            <button type="button" class="btn btn-primary btn-lg btn-block pull-right" style="margin-top:60px;margin-bottom: 5%">Start
-                <span class="glyphicon glyphicon-menu-right" aria-hidden="true"></span>
-            </button>
-      </a>
-  </div>
+
 
 
 

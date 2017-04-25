@@ -1,6 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
+<head>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -17,122 +17,130 @@
     <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
     <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
     <!--[if lt IE 9]>
-      <script src="https://oss.maxcdn.com/html5shiv/3.7.3/html5shiv.min.js"></script>
-      <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+    <script src="https://oss.maxcdn.com/html5shiv/3.7.3/html5shiv.min.js"></script>
+    <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
     <![endif]-->
-  </head>
-  <body>
-  <!--the head navbar of the website-->
+</head>
+<body>
+<!--the head navbar of the website-->
 {% include 'navbar.html' %}
-  <!--container of the whole content of the tool-->
-  <div class="container">
-        <h2 class = "text-center">
-            Goals-of-Care after Traumatic Brain Injury Decision Aid Prototype
-        </h2>
-        <br/>
+<!--container of the whole content of the tool-->
+<div class="container">
+    <h2 class="text-center">
+        Goals-of-Care after Traumatic Brain Injury Decision Aid Prototype
+    </h2>
+    <br/>
     <!--the tabs-->
     {% include 'tab.html' %}
     <!--the text box to put the main context-->
-        <div class="jumbotron">
-            <!--button division-->
+    <div class="jumbotron">
+        <!--button division-->
+        <div class="row">
+            <div class="col-md-6">
+                <a href="{{url_for('page_3')}}">
+                    <button type="button" class="btn btn-primary pull-left" style="margin-bottom: 5%">
+                        <span class="glyphicon glyphicon glyphicon-menu-left" aria-hidden="true"></span>
+                    </button>
+                </a>
+            </div>
+            <div class="col-md-6">
+                <a href="{{url_for('page_5')}}">
+                    <label for="submit_page_4" class="btn btn-primary pull-right" style="margin-bottom: 5%">
+                        <span class="glyphicon glyphicon glyphicon-menu-right" aria-hidden="true"></span>
+                    </label>
+                </a>
+            </div>
+        </div>
+
+        <!--the head of this page-->
+        <div class="section-head"><h3 class="text-center">WHAT DECISION AM I BEING ASKED TO MAKE?</h3></div>
+        <br>
+
+        <p>
+            Your loved one is still on a ventilator, and despite the best care from the doctors and nurses, your loved
+            one is unable to come off the ventilator and breathe on his/her own.</p>
+        <p>
+            At this point, there are <b>2 different treatment goals.</b>
+        </p>
+        <p>
+            <b>You are being asked to make a decision: which of these 2 treatment goals best aligns with your loved
+                one’s goals, values and preferences.</b>
+        </p>
+        <p>
+            The treatment goal that you choose will affect what kinds of procedures and care are done for your loved one
+            while they are in the ICU and afterwards.
+        </p>
+
+        <div class="section-head"><h3 class="text-center">WHAT IS MOST IMPORTANT FOR YOUR LOVED ONE RIGHT NOW?</h3>
+        </div>
+        <br>
+        <p>
+            What do you think is most important treatment for your loved one right now? What is most important to you?
+            Write it down.
+        </p>
+        <p><i>
+            Examples: “not to suffer”, “to make it out of the hospital”, “to be able to talk to family”, “to be back to
+            normal like before”, “to go back to work”, “have no pain”, etc.
+        </i></p>
+        <!--two columns asking two questions.-->
+        <!--TODO: make the number of rows changeable.-->
+        <form action="/post5" method="post" id="form_page_4">
             <div class="row">
-                <div class="col-md-6">
-                    <a href="{{url_for('page_3')}}">
-                        <button type="button" class="btn btn-primary pull-left" style="margin-bottom: 5%">
-                            <span class="glyphicon glyphicon glyphicon-menu-left" aria-hidden="true"></span>
-                        </button>
-                    </a>
+                <div class="col-xs-6 col-md-6">
+                    <div class="form-group">
+                        <h4 class="text-center">What is most important for your loved one right now?</h4>
+                        <textarea name="ans1" class="form-control" rows="1" id="ans1">{{ans1}}</textarea>
+                        <br/>
+                        <textarea name="ans2" class="form-control" rows="1" id="ans2">{{ans2}}</textarea>
+                        <br/>
+                        <textarea name="ans3" class="form-control" rows="1" id="ans3">{{ans3}}</textarea>
+                    </div>
                 </div>
-                <div class="col-md-6">
-                    <a href="{{url_for('page_5')}}">
-                        <label for="submit_page_4" class="btn btn-primary pull-right" style="margin-bottom: 5%">
-                            <span class="glyphicon glyphicon glyphicon-menu-right" aria-hidden="true"></span>
-                        </label>
-                    </a>
+                <div class="col-xs-6 col-md-6">
+                    <div class="form-group">
+                        <h4 class="text-center">What is most important for your loved one right now?</h4>
+                        <textarea name="ans4" class="form-control" rows="1" id="ans4">{{ans4}}</textarea>
+                        <br/>
+                        <textarea name="ans5" class="form-control" rows="1" id="ans5">{{ans5}}</textarea>
+                        <br/>
+                        <textarea name="ans6" class="form-control" rows="1" id="ans6">{{ans6}}</textarea>
+                    </div>
                 </div>
             </div>
-
-            <!--the head of this page-->
-            <div class = "section-head"><h3 class="text-center">WHAT DECISION AM I BEING ASKED TO MAKE?</h3></div><br>
-
-            <p>
-                Your loved one is still on a ventilator, and despite the best care from the doctors and nurses, your loved one is unable to come off the ventilator and breathe on his/her own.</p>
-            <p>
-                At this point, there are <b>2 different treatment goals.</b>
-            </p>
-            <p>
-                <b>You are being asked to make a decision: which of these 2 treatment goals best aligns with your loved one’s goals, values and preferences.</b>
-            </p>
-            <p>
-                The treatment goal that you choose will affect what kinds of procedures and care are done for your loved one while they are in the ICU and afterwards.
-            </p>
-
-            <div class = "section-head"><h3 class="text-center">WHAT IS MOST IMPORTANT FOR YOUR LOVED ONE RIGHT NOW?</h3></div><br>
-            <p>
-                 What do you think is most important treatment for your loved one right now? What is most important to you? Write it down.
-            </p>
-            <p><i>
-                Examples: “not to suffer”, “to make it out of the hospital”, “to be able to talk to family”, “to be back to normal like before”, “to go back to work”, “have no pain”, etc.
-            </i></p>
-            <!--two columns asking two questions.-->
-            <!--TODO: make the number of rows changeable.-->
-            <form action = "/post5" method="post" id="form_page_4">
-                <div class="row">
-                    <div class="col-xs-6 col-md-6">
-                        <div class="form-group">
-                            <h4 class="text-center">What is most important for your loved one right now?</h4>
-                            <textarea name ="ans1" class="form-control" rows="1" id="ans1">{{ans1}}</textarea>
-                            <br/>
-                            <textarea name ="ans2" class="form-control" rows="1" id="ans2">{{ans2}}</textarea>
-                            <br/>
-                            <textarea name ="ans3" class="form-control" rows="1" id="ans3">{{ans3}}</textarea>
-                        </div>
-                    </div>
-                    <div class="col-xs-6 col-md-6">
-                        <div class="form-group">
-                            <h4 class="text-center">What is most important for your loved one right now?</h4>
-                            <textarea name ="ans4" class="form-control" rows="1" id="ans4">{{ans4}}</textarea>
-                            <br/>
-                            <textarea name ="ans5" class="form-control" rows="1" id="ans5">{{ans5}}</textarea>
-                            <br/>
-                            <textarea name ="ans6" class="form-control" rows="1" id="ans6">{{ans6}}</textarea>
-                        </div>
-                    </div>
-                </div>
-                <input type="submit" id="submit_page_4" class="hidden">
-            </form>
-        </div>
-        <a href="{{url_for('page_3')}}">
-            <button type="button" class="btn btn-primary btn-lg pull-left" style="margin-bottom: 5%">
-                <span class="glyphicon glyphicon-menu-left" aria-hidden="true"></span>Previous
-            </button>
-        </a>
-        <!--<a href="{{url_for('page_5')}}">-->
-            <!--<button type="button" class="btn btn-primary btn-lg pull-right" style="margin-bottom: 5%">Next-->
-                <!--<span class="glyphicon glyphicon-menu-right" aria-hidden="true"></span>-->
-            <!--</button>-->
-        <!--</a>-->
-
-        <label for="submit_page_4" class="btn btn-primary btn-lg pull-right" style="margin-bottom: 5%">
-            Next<span class="glyphicon glyphicon-menu-right" aria-hidden="true"></span>
-        </label>
+            <input type="submit" id="submit_page_4" class="hidden">
+        </form>
     </div>
+    <a href="{{url_for('page_3')}}">
+        <button type="button" class="btn btn-primary btn-lg pull-left" style="margin-bottom: 5%">
+            <span class="glyphicon glyphicon-menu-left" aria-hidden="true"></span>Previous
+        </button>
+    </a>
+    <!--<a href="{{url_for('page_5')}}">-->
+    <!--<button type="button" class="btn btn-primary btn-lg pull-right" style="margin-bottom: 5%">Next-->
+    <!--<span class="glyphicon glyphicon-menu-right" aria-hidden="true"></span>-->
+    <!--</button>-->
+    <!--</a>-->
 
-    <!--<script>-->
-         <!--window.onbeforeunload = function () {-->
-        <!--return "You are about to leave this order form. You will lose any information...";-->
-    <!--}-->
-    <!--</script>-->
+    <label for="submit_page_4" class="btn btn-primary btn-lg pull-right" style="margin-bottom: 5%">
+        Next<span class="glyphicon glyphicon-menu-right" aria-hidden="true"></span>
+    </label>
+</div>
 
-    <script>
-        window.onbeforeunload = function(){
-            document.getElementById("form_page_4").submit();
-        };
-    </script>
+<!--<script>-->
+<!--window.onbeforeunload = function () {-->
+<!--return "You are about to leave this order form. You will lose any information...";-->
+<!--}-->
+<!--</script>-->
 
-    <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
-    <!-- Include all compiled plugins (below), or include individual files as needed -->
-    <script src="static/js/bootstrap.min.js"></script>
-  </body>
+<script>
+    window.onbeforeunload = function () {
+        document.getElementById("form_page_4").submit();
+    };
+</script>
+
+<!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+<!-- Include all compiled plugins (below), or include individual files as needed -->
+<script src="static/js/bootstrap.min.js"></script>
+</body>
 </html>

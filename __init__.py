@@ -2,6 +2,7 @@
 from flask import *
 from model import *
 from config import app
+from flask_mail import Mail, Message
 import datetime
 import os
 
@@ -334,25 +335,25 @@ def page_report():
         session.pop('logged')
         # TODO: retrieve the reference number from database and show it on this page.
         return render_template("report.html",
-                               ref_num  =data.ref_num,
-                               start    =sess.start_time,
-                               end      =sess.end_time,
-                               email    =sess.email,
-                               ans1     =data.ans1,
-                               ans2     =data.ans2,
-                               ans3     =data.ans3,
-                               ans4     =data.ans4,
-                               ans5     =data.ans5,
-                               ans6     =data.ans6,
-                               ans8     =data.ans8,
-                               ans9     =data.ans9,
-                               ans10    =data.ans10,
-                               ans11    =data.ans11,
-                               ans12    =data.ans12,
-                               ans13    =data.ans13,
-                               ans14    =data.ans14,
-                               ans15    =data.ans15,
-                               ans16    =data.ans16)
+                               ref_num=data.ref_num,
+                               start=sess.start_time,
+                               end=sess.end_time,
+                               email=sess.email,
+                               ans1=data.ans1,
+                               ans2=data.ans2,
+                               ans3=data.ans3,
+                               ans4=data.ans4,
+                               ans5=data.ans5,
+                               ans6=data.ans6,
+                               ans8=data.ans8,
+                               ans9=data.ans9,
+                               ans10=data.ans10,
+                               ans11=data.ans11,
+                               ans12=data.ans12,
+                               ans13=data.ans13,
+                               ans14=data.ans14,
+                               ans15=data.ans15,
+                               ans16=data.ans16)
     else:
         return redirect('/')
 

@@ -8,11 +8,11 @@
     <title>Goals-of-Care after Traumatic Brain Injury Decision Aid Prototype</title>
 
     <!--Bootstrap on server-->
-    <link href="{{ url_for ('static', filename = 'css/bootstrap.min.css') }}" rel="stylesheet">
+    <!--<link href="{{ url_for ('static', filename = 'css/bootstrap.min.css') }}" rel="stylesheet">-->
     <!--Bootstrap on local-->
     <!--<link href="css/bootstrap.min.css" rel="stylesheet">-->
     <!--Bootstrap on CDN-->
-    <!--<link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet">-->
+    <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet">
 
     <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
     <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
@@ -30,11 +30,12 @@
     <div class="container">
         <div class="jumbotron">
             <div>
-                <h2 class="text-center">
+                <h3 class="text-center">
                     Your worksheet has been saved!
-                </h2>
+                </h3>
                 <h4 class="text-center">
-                    Your reference number is : {{ref_num}}
+                    Your Report ID is
+                    <h2 class="text-center">{{ref_num}}</h2>
                     <br><br>
                 </h4>
             </div>
@@ -43,7 +44,7 @@
                     <button type="button" class="btn btn-primary btn-md" onclick="printDiv('printable')">
                         <span class="glyphicon glyphicon-print" aria-hidden="true"></span>Print
                     </button>
-                your work sheet and bring it to the family meeting with the doctor.
+                    your work sheet and bring it to the family meeting with the doctor.
                 </p>
             </div>
             <div class="text-center">
@@ -72,13 +73,13 @@
 
     <script>
         function printDiv(printable) {
-            var printContents=document.getElementById(printable).innerHTML;
-            var originalContents=document.body.innerHTML;
-            document.body.innerHTML=printContents;
+            var printContents = document.getElementById(printable).innerHTML;
+            var originalContents = document.body.innerHTML;
+            document.body.innerHTML = printContents;
             window.print();
-            document.body.innerHTML=originalContents;
-            }
+            document.body.innerHTML = originalContents;
+        }
     </script>
 </div>
-    </body>
+</body>
 </html>

@@ -1,6 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
+<head>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -17,79 +17,87 @@
     <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
     <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
     <!--[if lt IE 9]>
-      <script src="https://oss.maxcdn.com/html5shiv/3.7.3/html5shiv.min.js"></script>
-      <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+    <script src="https://oss.maxcdn.com/html5shiv/3.7.3/html5shiv.min.js"></script>
+    <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
     <![endif]-->
-  </head>
-  <body>
-  <!--the head navbar of the website-->
+</head>
+<body>
+<!--the head navbar of the website-->
 {% include 'navbar.html' %}
-  <!--container of the whole content of the tool-->
-  <div class="container">
-        <h2 class = "text-center">
-            Goals-of-Care after Traumatic Brain Injury Decision Aid Prototype
-        </h2>
-        <br/>
-<!--the tabs-->
-{% include 'tab.html' %}
+<!--container of the whole content of the tool-->
+<div class="container">
+    <h2 class="text-center">
+        Goals-of-Care after Traumatic Brain Injury Decision Aid Prototype
+    </h2>
+    <br/>
+    <!--the tabs-->
+    {% include 'tab.html' %}
 
-        <!--the text box to put the main context-->
-        <div class="jumbotron">
-            <!--the head of this page-->
-            <!--button division-->
-            <div class="row">
-                <div class="col-md-6">
-                    <a href="{{url_for('page_8')}}">
-                        <button type="button" class="btn btn-primary pull-left" style="margin-bottom: 5%">
-                            <span class="glyphicon glyphicon glyphicon-menu-left" aria-hidden="true"></span>
-                        </button>
-                    </a>
-                </div>
-                <div class="col-md-6">
-                    <a href="{{url_for('page_10')}}">
-                        <button type="button" class="btn btn-primary pull-right" style="margin-bottom: 5%">
-                            <span class="glyphicon glyphicon glyphicon-menu-right" aria-hidden="true"></span>
-                        </button>
-                    </a>
-                </div>
+    <!--the text box to put the main context-->
+    <div class="jumbotron">
+        <!--the head of this page-->
+        <!--button division-->
+        <div class="row">
+            <div class="col-md-6">
+                <a href="{{url_for('page_8')}}">
+                    <button type="button" class="btn btn-primary pull-left" style="margin-bottom: 5%">
+                        <span class="glyphicon glyphicon glyphicon-menu-left" aria-hidden="true"></span>
+                    </button>
+                </a>
             </div>
-            <div class = "section-head"><h3 class="text-center">WHAT DOES IT MEAN TO HAVE <u>COMFORT</u> AS THE GOAL OF CARE?</h3></div><br>
-            <!--the paragraph in this page-->
-            <p>
-                Some people feel that their family member has gone through enough in the ICU at this point. Others may be too sick to have any chance of survival. Some have said before that they would not want to endure the things necessary to be kept alive. Or you know that your loved one would not want a lower quality of life after the TBI.
-            <p>
-            When <b>comfort</b> is the treatment goal:
-            </p>
-            <ul>
-                <li>
-                    The bedside team will provide the safe and careful removal of medications (other than those preventing suffering). IV fluids, artificial feeding and machines, including the breathing tube and ventilator, which are keeping your loved one alive will also be stopped. This is done when the family is ready.
-                </li>
-                <li>
-                    The patient usually dies within a day to several days afterward.
-                </li>
-                <li>
-                    The patient will get medicines and nursing care to prevent pain and suffering, but the natural dying process will not be hastened.
-                </li>
-                <li>
-                    Family members and friends can stay with their loved ones during this time.
-                </li>
-            </ul>
+            <div class="col-md-6">
+                <a href="{{url_for('page_10')}}">
+                    <button type="button" class="btn btn-primary pull-right" style="margin-bottom: 5%">
+                        <span class="glyphicon glyphicon glyphicon-menu-right" aria-hidden="true"></span>
+                    </button>
+                </a>
+            </div>
         </div>
-        <a href="{{url_for('page_8')}}">
-            <button type="button" class="btn btn-primary btn-lg pull-left" style="margin-bottom: 5%">
-                <span class="glyphicon glyphicon glyphicon-menu-left" aria-hidden="true"></span>Previous
-            </button>
-        </a>
-        <a href="{{url_for('page_10')}}">
-            <button type="button" class="btn btn-primary btn-lg pull-right" style="margin-bottom: 5%">Next
-                <span class="glyphicon glyphicon glyphicon-menu-right" aria-hidden="true"></span>
-            </button>
-        </a>
+        <div class="section-head"><h3 class="text-center">WHAT DOES IT MEAN TO HAVE <u>COMFORT</u> AS THE GOAL OF CARE?
+        </h3></div>
+        <br>
+        <!--the paragraph in this page-->
+        <p>
+            Some people feel that their family member has gone through enough in the ICU at this point. Others may be
+            too sick to have any chance of survival. Some have said before that they would not want to endure the things
+            necessary to be kept alive. Or you know that your loved one would not want a lower quality of life after the
+            TBI.
+        <p>
+            When <b>comfort</b> is the treatment goal:
+        </p>
+        <ul>
+            <li>
+                The bedside team will provide the safe and careful removal of medications (other than those preventing
+                suffering). IV fluids, artificial feeding and machines, including the breathing tube and ventilator,
+                which are keeping your loved one alive will also be stopped. This is done when the family is ready.
+            </li>
+            <li>
+                The patient usually dies within a day to several days afterward.
+            </li>
+            <li>
+                The patient will get medicines and nursing care to prevent pain and suffering, but the natural dying
+                process will not be hastened.
+            </li>
+            <li>
+                Family members and friends can stay with their loved ones during this time.
+            </li>
+        </ul>
     </div>
+    <a href="{{url_for('page_8')}}">
+        <button type="button" class="btn btn-primary btn-lg pull-left" style="margin-bottom: 5%">
+            <span class="glyphicon glyphicon glyphicon-menu-left" aria-hidden="true"></span>Previous
+        </button>
+    </a>
+    <a href="{{url_for('page_10')}}">
+        <button type="button" class="btn btn-primary btn-lg pull-right" style="margin-bottom: 5%">Next
+            <span class="glyphicon glyphicon glyphicon-menu-right" aria-hidden="true"></span>
+        </button>
+    </a>
+</div>
 
-    <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
-    <!-- Include all compiled plugins (below), or include individual files as needed -->
-    <script src="static/js/bootstrap.min.js"></script>
-  </body>
+<!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+<!-- Include all compiled plugins (below), or include individual files as needed -->
+<script src="static/js/bootstrap.min.js"></script>
+</body>
 </html>
