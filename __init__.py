@@ -432,17 +432,17 @@ def mailid():
             print(str(tablelist.ref_num))
             print(str(tablelist.start_time))
             print(str(tablelist.end_time))
-            msg = Message(
+            retrieve_mail = Message(
                 'Your report ID from Traumatic Brain Injury Decision Aid Tool',
                 sender='mis573wpi@gmail.com',
-                recipients=
-                request.form.get('input_email'))
-            # msg.html = "<p>Hello, <p>You sent a request to request your report ID from Traumatic Brain Injury Decision Aid Tool. These are the reports you finished before: </p><p>Report ID: " + str(
-            #     tablelist.ref_num) + "</p><p>Start Time: " + str(tablelist.start_time) + "</p><p>End Time: " + str(
-            #     tablelist.end_time)
-            # msg.html = "Your Report ID is: "
-            # msg.body = 'test'
-            # mail.send(msg)
+                recipients=[request.form.get('input_email')])
+            # retrieve_mail = Message('a', sender='mis573wpi@gmail.com', recipients='lilinshuo1110@gmail.com')
+            # retrieve_mail.body = "testing"
+            # mail.send(retrieve_mail)
+            retrieve_mail.html = "<p>Hello, <p>You sent a request to request your report ID from Traumatic Brain Injury Decision Aid Tool. These are the reports you finished before: </p><p>Report ID: " + str(
+                tablelist.ref_num) + "</p><p>Start Time: " + str(tablelist.start_time) + "</p><p>End Time: " + str(
+                tablelist.end_time)
+            mail.send(retrieve_mail)
             alertmsg = 'The Report ID has been sent to your E-mail.'
             print("mail has been sent")
             return render_template("home.html",
@@ -455,6 +455,7 @@ def mailid():
         alertmsg = "You have to input your E-mail address"
         return render_template("forgetid.html",
                                alertmsg=alertmsg)
+
 
 # if user click the retrieve report button
 @app.route('/printable', methods=['POST'])
