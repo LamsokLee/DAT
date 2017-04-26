@@ -45,6 +45,9 @@
             </ul>
         </div>
         <div style="text-align: center; margin-bottom: 5%; margin-left: 20%; margin-right: 20%"> 
+            <!--<p class="text-center"-->
+            <!--style="line-height: 40px; font-size: 20px; font-weight: 500; color: #ffffff; opacity: 1;">For new-->
+            <!--user:</p>-->
             <a href="{{url_for('page_1')}}" class="text-center"> 
                 <button class="btn btn-primary btn-lg btn-block" type="button">Start 
                     <span class="glyphicon" aria-hidden="true">
@@ -57,12 +60,11 @@
             <!--<a href="{{url_for('getreport')}}">-->
             <button type="button" class="btn btn-primary btn-lg btn-block" data-toggle="modal"
                     data-target="#getreport" style="text-align: center; margin-bottom: 5%;">
-                <span class="glyphicon glyphicon-print" aria-hidden="true"></span>Get Report
+                <span class="glyphicon" aria-hidden="true"></span>Get Report
             </button>
             <!--</a>-->
         </div>
     </div>
-    <!--TODO: Start button and retrieve data form.-->
     <div class="modal fade" id="getreport" role="dialog">
         <div class="modal-dialog">
             <!-- Modal content-->
@@ -70,7 +72,6 @@
                 <div class="modal-body">
                     <!--first page of retrieve report-->
                     <form action="/printable" method="post">
-                        <!--TODO: the form of box to retrieve old session-->
                         <label for="ref">Report ID:</label>
                         <input type="number" class="form-control" name="ref" id="ref">
                         <label for="input_email">Email:</label>
@@ -80,7 +81,7 @@
                             </input>
                             <label for="retrieve">
                                 <button class="btn btn-primary">
-                                    <span class="glyphicon glyphicon-save-file" aria-hidden="true"></span>Get
+                                    <span class="glyphicon" aria-hidden="true"></span>Get
                                     Report
                                 </button>
                             </label>
@@ -116,7 +117,7 @@
                             </input>
                             <label for="retrieve">
                                 <button class="btn btn-primary pull-left">
-                                    <span class="glyphicon glyphicon-save-file" aria-hidden="true"></span>Send Report ID
+                                    <span class="glyphicon" aria-hidden="true"></span>Send Report ID
                                     to my E-mail
                                 </button>
                             </label>
@@ -134,15 +135,11 @@
             </div>
         </div>
     </div>
-    <!--forget report ID page-->
-
-
     <!--Get report section-->
     <!--{% if page == "getreport" %}-->
     <!--<div style="margin-top: 30%; margin-left: 10%; margin-right: 10%; margin-bottom: 5%; background-color: #000000; opacity: 1">-->
     <!--<div class="form-group well well-bg">-->
     <!--<form action="/printable" method="post">-->
-    <!--&lt;!&ndash;TODO: the form of box to retrieve old session&ndash;&gt;-->
     <!--<label for="ref">Report ID:</label>-->
     <!--<input type="text" class="form-control" name="ref" id="ref">-->
     <!--<label for="input_email">Email:</label>-->

@@ -1,3 +1,4 @@
+# -*- coding: utf-8 -*-
 # all the import
 from flask import *
 from model import *
@@ -96,8 +97,6 @@ def page_2():
 
 @app.route('/3')
 def page_3():
-    # TODO: When user click start, the session starts.
-    # TODO: Set the session time
     if 'logged' in session:
         return render_template("3.html", page=3)
     else:
@@ -397,7 +396,7 @@ def sendmail():
         # msg.body = "1) What is most important for your loved one right now?"
         msg.html = "<div style='line-height:20px'><p>Hello,</p><p>This is an auto-generate report from Goals-of-Care after Traumatic Brain Injury Decision Aid Prototype.</p> <p>Start Time:" + str(
             session['start_time']) + "<p>End Time: " + str(session[
-                                                               'end_time']) + "<ol><li>What is your loved one’s outlook for getting better and how independent will he/she be with further medical care after the ICU?</li><ul><li>" + data.ans8 + "</li></ul><li> Do you understand what your loved one’s life will be like based on the two different treatment goals?</li><ul><li>" + data.ans9 + "</li></ul><li>Is this quality of life acceptable to your loved one?</li><ul><li>" + data.ans10 + "</li></ul><li> Do you understand the pros and cons of the two treatment goals/choices?</li><ul><li>" + data.ans11 + "</li></ul><li>What are their wishes for medical treatments when illness is severe or possibly leave them disabled? Have they mentioned it to you? Do they have a living will?</li><ul><li>" + data.ans12 + "</li></ul><li>If your loved one could look at the choices right now, what would they choose?</li><ul><li>" + data.ans13 + "</li></ul><li>How is this choice making you feel?</li><ul><li>" + data.ans14 + "</li></ul><li>Make a list and ask. Bring the list of questions to the meeting with the doctor, too.</li><ul><li>" + data.ans15 + "</li></ul><li> Where do you think your loved one would put themselves on the line below?</li></div>"
+                                                               'end_time']) + "<ol><li>What is your loved one’s outlook for getting better and how independent will he/she be with further medical care after the ICU?</li><ul><li>" + data.ans8 + "</li></ul><li> Do you understand what your loved one’s life will be like based on the two different treatment goals?</li><ul><li>" + data.ans9 + "</li></ul><li>Is this quality of life acceptable to your loved one?</li><ul><li>" + data.ans10 + "</li></ul><li> Do you understand the pros and cons of the two treatment goals/choices?</li><ul><li>" + data.ans11 + "</li></ul><li>What are their wishes for medical treatments when illness is severe or possibly leave them disabled? Have they mentioned it to you? Do they have a living will?</li><ul><li>" + data.ans12 + "</li></ul><li>If your loved one could look at the choices right now, what would they choose?</li><ul><li>" + data.ans13 + "</li></ul><li>How is this choice making you feel?</li><ul><li>" + data.ans14 + "</li></ul><li>Make a list and ask. Bring the list of questions to the meeting with the doctor, too.</li><ul><li>" + data.ans15 + "</li></ul><li> Where do you think your loved one would put themselves on the line below? (Number from 0-100, smaller number represents survival, greater number represents comfort)</li><ul><li>"+ str(data.ans16)+"</li></ul></div>"
         session['mailsent'] = True
         mail.send(msg)
         alertmsg = 'The report has been sent.'
@@ -534,7 +533,6 @@ def admin_login():
 def admin_main():
     if (request.form.get('username') == 'admin') & (request.form.get('password') == 'umass'):
         session['adminlogged'] = 'y'
-        # TODO: Show the SQL query results of all the data
         return render_template('admin_main.html', tablelist=visit.query.all())
     else:
         return redirect('/admin')
@@ -570,9 +568,18 @@ def search_result():
 def getreport():
     return render_template('home.html', page="getreport")
 
+@app.route('/sendcontact', methods=['POST'])
+def sendcontact():
+    msg = Message(
+        'User Feedback: ' + request.form.get('subject'),
+        sender='mis573wpi@gmail.com',
+        recipients=['lilinshuo1110@gmail.com'])
+    msg.html = "<p> Name: " + request.form.get('name') + "</p><p> Email: " + request.form.get('email') + "</p><p>" + request.form.get('message')
+    mail.send(msg)
+    flash("Your feedback has been sent to us, we'll reply you as soon as possible. Thank you!")
+    print("mail has been sent")
+    return ('',204)
 
 if __name__ == "__main__":
     app.secret_key = os.urandom(32)
     app.run()
-
-global sdlajlj

@@ -9,7 +9,7 @@
      
     <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags --> 
     <title>Goals-of-Care after Traumatic Brain Injury Decision Aid Prototype</title>      <!--Bootstrap on server--> 
-    <link href="{{ url_for ('static', filename = 'css/bootstrap.min.css') }}" rel="stylesheet">
+    <!--<link href="{{ url_for ('static', filename = 'css/bootstrap.min.css') }}" rel="stylesheet">-->
          <!--Bootstrap on local-->     <!--<link href="/css/bootstrap.min.css" rel="stylesheet">--> 
     <!--Bootstrap on CDN--> 
     <!--<link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet">-->
@@ -19,36 +19,11 @@
     <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>     <![endif]--> 
 </head>
  
-<body>     <!--the head navbar of the website-->  {% include 'navbar.html' %} 
-<!--<nav class="navbar navbar-default">  <div class="container-fluid">      &lt;!&ndash; Brand and toggle get grouped for better mobile display &ndash;&gt;      <div class="navbar-header">          <a href="https://www.umassmed.edu/">              <img src="static/icon/logo-trans.png" class="img-responsive" width="130" height="40">          </a>      </div>      &lt;!&ndash; Collect the nav links, forms, and other content for toggling &ndash;&gt;      <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">          <ul class="nav navbar-nav">              <li><a href="{{url_for('homepage')}}">Home<span class="sr-only">(current)</span></a></li>              <li><a href="#">Introduction</a></li>              <li><a href="#">Contact Us</a></li>          </ul>      </div>&lt;!&ndash; /.navbar-collapse &ndash;&gt;  </div>&lt;!&ndash; /.container-fluid &ndash;&gt;</nav>-->
-   <!--container of the whole content of the tool--> 
-<div class="container">  <h2 class="text-center">  Goals-of-Care after Traumatic Brain Injury Decision Aid
-    Prototype  </h2>  <br/>         <!--the navigation bar--> 
-    <div id="tab"></div>
-     
-</div>
- 
-<div class="container" style="background-image: url(/static/img/landing_page.jpg); background-size:100%"> 
-    <!--The text-->
-    <div style="margin-top: 30%; margin-left: 10%; margin-right: 10%; margin-bottom: 5%; background-color: #000000; border: 1px solid black; opacity: 0.8">
-        <div style="margin: 5%; font-weight: 500; color: #ffffff; opacity: 1">
-            <h3 class="text-center">THIS TOOL IS FOR YOU IF: </h3>
-            <ul style="line-height: 40px; font-size: 20px; font-weight: 500;"> 
-                <li>  You are the one who makes decisions for your loved one when they can’t do it for themselves </li>
-                <li>  Your family member has a traumatic brain injury (TBI) and needs medical care in the ICU</li>
-                <li>  Your loved one needs machines to help them breathe and get food</li>
-            </ul>
-        </div>
-        <div style="text-align: center; margin-bottom: 5%; margin-left: 20%; margin-right: 20%"> 
-            <a href="{{url_for('page_1')}}" class="text-center"> 
-                <button class="btn btn-primary btn-lg btn-block" type="button">Start 
-                    <span class="glyphicon" aria-hidden="true">
-                    </span> 
-                </button>
-            </a> 
-        </div>
-    </div>
-</div>
+<body>
+<div style='line-height:20px'><p>Hello,</p><p>This is an auto-generate report from Goals-of-Care after Traumatic Brain Injury Decision Aid Prototype.</p> <p>Start Time:" + str(
+            session['start_time']) + "<p>End Time: " + str(session[
+                                                               'end_time']) + "<ol><li>What is your loved one’s outlook for getting better and how independent will he/she be with further medical care after the ICU?</li><ul><li>" + data.ans8 + "</li></ul><li> Do you understand what your loved one’s life will be like based on the two different treatment goals?</li><ul><li>" + data.ans9 + "</li></ul><li>Is this quality of life acceptable to your loved one?</li><ul><li>" + data.ans10 + "</li></ul><li> Do you understand the pros and cons of the two treatment goals/choices?</li><ul><li>" + data.ans11 + "</li></ul><li>What are their wishes for medical treatments when illness is severe or possibly leave them disabled? Have they mentioned it to you? Do they have a living will?</li><ul><li>" + data.ans12 + "</li></ul><li>If your loved one could look at the choices right now, what would they choose?</li><ul><li>" + data.ans13 + "</li></ul><li>How is this choice making you feel?</li><ul><li>" + data.ans14 + "</li></ul><li>Make a list and ask. Bring the list of questions to the meeting with the doctor, too.</li><ul><li>" + data.ans15 + "</li></ul><li> Where do you think your loved one would put themselves on the line below?(Number from 0-100, smaller number represents survival, greater number represents comfort)</li><ul><li>" + data.ans16 + "</li></ul></div>"
+
          <!-- jQuery (necessary for Bootstrap's JavaScript plugins) --> 
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
      <!-- Include all compiled plugins (below), or include individual files as needed --> 

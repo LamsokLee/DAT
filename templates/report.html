@@ -8,11 +8,11 @@
     <title>Goals-of-Care after Traumatic Brain Injury Decision Aid Prototype</title>
 
     <!--Bootstrap on server-->
-    <!--<link href="{{ url_for ('static', filename = 'css/bootstrap.min.css') }}" rel="stylesheet">-->
+    <link href="{{ url_for ('static', filename = 'css/bootstrap.min.css') }}" rel="stylesheet">
     <!--Bootstrap on local-->
     <!--<link href="css/bootstrap.min.css" rel="stylesheet">-->
     <!--Bootstrap on CDN-->
-    <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet">
+    <!--<link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet">-->
 
     <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
     <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
@@ -61,6 +61,8 @@
                 </p>
             </div>
             {% endif %}
+
+
             {% if alertmsg %}
             <div style="padding-bottom: 5%">
                 <div class="col-md-3"></div>

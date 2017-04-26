@@ -18,10 +18,23 @@
             <ul class="nav navbar-nav">
                 <li><a href="{{url_for('homepage')}}">Home<span class="sr-only">(current)</span></a></li>
                 <li><a href="#">Introduction</a></li>
-                <li><a href="#">Contact Us</a></li>
+                <li><a data-toggle="modal" data-target="#contact">Contact Us</a></li>
             </ul>
 
         </div>
         <!-- /.navbar-collapse -->
+    </div>
+    <div class="modal fade" id="contact" role="dialog">
+        <div class="modal-dialog">
+            <!-- Modal content-->
+            <div class="modal-content">
+                <div class="modal-body">
+                    {% include "contact.html" %}
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                </div>
+            </div>
+        </div>
     </div><!-- /.container-fluid -->
 </nav>
