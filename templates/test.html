@@ -1,134 +1,59 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <title>Bootstrap Example</title>
+<!DOCTYPE html> 
+<html lang="en"> 
+<head> 
     <meta charset="utf-8">
+     
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+     
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.0/jquery.min.js"></script>
-    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+     
+    <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags --> 
+    <title>Goals-of-Care after Traumatic Brain Injury Decision Aid Prototype</title>      <!--Bootstrap on server--> 
+    <link href="{{ url_for ('static', filename = 'css/bootstrap.min.css') }}" rel="stylesheet">
+         <!--Bootstrap on local-->     <!--<link href="/css/bootstrap.min.css" rel="stylesheet">--> 
+    <!--Bootstrap on CDN--> 
+    <!--<link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet">-->
+    <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries --> 
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->     <!--[if lt IE 9]> 
+    <script src="https://oss.maxcdn.com/html5shiv/3.7.3/html5shiv.min.js"></script> 
+    <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>     <![endif]--> 
 </head>
-<body onbeforeunload="return leavepage()">
-<div class="panel-group" id="accordion">
-    <div class="panel panel-default">
-        <div class="panel-heading">
-            <h4 class="panel-title">
-                <a onclick="click1()" data-toggle="collapse" data-parent="#accordion" href="#collapse1" id="block3">
-                    {% if session['accordion3'] == True %}
-                    <span class="glyphicon glyphicon-ok"></span>
-                    {% else %}
-                    <span class="glyphicon glyphicon-ok" aria-hidden="true" id="check3"
-                          style="display: none;"></span>
-                    {% endif %}
-                    Acute Rehabilitation Hospital
-                </a>
-            </h4>
+ 
+<body>     <!--the head navbar of the website-->  {% include 'navbar.html' %} 
+<!--<nav class="navbar navbar-default">  <div class="container-fluid">      &lt;!&ndash; Brand and toggle get grouped for better mobile display &ndash;&gt;      <div class="navbar-header">          <a href="https://www.umassmed.edu/">              <img src="static/icon/logo-trans.png" class="img-responsive" width="130" height="40">          </a>      </div>      &lt;!&ndash; Collect the nav links, forms, and other content for toggling &ndash;&gt;      <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">          <ul class="nav navbar-nav">              <li><a href="{{url_for('homepage')}}">Home<span class="sr-only">(current)</span></a></li>              <li><a href="#">Introduction</a></li>              <li><a href="#">Contact Us</a></li>          </ul>      </div>&lt;!&ndash; /.navbar-collapse &ndash;&gt;  </div>&lt;!&ndash; /.container-fluid &ndash;&gt;</nav>-->
+   <!--container of the whole content of the tool--> 
+<div class="container">  <h2 class="text-center">  Goals-of-Care after Traumatic Brain Injury Decision Aid
+    Prototype  </h2>  <br/>         <!--the navigation bar--> 
+    <div id="tab"></div>
+     
+</div>
+ 
+<div class="container" style="background-image: url(/static/img/landing_page.jpg); background-size:100%"> 
+    <!--The text-->
+    <div style="margin-top: 30%; margin-left: 10%; margin-right: 10%; margin-bottom: 5%; background-color: #000000; border: 1px solid black; opacity: 0.8">
+        <div style="margin: 5%; font-weight: 500; color: #ffffff; opacity: 1">
+            <h3 class="text-center">THIS TOOL IS FOR YOU IF: </h3>
+            <ul style="line-height: 40px; font-size: 20px; font-weight: 500;"> 
+                <li>  You are the one who makes decisions for your loved one when they can’t do it for themselves </li>
+                <li>  Your family member has a traumatic brain injury (TBI) and needs medical care in the ICU</li>
+                <li>  Your loved one needs machines to help them breathe and get food</li>
+            </ul>
         </div>
-        <div id="collapse1" class="panel-collapse collapse">
-            <div class="panel-body">
-                <b>Very few serious TBI patients go here directly.</b> Patients who go here are generally very
-                stable and wide awake. They must be able to take part in at least 3 hours of therapy per day for
-                5-7 days per week. It is focused on providing intense physical, occupational, and speech
-                therapies. Patients who still require a breathing machine, or frequent suctioning through the
-                trach, or are too sleepy, cannot go here until they get better. Patients are treated here for
-                several weeks.
-                <div class="row">
-                    <div class="col-md-4">
-                        <img src="static/img/speech_therapy.jpg" class="img-responsive">
-                    </div>
-                    <div class="col-md-4">
-                        <img src="static/img/speech_therapy_2.jpg" class="img-responsive">
-                    </div>
-                    <div class="col-md-4">
-                        <img src="static/img/PTon_bars.jpg" class="img-responsive">
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-    <div class="panel panel-default">
-        <div class="panel-heading">
-            <h4 class="panel-title">
-                <a onclick="click2()" data-toggle="collapse" data-parent="#accordion" href="#collapse2" id="block4">
-                    {% if session['accordion4'] == True %}
-                    <span class="glyphicon glyphicon-ok"></span>
-                    {% else %}
-                    <span class="glyphicon glyphicon-ok" aria-hidden="true" id="check4"
-                          style="display: none;"></span>
-                    {% endif %}
-                    Long-Term Acute Care Hospital (LTACH)</a>
-            </h4>
-        </div>
-        <div id="collapse2" class="panel-collapse collapse">
-            <div class="panel-body">
-                This place is able to provide more complex medical care than an acute rehabilitation hospital.
-                <b>Patients are sicker and dependent on help</b>, and for this reason therapy sessions are
-                usually fewer and less intense. Those patients who get better can be transferred to an acute
-                rehabilitation hospital later.
-                <img src="static/img/Vented_pt_Vibra.jpg" class="img-responsive">
-            </div>
-        </div>
-    </div>
-    <div class="panel panel-default">
-        <div class="panel-heading">
-            <h4 class="panel-title">
-                <a onclick="click3()" data-toggle="collapse" data-parent="#accordion" href="#collapse3" id="block5">
-                    {% if session['accordion5'] == True %}
-                    <span class="glyphicon glyphicon-ok"></span>
-                    {% else %}
-                    <span class="glyphicon glyphicon-ok" aria-hidden="true" id="check5"
-                          style="display: none;"></span>
-                    {% endif %}
-                    Skilled Nursing Facility (SNF)</a>
-            </h4>
-        </div>
-        <div id="collapse3" class="panel-collapse collapse">
-            <div class="panel-body">
-                This place is different from a hospital and patients are usually quite stable but need full
-                nursing care due to the effects from their injuries. <b>Patients may be here for a long period
-                of time, or even the rest of their lives.</b> Patients are too ill to take part in several hours
-                of therapy per day. Transition to LTACH or acute rehabilitation hospital is possible, but less
-                likely due to the patient’s high level of sickness and dependence on others.
-                <div class="row">
-                    <div class="col-md-6">
-                        <img src="static/img/Trach_Mask_pt_Vibra.jpg" class="img-responsive">
-                    </div>
-                    <div class="col-md-6">
-                        <img src="static/img/Nursing_home.jpg" class="img-responsive">
-                    </div>
-                </div>
-            </div>
+        <div style="text-align: center; margin-bottom: 5%; margin-left: 20%; margin-right: 20%"> 
+            <a href="{{url_for('page_1')}}" class="text-center"> 
+                <button class="btn btn-primary btn-lg btn-block" type="button">Start 
+                    <span class="glyphicon" aria-hidden="true">
+                    </span> 
+                </button>
+            </a> 
         </div>
     </div>
 </div>
-<a href="http://www.google.com">Click me to leave</a>
+         <!-- jQuery (necessary for Bootstrap's JavaScript plugins) --> 
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+     <!-- Include all compiled plugins (below), or include individual files as needed --> 
+<script src="static/js/bootstrap.min.js"></script>
+ 
 </body>
-<script>
-    var is_click = [false, false, false];
-    function click1() {
-        is_click[0] = true
-        alert(is_click[0])
-    };
-    function click2() {
-        is_click[1] = true
-        alert(is_click[1])
-    };
-    function click3() {
-        is_click[2] = true
-        alert(is_click[2])
-    };
-</script>
-<script>
-    function leavepage() {
-        if (is_click[0] == false || is_click[1] == false || is_click[2] == false) {
-            var userselect = confirm("You didn't finish all the sections, are you sure you want to continue?")
-            if (userselect == true)
-                return true;
-            else {
-                return false;
-            }
-        }
-    }
-</script>
-
+ 
 </html>

@@ -75,7 +75,7 @@ def homepage():
     session['accordion8'] = False;
     session['accordion9'] = False;
     session['accordion10'] = False;
-    return render_template("home.html", page = "homepage")
+    return render_template("home.html", page="homepage")
 
 
 @app.route('/1')
@@ -405,19 +405,49 @@ def sendmail():
         print("mail has been sent")
         return render_template("report.html",
                                ref_num=session['ref_num'],
+                               start=session['start_time'],
+                               end=session['end_time'],
                                email=session['email'],
-                               alertmsg=alertmsg)
+                               ans1=data.ans1,
+                               ans2=data.ans2,
+                               ans3=data.ans3,
+                               ans4=data.ans4,
+                               ans5=data.ans5,
+                               ans6=data.ans6,
+                               ans8=data.ans8,
+                               ans9=data.ans9,
+                               ans10=data.ans10,
+                               ans11=data.ans11,
+                               ans12=data.ans12,
+                               ans13=data.ans13,
+                               ans14=data.ans14,
+                               ans15=data.ans15,
+                               ans16=data.ans16,
+                               alertmsg=alertmsg
+                               )
     else:
         alertmsg = "You didn't input your E-mail address"
         return render_template("report.html",
                                ref_num=session['ref_num'],
+                               start=session['start_time'],
+                               end=session['end_time'],
                                email=session['email'],
+                               ans1=data.ans1,
+                               ans2=data.ans2,
+                               ans3=data.ans3,
+                               ans4=data.ans4,
+                               ans5=data.ans5,
+                               ans6=data.ans6,
+                               ans8=data.ans8,
+                               ans9=data.ans9,
+                               ans10=data.ans10,
+                               ans11=data.ans11,
+                               ans12=data.ans12,
+                               ans13=data.ans13,
+                               ans14=data.ans14,
+                               ans15=data.ans15,
+                               ans16=data.ans16,
                                alertmsg=alertmsg)
-
-
-@app.route("/forgetid")
-def forgetid():
-    return render_template("forgetid.html")
 
 
 @app.route("/mailid", methods=['POST'])
@@ -446,11 +476,11 @@ def mailid():
                                    alertmsg=alertmsg)
         else:
             alertmsg = "No matched record"
-            return render_template("forgetid.html",
+            return render_template("home.html",
                                    alertmsg=alertmsg)
     else:
         alertmsg = "You have to input your E-mail address"
-        return render_template("forgetid.html",
+        return render_template("home.html",
                                alertmsg=alertmsg)
 
 
@@ -459,6 +489,7 @@ def mailid():
 def printable():
     visitquery = visit.query.filter_by(ref_num=request.form.get('ref'),
                                        email=request.form.get('input_email')).first()
+    print(type(visitquery))
     if visitquery:
         answerquery = answer.query.filter_by(ref_num=request.form.get('ref')).first()
         return render_template("printable.html",
@@ -481,10 +512,8 @@ def printable():
                                ans14=answerquery.ans14,
                                ans15=answerquery.ans15,
                                ans16=answerquery.ans16)
-
     else:
         alertmsg = 'No matched record'
-        return render_template('home.html', alertmsg=alertmsg)
     return render_template('home.html', alertmsg=alertmsg)
 
 
@@ -536,10 +565,14 @@ def search_result():
     else:
         return render_template('admin_main.html', no_result=True)
 
+
 @app.route('/getreport')
 def getreport():
+    return render_template('home.html', page="getreport")
 
-    return render_template('home.html', page = "getreport")
+
 if __name__ == "__main__":
     app.secret_key = os.urandom(32)
     app.run()
+
+global sdlajlj

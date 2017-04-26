@@ -22,14 +22,13 @@
     <![endif]-->
     <!--<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.0/jquery.min.js"></script>-->
 </head>
-<body>
+<body onbeforeunload="return leavepage()">
 
 <!--the pop out window-->
 <div class="container">
     <!-- Modal -->
     <div class="modal fade" id="myModal" role="dialog">
         <div class="modal-dialog">
-
             <!-- Modal content-->
             <div class="modal-content">
                 <div class="modal-header">
@@ -86,7 +85,6 @@
                     <button type="button" class="btn btn-default" data-dismiss="modal">Continue</button>
                 </div>
             </div>
-
         </div>
     </div>
 
@@ -265,9 +263,10 @@
                     </div>
                 </div>
             </div>
-            <input type="submit" id="submit-answer" class="hidden">
+            <input type="submit" id="submit-answer" class="hidden" onclick="reviewpage()">
             <div class="form-group">
-                <label for="email">Please enter your E-mail address to receive your report and retrieve your report after you finished:</label>
+                <label for="email">Please enter your E-mail address to receive your report and retrieve your report
+                    after you finished:</label>
                 <input type="email" aria-describedby="emailHelp" placeholder="Enter email" class="form-control"
                        name="email" value="{{email}}" id="email">
             </div>
@@ -278,9 +277,9 @@
             <span class="glyphicon glyphicon-menu-left" aria-hidden="true"></span>Previous
         </button>
     </a>
-    <label for="submit-answer" class="btn btn-primary btn-lg pull-right" style="margin-bottom: 5%" id="btn3">
+    <label for="submit-answer" class="btn btn-primary btn-lg pull-right" style="margin-bottom: 5%" id="review_btn">
         <!--TODO: the icon of submit button -->
-        Review
+        Save and review
     </label>
 
 </div>
@@ -309,15 +308,25 @@
     $('#block9').click(function () {
         $('#css9').css("display", "inline-block")
     });
-
-    $("#btn3").click(function () {
-        if ($("#css5").css("display") == "inline-block" && $("#css6").css("display") == "inline-block" && $("#css7").css("display") == "inline-block"
-            && $("#css8").css("display") == "inline-block" && $("#css9").css("display") == "inline-block") {
-            window.location.href = "/preview";
-        } else {
-            alert("You have section not be finished on this page, pelase check it")
+    //    $("#btn_review").click(function () {
+    //        if ($("#css5").css("display") == "inline-block" && $("#css6").css("display") == "inline-block" && $("#css7").css("display") == "inline-block"
+    //            && $("#css8").css("display") == "inline-block" && $("#css9").css("display") == "inline-block") {
+    //            window.location.href = "/preview";
+    //        } else {
+    //            alert("You have section not be finished on this page, pelase check it")
+    //        }
+    //    });
+</script>
+<script>
+    var saved = false
+    function reviewpage(){
+        saved = true
+    }
+    function leavepage() {
+        if (saved == false) {
+            return "Write something clever here..."
         }
-    });
+    }
 </script>
 </body>
 </html>

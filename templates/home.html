@@ -22,10 +22,8 @@
 </head>
 <body>
 
-
 <!--the head navbar of the website-->
 {% include 'navbar.html' %}
-<!--<nav class="navbar navbar-default">  <div class="container-fluid">      &lt;!&ndash; Brand and toggle get grouped for better mobile display &ndash;&gt;      <div class="navbar-header">          <a href="https://www.umassmed.edu/">              <img src="static/icon/logo-trans.png" class="img-responsive" width="130" height="40">          </a>      </div>      &lt;!&ndash; Collect the nav links, forms, and other content for toggling &ndash;&gt;      <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">          <ul class="nav navbar-nav">              <li><a href="{{url_for('homepage')}}">Home<span class="sr-only">(current)</span></a></li>              <li><a href="#">Introduction</a></li>              <li><a href="#">Contact Us</a></li>          </ul>      </div>&lt;!&ndash; /.navbar-collapse &ndash;&gt;  </div>&lt;!&ndash; /.container-fluid &ndash;&gt;</nav>-->
 <!--container of the whole content of the tool-->
 <div class="container">
     <h2 class="text-center">
@@ -35,51 +33,149 @@
     <!--the navigation bar-->
     <div id="tab"></div>
 </div>
-<div class="container" style="background-image: url(/static/img/landing_page.jpg); background-size:100%">
-    <div class="col-md-4" style="padding-top: 30px; padding-bottom: 300px">
-        <!--TODO: Start button and retrieve data form.    -->
-        {% if page == "getreport" %}
-        <div class="form-group well well-bg">
-            <form action="/printable" method="post">
-                <!--TODO: the form of box to retrieve old session-->
-                <label for="ref">Report ID:</label>
-                <input type="text" class="form-control" name="ref" id="ref">
-                <label for="input_email">Email:</label>
-                <input type="text" class="form-control" name="input_email" id="input_email">
-                <div style="margin-top:20px">
-                    <input type="submit" class="hidden" name="submit" id="retrieve">
-                    </input>
-                    <label for="retrieve">
-                        <button class="btn btn-primary pull-left">
-                            <span class="glyphicon glyphicon-save-file" aria-hidden="true"></span>Get Report
-                        </button>
-                    </label>
-                </div>
-            </form>
-            <a class="text-center" href="{{url_for('forgetid')}}">Forget your Report ID?</a>
-            {% if alertmsg %}
-            <div class="alert alert-warning text-center" role="alert">
-                {{ alertmsg }}
-            </div>
-            {% endif %}
+<div class="container" style="background-image: url(/static/img/landing_page.jpg); background-size:cover"> 
+    <!--The text-->
+    <div style="margin-top: 30%; margin-left: 10%; margin-right: 10%; margin-bottom: 5%; background-color: #000000; border: 1px solid black; opacity: 0.8">
+        <div style="margin: 5%; font-weight: 500; color: #ffffff; opacity: 1">
+            <h3 class="text-center">THIS TOOL IS FOR YOU IF: </h3>
+            <ul style="line-height: 40px; font-size: 20px; font-weight: 500;"> 
+                <li>  You are the one who makes decisions for your loved one when they can’t do it for themselves </li>
+                <li>  Your family member has a traumatic brain injury (TBI) and needs medical care in the ICU</li>
+                <li>  Your loved one needs machines to help them breathe and get food</li>
+            </ul>
         </div>
-        {% endif %}
-    </div>
-
-    <div class="container">
-        <a href="{{url_for('page_1')}}" class="text-center">
-            <button type="button" class="btn btn-primary btn-lg btn-block pull-right"
-                    style="margin-top:60px;margin-bottom: 5%">Start
-                <span class="glyphicon glyphicon-menu-right" aria-hidden="true"></span>
+        <div style="text-align: center; margin-bottom: 5%; margin-left: 20%; margin-right: 20%"> 
+            <a href="{{url_for('page_1')}}" class="text-center"> 
+                <button class="btn btn-primary btn-lg btn-block" type="button">Start 
+                    <span class="glyphicon" aria-hidden="true">
+                    </span> 
+                </button>
+            </a>
+            <p class="text-center"
+               style="line-height: 40px; font-size: 20px; font-weight: 500; color: #ffffff; opacity: 1;">For returning
+                user:</p>
+            <!--<a href="{{url_for('getreport')}}">-->
+            <button type="button" class="btn btn-primary btn-lg btn-block" data-toggle="modal"
+                    data-target="#getreport" style="text-align: center; margin-bottom: 5%;">
+                <span class="glyphicon glyphicon-print" aria-hidden="true"></span>Get Report
             </button>
-        </a>
+            <!--</a>-->
+        </div>
     </div>
-</div>
+    <!--TODO: Start button and retrieve data form.-->
+    <div class="modal fade" id="getreport" role="dialog">
+        <div class="modal-dialog">
+            <!-- Modal content-->
+            <div class="modal-content">
+                <div class="modal-body">
+                    <!--first page of retrieve report-->
+                    <form action="/printable" method="post">
+                        <!--TODO: the form of box to retrieve old session-->
+                        <label for="ref">Report ID:</label>
+                        <input type="number" class="form-control" name="ref" id="ref">
+                        <label for="input_email">Email:</label>
+                        <input type="email" class="form-control" name="input_email" id="input_email">
+                        <div style="margin-top:20px;">
+                            <input type="submit" class="hidden" name="submit" id="retrieve">
+                            </input>
+                            <label for="retrieve">
+                                <button class="btn btn-primary">
+                                    <span class="glyphicon glyphicon-save-file" aria-hidden="true"></span>Get
+                                    Report
+                                </button>
+                            </label>
+                        </div>
+                    </form>
+                    <a class="text-center" data-toggle="modal" data-target="#forgetid">Forget
+                        your Report ID?</a>
+                    {% if alertmsg %}
+                    <div class="alert alert-warning text-center" role="alert">
+                        {{ alertmsg }}
+                    </div>
+                    {% endif %}
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                </div>
+            </div>
+        </div>
+    </div>
 
+
+    <div class="modal fade" id="forgetid" role="dialog">
+        <div class="modal-dialog">
+            <!-- Modal content-->
+            <div class="modal-content">
+                <div class="modal-body">
+                    <!--first page of retrieve report-->
+                    <form action="/mailid" method="post">
+                        <label for="input_email">Email:</label>
+                        <input type="email" class="form-control" name="input_email" id="input_email">
+                        <div style="margin-top:20px">
+                            <input type="submit" class="hidden" name="submit" id="retrieve">
+                            </input>
+                            <label for="retrieve">
+                                <button class="btn btn-primary pull-left">
+                                    <span class="glyphicon glyphicon-save-file" aria-hidden="true"></span>Send Report ID
+                                    to my E-mail
+                                </button>
+                            </label>
+                        </div>
+                    </form>
+                    {% if alertmsg %}
+                    <div class="alert alert-warning text-center" role="alert">
+                        {{ alertmsg }}
+                    </div>
+                    {% endif %}
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!--forget report ID page-->
+
+
+    <!--Get report section-->
+    <!--{% if page == "getreport" %}-->
+    <!--<div style="margin-top: 30%; margin-left: 10%; margin-right: 10%; margin-bottom: 5%; background-color: #000000; opacity: 1">-->
+    <!--<div class="form-group well well-bg">-->
+    <!--<form action="/printable" method="post">-->
+    <!--&lt;!&ndash;TODO: the form of box to retrieve old session&ndash;&gt;-->
+    <!--<label for="ref">Report ID:</label>-->
+    <!--<input type="text" class="form-control" name="ref" id="ref">-->
+    <!--<label for="input_email">Email:</label>-->
+    <!--<input type="text" class="form-control" name="input_email" id="input_email">-->
+    <!--<div style="margin-top:20px">-->
+    <!--<input type="submit" class="hidden" name="submit" id="retrieve">-->
+    <!--</input>-->
+    <!--<label for="retrieve">-->
+    <!--<button class="btn btn-primary pull-left">-->
+    <!--<span class="glyphicon glyphicon-save-file" aria-hidden="true"></span>Get Report-->
+    <!--</button>-->
+    <!--</label>-->
+    <!--</div>-->
+    <!--</form>-->
+    <!--<a class="text-center" href="{{url_for('forgetid')}}">Forget your Report ID?</a>-->
+    <!--{% if alertmsg %}-->
+    <!--<div class="alert alert-warning text-center" role="alert">-->
+    <!--{{ alertmsg }}-->
+    <!--</div>-->
+    <!--{% endif %}-->
+    <!--</div>-->
+    <!--</div>-->
+    <!--{% endif %}-->
+</div>
 
 <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
 <!-- Include all compiled plugins (below), or include individual files as needed -->
 <script src="static/js/bootstrap.min.js"></script>
+{% if alertmsg %}
+<script type="text/javascript">
+    $('#getreport').modal('show');
+</script>
+{% endif %}
 </body>
 </html>

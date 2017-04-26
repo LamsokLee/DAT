@@ -26,7 +26,7 @@
         };
     </script>
 </head>
-<body onbeforeunload="exitpage()">
+<body onbeforeunload="return exitpage()">
 <!--the head navbar of the website-->
 {% include 'navbar.html' %}
 <!--container of the whole content of the tool-->
@@ -73,7 +73,8 @@
             <div class="panel panel-default">
                 <div class="panel-heading">
                     <h4 class="panel-title">
-                        <a data-toggle="collapse" data-parent="#accordion" href="#collapse1" id="block1">
+                        <a onclick="click1()" data-toggle="collapse" data-parent="#accordion" href="#collapse1"
+                           id="block1">
                             {% if session['accordion1'] == True %}
                             <span class="glyphicon glyphicon-ok"></span>
                             {% else %}
@@ -121,7 +122,8 @@
             <div class="panel panel-default">
                 <div class="panel-heading">
                     <h4 class="panel-title">
-                        <a data-toggle="collapse" data-parent="#accordion" href="#collapse2" id="block2">
+                        <a onclick="click2()" data-toggle="collapse" data-parent="#accordion" href="#collapse2"
+                           id="block2">
                             {% if session['accordion2'] == True %}
                             <span class="glyphicon glyphicon-ok"></span>
                             {% else %}
@@ -174,11 +176,11 @@
             <span class="glyphicon glyphicon glyphicon-menu-left" aria-hidden="true"></span>Previous
         </button>
     </a>
-    <a href="{{url_for('page_11')}}">
-        <button type="button" class="btn btn-primary btn-lg pull-right" style="margin-bottom: 5%" id="next">Next
-            <span class="glyphicon glyphicon glyphicon-menu-right" aria-hidden="true"></span>
-        </button>
-    </a>
+    <!--<a href="{{url_for('page_11')}}">-->
+    <button type="button" class="btn btn-primary btn-lg pull-right" style="margin-bottom: 5%" id="next">Next
+        <span class="glyphicon glyphicon glyphicon-menu-right" aria-hidden="true"></span>
+    </button>
+    <!--</a>-->
 </div>
 
 <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
@@ -200,7 +202,20 @@
         }
     });
 </script>
-
+<!--<script>-->
+    <!--var readsec = [false, false]-->
+    <!--function click1() {-->
+        <!--readsec[0] = true-->
+    <!--}-->
+    <!--function click2() {-->
+        <!--readsec[0] = true-->
+    <!--}-->
+    <!--function exitpage() {-->
+        <!--if (readsec[0] == false || readsec[1] == false){-->
+            <!--return ('Still unfinished')-->
+        <!--}-->
+    <!--}-->
+<!--</script>-->
 
 </body>
 </html>
