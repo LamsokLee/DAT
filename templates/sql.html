@@ -1,0 +1,106 @@
+<!DOCTYPE html> 
+<html lang="en"> 
+<head> 
+    <meta charset="utf-8">
+     
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+     
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+     
+    <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags --> 
+    <title>Goals-of-Care after Traumatic Brain Injury Decision Aid Prototype</title>      <!--Bootstrap on server--> 
+    <link href="{{ url_for ('static', filename = 'css/bootstrap.min.css') }}" rel="stylesheet">
+         <!--Bootstrap on local-->     <!--<link href="/css/bootstrap.min.css" rel="stylesheet">--> 
+    <!--Bootstrap on CDN--> 
+    <!--<link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet">-->
+    <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries --> 
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->     <!--[if lt IE 9]> 
+    <script src="https://oss.maxcdn.com/html5shiv/3.7.3/html5shiv.min.js"></script> 
+    <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>     <![endif]--> 
+</head>
+ 
+<body>
+<form action="/sqlresult" method="post" id="form_sql">
+    <div class="row">
+        <div class="col-xs-6 col-md-6">
+            <h1>
+                SQL Queries Execution Page
+            </h1>
+            <p>Type raw SQL query</p>
+            <input type="text" name="query">
+        </div>
+    </div>
+    <input type="submit" id="submit_sql">
+</form>
+
+<!--container of the table-->
+<h3>Result:</h3>
+{% if result == 'error' %}
+<p>SQL Syntax Error</p>
+{% else %}
+{% for rows in result %}
+{{ rows }}
+{% endfor %}
+{% endif %}
+<!--<div class="container">-->
+<!--<table class="table table-striped">-->
+<!--<thead>-->
+<!--<tr>-->
+<!--<th>Reference Number</th>-->
+<!--<th>User E-mail</th>-->
+<!--<th>Start Time</th>-->
+<!--<th>End Time</th>-->
+<!--<th>Ans 1</th>-->
+<!--<th>Ans 2</th>-->
+<!--<th>Ans 3</th>-->
+<!--<th>Ans 4</th>-->
+<!--<th>Ans 5</th>-->
+<!--<th>Ans 6</th>-->
+<!--<th>Ans 7</th>-->
+<!--<th>Ans 8</th>-->
+<!--<th>Ans 9</th>-->
+<!--<th>Ans 10</th>-->
+<!--<th>Ans 11</th>-->
+<!--<th>Ans 12</th>-->
+<!--<th>Ans 13</th>-->
+<!--<th>Ans 14</th>-->
+<!--<th>Ans 15</th>-->
+<!--<th>Ans 16</th>-->
+<!--</tr>-->
+<!--</thead>-->
+<!--<tbody>-->
+<!--{% for rows in result %}-->
+<!--<tr>-->
+<!--<td>{{rows.ref_num}}</td>-->
+<!--<td>{{rows.email}}</td>-->
+<!--<td>{{rows.start}}</td>-->
+<!--<td>{{rows.end}}</td>-->
+<!--<td>{{rows.ans1}}</td>-->
+<!--<td>{{rows.ans2}}</td>-->
+<!--<td>{{rows.ans3}}</td>-->
+<!--<td>{{rows.ans4}}</td>-->
+<!--<td>{{rows.ans5}}</td>-->
+<!--<td>{{rows.ans6}}</td>-->
+<!--<td>{{rows.ans7}}</td>-->
+<!--<td>{{rows.ans8}}</td>-->
+<!--<td>{{rows.ans9}}</td>-->
+<!--<td>{{rows.ans10}}</td>-->
+<!--<td>{{rows.ans11}}</td>-->
+<!--<td>{{rows.ans12}}</td>-->
+<!--<td>{{rows.ans13}}</td>-->
+<!--<td>{{rows.ans14}}</td>-->
+<!--<td>{{rows.ans16}}</td>-->
+<!--</tr>-->
+<!--{% endfor %}-->
+<!--</tbody>-->
+<!--</table>-->
+<!--</div>-->
+
+         <!-- jQuery (necessary for Bootstrap's JavaScript plugins) --> 
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+     <!-- Include all compiled plugins (below), or include individual files as needed --> 
+<script src="static/js/bootstrap.min.js"></script>
+ 
+</body>
+ 
+</html>

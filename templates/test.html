@@ -20,9 +20,43 @@
 </head>
  
 <body>
-<div style='line-height:20px'><p>Hello,</p><p>This is an auto-generate report from Goals-of-Care after Traumatic Brain Injury Decision Aid Prototype.</p> <p>Start Time:" + str(
-            session['start_time']) + "<p>End Time: " + str(session[
-                                                               'end_time']) + "<ol><li>What is your loved one’s outlook for getting better and how independent will he/she be with further medical care after the ICU?</li><ul><li>" + data.ans8 + "</li></ul><li> Do you understand what your loved one’s life will be like based on the two different treatment goals?</li><ul><li>" + data.ans9 + "</li></ul><li>Is this quality of life acceptable to your loved one?</li><ul><li>" + data.ans10 + "</li></ul><li> Do you understand the pros and cons of the two treatment goals/choices?</li><ul><li>" + data.ans11 + "</li></ul><li>What are their wishes for medical treatments when illness is severe or possibly leave them disabled? Have they mentioned it to you? Do they have a living will?</li><ul><li>" + data.ans12 + "</li></ul><li>If your loved one could look at the choices right now, what would they choose?</li><ul><li>" + data.ans13 + "</li></ul><li>How is this choice making you feel?</li><ul><li>" + data.ans14 + "</li></ul><li>Make a list and ask. Bring the list of questions to the meeting with the doctor, too.</li><ul><li>" + data.ans15 + "</li></ul><li> Where do you think your loved one would put themselves on the line below?(Number from 0-100, smaller number represents survival, greater number represents comfort)</li><ul><li>" + data.ans16 + "</li></ul></div>"
+<form action="/testresult" method="post">
+    <h1>
+        Testing Page
+    </h1>
+    <form method="post">
+        <input type="text" name="testvar">
+
+        <input type="submit">
+    </form>
+</form>
+<p>Test String:{{test}}</p>
+<p>Input sample:{{input}}</p>
+
+<h3>All variables</h3>
+<ul>
+    <li>Session ID: {{ref_num}}</li>
+    <li>User Email: {{email}}</li>
+    <li>Start Time: {{start}}</li>
+    <li>End Time:   {{end}}</li>
+    <li>Logged in:  {{logged}}</li>
+    <li>ans1:       {{ans1}}</li>
+    <li>ans2:       {{ans2}}</li>
+    <li>ans3:       {{ans3}}</li>
+    <li>ans4:       {{ans4}}</li>
+    <li>ans5:       {{ans5}}</li>
+    <li>ans6:       {{ans6}}</li>
+    <li>ans7:       {{ans7}}</li>
+    <li>ans8:       {{ans8}}</li>
+    <li>ans9:       {{ans9}}</li>
+    <li>ans10:      {{ans10}}</li>
+    <li>ans11:      {{ans11}}</li>
+    <li>ans12:      {{ans12}}</li>
+    <li>ans13:      {{ans13}}</li>
+    <li>ans14:      {{ans14}}</li>
+    <li>ans15:      {{ans15}}</li>
+    <li>ans16:      {{ans16}}</li>
+</ul>
 
          <!-- jQuery (necessary for Bootstrap's JavaScript plugins) --> 
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>

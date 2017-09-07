@@ -18,7 +18,7 @@ app.config.update(
     MAIL_PORT=465,
     MAIL_USE_SSL=True,
     MAIL_USERNAME='mis573wpi@gmail.com',
-    MAIL_PASSWORD='Mis573umass'
+    MAIL_PASSWORD='wpimstbi'
 )
 
 mail = Mail(app)
@@ -26,56 +26,72 @@ mail = Mail(app)
 
 # TODO: If session is running, kill it
 # TODO: To test if the session exists.
+# @app.route('/login')
+# def login():
+#     if 'logged' in session:
+#         # already logged in
+#         return render_template("home.html", page="homepage")
+#     else:
+#         session['login'] = True
+#         return render_template("home.html", page="homepage")
+
 # This is the test for email server
 
 
 # create the answers instance, which takes all the value of answers.
+
 @app.route('/')
 def homepage():
     # initialize the objects in current session
-    global sess
-    global data
+    # global sess
+    # session['sess']
+    # session['data']
+    # global data
     # global read
     # read = read()
-    sess = visit()
-    data = answer()
-    # default value of data attributes
-    data.ans1 = ''
-    data.ans2 = ''
-    data.ans3 = ''
-    data.ans4 = ''
-    data.ans5 = ''
-    data.ans6 = ''
-    data.ans7 = 'Did not make any choice'
-    data.ans8 = ''
-    data.ans9 = ''
-    data.ans10 = ''
-    data.ans11 = ''
-    data.ans12 = ''
-    data.ans13 = ''
-    data.ans14 = ''
-    data.ans15 = ''
-    data.ans16 = 50
+    # session['sess'] = visit()
+    # session['data'] = answer()
+
+    session['ans1'] = ''
+    session['ans2'] = ''
+    session['ans3'] = ''
+    session['ans4'] = ''
+    session['ans5'] = ''
+    session['ans6'] = ''
+    session['ans7'] = 'Did not make any choice'
+    session['ans8'] = ''
+    session['ans9'] = ''
+    session['ans10'] = ''
+    session['ans11'] = ''
+    session['ans12'] = ''
+    session['ans13'] = ''
+    session['ans14'] = ''
+    session['ans15'] = ''
+    session['ans16'] = 50
+    session['ref_num'] = -1
+    session['email'] = ''
+    session['start'] = datetime.datetime.now().strftime('%Y-%m-%d %H:%M:%S')
+    session['end'] = -1
 
     # default value of sess attributes
-    sess.email = ''
-    session['start_time'] = datetime.datetime.now()
-    sess.start_time = session['start_time']
+
+
     # TODO: Is_finish is not funcitoning
-    sess.is_finished = False
+    # session['is_finished'] = False
+    # session['mailsent'] = False
+    # session['accordion1'] = False;
+    # session['accordion2'] = False;
+    # session['accordion3'] = False;
+    # session['accordion4'] = False;
+    # session['accordion5'] = False;
+    # session['accordion6'] = False;
+    # session['accordion7'] = False;
+    # session['accordion8'] = False;
+    # session['accordion9'] = False;
+    # session['accordion10'] = False;
+
     # mark the session as logged
     session['logged'] = 'y'
-    session['mailsent'] = False
-    session['accordion1'] = False;
-    session['accordion2'] = False;
-    session['accordion3'] = False;
-    session['accordion4'] = False;
-    session['accordion5'] = False;
-    session['accordion6'] = False;
-    session['accordion7'] = False;
-    session['accordion8'] = False;
-    session['accordion9'] = False;
-    session['accordion10'] = False;
     return render_template("home.html", page="homepage")
 
 
@@ -108,12 +124,12 @@ def page_4():
     if 'logged' in session:
         return render_template("4.html",
                                page=4,
-                               ans1=data.ans1,
-                               ans2=data.ans2,
-                               ans3=data.ans3,
-                               ans4=data.ans4,
-                               ans5=data.ans5,
-                               ans6=data.ans6)
+                               ans1=session['ans1'],
+                               ans2=session['ans2'],
+                               ans3=session['ans3'],
+                               ans4=session['ans4'],
+                               ans5=session['ans5'],
+                               ans6=session['ans6'])
     else:
         return redirect('/')
 
@@ -122,12 +138,13 @@ def page_4():
 def post_5():
     if 'logged' in session:
         # get the user input from the form in the html
-        data.ans1 = request.form.get('ans1')
-        data.ans2 = request.form.get('ans2')
-        data.ans3 = request.form.get('ans3')
-        data.ans4 = request.form.get('ans4')
-        data.ans5 = request.form.get('ans5')
-        data.ans6 = request.form.get('ans6')
+        session['ans1'] = request.form.get('ans1')
+        session['ans2'] = request.form.get('ans2')
+        session['ans3'] = request.form.get('ans3')
+        session['ans4'] = request.form.get('ans4')
+        session['ans5'] = request.form.get('ans5')
+        session['ans6'] = request.form.get('ans6')
+        # db.engine.execute("INSERT INTO session (ans1) VALUES (session['ans1'])")
         return render_template("5.html", page=5)
     else:
         return redirect('/')
@@ -216,7 +233,7 @@ def page_14():
 @app.route('/post15', methods=['POST'])
 def post_15():
     if 'logged' in session:
-        data.ans7 = request.form.get('option')
+        session['ans7'] = request.form.get('option')
         return render_template("15.html", page=15)
     else:
         return redirect('/')
@@ -251,23 +268,23 @@ def page_18():
     if 'logged' in session:
         return render_template("18.html",
                                page=18,
-                               ans1=data.ans1,
-                               ans2=data.ans2,
-                               ans3=data.ans3,
-                               ans4=data.ans4,
-                               ans5=data.ans5,
-                               ans6=data.ans6,
-                               ans7=data.ans7,
-                               ans8=data.ans8,
-                               ans9=data.ans9,
-                               ans10=data.ans10,
-                               ans11=data.ans11,
-                               ans12=data.ans12,
-                               ans13=data.ans13,
-                               ans14=data.ans14,
-                               ans15=data.ans15,
-                               ans16=data.ans16,
-                               email=sess.email)
+                               ans1=session['ans1'],
+                               ans2=session['ans2'],
+                               ans3=session['ans3'],
+                               ans4=session['ans4'],
+                               ans5=session['ans5'],
+                               ans6=session['ans6'],
+                               ans7=session['ans7'],
+                               ans8=session['ans8'],
+                               ans9=session['ans9'],
+                               ans10=session['ans10'],
+                               ans11=session['ans11'],
+                               ans12=session['ans12'],
+                               ans13=session['ans13'],
+                               ans14=session['ans14'],
+                               ans15=session['ans15'],
+                               ans16=session['ans16'],
+                               email=session['email'])
 
     else:
         return redirect('/')
@@ -277,34 +294,34 @@ def page_18():
 def post_preview():
     if 'logged' in session:
         # get the user input from the form
-        data.ans8 = request.form.get('ans8')
-        data.ans9 = request.form.get('ans9')
-        data.ans10 = request.form.get('ans10')
-        data.ans11 = request.form.get('ans11')
-        data.ans12 = request.form.get('ans12')
-        data.ans13 = request.form.get('ans13')
-        data.ans14 = request.form.get('ans14')
-        data.ans15 = request.form.get('ans15')
-        data.ans16 = request.form.get('ans16')
-        sess.email = request.form.get('email')
+        session['ans8'] = request.form.get('ans8')
+        session['ans9'] = request.form.get('ans9')
+        session['ans10'] = request.form.get('ans10')
+        session['ans11'] = request.form.get('ans11')
+        session['ans12'] = request.form.get('ans12')
+        session['ans13'] = request.form.get('ans13')
+        session['ans14'] = request.form.get('ans14')
+        session['ans15'] = request.form.get('ans15')
+        session['ans16'] = request.form.get('ans16')
+        session['email'] = request.form.get('email')
 
         return render_template('preview.html',
                                page="review",
-                               ans1=data.ans1,
-                               ans2=data.ans2,
-                               ans3=data.ans3,
-                               ans4=data.ans4,
-                               ans5=data.ans5,
-                               ans6=data.ans6,
-                               ans8=data.ans8,
-                               ans9=data.ans9,
-                               ans10=data.ans10,
-                               ans11=data.ans11,
-                               ans12=data.ans12,
-                               ans13=data.ans13,
-                               ans14=data.ans14,
-                               ans15=data.ans15,
-                               ans16=data.ans16
+                               ans1=session['ans1'],
+                               ans2=session['ans2'],
+                               ans3=session['ans3'],
+                               ans4=session['ans4'],
+                               ans5=session['ans5'],
+                               ans6=session['ans6'],
+                               ans8=session['ans8'],
+                               ans9=session['ans9'],
+                               ans10=session['ans10'],
+                               ans11=session['ans11'],
+                               ans12=session['ans12'],
+                               ans13=session['ans13'],
+                               ans14=session['ans14'],
+                               ans15=session['ans15'],
+                               ans16=session['ans16']
                                )
     else:
         return redirect('/')
@@ -315,73 +332,70 @@ def page_preview():
     if 'logged' in session:
         return render_template('preview.html',
                                page="review",
-                               ans1=data.ans1,
-                               ans2=data.ans2,
-                               ans3=data.ans3,
-                               ans4=data.ans4,
-                               ans5=data.ans5,
-                               ans6=data.ans6,
-                               ans8=data.ans8,
-                               ans9=data.ans9,
-                               ans10=data.ans10,
-                               ans11=data.ans11,
-                               ans12=data.ans12,
-                               ans13=data.ans13,
-                               ans14=data.ans14,
-                               ans15=data.ans15,
-                               ans16=data.ans16
+                               ans1=session['ans1'],
+                               ans2=session['ans2'],
+                               ans3=session['ans3'],
+                               ans4=session['ans4'],
+                               ans5=session['ans5'],
+                               ans6=session['ans6'],
+                               ans8=session['ans8'],
+                               ans9=session['ans9'],
+                               ans10=session['ans10'],
+                               ans11=session['ans11'],
+                               ans12=session['ans12'],
+                               ans13=session['ans13'],
+                               ans14=session['ans14'],
+                               ans15=session['ans15'],
+                               ans16=session['ans16']
                                )
     else:
         return redirect('/')
 
 
+
 @app.route('/report')
 def page_report():
     if 'logged' in session:
-        session['end_time'] = datetime.datetime.now()
-        sess.end_time = session['end_time']
-        sess.is_finished = True
-        db.session.add(data)
-        db.session.add(sess)
-        db.session.commit()
+        # session['end_time'] = datetime.datetime.now()
+        # session['is_finished'] = True
+        # # creating two objects to add data
+        # db.session.add(data)
+        # db.session.add(sess)
+        # db.session.commit()
+        # # test code
+        # session['ref_num'] = data.ref_num
+        # session['email'] = sess.email
+        # db.session.add(data)
+        # db.session.add(sess)
+        # db.session.commit()
         # test code
-        data.ref_num = sess.ref_num
-        session['ref_num'] = data.ref_num
-        session['email'] = sess.email
-        db.session.add(data)
-        db.session.add(sess)
-        db.session.commit()
-        # test code
+        commitdb()
         session.pop('logged')
-        print("the session ends")
-        print(session['mailsent'])
+        # print("the session ends")
+        # print(session['mailsent'])
         return render_template("report.html",
-                               ref_num=data.ref_num,
-                               start=session['start_time'],
-                               end=session['end_time'],
-                               email=sess.email,
-                               ans1=data.ans1,
-                               ans2=data.ans2,
-                               ans3=data.ans3,
-                               ans4=data.ans4,
-                               ans5=data.ans5,
-                               ans6=data.ans6,
-                               ans8=data.ans8,
-                               ans9=data.ans9,
-                               ans10=data.ans10,
-                               ans11=data.ans11,
-                               ans12=data.ans12,
-                               ans13=data.ans13,
-                               ans14=data.ans14,
-                               ans15=data.ans15,
-                               ans16=data.ans16)
+                               ref_num=session['ref_num'],
+                               start=session['start'],
+                               end=session['end'],
+                               email=session['email'],
+                               ans1=session['ans1'],
+                               ans2=session['ans2'],
+                               ans3=session['ans3'],
+                               ans4=session['ans4'],
+                               ans5=session['ans5'],
+                               ans6=session['ans6'],
+                               ans8=session['ans8'],
+                               ans9=session['ans9'],
+                               ans10=session['ans10'],
+                               ans11=session['ans11'],
+                               ans12=session['ans12'],
+                               ans13=session['ans13'],
+                               ans14=session['ans14'],
+                               ans15=session['ans15'],
+                               ans16=session['ans16'])
     else:
         return redirect('/')
 
-
-@app.route("/test")
-def test():
-    return render_template('test.html')
 
 
 @app.route("/mail")
@@ -395,8 +409,9 @@ def sendmail():
             [session['email']])
         # msg.body = "1) What is most important for your loved one right now?"
         msg.html = "<div style='line-height:20px'><p>Hello,</p><p>This is an auto-generate report from Goals-of-Care after Traumatic Brain Injury Decision Aid Prototype.</p> <p>Start Time:" + str(
-            session['start_time']) + "<p>End Time: " + str(session[
-                                                               'end_time']) + "<ol><li>What is your loved one’s outlook for getting better and how independent will he/she be with further medical care after the ICU?</li><ul><li>" + data.ans8 + "</li></ul><li> Do you understand what your loved one’s life will be like based on the two different treatment goals?</li><ul><li>" + data.ans9 + "</li></ul><li>Is this quality of life acceptable to your loved one?</li><ul><li>" + data.ans10 + "</li></ul><li> Do you understand the pros and cons of the two treatment goals/choices?</li><ul><li>" + data.ans11 + "</li></ul><li>What are their wishes for medical treatments when illness is severe or possibly leave them disabled? Have they mentioned it to you? Do they have a living will?</li><ul><li>" + data.ans12 + "</li></ul><li>If your loved one could look at the choices right now, what would they choose?</li><ul><li>" + data.ans13 + "</li></ul><li>How is this choice making you feel?</li><ul><li>" + data.ans14 + "</li></ul><li>Make a list and ask. Bring the list of questions to the meeting with the doctor, too.</li><ul><li>" + data.ans15 + "</li></ul><li> Where do you think your loved one would put themselves on the line below? (Number from 0-100, smaller number represents survival, greater number represents comfort)</li><ul><li>"+ str(data.ans16)+"</li></ul></div>"
+            session['start']) + "<p>End Time: " + str(session[
+                                                               'end']) + "<ol><li>What is your loved one’s outlook for getting better and how independent will he/she be with further medical care after the ICU?</li><ul><li>" + session['ans8'] + "</li></ul><li> Do you understand what your loved one’s life will be like based on the two different treatment goals?</li><ul><li>" + session['ans9'] + "</li></ul><li>Is this quality of life acceptable to your loved one?</li><ul><li>" + session['ans10'] + "</li></ul><li> Do you understand the pros and cons of the two treatment goals/choices?</li><ul><li>" + session['ans11'] + "</li></ul><li>What are their wishes for medical treatments when illness is severe or possibly leave them disabled? Have they mentioned it to you? Do they have a living will?</li><ul><li>" + session['ans12'] + "</li></ul><li>If your loved one could look at the choices right now, what would they choose?</li><ul><li>" + session['ans13'] + "</li></ul><li>How is this choice making you feel?</li><ul><li>" + session['ans14'] + "</li></ul><li>Make a list and ask. Bring the list of questions to the meeting with the doctor, too.</li><ul><li>" + session['ans15'] + "</li></ul><li> Where do you think your loved one would put themselves on the line below? (Number from 0-100, smaller number represents survival, greater number represents comfort)</li><ul><li>" + str(
+            session['ans16']) + "</li></ul></div>"
         session['mailsent'] = True
         mail.send(msg)
         alertmsg = 'The report has been sent.'
@@ -404,48 +419,48 @@ def sendmail():
         print("mail has been sent")
         return render_template("report.html",
                                ref_num=session['ref_num'],
-                               start=session['start_time'],
-                               end=session['end_time'],
+                               start=session['start'],
+                               end=session['end'],
                                email=session['email'],
-                               ans1=data.ans1,
-                               ans2=data.ans2,
-                               ans3=data.ans3,
-                               ans4=data.ans4,
-                               ans5=data.ans5,
-                               ans6=data.ans6,
-                               ans8=data.ans8,
-                               ans9=data.ans9,
-                               ans10=data.ans10,
-                               ans11=data.ans11,
-                               ans12=data.ans12,
-                               ans13=data.ans13,
-                               ans14=data.ans14,
-                               ans15=data.ans15,
-                               ans16=data.ans16,
+                               ans1=session['ans1'],
+                               ans2=session['ans2'],
+                               ans3=session['ans3'],
+                               ans4=session['ans4'],
+                               ans5=session['ans5'],
+                               ans6=session['ans6'],
+                               ans8=session['ans8'],
+                               ans9=session['ans9'],
+                               ans10=session['ans10'],
+                               ans11=session['ans11'],
+                               ans12=session['ans12'],
+                               ans13=session['ans13'],
+                               ans14=session['ans14'],
+                               ans15=session['ans15'],
+                               ans16=session['ans16'],
                                alertmsg=alertmsg
                                )
     else:
         alertmsg = "You didn't input your E-mail address"
         return render_template("report.html",
                                ref_num=session['ref_num'],
-                               start=session['start_time'],
-                               end=session['end_time'],
+                               start=session['start'],
+                               end=session['end'],
                                email=session['email'],
-                               ans1=data.ans1,
-                               ans2=data.ans2,
-                               ans3=data.ans3,
-                               ans4=data.ans4,
-                               ans5=data.ans5,
-                               ans6=data.ans6,
-                               ans8=data.ans8,
-                               ans9=data.ans9,
-                               ans10=data.ans10,
-                               ans11=data.ans11,
-                               ans12=data.ans12,
-                               ans13=data.ans13,
-                               ans14=data.ans14,
-                               ans15=data.ans15,
-                               ans16=data.ans16,
+                               ans1=session['ans1'],
+                               ans2=session['ans2'],
+                               ans3=session['ans3'],
+                               ans4=session['ans4'],
+                               ans5=session['ans5'],
+                               ans6=session['ans6'],
+                               ans8=session['ans8'],
+                               ans9=session['ans9'],
+                               ans10=session['ans10'],
+                               ans11=session['ans11'],
+                               ans12=session['ans12'],
+                               ans13=session['ans13'],
+                               ans14=session['ans14'],
+                               ans15=session['ans15'],
+                               ans16=session['ans16'],
                                alertmsg=alertmsg)
 
 
@@ -568,17 +583,104 @@ def search_result():
 def getreport():
     return render_template('home.html', page="getreport")
 
+
 @app.route('/sendcontact', methods=['POST'])
 def sendcontact():
     msg = Message(
         'User Feedback: ' + request.form.get('subject'),
         sender='mis573wpi@gmail.com',
         recipients=['lilinshuo1110@gmail.com'])
-    msg.html = "<p> Name: " + request.form.get('name') + "</p><p> Email: " + request.form.get('email') + "</p><p>" + request.form.get('message')
+    msg.html = "<p> Name: " + request.form.get('name') + "</p><p> Email: " + request.form.get(
+        'email') + "</p><p>" + request.form.get('message')
     mail.send(msg)
     flash("Your feedback has been sent to us, we'll reply you as soon as possible. Thank you!")
     print("mail has been sent")
-    return ('',204)
+    return ('', 204)
+
+
+###############
+# for testing #
+###############
+
+# add into database
+def commitdb():
+    ex = db.engine.execute("INSERT INTO session (start) VALUES ('" + session['start'] + "')")
+    session['ref_num'] = ex.lastrowid
+    session['end'] = datetime.datetime.now().strftime('%Y-%m-%d %H:%M:%S')
+    db.engine.execute("UPDATE session SET email  = '" + session['email'] + "' WHERE session_id = " + str(session['ref_num']))
+    db.engine.execute("UPDATE session SET end    = '" + session['end']   + "' WHERE session_id = " + str(session['ref_num']))
+    db.engine.execute("UPDATE session SET ans1   = '" + session['ans1']  + "' WHERE session_id = " + str(session['ref_num']))
+    db.engine.execute("UPDATE session SET ans2   = '" + session['ans2']  + "' WHERE session_id = " + str(session['ref_num']))
+    db.engine.execute("UPDATE session SET ans3   = '" + session['ans3']  + "' WHERE session_id = " + str(session['ref_num']))
+    db.engine.execute("UPDATE session SET ans4   = '" + session['ans4']  + "' WHERE session_id = " + str(session['ref_num']))
+    db.engine.execute("UPDATE session SET ans5   = '" + session['ans5']  + "' WHERE session_id = " + str(session['ref_num']))
+    db.engine.execute("UPDATE session SET ans6   = '" + session['ans6']  + "' WHERE session_id = " + str(session['ref_num']))
+    db.engine.execute("UPDATE session SET ans7   = '" + session['ans7']  + "' WHERE session_id = " + str(session['ref_num']))
+    db.engine.execute("UPDATE session SET ans8   = '" + session['ans8']  + "' WHERE session_id = " + str(session['ref_num']))
+    db.engine.execute("UPDATE session SET ans9   = '" + session['ans9']  + "' WHERE session_id = " + str(session['ref_num']))
+    db.engine.execute("UPDATE session SET ans10  = '" + session['ans10'] + "' WHERE session_id = " + str(session['ref_num']))
+    db.engine.execute("UPDATE session SET ans11  = '" + session['ans11'] + "' WHERE session_id = " + str(session['ref_num']))
+    db.engine.execute("UPDATE session SET ans12  = '" + session['ans12'] + "' WHERE session_id = " + str(session['ref_num']))
+    db.engine.execute("UPDATE session SET ans13  = '" + session['ans13'] + "' WHERE session_id = " + str(session['ref_num']))
+    db.engine.execute("UPDATE session SET ans14  = '" + session['ans14'] + "' WHERE session_id = " + str(session['ref_num']))
+    db.engine.execute("UPDATE session SET ans15  = '" + session['ans15'] + "' WHERE session_id = " + str(session['ref_num']))
+    db.engine.execute("UPDATE session SET ans16  = '" + str(session['ans16']) + "' WHERE session_id = " + str(session['ref_num']))
+    return
+
+
+@app.route("/test")
+def test():
+    commitdb()
+    print("Commit successfully")
+    return render_template('test.html',
+                           ref_num=session['ref_num'],
+                           start=session['start'],
+                           end=session['end'],
+                           email=session['email'],
+                           logged=session['logged'],
+                           ans1=session['ans1'],
+                           ans2=session['ans2'],
+                           ans3=session['ans3'],
+                           ans4=session['ans4'],
+                           ans5=session['ans5'],
+                           ans6=session['ans6'],
+                           ans8=session['ans8'],
+                           ans9=session['ans9'],
+                           ans10=session['ans10'],
+                           ans11=session['ans11'],
+                           ans12=session['ans12'],
+                           ans13=session['ans13'],
+                           ans14=session['ans14'],
+                           ans15=session['ans15'],
+                           ans16=session['ans16'])
+
+@app.route("/testresult", methods=['POST'])
+def testresult():
+    session['form'] = request.form.get('testvar')
+    print(type(session['form']))
+    ex = db.engine.execute("INSERT INTO session (ans1) VALUES ('" + session['form'] + "')")
+    print(ex.lastrowid)
+    return render_template('test.html', test = session['form'])
+
+
+@app.route('/sql')
+def sql():
+    return render_template("sql.html")
+
+
+@app.route('/sqlresult', methods=['POST'])
+def sqlresult():
+    # Get the raw sql query from the form
+    query = request.form.get('query')
+    # Run it using SQL
+    try:
+        result = db.engine.execute(query)
+    except Exception:
+        return render_template("sql.html", result = 'error')
+    # for row in result:
+    #     print(row)
+    # Print the resfiult on the screen
+    return render_template("sql.html", result = result)
 
 if __name__ == "__main__":
     app.secret_key = os.urandom(32)
