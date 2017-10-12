@@ -8,8 +8,12 @@ app.config['SQLALCHEMY_DATABASE_URI'] = 'mysql://root:melomelo@localhost:3306/ma
 app.config['SQLALCHEMY_TRACK_MODIFICATIONS'] = False
 
 # configure the Email server
-app.config['MAIL_SERVER']   =   'smtp.gmail.com'
-app.config['MAIL_PORT']     =   465
-app.config['MAIL_USE_SSL']  =   True,
-app.config['MAIL_USERNAME'] =   'mis573wpi@gmail.com',
-app.config['MAIL_PASSWORD'] =   'wpimstbi'
+app.config.update(
+    DEBUG=True,
+    # EMAIL SETTINGS
+    MAIL_SERVER='smtp.gmail.com',
+    MAIL_PORT=465,
+    MAIL_USE_SSL=True,
+    MAIL_USERNAME='mis573wpi@gmail.com',
+    MAIL_PASSWORD='wpimstbi'
+)

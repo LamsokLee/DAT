@@ -1,27 +1,5 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="utf-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
-    <title>Goals-of-Care after Traumatic Brain Injury Decision Aid Prototype</title>
-
-    <!--Bootstrap on server-->
-    <link href="{{ url_for ('static', filename = 'css/bootstrap.min.css') }}" rel="stylesheet">
-    <!--Bootstrap on local-->
-    <!--<link href="static/css/bootstrap.min.css" rel="stylesheet">-->
-    <!--Bootstrap on CDN-->
-    <!--<link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet">-->
-
-    <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
-    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
-    <!--[if lt IE 9]>
-    <script src="https://oss.maxcdn.com/html5shiv/3.7.3/html5shiv.min.js"></script>
-    <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
-    <![endif]-->
-    <!--<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.0/jquery.min.js"></script>-->
-</head>
+<!--the head of HTML file-->
+{% include 'head.html' %}
 <body onbeforeunload="return leavepage()">
 
 <!--the pop out window-->
@@ -40,17 +18,17 @@
                         <li>
                             <b>What is most important for my loved one right now?</b>
                             <ul>
-                                {% if (ans1 == '') and (ans2 == '') and (ans3 == '') %}
+                                {% if (session['ans1'] == '') and (session['ans2'] == '') and (session['ans3'] == '') %}
                                 <li>No answer submitted</li>
                                 {% else %}
-                                {% if ans1 != '' %}
-                                <li>{{ans1}}</li>
+                                {% if session['ans1'] != '' %}
+                                <li>{{session['ans1']}}</li>
                                 {% endif %}
                                 {% if ans2 != '' %}
-                                <li>{{ans2}}</li>
+                                <li>{{session['ans2']}}</li>
                                 {% endif %}
-                                {% if ans3 != '' %}
-                                <li>{{ans3}}</li>
+                                {% if session['ans3'] != '' %}
+                                <li>{{session['ans3']}}</li>
                                 {% endif %}
                                 {% endif %}
                             </ul>
@@ -58,17 +36,17 @@
                         <li>
                             <b>What is most important for you right now?</b>
                             <ul>
-                                {% if (ans4 == '') and (ans5 == '') and (ans6 == '') %}
+                                {% if (session['ans4'] == '') and (session['ans5'] == '') and (session['ans6'] == '') %}
                                 <li>No answer submitted</li>
                                 {% else %}
-                                {% if ans4 != '' %}
-                                <li>{{ans4}}</li>
+                                {% if session['ans4'] != '' %}
+                                <li>{{session['ans4']}}</li>
                                 {% endif %}
-                                {% if ans5 != '' %}
-                                <li>{{ans5}}</li>
+                                {% if session['ans5'] != '' %}
+                                <li>{{session['ans5']}}</li>
                                 {% endif %}
-                                {% if ans6 != '' %}
-                                <li>{{ans6}}</li>
+                                {% if session['ans6'] != '' %}
+                                <li>{{session['ans6']}}</li>
                                 {% endif %}
                                 {% endif %}
                             </ul>
@@ -76,7 +54,7 @@
                         <li>
                             <b>My feeling about the decision:</b>
                             <ul>
-                                <li>{{ans7}}</li>
+                                <li>{{session['ans7']}}</li>
                             </ul>
                         </li>
                     </ul>
@@ -140,7 +118,8 @@
                                     What is your loved one’s outlook for getting better and how independent will he/she
                                     be with further medical care after the ICU?
                                 </label> 
-                                <textarea name="ans8" class="form-control" rows="3" id="ans8">{{ans8}}</textarea> 
+                                <textarea name="ans8" class="form-control" rows="3"
+                                          id="ans8">{{session['ans8']}}</textarea> 
                             </div>
                              
                             <div class="form-group">
@@ -148,7 +127,8 @@
                                     Do you understand what your loved one’s life will be like based on the two different
                                     treatment goals?
                                 </label> 
-                                <textarea name="ans9" class="form-control" rows="3" id="ans9">{{ans9}}</textarea>
+                                <textarea name="ans9" class="form-control" rows="3"
+                                          id="ans9">{{session['ans9']}}</textarea>
                                  
                             </div>
                              
@@ -156,7 +136,8 @@
                                 <label for="ans10">
                                     Is this quality of life acceptable to your loved one?
                                 </label> 
-                                <textarea name="ans10" class="form-control" rows="3" id="ans10">{{ans10}}</textarea>
+                                <textarea name="ans10" class="form-control" rows="3"
+                                          id="ans10">{{session['ans10']}}</textarea>
                                  
                             </div>
                              
@@ -164,7 +145,8 @@
                                 <label for="ans11">
                                     Do you understand the pros and cons of the two treatment goals/choices?
                                 </label>
-                                 <textarea name="ans11" class="form-control" rows="3" id="ans11">{{ans11}}</textarea> 
+                                 <textarea name="ans11" class="form-control" rows="3"
+                                           id="ans11">{{session['ans11']}}</textarea> 
                             </div>
                         </div>
                     </div>
@@ -186,14 +168,16 @@
                                     What are their wishes for medical treatments when illness is severe or possibly
                                     leave them disabled? Have they mentioned it to you? Do they have a living will?
                                 </label> 
-                                <textarea name="ans12" class="form-control" rows="3" id="ans12">{{ans12}}</textarea> 
+                                <textarea name="ans12" class="form-control" rows="3"
+                                          id="ans12">{{session['ans12']}}</textarea> 
                             </div>
                              
                             <div class="form-group">
                                 <label for="ans13">
                                     If your loved one could look at the choices right now, what would they choose?
                                 </label> 
-                                <textarea name="ans13" class="form-control" rows="3" id="ans13">{{ans13}}</textarea> 
+                                <textarea name="ans13" class="form-control" rows="3"
+                                          id="ans13">{{session['ans13']}}</textarea> 
                             </div>
                              
                         </div>
@@ -211,7 +195,8 @@
                     </div>
                     <div id="collapse3" class="panel-collapse collapse">
                         <div class="panel-body">
-                            <textarea name="ans14" class="form-control" rows="3" id="ans14">{{ans14}}</textarea> 
+                            <textarea name="ans14" class="form-control" rows="3"
+                                      id="ans14">{{session['ans14']}}</textarea> 
                         </div>
                     </div>
                 </div>
@@ -229,7 +214,8 @@
                             <label for="ans15">
                                 Make a list and ask. Bring the list of questions to the meeting with the doctor, too.
                             </label>
-                            <textarea name="ans15" class="form-control" rows="6" id="ans15">{{ans15}}</textarea>
+                            <textarea name="ans15" class="form-control" rows="6"
+                                      id="ans15">{{session['ans15']}}</textarea>
                         </div>
                     </div>
                 </div>
@@ -254,7 +240,8 @@
                                 <h4>Survival</h4>
                             </div>
                             <div class="col-md-10"><br>
-                                <input type="range" name="ans16" min="0" max="100" id="ans16" value={{ans16}}>
+                                <input type="range" name="ans16" min="0" max="100" id="ans16"
+                                       value={{session['ans16']}}>
                             </div>
                             <div class="col-md-1 text-center">
                                 <h4>Comfort</h4>
@@ -268,7 +255,7 @@
                 <label for="email">Please enter your E-mail address to receive your report and retrieve your report
                     after you finished:</label>
                 <input type="email" aria-describedby="emailHelp" placeholder="Enter email" class="form-control"
-                       name="email" value="{{email}}" id="email">
+                       name="email" value="{{session['email']}}" id="email">
             </div>
         </form>
     </div>
@@ -319,9 +306,11 @@
 </script>
 <script>
     var saved = false
-    function reviewpage(){
+
+    function reviewpage() {
         saved = true
     }
+
     function leavepage() {
         if (saved == false) {
             return "Write something clever here..."

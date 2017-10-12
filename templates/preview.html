@@ -1,26 +1,5 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="utf-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
-    <title>Goals-of-Care after Traumatic Brain Injury Decision Aid Prototype</title>
-
-    <!--Bootstrap on server-->
-    <link href="{{ url_for ('static', filename = 'css/bootstrap.min.css') }}" rel="stylesheet">
-    <!--Bootstrap on local-->
-    <!--<link href="css/bootstrap.min.css" rel="stylesheet">-->
-    <!--Bootstrap on CDN-->
-    <!--<link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet">-->
-
-    <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
-    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
-    <!--[if lt IE 9]>
-    <script src="https://oss.maxcdn.com/html5shiv/3.7.3/html5shiv.min.js"></script>
-    <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
-    <![endif]-->
-</head>
+<!--the head of HTML file-->
+{% include 'head.html' %}
 <body>
 <!--the head navbar of the website-->
 {% include 'navbar.html' %}
@@ -47,17 +26,17 @@
                     <div class="panel-heading">1) What is most important for your loved one right now?</div>
                     <div class="panel-body" style="font-style: italic">
                         <ul>
-                            {% if (ans1 == '') and (ans2 == '') and (ans3 == '') %}
+                            {% if (session['ans1'] == '') and (session['ans2'] == '') and (session['ans3'] == '') %}
                             <li><i>No answer submitted</i></li>
                             {% else %}
-                            {% if ans1 != '' %}
-                            <li><i>{{ans1}}</i></li>
+                            {% if session['ans1'] != '' %}
+                            <li><i>{{session['ans1']}}</i></li>
                             {% endif %}
-                            {% if ans2 != '' %}
-                            <li><i>{{ans2}}</i></li>
+                            {% if session['ans2'] != '' %}
+                            <li><i>{{session['ans2']}}</i></li>
                             {% endif %}
-                            {% if ans3 != '' %}
-                            <li><i>{{ans3}}</i></li>
+                            {% if session['ans3'] != '' %}
+                            <li><i>{{session['ans3']}}</i></li>
                             {% endif %}
                             {% endif %}
                         </ul>
@@ -66,17 +45,17 @@
                 <div class="panel panel-primary">
                     <div class="panel-heading">2) What is most important for you right now?</div>
                     <div class="panel-body" style="font-style: italic">
-                        <ul>{% if (ans4 == '') and (ans5 == '') and (ans6 == '') %}
+                        <ul>{% if (session['ans4'] == '') and (session['ans5'] == '') and (session['ans6'] == '') %}
                             <li><i>No answer submitted</i></li>
                             {% else %}
-                            {% if ans4 != '' %}
-                            <li><i>{{ans4}}</i></li>
+                            {% if session['ans4'] != '' %}
+                            <li><i>{{session['ans4']}}</i></li>
                             {% endif %}
-                            {% if ans5 != '' %}
-                            <li><i>{{ans5}}</i></li>
+                            {% if session['ans5'] != '' %}
+                            <li><i>{{session['ans5']}}</i></li>
                             {% endif %}
-                            {% if ans6 != '' %}
-                            <li><i>{{ans6}}</i></li>
+                            {% if session['ans6'] != '' %}
+                            <li><i>{{session['ans6']}}</i></li>
                             {% endif %}
                             {% endif %}
                         </ul>
@@ -86,9 +65,9 @@
                     <div class="panel-heading">3) What is your loved one’s outlook for getting better and how
                         independent will he/she be with further medical care after the ICU?
                     </div>
-                    <div class="panel-body" style="font-style: italic">{% if ans8 != '' %}
+                    <div class="panel-body" style="font-style: italic">{% if session['ans8'] != '' %}
                         <ul>
-                            <li><i>{{ans8}}</i></li>
+                            <li><i>{{session['ans8']}}</i></li>
                         </ul>
                         {% else %}
                         <ul>
@@ -101,9 +80,9 @@
                     <div class="panel-heading">4) Do you understand what your loved one’s life will be like based on the
                         two different treatment goals?
                     </div>
-                    <div class="panel-body" style="font-style: italic">{% if ans9 != '' %}
+                    <div class="panel-body" style="font-style: italic">{% if session['ans9'] != '' %}
                         <ul>
-                            <li><i>{{ans9}}</i></li>
+                            <li><i>{{session['ans9']}}</i></li>
                         </ul>
                         {% else %}
                         <ul>
@@ -114,9 +93,9 @@
                 </div>
                 <div class="panel panel-primary">
                     <div class="panel-heading">5) Is this quality of life acceptable to your loved one?</div>
-                    <div class="panel-body" style="font-style: italic"> {% if ans10 != '' %}
+                    <div class="panel-body" style="font-style: italic"> {% if session['ans10'] != '' %}
                         <ul>
-                            <li><i>{{ans10}}</i></li>
+                            <li><i>{{session['ans10']}}</i></li>
                         </ul>
                         {% else %}
                         <ul>
@@ -129,9 +108,9 @@
                     <div class="panel-heading">6) Do you understand the pros and cons of the two treatment
                         goals/choices?
                     </div>
-                    <div class="panel-body" style="font-style: italic"> {% if ans11 != '' %}
+                    <div class="panel-body" style="font-style: italic"> {% if session['ans11'] != '' %}
                         <ul>
-                            <li><i>{{ans11}}</i></li>
+                            <li><i>{{session['ans11']}}</i></li>
                         </ul>
                         {% else %}
                         <ul>
@@ -144,9 +123,9 @@
                     <div class="panel-heading">7) What are their wishes for medical treatments when illness is severe or
                         possibly leave them disabled? Have they mentioned it to you? Do they have a living will?
                     </div>
-                    <div class="panel-body" style="font-style: italic"> {% if ans12 != '' %}
+                    <div class="panel-body" style="font-style: italic"> {% if session['ans12'] != '' %}
                         <ul>
-                            <li><i>{{ans12}}</i></li>
+                            <li><i>{{session['ans12']}}</i></li>
                         </ul>
                         {% else %}
                         <ul>
@@ -159,9 +138,9 @@
                     <div class="panel-heading">8) If your loved one could look at the choices right now, what would they
                         choose?
                     </div>
-                    <div class="panel-body" style="font-style: italic">{% if ans13 != '' %}
+                    <div class="panel-body" style="font-style: italic">{% if session['ans13'] != '' %}
                         <ul>
-                            <li><i>{{ans13}}</i></li>
+                            <li><i>{{session['ans13']}}</i></li>
                         </ul>
                         {% else %}
                         <ul>
@@ -172,9 +151,9 @@
                 </div>
                 <div class="panel panel-primary">
                     <div class="panel-heading">9) How is this choice making you feel?</div>
-                    <div class="panel-body" style="font-style: italic">{% if ans14 != '' %}
+                    <div class="panel-body" style="font-style: italic">{% if session['ans14'] != '' %}
                         <ul>
-                            <li><i>{{ans14}}</i></li>
+                            <li><i>{{session['ans14']}}</i></li>
                         </ul>
                         {% else %}
                         <ul>
@@ -188,9 +167,9 @@
                     <div class="panel-heading">10) Make a list and ask. Bring the list of questions to the meeting with
                         the doctor, too.
                     </div>
-                    <div class="panel-body" style="font-style: italic">{% if ans15 != '' %}
+                    <div class="panel-body" style="font-style: italic">{% if session['ans15'] != '' %}
                         <ul>
-                            <li><i>{{ans15}}</i></li>
+                            <li><i>{{session['ans15']}}</i></li>
                         </ul>
                         {% else %}
                         <ul>
@@ -205,7 +184,7 @@
                     </div>
                     <div class="panel-body" style="font-style: italic">
                         <div style="margin-top:10px; padding-top:20px;margin-bottom: 10px; padding-bottom: 50px">
-                            <input type="range" name="ans16" min="0" max="100" id="ans16" value={{ans16}} disabled>
+                            <input type="range" name="ans16" min="0" max="100" id="ans16" value={{session['ans16']}} disabled>
                             <h4 class="pull-left">Survival</h4>
                             <h4 class="pull-right">Comfort</h4>
                         </div>

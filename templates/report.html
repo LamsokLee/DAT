@@ -1,26 +1,5 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="utf-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
-    <title>Goals-of-Care after Traumatic Brain Injury Decision Aid Prototype</title>
-
-    <!--Bootstrap on server-->
-    <link href="{{ url_for ('static', filename = 'css/bootstrap.min.css') }}" rel="stylesheet">
-    <!--Bootstrap on local-->
-    <!--<link href="css/bootstrap.min.css" rel="stylesheet">-->
-    <!--Bootstrap on CDN-->
-    <!--<link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet">-->
-
-    <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
-    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
-    <!--[if lt IE 9]>
-    <script src="https://oss.maxcdn.com/html5shiv/3.7.3/html5shiv.min.js"></script>
-    <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
-    <![endif]-->
-</head>
+<!--the head of HTML file-->
+{% include 'head.html' %}
 <body>
 <!--the head navbar of the website-->
 {% include 'navbar.html' %}
@@ -34,7 +13,7 @@
             <h4>
                 Your Report ID is
                 <h1 class="text-center">
-                    <mark>{{ref_num}}</mark>
+                    <mark>{{session['ref_num']}}</mark>
                 </h1>
                 <p>You can use this Report ID to retrieve your answer.</p>
                 <p>Make sure you remember it or write it down if you want to.</p>
@@ -57,17 +36,17 @@
                         <button type="button" class="btn btn-primary btn-md">
                             <span class="glyphicon glyphicon-envelope" aria-hidden="true"></span>Send
                         </button>
-                    </a>the worksheet to <b>{{email}}</b> if you want to.
+                    </a>the worksheet to <b>{{session['email']}}</b> if you want to.
                 </p>
             </div>
             {% endif %}
 
 
-            {% if alertmsg %}
+            {% if session['alertmsg'] %}
             <div style="padding-bottom: 5%">
                 <div class="col-md-3"></div>
                 <div class="col-md-6 alert alert-info text-center">
-                    {{alertmsg}}
+                    {{session['alertmsg']}}
                 </div>
                 <div class="col-md-3"></div>
             </div>

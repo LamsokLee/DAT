@@ -6,17 +6,6 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
      
     <meta name="viewport" content="width=device-width, initial-scale=1">
-     
-    <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags --> 
-    <title>Goals-of-Care after Traumatic Brain Injury Decision Aid Prototype</title>      <!--Bootstrap on server--> 
-    <!--<link href="{{ url_for ('static', filename = 'css/bootstrap.min.css') }}" rel="stylesheet">-->
-         <!--Bootstrap on local-->     <!--<link href="/css/bootstrap.min.css" rel="stylesheet">--> 
-    <!--Bootstrap on CDN--> 
-    <!--<link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet">-->
-    <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries --> 
-    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->     <!--[if lt IE 9]> 
-    <script src="https://oss.maxcdn.com/html5shiv/3.7.3/html5shiv.min.js"></script> 
-    <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>     <![endif]--> 
 </head>
  
 <body>
@@ -30,39 +19,39 @@
         <input type="submit">
     </form>
 </form>
-<p>Test String:{{test}}</p>
-<p>Input sample:{{input}}</p>
+<h3>Query Result:</h3>
+<p>{%for rows in result%}
+<ul>
+    <li>{{rows}}</li>
+</ul>
+{% endfor %}
+</p>
 
 <h3>All variables</h3>
 <ul>
-    <li>Session ID: {{ref_num}}</li>
-    <li>User Email: {{email}}</li>
-    <li>Start Time: {{start}}</li>
-    <li>End Time:   {{end}}</li>
-    <li>Logged in:  {{logged}}</li>
-    <li>ans1:       {{ans1}}</li>
-    <li>ans2:       {{ans2}}</li>
-    <li>ans3:       {{ans3}}</li>
-    <li>ans4:       {{ans4}}</li>
-    <li>ans5:       {{ans5}}</li>
-    <li>ans6:       {{ans6}}</li>
-    <li>ans7:       {{ans7}}</li>
-    <li>ans8:       {{ans8}}</li>
-    <li>ans9:       {{ans9}}</li>
-    <li>ans10:      {{ans10}}</li>
-    <li>ans11:      {{ans11}}</li>
-    <li>ans12:      {{ans12}}</li>
-    <li>ans13:      {{ans13}}</li>
-    <li>ans14:      {{ans14}}</li>
-    <li>ans15:      {{ans15}}</li>
-    <li>ans16:      {{ans16}}</li>
+    <li>Session ID: {{session['ref_num']}}</li>
+    <li>User Email: {{session['email']}}</li>
+    <li>Start Time: {{session['start']}}</li>
+    <li>End Time: {{session['end']}}</li>
+    <li>Logged in: {{session['logged']}}</li>
+    <li>ans1: {{session['ans1']}}</li>
+    <li>ans2: {{session['ans2']}}</li>
+    <li>ans3: {{session['ans3']}}</li>
+    <li>ans4: {{session['ans4']}}</li>
+    <li>ans5: {{session['ans5']}}</li>
+    <li>ans6: {{session['ans6']}}</li>
+    <li>ans7: {{session['ans7']}}</li>
+    <li>ans8: {{session['ans8']}}</li>
+    <li>ans9: {{session['ans9']}}</li>
+    <li>ans10: {{session['ans10']}}</li>
+    <li>ans11: {{session['ans11']}}</li>
+    <li>ans12: {{session['ans12']}}</li>
+    <li>ans13: {{session['ans13']}}</li>
+    <li>ans14: {{session['ans14']}}</li>
+    <li>ans15: {{session['ans15']}}</li>
+    <li>ans16: {{session['ans16']}}</li>
 </ul>
 
-         <!-- jQuery (necessary for Bootstrap's JavaScript plugins) --> 
-<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
-     <!-- Include all compiled plugins (below), or include individual files as needed --> 
-<script src="static/js/bootstrap.min.js"></script>
- 
 </body>
  
 </html>

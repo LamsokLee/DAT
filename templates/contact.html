@@ -26,5 +26,10 @@
         <label for="submit" class="btn btn-primary btn-md">
             Send Message<span class="glyphicon glyphicon-menu-right" aria-hidden="true"></span>
         </label>
+        {% if feedback %}
+        <div class="alert alert-warning text-center" role="alert">
+            {{ feedback }}
+        </div>
+        {% endif %}
     </form>
 </div>

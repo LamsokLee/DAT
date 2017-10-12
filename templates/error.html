@@ -1,0 +1,44 @@
+<!--the head of HTML file-->
+{% include 'head.html' %}
+<body>
+
+<!--the head navbar of the website-->
+{% include 'navbar.html' %}
+<!--container of the whole content of the tool-->
+<div class="container">
+    <h2 class="text-center">
+        Goals-of-Care after Traumatic Brain Injury Decision Aid Prototype
+    </h2>
+    <br/>
+    <!--the navigation bar-->
+    <div id="tab"></div>
+</div>
+<!--The text-->
+<div style=" margin-left: 10%; margin-right: 10%; background-color: #000000; border: 1px solid black; opacity: 0.8">
+    <div style="margin: 5%; font-weight: 500; color: #ffffff; opacity: 1">
+        <h3 class="text-center">404 PAGE NOT FOUND </h3>
+        <p style="line-height: 40px; font-size: 20px; font-weight: 500; text-align: center"> 
+            The Page you are looking for doesn't exist or an other error occurred.
+        </p>
+    </div>
+    <div style="text-align: center; margin-bottom: 5%; margin-left: 20%; margin-right: 20%"> 
+        <a href="{{url_for('homepage')}}" class="text-center"> 
+            <button type="button" class="btn btn-primary btn-lg btn-block" data-toggle="modal"
+                    data-target="#getreport" style="text-align: center; margin-bottom: 5%;">
+                <span class="glyphicon" aria-hidden="true"></span>Take me Home!
+            </button>
+        </a>
+    </div>
+</div>
+
+<!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+<!-- Include all compiled plugins (below), or include individual files as needed -->
+<script src="static/js/bootstrap.min.js"></script>
+{% if alertmsg %}
+<script type="text/javascript">
+    $('#getreport').modal('show');
+</script>
+{% endif %}
+</body>
+</html>

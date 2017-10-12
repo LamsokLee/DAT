@@ -2,16 +2,16 @@
 {% include 'head.html' %}
 <body>
 <!--the head navbar of the website-->
-{% include 'navbar.html' %}
+{% include 'admin_navbar.html' %}
 <div style="text-align: center">
+    <a href="{{url_for('admin_listall')}}">
+        <button type="button" class="btn btn-primary btn-md">
+            <span class="glyphicon glyphicon-chevron-left" aria-hidden="true"></span>Return
+        </button>
+    </a>
     <button type="button" class="btn btn-primary btn-md" onclick="printDiv('printable')">
         <span class="glyphicon glyphicon-print" aria-hidden="true"></span>Print this report
     </button>
-    <a href="{{url_for('page_18')}}">
-        <button type="button" class="btn btn-primary btn-md">
-            <span class="glyphicon glyphicon-pencil" aria-hidden="true"></span>Edit My Report
-        </button>
-    </a>
 </div>
 
 <div id="printable" class="container">
