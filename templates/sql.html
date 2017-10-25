@@ -1,5 +1,5 @@
 <!--the head of HTML file-->
-{% include 'head.html' %}
+{% include 'sections/head.html' %}
  
 <body>
 <form action="/sqlresult" method="post" id="form_sql">
@@ -24,59 +24,6 @@
 {{ rows }}
 {% endfor %}
 {% endif %}
-<!--<div class="container">-->
-<!--<table class="table table-striped">-->
-<!--<thead>-->
-<!--<tr>-->
-<!--<th>Reference Number</th>-->
-<!--<th>User E-mail</th>-->
-<!--<th>Start Time</th>-->
-<!--<th>End Time</th>-->
-<!--<th>Ans 1</th>-->
-<!--<th>Ans 2</th>-->
-<!--<th>Ans 3</th>-->
-<!--<th>Ans 4</th>-->
-<!--<th>Ans 5</th>-->
-<!--<th>Ans 6</th>-->
-<!--<th>Ans 7</th>-->
-<!--<th>Ans 8</th>-->
-<!--<th>Ans 9</th>-->
-<!--<th>Ans 10</th>-->
-<!--<th>Ans 11</th>-->
-<!--<th>Ans 12</th>-->
-<!--<th>Ans 13</th>-->
-<!--<th>Ans 14</th>-->
-<!--<th>Ans 15</th>-->
-<!--<th>Ans 16</th>-->
-<!--</tr>-->
-<!--</thead>-->
-<!--<tbody>-->
-<!--{% for rows in result %}-->
-<!--<tr>-->
-<!--<td>{{rows.ref_num}}</td>-->
-<!--<td>{{rows.email}}</td>-->
-<!--<td>{{rows.start}}</td>-->
-<!--<td>{{rows.end}}</td>-->
-<!--<td>{{rows.ans1}}</td>-->
-<!--<td>{{rows.ans2}}</td>-->
-<!--<td>{{rows.ans3}}</td>-->
-<!--<td>{{rows.ans4}}</td>-->
-<!--<td>{{rows.ans5}}</td>-->
-<!--<td>{{rows.ans6}}</td>-->
-<!--<td>{{rows.ans7}}</td>-->
-<!--<td>{{rows.ans8}}</td>-->
-<!--<td>{{rows.ans9}}</td>-->
-<!--<td>{{rows.ans10}}</td>-->
-<!--<td>{{rows.ans11}}</td>-->
-<!--<td>{{rows.ans12}}</td>-->
-<!--<td>{{rows.ans13}}</td>-->
-<!--<td>{{rows.ans14}}</td>-->
-<!--<td>{{rows.ans16}}</td>-->
-<!--</tr>-->
-<!--{% endfor %}-->
-<!--</tbody>-->
-<!--</table>-->
-<!--</div>-->
 
          <!-- jQuery (necessary for Bootstrap's JavaScript plugins) --> 
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>

@@ -1,0 +1,75 @@
+<!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+<!-- Include all compiled plugins (below), or include individual files as needed -->
+<script src="static/js/bootstrap.min.js"></script>
+{% if page == 10 %}
+<script type="text/javascript">
+    $("#block1").click(function () {
+        $("#check1").css("display", "inline-block")
+    });
+    $("#block2").click(function () {
+        $("#check2").css("display", "inline-block")
+    });
+    $("#next").click(function () {
+        if ($("#check1").css("display") == "inline-block" && $("#check2").css("display") == "inline-block") {
+            window.location.href = "/11";
+        } else {
+            alert("Please read all the sections")
+        }
+    });
+</script>
+{% endif %}
+{% if page == 11 %}
+<script type="text/javascript">
+    $("#block3").click(function () {
+        $("#check3").css("display", "inline-block")
+    });
+    $("#block4").click(function () {
+        $("#check4").css("display", "inline-block")
+    });
+    $("#block5").click(function () {
+        $("#check5").css("display", "inline-block")
+    });
+    $("#next").click(function () {
+        if ($("#check3").css("display") == "inline-block" && $("#check4").css("display") == "inline-block" && $("#check5").css("display") == "inline-block") {
+            window.location.href = "/12";
+        } else {
+            alert("Please read all the sections")
+        }
+    });
+</script>
+{% elif page == 18 %}
+<script type="text/javascript">
+    $('#myModal').modal('show');
+</script>
+<script type="text/javascript">
+    $('#block5').click(function () {
+        $('#css5').css("display", "inline-block")
+    });
+    $('#block6').click(function () {
+        $('#css6').css("display", "inline-block")
+    });
+    $('#block7').click(function () {
+        $('#css7').css("display", "inline-block")
+    });
+    $('#block8').click(function () {
+        $('#css8').css("display", "inline-block")
+    });
+    $('#block9').click(function () {
+        $('#css9').css("display", "inline-block")
+    });
+</script>
+<script>
+    var saved = false
+
+    function reviewpage() {
+        saved = true
+    }
+
+    function leavepage() {
+        if (saved == false) {
+            return "Write something clever here..."
+        }
+    }
+</script>
+{% endif %}

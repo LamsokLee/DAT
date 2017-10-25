@@ -1,0 +1,96 @@
+<div class="section-head"><h3 class="text-center">ARE YOU STILL UNSURE?</h3></div>
+<br>
+<h4 class="text-center">After reading the prior pages, how do you feel about making a decision?</h4>
+<h4 class="text-center">Make an X on the line based on how you feel:</h4>
+<div class="container well well-lg">
+    <form action="/post15" method="post" id="form_page_14">
+        <div class="col-md-2 text-center">
+            <h4>Please Choose your feeling:</h4>
+        </div>
+        <div class="col-md-2 text-center">
+            <label class="radio-inline">
+                {% if session['ans1'] == 'Not ready at all' %}
+                <input type="radio" value="Not ready at all" name="option" checked>
+                {% else %}
+                <input type="radio" value="Not ready at all" name="option">
+                {% endif %}
+            </label>
+            <h5>Not ready at all</h5>
+        </div>
+        <div class="col-md-2 text-center">
+            <label class="radio-inline">
+                {% if session['ans1'] == 'Somewhat not ready' %}
+                <input type="radio" value="Somewhat not ready" name="option" checked>
+                {% else %}
+                <input type="radio" value="Somewhat not ready" name="option">
+                {% endif %}
+            </label>
+            <h5>Somewhat not ready</h5>
+        </div>
+        <div class="col-md-2 text-center">
+            <label class="radio-inline">
+                {% if session['ans1'] == 'Unsure' %}
+                <input type="radio" value="Unsure" name="option" checked>
+                {% else %}
+                <input type="radio" value="Unsure" name="option">
+                {% endif %}
+            </label>
+            <h5>Unsure</h5>
+        </div>
+        <div class="col-md-2 text-center">
+            <label class="radio-inline">
+                {% if session['ans1'] == 'Somewhat ready' %}
+                <input type="radio" value="Somewhat ready" name="option" checked>
+                {% else %}
+                <input type="radio" value="Somewhat ready" name="option">
+                {% endif %}
+            </label>
+            <h5>Somewhat ready</h5>
+        </div>
+        <div class="col-md-2 text-center">
+            <label class="radio-inline">
+                {% if session['ans1'] == 'Ready' %}
+                <input type="radio" value="Ready" name="option" checked>
+                {% else %}
+                <input type="radio" value="Ready" name="option">
+                {% endif %}
+            </label>
+            <h5>Ready</h5>
+        </div>
+        <!--submit input button for the radio buttons-->
+        <input type="submit" id="submit_page_14" class="hidden">
+    </form>
+</div>
+<ul>
+    <li>Even after thinking about the decision and the options, you may still not be sure what is best for your family
+        member.
+    <li><b>It’s ok to feel that way. Many people in this situation feel the same way.</b>
+    <li>You may be unsure because:
+        <ul>
+            <li>You need to talk with others before making a decision.
+            <li>You still have questions about treatment choices.
+            <li>You need more time to think about things.
+        </ul>
+</ul>
+
+
+<div class="section-head"><h3 class="text-center">WHERE CAN YOU GET MORE INFORMATION?</h3></div>
+<p><b>It is very important to discuss your decision with your family member’s doctor and get answers to your
+    questions.</b></p>
+<ul>
+    <li>
+        <b>Many staff members are ready to help and support you, including:</b>
+    </li>
+    <ul>
+        <li>doctors,
+        <li>nurses,
+        <li>palliative care specialists,
+        <li>chaplains,
+        <li>social workers, and
+        <li>case managers.
+    </ul>
+    <li>You can get more help by speaking to these staff members and meeting with your family member’s doctor.
+        </li>
+
+
+</ul>

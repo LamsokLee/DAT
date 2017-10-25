@@ -1,0 +1,50 @@
+<nav class="navbar navbar-default">
+    <div class="container-fluid">
+        <!-- Brand and toggle get grouped for better mobile display -->
+        <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar">
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+        </button>
+        <div class="navbar-header">
+            <a href="https://www.umassmed.edu/">
+                <img src="{{ url_for ('static', filename = 'icon/logo-trans.png') }}" class="img-responsive" width="130"
+                     height="40">
+            </a>
+        </div>
+        <div class="navbar-header">
+            <a href="https://www.wpi.edu/">
+                <img src="{{ url_for ('static', filename = 'icon/logo-wpi.png') }}" class="img-responsive" width="130"
+                     height="40">
+            </a>
+        </div>
+        <!--<div class="navbar-brand" style="padding-left: 1%">-->
+        <!--<a href="https://www.umassmed.edu/">-->
+        <!--<img src="{{ url_for ('static', filename = 'icon/logo_right.png') }}">-->
+        <!--</a>-->
+        <!--</div>-->
+        <!-- Collect the nav links, forms, and other content for toggling -->
+        <div class="collapse navbar-collapse" id="myNavbar">
+            <ul class="nav navbar-nav">
+                <li><a href="{{url_for('homepage')}}">Home<span class="sr-only"></span></a></li>
+                <li><a href="{{url_for('about')}}">About Us</a></li>
+                <li><a data-toggle="modal" data-target="#contact" style="cursor: hand">Provide Feedback</a></li>
+                <!--<li><a href="{{url_for('admin_login')}}">Admin</a></li>-->
+            </ul>
+        </div>
+        <!-- /.navbar-collapse -->
+    </div>
+    <div class="modal fade" id="contact" role="dialog">
+        <div class="modal-dialog">
+            <!-- Modal content-->
+            <div class="modal-content">
+                <div class="modal-body">
+                    {% include "sections/contact.html" %}
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                </div>
+            </div>
+        </div>
+    </div><!-- /.container-fluid -->
+</nav>

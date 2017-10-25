@@ -1,0 +1,29 @@
+<!--container of the table-->
+<div class="container">
+    <table class="table table-striped">
+        <thead>
+        <tr>
+            <th>Reference Number</th>
+            <th>User E-mail</th>
+            <th>Start Time</th>
+            <th>End Time</th>
+            <th>See Report</th>
+        </tr>
+        </thead>
+        <tbody>
+        {% for rows in tablelist %}
+        <tr>
+            <td>{{rows.session_id}}</td>
+            <td>{{rows.email}}</td>
+            <td>{{rows.start}}</td>
+            <td>{{rows.end}}</td>
+            <td><a href="{{url_for('admin_report', ref_num = rows.session_id)}}">
+                <button type="button" class="btn btn-default">
+                    <span class="glyphicon glyphicon-file" aria-hidden="true"></span>
+                </button>
+            </a></td>
+        </tr>
+        {% endfor %}
+        </tbody>
+    </table>
+</div>

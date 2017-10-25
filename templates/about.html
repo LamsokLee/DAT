@@ -1,0 +1,99 @@
+<html>
+<!--the head of HTML file-->
+{% include 'sections/head.html' %}
+<body>
+<!--the head navbar of the website-->
+{% include 'sections/navbar.html' %}
+<!--container of the whole content of the tool-->
+<div class="container">
+    {% include 'sections/pagetitle.html' %}
+    <!--the navigation bar-->
+    <div id="tab"></div>
+</div>
+<!--The text-->
+<div class="container">
+    <div class="section-head"><h3 class="text-center">ABOUT US</h3></div>
+    <br>
+    <div class="container">
+        <h4>Team:</h4>
+        <table class="table">
+            <tbody>
+            <tr>
+                <td><a href="https://physicians.umassmemorial.org/details/2771/susanne-muehlschlegel-neurology-worcester">Susanne Muehlschlegel, MD, MPH, FNCS, FCCM</a></td>
+                <td>Principal Investigator (PI)</td>
+                <td>UMass Medical School</td>
+                </td>
+            </tr>
+            <tr>
+                <td><a href="https://www.wpi.edu/people/faculty/bengisu">Bengisu Tulu, PhD</a></td>
+                <td>Principal Investigator (PI)</td>
+                <td>Worcester Polytechnic Institute</td>
+            </tr>
+            <tr>
+                <td><a href="https://www.linkedin.com/in/iryna-nieto-58b93973">Iryna Nieto</a></td>
+                <td>Research coordinator</td>
+                <td>UMass Medical School</td>
+            </tr>
+
+            <tr>
+                <td><a href="https://www.linkedin.com/in/linshuoli/">Linshuo Li</a></td>
+                <td>Graduate Student Developer</td>
+                <td>Worcester Polytechnic Institute</td>
+            </tr>
+            <tr>
+                <td><a href="https://www.linkedin.com/in/kavya-aroor-9a966551">Kavya Aroor</a></td>
+                <td>Graduate Student Tester</td>
+                <td>Worcester Polytechnic Institute</td>
+            </tr>
+
+            </tbody>
+        </table>
+    </div>
+
+    <ul>
+    </ul>
+
+    <h4>Funding Source:</h4>
+
+    <ul>
+        <li>National Institutes of Health / Eunice Kennedy Shriver National Institute for Child Health
+            and Human Development, Grant 5K23HD080971
+    </ul>
+
+    <h4>Publications:</h4>
+    <ol>
+        <li>Khan MW, Muehlschlegel S. Shared Decision Making in Neurocritical Care. Neurol Clin. 2017
+            Nov;35(4):825-834. doi: 10.1016/j.ncl.2017.06.014. Review. PubMed PMID: 28962816.
+
+        <li>Quinn T, Moskowitz J, Khan MW, Shutter L, Goldberg R, Col N, Mazor KM, Muehlschlegel S. What Families
+            Need and Physicians Deliver: Contrasting Communication Preferences Between Surrogate Decision-Makers and
+            Physicians During Outcome Prognostication in Critically Ill TBI Patients. Neurocrit Care. 2017 Jul 6.
+            doi:
+            10.1007/s12028-017-0427-2. [Epub ahead of print] PubMed PMID: 28685395.
+
+        <li>Cai X, Robinson J, Muehlschlegel S, White DB, Holloway RG, Sheth KN, Fraenkel L, Hwang DY. Patient
+            Preferences and Surrogate Decision Making in Neuroscience Intensive Care Units. Neurocrit Care. 2015
+            Aug;23(1):131-41. doi: 10.1007/s12028-015-0149-2. Review. PubMed PMID: 25990137; PubMed Central PMCID:
+            PMC4816524.
+
+        <li>Muehlschlegel S, Shutter L, Col N, Goldberg R. Decision Aids and Shared
+            Decision-Making in Neurocritical Care: An Unmet Need in Our NeuroICUs. Neurocrit Care. 2015
+            Aug;23(1):127-30. doi: 10.1007/s12028-014-0097-2. PubMed PMID: 25561435; PubMed Central PMCID:
+            PMC4806789.
+    </ol>
+
+</div>
+<div class="text-center">© 2017 University of Massachusetts and Worcester Polytechnic Institute. All Rights Reserved.
+</div>
+<br><br>
+<!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+<!-- Include all compiled plugins (below), or include individual files as needed -->
+<script src="static/js/bootstrap.min.js"></script>
+{% if alertmsg %}
+<script type="text/javascript">
+    $('#getreport').modal('show');
+</script>
+{% endif %}
+</body>
+</html>

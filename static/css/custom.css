@@ -1,0 +1,30 @@
+/*following are personalized style sheet*/
+
+p {
+    font-family: "Times New Roman";
+}
+
+h3 {
+    font-family: Arial, Times, serif;
+    font-weight: bold;
+}
+
+.section-head {
+    background-color: #bed6ed;
+    padding: 5px;
+}
+
+ul {
+    font-family: "Times New Roman", Arial, Times, serif;
+    font-size: large;
+}
+
+ol {
+    font-family: "Times New Roman", Arial, Times, serif;
+    font-size: large;
+}
+
+.nav {
+    font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+    font-size: small;
+}

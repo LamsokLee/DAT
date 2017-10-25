@@ -1,25 +1,21 @@
+<html>
 <!--the head of HTML file-->
-{% include 'head.html' %}
+{% include 'sections/head.html' %}
 <body>
-
 <!--the head navbar of the website-->
-{% include 'navbar.html' %}
+{% include 'sections/navbar.html' %}
 <!--container of the whole content of the tool-->
 <div class="container">
-    <h2 class="text-center">
-        Goals-of-Care after Traumatic Brain Injury Decision Aid Prototype
-    </h2>
-    <br/>
+    {% include 'sections/pagetitle.html' %}
     <!--the navigation bar-->
     <div id="tab"></div>
 </div>
 <!--The text-->
 <div style=" margin-left: 10%; margin-right: 10%; background-color: #000000; border: 1px solid black; opacity: 0.8">
     <div style="margin: 5%; font-weight: 500; color: #ffffff; opacity: 1">
-        <h3 class="text-center">404 PAGE NOT FOUND </h3>
+        <h3 class="text-center">Error</h3>
         <p style="line-height: 40px; font-size: 20px; font-weight: 500; text-align: center"> 
-            The Page you are looking for doesn't exist or an other error occurred.
-        </p>
+            {{error}} </p>
     </div>
     <div style="text-align: center; margin-bottom: 5%; margin-left: 20%; margin-right: 20%"> 
         <a href="{{url_for('homepage')}}" class="text-center"> 
@@ -30,7 +26,9 @@
         </a>
     </div>
 </div>
-
+<div class="text-center">© 2017 University of Massachusetts and Worcester Polytechnic Institute. All Rights Reserved.
+</div>
+<br><br>
 <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
 <!-- Include all compiled plugins (below), or include individual files as needed -->

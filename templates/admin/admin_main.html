@@ -1,0 +1,19 @@
+<html>
+<!--the head of HTML file-->
+{% include 'sections/head.html' %}
+<body>
+<!--the head navbar of the website-->
+{% include 'admin/admin_navbar.html' %}
+
+<!--the input box of searching-->
+{% include 'admin/admin_search.html' %}
+
+<!--container of the table-->
+{% include 'admin/admin_result.html' %}
+
+<!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+<!-- Include all compiled plugins (below), or include individual files as needed -->
+<script src="{{ url_for ('static', filename = 'js/bootstrap.min.js') }}"></script>
+</body>
+</html>
