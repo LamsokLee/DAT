@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html lang="en">
+<!--the head of HTML file-->
+{% include 'sections/head.html' %}
+<body>
+<!--the head navbar of the website-->
+{% include 'sections/navbar.html' %}
+<!--container of the whole content of the tool-->
+<div class="container">
+    <h2 class="text-center">
+        System Usability Scale
+    </h2>
+    <h4>
+        Instructions: For each of the following statements, mark one box that best describes your reactions to the
+        website today.
+    </h4>
+    <form action="/submitsus" method="post">
+        <table class="table table-striped">
+            <thead>
+            <tr>
+                <th class="col-md-1">#</th>
+                <th class="col-md-6"></th>
+                <th class="col-md-1">Strongly Disagree</th>
+                <th class="col-md-1"></th>
+                <th class="col-md-1"></th>
+                <th class="col-md-1"></th>
+                <th class="col-md-1">Strongly Agree</th>
+            </tr>
+            </thead>
+            <tbody>
+            <tr>
+                <th scope="row">1</th>
+                <td>I think that I would like to use this website frequently.
+                </td>
+                <td><input type="radio" value=1 name="q1"><br>1</td>
+                <td><input type="radio" value=2 name="q1"><br>2</td>
+                <td><input type="radio" value=3 name="q1"><br>3</td>
+                <td><input type="radio" value=4 name="q1"><br>4</td>
+                <td><input type="radio" value=5 name="q1"><br>5</td>
+            </tr>
+            <tr>
+                <th scope="row">2</th>
+                <td>I found this website unnecessarily complex. 
+                </td>
+                <td><input type="radio" value=1 name="q2"><br>1</td>
+                <td><input type="radio" value=2 name="q2"><br>2</td>
+                <td><input type="radio" value=3 name="q2"><br>3</td>
+                <td><input type="radio" value=4 name="q2"><br>4</td>
+                <td><input type="radio" value=5 name="q2"><br>5</td>
+            </tr>
+            <tr>
+                <th scope="row">3</th>
+                <td>I thought this website was easy to use. 
+                </td>
+                <td><input type="radio" value=1 name="q3"><br>1</td>
+                <td><input type="radio" value=2 name="q3"><br>2</td>
+                <td><input type="radio" value=3 name="q3"><br>3</td>
+                <td><input type="radio" value=4 name="q3"><br>4</td>
+                <td><input type="radio" value=5 name="q3"><br>5</td>
+            </tr>
+            <tr>
+                <th scope="row">4</th>
+                <td>I think that I would need assistance to be able to use this website.
+                </td>
+                <td><input type="radio" value=1 name="q4"><br>1</td>
+                <td><input type="radio" value=2 name="q4"><br>2</td>
+                <td><input type="radio" value=3 name="q4"><br>3</td>
+                <td><input type="radio" value=4 name="q4"><br>4</td>
+                <td><input type="radio" value=5 name="q4"><br>5</td>
+            </tr>
+            <tr>
+                <th scope="row">5</th>
+                <td>I found the various functions in this website were well integrated.
+                </td>
+                <td><input type="radio" value=1 name="q5"><br>1</td>
+                <td><input type="radio" value=2 name="q5"><br>2</td>
+                <td><input type="radio" value=3 name="q5"><br>3</td>
+                <td><input type="radio" value=4 name="q5"><br>4</td>
+                <td><input type="radio" value=5 name="q5"><br>5</td>
+            </tr>
+            <tr>
+                <th scope="row">6</th>
+                <td>I thought there was too much inconsistency in this website.
+                </td>
+                <td><input type="radio" value=1 name="q6"><br>1</td>
+                <td><input type="radio" value=2 name="q6"><br>2</td>
+                <td><input type="radio" value=3 name="q6"><br>3</td>
+                <td><input type="radio" value=4 name="q6"><br>4</td>
+                <td><input type="radio" value=5 name="q6"><br>5</td>
+            </tr>
+            <tr>
+                <th scope="row">7</th>
+                <td>I would imagine that most people would learn to use this website very quickly.
+                </td>
+                <td><input type="radio" value=1 name="q7"><br>1</td>
+                <td><input type="radio" value=2 name="q7"><br>2</td>
+                <td><input type="radio" value=3 name="q7"><br>3</td>
+                <td><input type="radio" value=4 name="q7"><br>4</td>
+                <td><input type="radio" value=5 name="q7"><br>5</td>
+            </tr>
+            <tr>
+                <th scope="row">8</th>
+                <td>I found this website very cumbersome/awkward to use.
+
+                </td>
+                <td><input type="radio" value=1 name="q8"><br>1</td>
+                <td><input type="radio" value=2 name="q8"><br>2</td>
+                <td><input type="radio" value=3 name="q8"><br>3</td>
+                <td><input type="radio" value=4 name="q8"><br>4</td>
+                <td><input type="radio" value=5 name="q8"><br>5</td>
+            </tr>
+            <tr>
+                <th scope="row">9</th>
+                <td>I felt very confident using this website.
+                </td>
+                <td><input type="radio" value=1 name="q9"><br>1</td>
+                <td><input type="radio" value=2 name="q9"><br>2</td>
+                <td><input type="radio" value=3 name="q9"><br>3</td>
+                <td><input type="radio" value=4 name="q9"><br>4</td>
+                <td><input type="radio" value=5 name="q9"><br>5</td>
+            </tr>
+            <tr>
+                <th scope="row">10</th>
+                <td>I needed to learn a lot of things before I could get going with this website
+                </td>
+                <td><input type="radio" value=1 name="q10"><br>1</td>
+                <td><input type="radio" value=2 name="q10"><br>2</td>
+                <td><input type="radio" value=3 name="q10"><br>3</td>
+                <td><input type="radio" value=4 name="q10"><br>4</td>
+                <td><input type="radio" value=5 name="q10"><br>5</td>
+            </tr>
+            </tbody>
+        </table>
+        <br/>
+        <div class="form-group"> 
+            <label for="q11">
+                Please provide any comments about this website:
+            </label> 
+            <textarea name="q11" class="form-control" rows="3"
+                      id="q11"></textarea> 
+        </div>
+        <input type="submit" id="submit" class="hidden" onclick="submitsus()">
+        <label for="submit">
+            <button class="btn btn-primary">
+                <span class="glyphicon" aria-hidden="true"></span>Submit
+            </button>
+        </label>
+    </form>
+</div>
+
+{% if page != '' %}
+<div class="text-center">Version: 3.0 Last Updated: 8/16/2017</div>
+{% endif %}
+<div class="text-center">© 2017 University of Massachusetts and Worcester Polytechnic Institute. All Rights Reserved.
+</div>
+<br><br>
+{% include 'sections/scripts.html' %}
+</body>
+</html>

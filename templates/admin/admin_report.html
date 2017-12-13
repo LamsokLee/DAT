@@ -77,7 +77,7 @@
                 <div class="panel panel-primary">
                     <div class="panel-heading">What is important to your loved one?</div>
                     <div class="panel-body" style="font-style: italic">
-                        <table class="table-bordered" style="font-family: 'Times New Roman', Arial, Times, serif">
+                        <table class="table-bordered tabletext">
                             <thead>
                             <tr>
                                 <th>
@@ -96,24 +96,24 @@
                             <tr>
                                 <td>My family member wants to live as comfortably as possible.</td>
                                 <td class="text-center">
-                                    {% if session['ans4'] == '1' %}
+                                    {% if session['ans4'] == 1 %}
                                     <input type="radio" value=1 name="ans4" checked>
                                     {% else %}
-                                    <input type="radio" value=1 name="ans4">
+                                    <input type="radio" value=1 name="ans4" disabled>
                                     {% endif %}
                                 </td>
                                 <td class="text-center">
-                                    {% if session['ans4'] == '2' %}
+                                    {% if session['ans4'] == 2 %}
                                     <input type="radio" value=2 name="ans4" checked>
                                     {% else %}
-                                    <input type="radio" value=2 name="ans4">
+                                    <input type="radio" value=2 name="ans4" disabled>
                                     {% endif %}
                                 </td>
                                 <td class="text-center">
-                                    {% if session['ans4'] == '3' %}
+                                    {% if session['ans4'] == 3 %}
                                     <input type="radio" value=3 name="ans4" checked>
                                     {% else %}
-                                    <input type="radio" value=3 name="ans4">
+                                    <input type="radio" value=3 name="ans4" disabled>
                                     {% endif %}
                                 </td>
                             </tr>
@@ -122,101 +122,100 @@
                                     life.
                                 </td>
                                 <td class="text-center">
-                                    {% if session['ans5'] == '1' %}
+                                    {% if session['ans5'] == 1 %}
                                     <input type="radio" value=1 name="ans5" checked>
                                     {% else %}
-                                    <input type="radio" value=1 name="ans5">
+                                    <input type="radio" value=1 name="ans5" disabled>
                                     {% endif %}
                                 </td>
                                 <td class="text-center">
-                                    {% if session['ans5'] == '2' %}
+                                    {% if session['ans5'] == 2 %}
                                     <input type="radio" value=2 name="ans5" checked>
                                     {% else %}
-                                    <input type="radio" value=2 name="ans5">
+                                    <input type="radio" value=2 name="ans5" disabled>
                                     {% endif %}
                                 </td>
                                 <td class="text-center">
-                                    {% if session['ans5'] == '3' %}
+                                    {% if session['ans5'] == 3 %}
                                     <input type="radio" value=3 name="ans5" checked>
                                     {% else %}
-                                    <input type="radio" value=3 name="ans5">
+                                    <input type="radio" value=3 name="ans5" disabled>
                                     {% endif %}
                                 </td>
                             </tr>
                             <tr>
                                 <td>For my family member a high quality of life is most important.</td>
                                 <td class="text-center">
-                                    {% if session['ans6'] == '1' %}
+                                    {% if session['ans6'] == 1 %}
                                     <input type="radio" value=1 name="ans6" checked>
                                     {% else %}
-                                    <input type="radio" value=1 name="ans6">
+                                    <input type="radio" value=1 name="ans6" disabled>
                                     {% endif %}
                                 </td>
                                 <td class="text-center">
-                                    {% if session['ans6'] == '2' %}
+                                    {% if session['ans6'] == 2 %}
                                     <input type="radio" value=2 name="ans6" checked>
                                     {% else %}
-                                    <input type="radio" value=2 name="ans6">
+                                    <input type="radio" value=2 name="ans6" disabled>
                                     {% endif %}
                                 </td>
                                 <td class="text-center">
-                                    {% if session['ans6'] == '3' %}
+                                    {% if session['ans6'] == 3 %}
                                     <input type="radio" value=3 name="ans6" checked>
                                     {% else %}
-                                    <input type="radio" value=3 name="ans6">
+                                    <input type="radio" value=3 name="ans6" disabled>
                                     {% endif %}
                                 </td>
                             </tr>
                             <tr>
                                 <td>My family member does not want to be dependent on others away from home.</td>
                                 <td class="text-center">
-                                    {% if session['ans7'] == '1' %}
+                                    {% if session['ans7'] == 1 %}
                                     <input type="radio" value=1 name="ans7" checked>
                                     {% else %}
-                                    <input type="radio" value=1 name="ans7">
+                                    <input type="radio" value=1 name="ans7" disabled>
                                     {% endif %}
                                 </td>
                                 <td class="text-center">
-                                    {% if session['ans7'] == '2' %}
+                                    {% if session['ans7'] == 2 %}
                                     <input type="radio" value=2 name="ans7" checked>
                                     {% else %}
-                                    <input type="radio" value=2 name="ans7">
+                                    <input type="radio" value=2 name="ans7" disabled>
                                     {% endif %}
                                 </td>
                                 <td class="text-center">
-                                    {% if session['ans7'] == '3' %}
+                                    {% if session['ans7'] == 3 %}
                                     <input type="radio" value=3 name="ans7" checked>
                                     {% else %}
-                                    <input type="radio" value=3 name="ans7">
+                                    <input type="radio" value=3 name="ans7" disabled>
                                     {% endif %}
                                 </td>
                             </tr>
                             <tr>
                                 <td>My family member would accept a tracheostomy and feeding tube to stay alive.</td>
                                 <td class="text-center">
-                                    {% if session['ans8'] == '1' %}
+                                    {% if session['ans8'] == 1 %}
                                     <input type="radio" value=1 name="ans8" checked>
                                     {% else %}
-                                    <input type="radio" value=1 name="ans8">
+                                    <input type="radio" value=1 name="ans8" disabled>
                                     {% endif %}
                                 </td>
                                 <td class="text-center">
-                                    {% if session['ans8'] == '2' %}
+                                    {% if session['ans8'] == 2 %}
                                     <input type="radio" value=2 name="ans8" checked>
                                     {% else %}
-                                    <input type="radio" value=2 name="ans8">
+                                    <input type="radio" value=2 name="ans8" disabled>
                                     {% endif %}
                                 </td>
                                 <td class="text-center">
-                                    {% if session['ans8'] == '3' %}
+                                    {% if session['ans8'] == 3 %}
                                     <input type="radio" value=3 name="ans8" checked>
                                     {% else %}
-                                    <input type="radio" value=3 name="ans8">
+                                    <input type="radio" value=3 name="ans8" disabled>
                                     {% endif %}
                                 </td>
                             </tbody>
                         </table>
-
                     </div>
                 </div>
                 <div class="panel panel-primary">
@@ -235,16 +234,16 @@
                 <div class="panel panel-primary">
                     <div class="panel-heading">Your Goals of Care Options</div>
                     <div class="panel-body" style="font-style: italic">
-                        <table class="table-bordered" style="font-family: 'Times New Roman', Arial, Times, serif">
+                        <table class="table-bordered tabletext">
                             <thead>
                             <tr>
-                                <th class="col-md-2">
+                                <th class="col-md-4">
                                     <h4><b>Goals of care option</b></h4>
                                 </th>
-                                <th class="col-md-5">
+                                <th class="col-md-4">
                                     <h4><b>Reasons to choose this option</b></h4>
                                 </th>
-                                <th class="col-md-5">
+                                <th class="col-md-4">
                                     <h4><b>Reasons not to choose this option</b></h4>
                                 </th>
                             </tr>
