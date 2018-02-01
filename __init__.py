@@ -12,10 +12,10 @@ app.debug = True
 
 # TODO: If session is running, kill it
 # TODO: To test if the session exists.
-
-@app.route('/')
-def homepage():
+@app.route('/testportal')
+def testhomepage():
     # initialize the objects in current session
+    session['test'] = 1
     session['ans1'] = 'Did not make any choice'
     session['ans2'] = ''
     session['ans3'] = ''
@@ -35,7 +35,32 @@ def homepage():
     session['opt2'] = 0
     session['opt3'] = 0
     session['opt4'] = 0
-    return render_template("pages/home.html")
+    return render_template("pages/home.html", session = session)
+
+@app.route('/')
+def homepage():
+    # initialize the objects in current session
+    session['test'] = 0
+    session['ans1'] = 'Did not make any choice'
+    session['ans2'] = ''
+    session['ans3'] = ''
+    session['ans4'] = 0
+    session['ans5'] = 0
+    session['ans6'] = 0
+    session['ans7'] = 0
+    session['ans8'] = 0
+    session['ans9'] = 50
+    session['ans10'] = ''
+    session['ref_num'] = -1
+    session['email'] = ''
+    session['start'] = datetime.datetime.now().strftime('%Y-%m-%d %H:%M:%S')
+    session['end'] = -1
+    session['logged'] = 'y'
+    session['opt1'] = 0
+    session['opt2'] = 0
+    session['opt3'] = 0
+    session['opt4'] = 0
+    return render_template("pages/home.html", session = session)
 
 
 # Report Preview Page

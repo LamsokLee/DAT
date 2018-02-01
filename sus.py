@@ -1,5 +1,6 @@
-from flask import session, request, render_template
+from flask import session, request, render_template, redirect
 from config import *
+from database import *
 
 @app.route('/sus')
 def sus():

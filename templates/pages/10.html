@@ -1,16 +1,11 @@
 <!--the head of this page-->
-<div class="section-head"><h3 class="text-center">WHEN SURVIVAL IS THE GOAL OF CARE</h3></div>
-<br>
+<div class="section-head"><h3 class="text-primary text-center">When survival is the goal of care</h3></div>
 <!--the paragraph in this page-->
-<ul>
-    <li>
-        Doctors and nurses will do whatever it takes to keep a person alive.
-    </li>
-    <li>
-        Patients will require additional procedures to improve their chances of survival.
-    </li>
-</ul>
-<u><p>Patients usually need these two procedures:</p></u>
+<p>
+    Doctors and nurses will do whatever it takes to keep a person alive. Patients will require additional procedures to
+    improve their chances of survival.
+</p><p>Patients usually need these two procedures</p>
+<div class="alert alert-info text-center" role="alert">Please click and read the following sections.</div>
 
 <div class="panel-group" id="accordion">
     <div class="panel panel-default">
@@ -21,10 +16,10 @@
                     {% if session['accordion1'] == True %}
                     <span class="glyphicon glyphicon-ok"></span>
                     {% else %}
-                    <span class="glyphicon glyphicon-ok" aria-hidden="true" id="check1"
-                          style="display: none;"></span>
+                    <span class="glyphicon glyphicon-hand-right" aria-hidden="true" id="check1"
+                          style="display: contents;"></span>
                     {% endif %}
-                    1. Tracheostomy (“trach”)</a>
+                    Tracheostomy (“trach”)</a>
             </h4>
         </div>
         <div id="collapse1" class="panel-collapse collapse">
@@ -70,10 +65,10 @@
                     {% if session['accordion2'] == True %}
                     <span class="glyphicon glyphicon-ok"></span>
                     {% else %}
-                    <span class="glyphicon glyphicon-ok" aria-hidden="true" id="check2"
-                          style="display: none;"></span>
+                    <span class="glyphicon glyphicon-hand-right" aria-hidden="true" id="check2"
+                          style="display: contents;"></span>
                     {% endif %}
-                    2. Feeding Tube (“PEG” or “G-tube”)</a>
+                    Feeding Tube (“PEG” or “G-tube”)</a>
             </h4>
         </div>
         <div id="collapse2" class="panel-collapse collapse">
@@ -96,24 +91,25 @@
                         <img class="img-responsive" src="static/img/PEG.jpg" alt="PEG">
                     </div>
                 </div>
-                <p>
-                    <b>Both the trach and the feeding tube are removable </b>if the patient’s condition improves enough.
-                </p>
-                <p>
-                    <b>If your family member does not recover to the level you had hoped</b>, despite the highest level
-                    of
-                    care,
-                    you may decide to have the trach and feeding tube removed at that point and transition to comfort
-                    care.
-                </p>
-
-                <!--TODO: ADD the boarder-->
-                <div><p><b>Some patients die</b> despite the best efforts of the doctors and the medical team
-                    and despite additional
-                    procedures to keep them alive.</p>
-                </div>
-
             </div>
         </div>
     </div>
+    <br>
+    <p>
+        <b>Both the trach and the feeding tube are removable </b>if the patient’s condition improves enough.
+    </p>
+    <p>
+        <b>If your family member does not recover to the level you had hoped</b>, despite the highest level
+        of
+        care,
+        you may decide to have the trach and feeding tube removed at that point and transition to comfort
+        care.
+    </p>
+
+    <!--TODO: ADD the boarder-->
+    <div><p><b>Some patients die</b> despite the best efforts of the doctors and the medical team
+        and despite additional
+        procedures to keep them alive.</p>
+    </div>
+
 </div>

@@ -4,6 +4,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
     <title>“Goals of Care” decision aid for families of TBI patients</title>
+    {% if session['test'] == 0 %}
     <!-- Global Site Tag (gtag.js) - Google Analytics -->
     <script async src="https://www.googletagmanager.com/gtag/js?id=UA-107793932-1"></script>
     <script>
@@ -17,6 +18,7 @@
 
         gtag('config', 'UA-107793932-1');
     </script>
+    {% endif %}
     <link rel="icon" href="{{ url_for ('static', filename = 'icon/logo_right.png')}}">
     <!--Bootstrap on server-->
     <link href="{{ url_for ('static', filename = 'css/bootstrap.min.css') }}" rel="stylesheet">

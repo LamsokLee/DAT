@@ -1,6 +1,6 @@
 <div class="jumbotron">
         <!--the head of this page-->
-        <div class="section-head"><h3 class="text-center">Report Preview
+        <div class="section-head"><h3 class="text-primary text-center">Report Preview
         </h3></div>
         <br>
         <div class="container">
@@ -258,7 +258,6 @@
                                         <li>Patient does not want a tracheostomy or feeding tube.
                                         <li>Patient may still die and will have pain from additional treatments.
                                     </ul>
-
                                 </th>
                             </tr>
 
@@ -278,7 +277,7 @@
                                     </ul>
 
                                 </th>
-                                {% if session['opt4report.html'] == 1 %}
+                                {% if session['opt4'] == 1 %}
                                 <th style="font-weight:normal; color: #229922">
                                 {% else %}
                                 <th style="font-weight:normal">

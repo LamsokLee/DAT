@@ -30,6 +30,9 @@
                 <li><a href="{{url_for('about')}}">About Us</a></li>
                 <li><a data-toggle="modal" data-target="#contact" style="cursor: hand">Provide Feedback</a></li>
                 <!--<li><a href="{{url_for('admin_login')}}">Admin</a></li>-->
+                {% if session['test'] == 1 %}
+                <li><a href="#" style="color:red">Debug Mode</a></li>
+                {% endif %}
             </ul>
         </div>
         <!-- /.navbar-collapse -->
