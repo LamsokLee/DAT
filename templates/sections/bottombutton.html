@@ -34,17 +34,8 @@
 <button type="button" class="btn btn-primary btn-lg pull-right" style="margin-bottom: 5%" id="next">Next
     <span class="glyphicon glyphicon glyphicon-menu-right" aria-hidden="true"></span>
 </button>
-{% elif page == 14 %}
-<a href="{{url_for('page_13')}}">
-    <button type="button" class="btn btn-primary btn-lg pull-left" style="margin-bottom: 5%">
-        <span class="glyphicon glyphicon-menu-left" aria-hidden="true"></span>Previous
-    </button>
-</a>
-<label for="submit_page_14" class="btn btn-primary btn-lg pull-right" style="margin-bottom: 5%">Next
-    <span class="glyphicon glyphicon-menu-right" aria-hidden="true"></span>
-</label>
-{% elif page == 15%}
-<a href="{{url_for('page_14')}}">
+{% elif page == 18%}
+<a href="{{url_for('page_17')}}">
     <button type="button" class="btn btn-primary btn-lg pull-left" style="margin-bottom: 5%">
         <span class="glyphicon glyphicon-menu-left" aria-hidden="true"></span>Previous
     </button>
@@ -53,13 +44,6 @@
     <!--TODO: the icon of submit button -->
     Save and review
 </label>
-
-{% elif page == 18 %}
-<a href="{{url_for('page_'+(page-1)|string)}}">
-    <button type="button" class="btn btn-primary btn-lg pull-left" style="margin-bottom: 5%">
-        <span class="glyphicon glyphicon glyphicon-menu-left" aria-hidden="true"></span>Previous
-    </button>
-</a>
 
 {% else %}
 <a href="{{url_for('page_'+(page-1)|string)}}">

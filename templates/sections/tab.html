@@ -2,51 +2,53 @@
     <!--the tabs-->
     <ul class="nav nav-pills nav-justified" id="tabs">
         {% if page == 1 or page == 2 %}
-        <li role="presentation" class="active"><a href="{{url_for('page_1')}}">Overview</a></li>
+            <li role="presentation" class="active"><a href="{{ url_for('page_1') }}">Overview</a></li>
         {% else %}
-        <li role="presentation"><a href="{{url_for('page_1')}}">Overview</a></li>
+            <li role="presentation"><a href="{{ url_for('page_1') }}">Overview</a></li>
         {% endif %}
 
         {% if page == 3 %}
-        <li role="presentation" class="active"><a href="{{url_for('page_3')}}">Mechanical Ventilator</a></li>
+            <li role="presentation" class="active"><a href="{{ url_for('page_3') }}">Mechanical Ventilator</a></li>
         {% else %}
-        <li role="presentation"><a href="{{url_for('page_3')}}">Mechanical Ventilator</a></li>
+            <li role="presentation"><a href="{{ url_for('page_3') }}">Mechanical Ventilator</a></li>
         {% endif %}
 
         {% if page == 4 %}
-        <li role="presentation" class="active"><a href="{{url_for('page_4')}}">The decision to make</a></li>
+            <li role="presentation" class="active"><a href="{{ url_for('page_4') }}">The decision to make</a></li>
         {% else %}
-        <li role="presentation"><a href="{{url_for('page_4')}}">The decision to make</a></li>
+            <li role="presentation"><a href="{{ url_for('page_4') }}">The decision to make</a></li>
         {% endif %}
 
-        {% if page == 5 or page == 6 or page == 7 %}
-        <li role="presentation" class="active"><a href="{{url_for('page_5')}}">Prognosis</a></li>
+        {% if page in range(5,8) %}
+            <li role="presentation" class="active"><a href="{{ url_for('page_5') }}">Prognosis</a></li>
         {% else %}
-        <li role="presentation"><a href="{{url_for('page_5')}}">Prognosis</a></li>
+            <li role="presentation"><a href="{{ url_for('page_5') }}">Prognosis</a></li>
         {% endif %}
 
-        {% if page == 8 or page == 9 or page == 10 or page == 11 or page == 12%}
-        <li role="presentation" class="active"><a href="{{url_for('page_8')}}">Two options</a></li>
+        {% if page in range(8,13) %}
+            <li role="presentation" class="active"><a href="{{ url_for('page_8') }}">Two options</a></li>
         {% else %}
-        <li role="presentation"><a href="{{url_for('page_8')}}">Two options</a></li>
+            <li role="presentation"><a href="{{ url_for('page_8') }}">Two options</a></li>
         {% endif %}
 
-        {% if page == 13 or page == 14 %}
-        <li role="presentation" class="active"><a href="{{url_for('page_13')}}">Making the decision</a></li>
+        {% if page in range(13,15) %}
+            <li role="presentation" class="active"><a href="{{ url_for('page_13') }}">Making the decision</a></li>
         {% else %}
-        <li role="presentation"><a href="{{url_for('page_13')}}">Making the decision</a></li>
+            <li role="presentation"><a href="{{ url_for('page_13') }}">Making the decision</a></li>
         {% endif %}
 
-        {% if page == 15 %}
-        <li role="presentation" class="active"><a href="{{url_for('page_15')}}">Worksheet</a></li>
+        {% if page in range(15,18)%}
+            <li role="presentation" class="active"><a href="{{ url_for('page_15') }}">Patient Examples</a></li>
         {% else %}
-        <li role="presentation"><a href="{{url_for('page_15')}}">Worksheet</a></li>
+            <li role="presentation"><a href="{{ url_for('page_15') }}">Patient Examples</a></li>
         {% endif %}
 
-        {% if page == 16 or page == 17 or page == 18 %}
-        <li role="presentation" class="active"><a href="{{url_for('page_16')}}">Patient Examples</a></li>
+        {% if page == 18 %}
+            <li role="presentation" class="active"><a href="{{ url_for('page_18') }}">Worksheet</a></li>
         {% else %}
-        <li role="presentation"><a href="{{url_for('page_16')}}">Patient Examples</a></li>
+            <li role="presentation"><a href="{{ url_for('page_18') }}">Worksheet</a></li>
         {% endif %}
+
+
     </ul>
 </div>

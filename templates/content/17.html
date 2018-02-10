@@ -1,0 +1,238 @@
+{% extends 'layout.html' %}
+{% block content %}
+    <div class="section-head"><h3 class="text-primary text-center">Example 2</h3></div>
+    <!--the paragraph in this page-->
+    <p>
+        Mr. Alvarez is a 76-year-old man with diabetes who was struck by a car while crossing the road. He has many
+        areas of bleeding located deep inside his brain, and is in a coma. He also has a broken leg and many broken
+        ribs. One of his broken ribs has injured his lungs. While in the hospital, he gets an infection in his lungs
+        (pneumonia). Mr. Alvarez:
+    </p>
+    <ul>
+        <li>
+            Is an older man with some chronic medical problems, which are controlled
+        </li>
+        <li>
+            Has a complicated brain injury
+        </li>
+        <li>
+            Has other injuries to his body, including his lungs
+        </li>
+        <li>
+            Has an infection while in the hospital
+        </li>
+    </ul>
+
+    <p>
+        The doctor thinks that Mr. Alvarez won’t be able to breathe or eat on his own any time soon, if ever. The
+        doctor expects that his chance of surviving 6 months is low. He may improve to some degree, but will
+        probably never be independent again. Whether he may go home ever again is unclear. It’s unlikely because he
+        lives alone, and his children have their own families and jobs and won’t be able to look after him all day
+        long. The doctor asks the daughter to help decide which goals of care best align with Mr. Alvarez’s values
+        and preferences.
+    </p>
+    <p>
+        The daughter filled out the worksheet to help her decide which goal of care was best for her father:
+    </p>
+    <div class="section-head"><h3 class="text-primary text-center">Worksheet for Example 2, Mr. Alvarez</h3></div>
+    <br>
+    <!--the paragraph in this page-->
+    <h4 class="section-head">Part I: What is the decision and why do you have to make it?</h4>
+    <div class="panel panel-primary">
+        <div class="panel-heading">1) What is the “goals of care” decision about?
+        </div>
+        <div class="panel-body" style="font-style: italic">“Choosing between survival at all cost versus comfort as the
+            main
+            treatment goal for my father. I need to think about what my dad would want.”
+        </div>
+    </div>
+    <div class="panel panel-primary">
+        <div class="panel-heading">2) Why do you need to make a decision about your family member’s goals of care?
+        </div>
+        <div class="panel-body" style="font-style: italic"> “Dad is in the ICU and his chance of surviving and being
+            independent is low. He may die soon no matter what choice we make. He would definitely need to go to a
+            nursing
+            home if we choose survival as the goal. He would need a trach and a feeding tube..”
+        </div>
+    </div>
+    <h4 class="section-head">Part II: What is important to your loved one?</h4>
+    <table class="table-bordered tabletext">
+        <thead>
+        <tr>
+            <th>
+            </th>
+            <th class="col-md-1 text-center">
+                Not important
+            </th>
+            <th class="col-md-1 text-center">
+            </th>
+            <th class="col-md-1 text-center">
+                Very important
+            </th>
+        </tr>
+        </thead>
+        <tbody>
+        <tr>
+            <td>My family member wants to live as comfortably as possible.</td>
+            <td class="text-center">
+                <input type="radio" disabled>
+            </td>
+            <td class="text-center">
+                <input type="radio" checked>
+            </td>
+            <td class="text-center">
+                <input type="radio" disabled>
+            </td>
+        </tr>
+        <tr>
+            <td>My family member wants to live as long as possible, regardless of the quality of life.</td>
+            <td class="text-center">
+                <input type="radio" checked>
+            </td>
+            <td class="text-center">
+                <input type="radio" disabled>
+            </td>
+            <td class="text-center">
+                <input type="radio" disabled>
+            </td>
+        </tr>
+        <tr>
+            <td>For my family member a high quality of life is most important.</td>
+            <td class="text-center">
+                <input type="radio" disabled>
+            </td>
+            <td class="text-center">
+                <input type="radio" disabled>
+            </td>
+            <td class="text-center">
+                <input type="radio" checked>
+            </td>
+        </tr>
+        <tr>
+            <td>My family member does not want to be dependent on others away from home.</td>
+            <td class="text-center">
+                <input type="radio" disabled>
+            </td>
+            <td class="text-center">
+                <input type="radio" disabled>
+            </td>
+            <td class="text-center">
+                <input type="radio" checked>
+            </td>
+        </tr>
+        <tr>
+            <td>My family member would accept a tracheostomy and feeding tube to stay alive.</td>
+            <td class="text-center">
+                <input type="radio" checked>
+            </td>
+            <td class="text-center">
+                <input type="radio" disabled>
+            </td>
+            <td class="text-center">
+                <input type="radio" disabled>
+            </td>
+        </tbody>
+    </table>
+    <br>
+    <br>
+    <div>
+        <p>
+            Imagine a line where the right side is comfort care and the left side is survival at any cost.
+            <i>Make an X on the line below at the point you think your loved one would choose.</i><br>
+        </p>
+        <div class="col-md-1 text-center">
+            <h4>Survival</h4>
+        </div>
+        <div class="col-md-10"><br>
+            <input type="range" min="0" max="100"
+                   value=75 disabled>
+        </div>
+        <div class="col-md-1 text-center">
+            <h4>Comfort</h4>
+        </div>
+    </div>
+    <br><br><br><br>
+    <h4 class="section-head">Part III: Your Goals of Care Options</h4>
+    <table class="table-bordered tabletext">
+        <thead>
+        <tr>
+            <th class="col-md-4">
+                <h4><b>Goals of care option</b></h4>
+            </th>
+            <th class="col-md-4">
+                <h4><b>Reasons to choose this option</b></h4>
+            </th>
+            <th class="col-md-4">
+                <h4><b>Reasons not to choose this option</b></h4>
+            </th>
+        </tr>
+        </thead>
+        <tbody>
+        <tr>
+            <th style="font-weight:normal">
+                <b>“Do everything”:
+                    Focus on <u>survival</u></b><br>
+                Tracheostomy and feeding tube placement is done, followed by placement in LTACH or nursing home,
+                sometimes acute rehab when the patient is ready.
+            </th>
+            <th style="font-weight:normal">
+                <ul>
+                    <li>Best chance to stay alive.
+                    <li>Patient will have a quality of life that he/she finds acceptable.
+                    <li>Patient has said in the past to keep him/her alive at all cost.
+                    <li>Patient would feel OK with being uncomfortable from lying in bed or working hard during therapy
+                        sessions.
+                </ul>
+
+            </th>
+            <th style="font-weight:normal">
+                <ul>
+                    <li>Additional treatments can be painful.
+                    <li>Patient does not want to be dependent on others to live.
+                    <li>Patient does not want a tracheostomy or feeding tube.
+                    <li>Patient may still die and will have pain from additional treatments.
+                </ul>
+
+            </th>
+
+        </tr>
+        <tr>
+            <th style="font-weight:normal">
+                <b>“No suffering”: Focus on <u>comfort</u></b><br>
+                Transition to comfort care is provided when the family is ready.
+            </th>
+            <th style="font-weight:normal">
+                <ul>
+                    <li>Unlikely that patient will have an acceptable quality of life.
+                    <li>Patient has suffered enough; family wants him/her to be comfortable.
+                </ul>
+
+            </th>
+            <th style="font-weight:normal">
+                <ul>
+                    <li>Without life support, the patient will die.
+                    <li>Patient would choose to have advanced treatments and live in a nursing home.
+                </ul>
+
+            </th>
+        </tr>
+        </tbody>
+    </table>
+    <br><br>
+    <div class="panel panel-primary">
+        <div class="panel-heading">3) How do you feel about this choice?
+        </div>
+        <div class="panel-body" style="font-style: italic">“My dad is a very independent person who loved life, walking
+            to
+            the library and playing chess with his friends. He likes to cook for himself and the whole family. He was
+            already limited in how far he could travel due to his diabetes, and he did not like that. Now, his quality
+            of
+            life would be much lower. Without his chess or cooking, he would not want to just be alive. He would not
+            want to
+            go on with the outlook that he would be dependent on others. It makes me sad. I still want to talk this
+            choice
+            over with Dad’s doctor and my other siblings.”
+        </div>
+    </div>
+    <!--TODO: Choose bar-->
+{% endblock %}

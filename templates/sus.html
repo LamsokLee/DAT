@@ -1,11 +1,5 @@
-<!DOCTYPE html>
-<html lang="en">
-<!--the head of HTML file-->
-{% include 'sections/head.html' %}
-<body>
-<!--the head navbar of the website-->
-{% include 'sections/navbar.html' %}
-<!--container of the whole content of the tool-->
+{% extends 'layout.html' %}
+{% block container %}
 <div class="container">
     <h2 class="text-center">
         System Usability Scale
@@ -147,13 +141,4 @@
         </label>
     </form>
 </div>
-
-{% if page != '' %}
-<div class="text-center">Version: 3.0 Last Updated: 8/16/2017</div>
-{% endif %}
-<div class="text-center">© 2017 University of Massachusetts and Worcester Polytechnic Institute. All Rights Reserved.
-</div>
-<br><br>
-{% include 'sections/scripts.html' %}
-</body>
-</html>
+{% endblock %}

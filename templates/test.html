@@ -1,79 +1,34 @@
-<!DOCTYPE html> 
-<html lang="en"> 
-<head> 
-    <meta charset="utf-8">
-     
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-     
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-</head>
- 
-<body>
-<form action="/testresult" method="post">
-    <h1>
-        Testing Page
-    </h1>
-    <form method="post">
-        <input type="text" name="testvar">
+{% extends 'layout.html' %}
+{% block container %}
+    <form action="/testresult" method="post">
+        <form method="post">
+            <input type="text" name="testvar">
 
-        <input type="submit">
+            <input type="submit">
+        </form>
     </form>
-</form>
-<h3>Query Result:</h3>
-<p>{%for rows in result%}
-<ul>
-    <li>{{rows}}</li>
-</ul>
-{% endfor %}
-</p>
-
-<h3>All variables</h3>
-<table>
-    <thead>
-    <tr>
-        <th>
-            Name
-        </th>
-        <th>
-            Value
-        </th>
-        <th>
-            Type
-        </th>
-    </tr>
-    </thead>
-    <tbody>
-    <tr>
-        <th>
-            Name
-        </th>
-        <th>
-            Value
-        </th>
-        <th>
-            Type
-        </th>
-    </tr>
-    </tbody>
-</table>
-<ul>
-    <li>Session ID: {{session['ref_num']}}</li>
-    <li>User Email: {{session['email']}}</li>
-    <li>Start Time: {{session['start']}}</li>
-    <li>End Time: {{session['end']}}</li>
-    <li>Logged in: {{session['logged']}}</li>
-    <li>ans1: {{session['ans1']}} type: {{session['ans1'].type}}</li>
-    <li>ans2: {{session['ans2']}}</li>
-    <li>ans3: {{session['ans3']}}</li>
-    <li>ans4: {{session['ans4']}}</li>
-    <li>ans5: {{session['ans5']}}</li>
-    <li>ans6: {{session['ans6']}}</li>
-    <li>ans7: {{session['ans7']}}</li>
-    <li>ans8: {{session['ans8']}}</li>
-    <li>ans9: {{session['ans9']}}</li>
-    <li>ans10: {{session['ans10']}}</li>
-</ul>
-
-</body>
- 
-</html>
+    <p>{% for rows in result %}
+        <ul>
+            <li>{{ rows }}</li>
+        </ul>
+    {% endfor %}
+    </p>
+    <div class="container">
+        <table class="table">
+            <thead>
+            <tr>
+                <th>Var</th>
+                <th>Value</th>
+            </tr>
+            </thead>
+            <tbody>
+            {% for items in session %}
+                <tr>
+                    <td>{{ items }}</td>
+                    <td>{{ session[items] }}</td>
+                </tr>
+            {% endfor %}
+            </tbody>
+        </table>
+    </div>
+{% endblock %}

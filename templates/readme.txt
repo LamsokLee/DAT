@@ -19,3 +19,8 @@ Page report: If the user doesn't input the E-mail in worksheet, the sending E-ma
 /* Improvements */
 
 Download the JQuery file and the JavaScript file on local
+
+
+Vars:
+
+User ID n

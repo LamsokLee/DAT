@@ -7,93 +7,55 @@ from config import app
 # create an instance of SQLAlchemy class with the Flask object as the parameter
 db = SQLAlchemy(app)
 
+
 def commitdb():
-    if session['ref_num'] != -1:
-        # session exists
+    if session['id'] != 0:
+        # session exists, update datetime
         session['end'] = datetime.datetime.now().strftime('%Y-%m-%d %H:%M:%S')
-        db.engine.execute(
-            "UPDATE session SET end  = '" + session['end'] + "' WHERE session_id = " + str(session['ref_num']))
-        db.engine.execute(
-            "UPDATE session SET email  = '" + session['email'] + "' WHERE session_id = " + str(session['ref_num']))
-        db.engine.execute(
-            "UPDATE session SET end    = '" + session['end'] + "' WHERE session_id = " + str(session['ref_num']))
-        db.engine.execute(
-            "UPDATE session SET ans1   = '" + str(session['ans1']) + "' WHERE session_id = " + str(session['ref_num']))
-        db.engine.execute(
-            "UPDATE session SET ans2   = '" + str(session['ans2']) + "' WHERE session_id = " + str(session['ref_num']))
-        db.engine.execute(
-            "UPDATE session SET ans3   = '" + str(session['ans3']) + "' WHERE session_id = " + str(session['ref_num']))
-        db.engine.execute(
-            "UPDATE session SET ans4   = '" + str(session['ans4']) + "' WHERE session_id = " + str(session['ref_num']))
-        db.engine.execute(
-            "UPDATE session SET ans5   = '" + str(session['ans5']) + "' WHERE session_id = " + str(session['ref_num']))
-        db.engine.execute(
-            "UPDATE session SET ans6   = '" + str(session['ans6']) + "' WHERE session_id = " + str(session['ref_num']))
-        db.engine.execute(
-            "UPDATE session SET ans7   = '" + str(session['ans7']) + "' WHERE session_id = " + str(session['ref_num']))
-        db.engine.execute(
-            "UPDATE session SET ans8   = '" + str(session['ans8']) + "' WHERE session_id = " + str(session['ref_num']))
-        db.engine.execute(
-            "UPDATE session SET ans9   = '" + str(session['ans9']) + "' WHERE session_id = " + str(session['ref_num']))
-        db.engine.execute(
-            "UPDATE session SET ans10  = '" + session['ans10'] + "' WHERE session_id = " + str(session['ref_num']))
-        db.engine.execute(
-            "UPDATE session SET opt1  = '" + str(session['opt1']) + "' WHERE session_id = " + str(session['ref_num']))
-        db.engine.execute(
-            "UPDATE session SET opt2  = '" + str(session['opt2']) + "' WHERE session_id = " + str(session['ref_num']))
-        db.engine.execute(
-            "UPDATE session SET opt3  = '" + str(session['opt3']) + "' WHERE session_id = " + str(session['ref_num']))
-        db.engine.execute(
-            "UPDATE session SET opt4  = '" + str(session['opt4']) + "' WHERE session_id = " + str(session['ref_num']))
+        for value in session:
+            if value not in ['logged', 'page', 'test', 'id', 'version']:
+                if type(session[value]) is int:
+                    db.engine.execute(
+                        "UPDATE session SET " + str(value) + " = " + str(session[value]) + " WHERE id = " + str(
+                            session['id']))
+
+                else:
+                    db.engine.execute(
+                        "UPDATE session SET " + str(value) + " = '" + str(session[value]) + "' WHERE id = " + str(
+                            session['id']))
+
 
     else:
         ex = db.engine.execute("INSERT INTO session (start) VALUES ('" + session['start'] + "')")
-        session['ref_num'] = ex.lastrowid
+        session['id'] = ex.lastrowid
         session['end'] = datetime.datetime.now().strftime('%Y-%m-%d %H:%M:%S')
-        db.engine.execute(
-            "UPDATE session SET email  = '" + session['email'] + "' WHERE session_id = " + str(session['ref_num']))
-        db.engine.execute(
-            "UPDATE session SET end    = '" + session['end'] + "' WHERE session_id = " + str(session['ref_num']))
-        db.engine.execute(
-            "UPDATE session SET ans1   = '" + str(session['ans1']) + "' WHERE session_id = " + str(session['ref_num']))
-        db.engine.execute(
-            "UPDATE session SET ans2   = '" + str(session['ans2']) + "' WHERE session_id = " + str(session['ref_num']))
-        db.engine.execute(
-            "UPDATE session SET ans3   = '" + str(session['ans3']) + "' WHERE session_id = " + str(session['ref_num']))
-        db.engine.execute(
-            "UPDATE session SET ans4   = '" + str(session['ans4']) + "' WHERE session_id = " + str(session['ref_num']))
-        db.engine.execute(
-            "UPDATE session SET ans5   = '" + str(session['ans5']) + "' WHERE session_id = " + str(session['ref_num']))
-        db.engine.execute(
-            "UPDATE session SET ans6   = '" + str(session['ans6']) + "' WHERE session_id = " + str(session['ref_num']))
-        db.engine.execute(
-            "UPDATE session SET ans7   = '" + str(session['ans7']) + "' WHERE session_id = " + str(session['ref_num']))
-        db.engine.execute(
-            "UPDATE session SET ans8   = '" + str(session['ans8']) + "' WHERE session_id = " + str(session['ref_num']))
-        db.engine.execute(
-            "UPDATE session SET ans9   = '" + str(session['ans9']) + "' WHERE session_id = " + str(session['ref_num']))
-        db.engine.execute(
-            "UPDATE session SET ans10  = '" + session['ans10'] + "' WHERE session_id = " + str(session['ref_num']))
-        db.engine.execute(
-            "UPDATE session SET opt1  = '" + str(session['opt1']) + "' WHERE session_id = " + str(session['ref_num']))
-        db.engine.execute(
-            "UPDATE session SET opt2  = '" + str(session['opt2']) + "' WHERE session_id = " + str(session['ref_num']))
-        db.engine.execute(
-            "UPDATE session SET opt3  = '" + str(session['opt3']) + "' WHERE session_id = " + str(session['ref_num']))
-        db.engine.execute(
-            "UPDATE session SET opt4  = '" + str(session['opt4']) + "' WHERE session_id = " + str(session['ref_num']))
+        for value in session:
+            if value not in ['logged', 'page', 'test', 'id', 'start', 'version']:
+                if type(session[value]) is int:
+                    db.engine.execute(
+                        "UPDATE session SET " + str(value) + " = " + str(session[value]) + " WHERE id = " + str(
+                            session['id']))
+                else:
+                    db.engine.execute(
+                        "UPDATE session SET " + str(value) + " = '" + str(session[value]) + "' WHERE id = " + str(
+                            session['id']))
     return
 
+
 def commitsus():
+    susscore = [session['sus'].get(sus) for sus in session['sus']]
+
     db.engine.execute("INSERT INTO sus VALUES (" +
-                      str(session['sus1']) + ',' +
-                      str(session['sus2'])+ ',' +
-                      str(session['sus3'])+ ',' +
-                      str(session['sus4'])+ ',' +
-                      str(session['sus5'])+ ',' +
-                      str(session['sus6'])+ ',' +
-                      str(session['sus7'])+ ',' +
-                      str(session['sus8'])+ ',' +
-                      str(session['sus9'])+ ',' +
-                      str(session['sus10']) + ",'" +
-                      str(session['sus11']) + "')")
+                      str(susscore[0]) + ',' +
+                      str(susscore[1]) + ',' +
+                      str(susscore[2]) + ',' +
+                      str(susscore[3]) + ',' +
+                      str(susscore[4]) + ',' +
+                      str(susscore[5]) + ',' +
+                      str(susscore[6]) + ',' +
+                      str(susscore[7]) + ',' +
+                      str(susscore[8]) + ',' +
+                      str(susscore[9]) + ",'" +
+                      str(susscore[10]) + "'," +
+                      str(susscore[11]) + ",'" +
+                      str(susscore[12]) + "')")

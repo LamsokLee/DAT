@@ -9,7 +9,7 @@ from config import app
 
 @app.route("/test")
 def test():
-    return render_template('test.html', session = session)
+    return render_template('test.html')
 
 @app.route("/testresult", methods=['POST'])
 def testresult():

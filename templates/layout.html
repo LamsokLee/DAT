@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<!--the head of HTML file-->
+{% block head %}
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
+        <title>“Goals of Care” decision aid for families of TBI patients</title>
+        {% if session['test'] == 0 %}
+            <!-- Global Site Tag (gtag.js) - Google Analytics -->
+            <script async src="https://www.googletagmanager.com/gtag/js?id=UA-107793932-1"></script>
+            <script>
+                window.dataLayer = window.dataLayer || [];
+
+                function gtag() {
+                    dataLayer.push(arguments);
+                }
+
+                gtag('js', new Date());
+
+                gtag('config', 'UA-107793932-1');
+            </script>
+        {% endif %}
+        <link rel="icon" href="{{ url_for ('static', filename = 'icon/logo_right.png') }}">
+        <!--Bootstrap on server-->
+        <link href="{{ url_for ('static', filename = 'css/bootstrap.min.css') }}" rel="stylesheet">
+        <link href="{{ url_for ('static', filename = 'css/custom.css') }}" rel="stylesheet">
+        <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
+        <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+        <!--[if lt IE 9]>
+    <script src="https://oss.maxcdn.com/html5shiv/3.7.3/html5shiv.min.js"></script>
+    <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+    <![endif]-->
+    </head>
+{% endblock %}
+
+<body>
+{% block body %}
+    <!--the head navbar of the website-->
+    {% block navbar %}
+        {% include 'include/navbar.html' %}
+    {% endblock %}
+
+    <!--container of the whole content of the tool-->
+    <div class="container">
+        {% block container %}
+            <!--the tabs-->
+            {% block tab %}
+                {% include 'include/tab.html' %}
+            {% endblock %}
+            <!--the text box to put the main context-->
+            <div class="jumbotron">
+                <!--navigation arrows-->
+                {% block navbutton %}
+                    {% include 'include/navbutton.html' %}
+                    <!--the head of this page-->
+                {% endblock %}
+                {% block content %}
+                    <h1>This is the content</h1>
+                {% endblock %}
+            </div>
+            {% block bottombutton %}
+                {% include 'include/bottombutton.html' %}
+            {% endblock %}
+        {% endblock %}
+    </div>
+    <div class="text-center">Version: {{ session['version'] }} Last Updated: 12/13/2017</div>
+    <div class="text-center">© 2017 University of Massachusetts and Worcester Polytechnic Institute. All Rights
+        Reserved.
+    </div>
+{% endblock %}
+<br><br>
+<!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+<!-- Include all compiled plugins (below), or include individual files as needed -->
+<script src="static/js/bootstrap.min.js"></script>
+</body>
+</html>

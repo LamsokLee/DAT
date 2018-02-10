@@ -1,0 +1,94 @@
+{% extends 'layout.html' %}
+{% block content %}
+    <div class="section-head"><h3 class="text-primary text-center">Comparing and summarizing different treatment
+        options</h3>
+    </div>
+    <!--the paragraph in this page-->
+    <table class="table">
+        <thead>
+        <tr>
+            <th></th>
+            <th class="info text-center">Reasons for <u>choosing</u> this option</th>
+            <th class="info text-center">Reasons for <u>avoiding</u> this option</th>
+        </tr>
+        </thead>
+        <tbody>
+        <tr>
+            <td class="info text-center"><h4>“Do everything”</h4><br/>
+                Focus on <u>survival</u>
+            </td>
+            <td class="bg-warning">
+                <ul>
+                    <li>
+                        It gives the patient the best chance of staying alive, even if just for a while.
+                    </li>
+                    <li>
+                        The family believes that the patient will have a quality of life that he or she finds
+                        acceptable.
+                    </li>
+                    <li>
+                        The patient has said in the past that he or she wants to be kept alive at all costs.
+                    </li>
+                    <li>
+                        The patient would feel OK with being uncomfortable from lying in bed or working hard during
+                        therapy
+                        sessions.
+                    </li>
+                </ul>
+            </td>
+            <td class="bg-warning">
+                <ul>
+                    <li>
+                        Additional treatments can be painful, or make the patient uncomfortable
+                    </li>
+                    <li>
+                        The patient has said in the past that he or she does not wish to be dependent on others to live.
+                    </li>
+                    <li>
+                        The family knows that the patient does not want a trach or feeding tube, even if just
+                        temporarily.
+                    </li>
+                    <li>
+                        The patient may still die, even with advanced treatments, and will suffer as a result of those
+                        measures.
+                    </li>
+                </ul>
+            </td>
+        </tr>
+        <tr class="bg-primary">
+            <td></td>
+            <td></td>
+            <td></td>
+        </tr>
+        <tr class="bg-info">
+            <td class="text-center">
+                <h4>“No suffering”</h4><br/>
+                Focus on <u>comfort</u>
+            </td>
+            <td class="bg-warning">
+                <ul>
+                    <li>
+                        It is unlikely that the patient will have a quality of life that is acceptable to him or her.
+                    </li>
+                    <li>
+                        Family members believe that the patient has suffered enough; they want the patient to be
+                        comfortable
+                        and at peace.
+                    </li>
+                </ul>
+            </td>
+            <td class="bg-warning">
+                <ul>
+                    <li>
+                        Without life support, the patient will die.
+                    </li>
+                    <li>
+                        The patient would choose to undergo advanced treatments and live in a nursing home to survive if
+                        able to speak on the matter.
+                    </li>
+                </ul>
+            </td>
+        </tr>
+        </tbody>
+    </table>
+{% endblock %}

@@ -1,20 +1,18 @@
-{% include 'sections/head.html' %}
+{% extends 'layout.html' %}
 <body>
 
-<!--the head navbar of the website-->
-{% include 'sections/navbar.html' %}
-<!--container of the whole content of the tool-->
 <div class="container">
-    {% include 'sections/pagetitle.html' %}
+    {% include 'include/pagetitle.html' %}
     <!--the navigation bar-->
     <div id="tab"></div>
 </div>
-<!--<div class="container" style="background-image: url(/static/img/landing_page.jpg); background-size:cover"> -->
-<!--&lt;!&ndash;The text&ndash;&gt;-->
-<!--<div style="margin-top: 30%; margin-left: 10%; margin-right: 10%; margin-bottom: 5%; background-color: #000000; border: 1px solid black; opacity: 0.8">-->
-<!--<div style="margin: 5%; font-weight: 500; color: #ffffff; opacity: 1">-->
+{% block body %}
+{% include 'include/navbar.html' %}
+<h2 class="text-center">
+    “Goals of Care” decision aid for families of TBI patients
+</h2>
+<br/>
 <div class="container">
-
     <div class="col-md-7">
         <img src="/static/img/landing_page.jpg" class="img-thumbnail img-responsive">
     </div>
@@ -22,17 +20,19 @@
         <h2 class="text-center">This tool is for you if:</h2>
         <!--<ul style="line-height: 30px; font-size: 18px; font-weight: 400;"> -->
         <ul>
-            <li> You are the one designated to make decisions for your family member when (s)he can’t make those decisions on his/her own</li>
+            <li> You are the one designated to make decisions for your family member when (s)he can’t make those
+                decisions on his/her own
+            </li>
             <li> Your family member has a traumatic brain injury (TBI) and needs medical care in the ICU</li>
             <li> Your family member is on a machine to help with breathing and is fed through a tube (life support)</li>
         </ul>
         <br>
 
-        <div style="text-align: center; margin-bottom: 5%; margin-left: 20%; margin-right: 20%"> 
-            <a href="{{url_for('page_1')}}" class="text-center"> 
+        <div style="text-align: center; margin-bottom: 5%; margin-left: 20%; margin-right: 20%">
+            <a href="\1" class="text-center">
                 <button class="btn btn-primary btn-lg btn-block" type="button">Start 
                     <span class="glyphicon" aria-hidden="true">
-                    </span> 
+                    </span>
                 </button>
             </a>
             <br>
@@ -129,8 +129,10 @@
     {% endif %}
 
 </div>
-<div class="text-center" style="padding-top: 20px">© 2017 University of Massachusetts and Worcester Polytechnic Institute. All Rights
+<div class="text-center" style="padding-top: 20px">© 2017 University of Massachusetts and Worcester Polytechnic
+    Institute. All Rights
     Reserved.
 </div>
+{% endblock %}
 </body>
 </html>
