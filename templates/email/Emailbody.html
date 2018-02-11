@@ -1,14 +1,14 @@
 <div style='line-height:20px'><p>Hello, </p>
     <p>This is an auto-generate report from Goals-of-Care after Traumatic Brain Injury Decision Aid Prototype.</p>
-    <p>Start Time: {{session['start']}}
-    <p>End Time: {{session['end']}}
+    <p>Start Time: {{ session['start'] }}
+    <p>End Time: {{ session['end'] }}
         <!--the head of this page-->
     <ol>
         <li>
             What is the "goals of care" decision about?
             <ul>
                 <li>
-                    {{session['ans2']}}
+                    {{ session['ans2'] }}
                 </li>
             </ul>
         </li>
@@ -16,7 +16,7 @@
             Why do you need to make a decision about your family member's goals of care?
             <ul>
                 <li>
-                    {{session['ans3']}}
+                    {{ session['ans3'] }}
                 </li>
             </ul>
         </li>
@@ -27,7 +27,7 @@
                     My family member wants to live as comfortably as possible.
                     <ul>
                         <li>
-                            {{session['ans4']}}
+                            {{ session['ans4'] }}
                         </li>
                     </ul>
                 </li>
@@ -35,7 +35,7 @@
                     My family member wants to live as long as possible, regardless of the quality of life.
                     <ul>
                         <li>
-                            {{session['ans5']}}
+                            {{ session['ans5'] }}
                         </li>
                     </ul>
                 </li>
@@ -43,7 +43,7 @@
                     For my family member a high quality of life is most important.
                     <ul>
                         <li>
-                            {{session['ans6']}}
+                            {{ session['ans6'] }}
                         </li>
                     </ul>
                 </li>
@@ -51,7 +51,7 @@
                     My family member does not want to be dependent on others away from home.
                     <ul>
                         <li>
-                            {{session['ans7']}}
+                            {{ session['ans7'] }}
                         </li>
                     </ul>
                 </li>
@@ -59,7 +59,7 @@
                     My family member would accept a tracheostomy and feeding tube to stay alive.
                     <ul>
                         <li>
-                            {{session['ans8']}}
+                            {{ session['ans8'] }}
                         </li>
                     </ul>
                 </li>
@@ -71,8 +71,8 @@
             </div>
             <div class="panel-body" style="font-style: italic">
                 <div style="margin-top:10px; padding-top:20px;margin-bottom: 10px; padding-bottom: 50px">
-                    <input type="range" name="ans16" min="0" max="100" value={{session['ans9']}}
-                           disabled>
+                    <input type="range" name="ans16" min="0" max="100" value={{ session['ans9'] }}
+                            disabled>
                     <h4 class="pull-left">Survival</h4>
                     <h4 class="pull-right">Comfort</h4>
                 </div>
@@ -81,17 +81,17 @@
         <li>
             The Goals of Care Options I'd like to know more:
             <ul>
-                {% if session['opt1'] == 1%}
-                <li>The reason why choosing to focus on survival</li>
+                {% if session['opt1'] == 1 %}
+                    <li>The reason why choosing to focus on survival</li>
                 {% endif %}
-                {% if session['opt2'] == 1%}
-                <li>The reason why not choosing to focus on survival</li>
+                {% if session['opt2'] == 1 %}
+                    <li>The reason why not choosing to focus on survival</li>
                 {% endif %}
-                {% if session['opt3'] == 1%}
-                <li>The reason why choosing to focus on comfort</li>
+                {% if session['opt3'] == 1 %}
+                    <li>The reason why choosing to focus on comfort</li>
                 {% endif %}
-                {% if session['opt4'] == 1%}
-                <li>The reason why not choosing focus on comfort</li>
+                {% if session['opt4'] == 1 %}
+                    <li>The reason why not choosing focus on comfort</li>
                 {% endif %}
             </ul>
         </li>
@@ -99,7 +99,7 @@
             How do you feel about this choice?
             <ul>
                 <li>
-                    {{session['ans10']}}
+                    {{ session['ans10'] }}
                 </li>
             </ul>
         </li>

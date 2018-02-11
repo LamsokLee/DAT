@@ -102,7 +102,7 @@ def printable():
             "SELECT * FROM session WHERE session_id = " + request.form.get('ref') + " and email = '" + request.form.get(
                 'input_email') + "'")
         if visitquery.rowcount == 0:
-            return render_template('pages/home.html', alertmsg="No matched record")
+            return render_template('content/home.html', alertmsg="No matched record")
         else:
             result = visitquery.fetchall()
             for ans in result:
@@ -124,8 +124,8 @@ def printable():
                 session['email'] = ans['email']
                 session['start'] = ans['start']
                 session['end'] = ans['end']
-            return render_template("printable.html", session=session)
-    return render_template("pages/home.html", alertmsg="Please input complete information")
+            return render_template("printable.html")
+    return render_template("content/home.html", alertmsg="Please input complete information")
 
 
 @app.route('/getreport')

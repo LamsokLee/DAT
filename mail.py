@@ -9,20 +9,18 @@ mail = Mail(app)
 def sendmail():
     if session['email'] != '':
         # Email: Subject, sender, recipient
-        msg = Message('Your report from Traumatic Brain Injury Decision Aid Tool -- Report ID: ' + str(session['ref_num']),
+        msg = Message('Your report from Traumatic Brain Injury Decision Aid Tool -- Report ID: ' + str(session['id']),
             sender='mis573wpi@gmail.com',
             recipients=[session['email']])
         # Email: Body
-        msg.html = render_template('sections/textreport.html', session = session)
+        msg.html = render_template('include/textreport.html')
         try:
             mail.send(msg)
         except Exception:
             session['alertmsg'] = "E-mail sent unsuccessfully, Please try again."
-            return render_template("summary.html",
-                                   session=session)
+            return render_template("summary.html")
         session['alertmsg'] = 'The report has been sent.'
-        return render_template("summary.html",
-                               session = session)
+        return render_template("summary.html")
 
 #
 @app.route("/mailid", methods=['POST'])
@@ -42,15 +40,15 @@ def mailid():
             mail.send(retrieve_mail)
             alertmsg = 'The Report ID has been sent to your E-mail.'
             print("mail has been sent")
-            return render_template("pages/home.html",
+            return render_template("content/home.html",
                                    alertmsg=alertmsg)
         else:
             alertmsg = "No matched record"
-            return render_template("pages/home.html",
+            return render_template("content/home.html",
                                    alertmsg=alertmsg)
     else:
         alertmsg = "You have to input your E-mail address"
-        return render_template("pages/home.html",
+        return render_template("content/home.html",
                                alertmsg=alertmsg)
 
 @app.route('/sendcontact', methods=['POST'])
@@ -64,4 +62,4 @@ def sendcontact():
     mail.send(msg)
     # flash("Your feedback has been sent to us, we'll reply you as soon as possible. Thank you!")
     # return ('', 204)
-    return render_template("pages/home.html", feedback ="Your feedback has been sent to us, we'll reply you as soon as possible. Thank you!")
+    return render_template("content/home.html", feedback ="Your feedback has been sent to us, we'll reply you as soon as possible. Thank you!")
