@@ -166,12 +166,29 @@
             themselves on the line
             below?</h4>
         <div class="container well well-lg">
-            <div style="margin-top:10px; padding-top:20px;margin-bottom: 10px; padding-bottom: 50px">
-                <input type="range" name="ans16" min="0" max="100" id="ans16" value={{ session['ans7'] }}
-                        disabled>
-                <h4 class="pull-left">Survival</h4>
-                <h4 class="pull-right">Comfort</h4>
-            </div>
+            <table class="table table-responsive" style="margin-bottom: 0px">
+                <thead>
+                <tr>
+                    <th class="col-md-1"><h4>Survival</h4></th>
+                    <th class="col-md-10"><input class="slider" type="range" name="ans7" min="0" max="100" id="ans7"
+                                                 value={{ session['ans7'] }} disabled></th>
+                    <th class="col-md-1"><h4>Comfort</h4></th>
+                </tr>
+                </thead>
+                <tbody>
+                <tr>
+                    <td>
+
+                    </td>
+                    <td class="text-center">
+                        Drag the slider above at the point you think your loved one would choose
+                    </td>
+                    <td>
+
+                    </td>
+                </tr>
+                </tbody>
+            </table>
         </div>
         <h4 class="section-head" style="font-weight: bold">4. Your Goals of Care Options</h4>
         <div class="container well well-lg">

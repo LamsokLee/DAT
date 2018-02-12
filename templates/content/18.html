@@ -216,20 +216,31 @@
             </table>
         </div>
         <h4 class="section-head" style="line-height: 160%">3. Imagine a line where the right side is comfort care and
-            the
-            left side is survival at any cost. Drag the slider below at the point you think your loved one would
-            choose.</h4>
+            the left side is survival at any cost. </h4>
         <div class="container well well-lg">
-            <div class="col-md-1 text-center">
-                <h4>Survival</h4>
-            </div>
-            <div class="col-md-10"><br>
-                <input type="range" name="ans7" min="0" max="100" id="ans7"
-                       value={{ session['ans7'] }}>
-            </div>
-            <div class="col-md-1 text-center">
-                <h4>Comfort</h4>
-            </div>
+            <table class="table table-responsive" style="margin-bottom: 0px">
+                <thead>
+                <tr>
+                    <th class="col-md-1"><h4>Survival</h4></th>
+                    <th class="col-md-10"><input class="slider" type="range" name="ans7" min="0" max="100" id="ans7"
+                                                 value={{ session['ans7'] }}></th>
+                    <th class="col-md-1"><h4>Comfort</h4></th>
+                </tr>
+                </thead>
+                <tbody>
+                <tr>
+                    <td>
+
+                    </td>
+                    <td class="text-center">
+                        Drag the slider above at the point you think your loved one would choose
+                    </td>
+                    <td>
+
+                    </td>
+                </tr>
+                </tbody>
+            </table>
         </div>
         <h4 class="section-head">4. Your Goals of Care Options</h4>
         <p style="font-size: 16px">There are 2 goals of care options available. Each option has different benefits and
