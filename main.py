@@ -99,7 +99,7 @@ def printable():
     # TODO: check the input format
     if request.form.get('input_email') != '' and request.form.get('ref') != '':
         visitquery = db.engine.execute(
-            "SELECT * FROM session WHERE session_id = " + request.form.get('ref') + " and email = '" + request.form.get(
+            "SELECT * FROM session WHERE id = " + request.form.get('ref') + " and email = '" + request.form.get(
                 'input_email') + "'")
         if visitquery.rowcount == 0:
             return render_template('content/home.html', alertmsg="No matched record")
@@ -116,15 +116,14 @@ def printable():
                 session['ans8'] = ans['ans8']
                 session['ans9'] = ans['ans9']
                 session['ans10'] = ans['ans10']
-                session['opt1'] = ans['opt1']
-                session['opt2'] = ans['opt2']
-                session['opt3'] = ans['opt3']
-                session['opt4'] = ans['opt4']
+                session['ans11'] = ans['ans11']
+                session['ans12'] = ans['ans12']
+                session['ans13'] = ans['ans13']
                 session['id'] = ans['id']
                 session['email'] = ans['email']
                 session['start'] = ans['start']
                 session['end'] = ans['end']
-            return render_template("printable.html")
+            return render_template("report.html")
     return render_template("content/home.html", alertmsg="Please input complete information")
 
 

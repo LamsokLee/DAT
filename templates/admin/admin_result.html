@@ -13,11 +13,11 @@
         <tbody>
         {% for rows in tablelist %}
         <tr>
-            <td>{{rows.session_id}}</td>
+            <td>{{rows.id}}</td>
             <td>{{rows.email}}</td>
             <td>{{rows.start}}</td>
             <td>{{rows.end}}</td>
-            <td><a href="{{url_for('admin_report', ref_num = rows.session_id)}}">
+            <td><a href="{{url_for('admin_report', ref_num = rows.id)}}">
                 <button type="button" class="btn btn-default">
                     <span class="glyphicon glyphicon-file" aria-hidden="true"></span>
                 </button>

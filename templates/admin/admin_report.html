@@ -1,8 +1,8 @@
-<!--the head of HTML file-->
-{% include 'include/head.html' %}
-<body>
+{% extends 'layout.html' %}
 <!--the head navbar of the website-->
+{% block navbar %}
 {% include 'admin/admin_navbar.html' %}
+{% endblock %}
 <div style="text-align: center">
     <a href="{{url_for('admin_listall')}}">
         <button type="button" class="btn btn-primary btn-md">

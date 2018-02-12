@@ -33,7 +33,7 @@ def admin_main():
 @app.route('/admin/main')
 def admin_listall():
     if 'adminlogged' in session:
-        return render_template('admin/admin_main.html', tablelist=db.engine.execute("SELECT * FROM session ORDER BY session_id DESC"))
+        return render_template('admin/admin_main.html', tablelist=db.engine.execute("SELECT * FROM session ORDER BY id DESC"))
     else:
         return redirect('/admin')
 
@@ -43,20 +43,20 @@ def search_result():
     if (request.form.get('ref_num') != '') and (request.form.get('email') == ''):
         # only ref_num input
         return render_template('admin/admin_main.html',
-                               tablelist=db.engine.execute("SELECT * FROM session WHERE session_id = " + request.form.get('ref_num')))
+                               tablelist=db.engine.execute("SELECT * FROM session WHERE id = " + request.form.get('ref_num')))
     elif (request.form.get('ref_num') == '') and (request.form.get('email') != ''):
         # only email input
         return render_template('admin/admin_main.html',
-                               tablelist=db.engine.execute("SELECT * FROM session WHERE email = '" + request.form.get('email') +"' ORDER BY session_id DESC"))
+                               tablelist=db.engine.execute("SELECT * FROM session WHERE email = '" + request.form.get('email') +"' ORDER BY id DESC"))
     elif (request.form.get('ref_num') != '') and (request.form.get('email') != ''):
-        return render_template('admin/admin_main.html', tablelist=db.engine.execute("SELECT * FROM session WHERE session_id = " + request.form.get('ref_num') + " AND email = '" + request.form.get('email') + "' ORDER BY session_id DESC"))
+        return render_template('admin/admin_main.html', tablelist=db.engine.execute("SELECT * FROM session WHERE id = " + request.form.get('ref_num') + " AND email = '" + request.form.get('email') + "' ORDER BY id DESC"))
     else:
         return render_template('admin/admin_main.html', no_result=True)
 
 @app.route('/admin/main/report/<int:ref_num>', methods=['GET','POST'])
 def admin_report(ref_num):
     if 'adminlogged' in session:
-        visitquery = db.engine.execute("SELECT * FROM session WHERE session_id = " + str(ref_num))
+        visitquery = db.engine.execute("SELECT * FROM session WHERE id = " + str(ref_num))
         result = visitquery.fetchall()
         for ans in result:
             session['ans1'] = ans['ans1']
@@ -69,7 +69,7 @@ def admin_report(ref_num):
             session['ans8'] = ans['ans8']
             session['ans9'] = ans['ans9']
             session['ans10'] = ans['ans10']
-            session['ref_num'] = ans['session_id']
+            session['ref_num'] = ans['id']
             session['email'] = ans['email']
             session['start'] = ans['start']
             session['end'] = ans['end']
@@ -80,7 +80,7 @@ def admin_report(ref_num):
 @app.route('/admin/main/report/delete')
 def admin_report_delete():
     if 'adminlogged' in session:
-        db.engine.execute("DELETE FROM session WHERE session_id = " + str(session['ref_num']))
+        db.engine.execute("DELETE FROM session WHERE id = " + str(session['ref_num']))
         return redirect('/admin/main')
     else:
         return redirect('/admin')
