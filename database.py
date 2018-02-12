@@ -1,12 +1,6 @@
 import datetime
-
-from flask import session, request
-from flask_sqlalchemy import SQLAlchemy
-from config import app
-
-# create an instance of SQLAlchemy class with the Flask object as the parameter
-db = SQLAlchemy(app)
-
+from flask import session
+from config import db
 
 def commitdb():
     if session['id'] != 0:

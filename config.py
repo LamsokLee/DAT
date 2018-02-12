@@ -1,11 +1,13 @@
 from flask import Flask
+from flask_sqlalchemy import SQLAlchemy
+from flask_mail import Mail
 
-# create the Flask application instance
 app = Flask(__name__)
 
 # configure the SQLAlchemy database
 app.config['SQLALCHEMY_DATABASE_URI'] = 'mysql://root:melomelo@localhost:3306/main'
 app.config['SQLALCHEMY_TRACK_MODIFICATIONS'] = False
+db = SQLAlchemy(app)
 
 # configure the Email server
 app.config.update(
@@ -17,3 +19,4 @@ app.config.update(
     MAIL_USERNAME='mis573wpi@gmail.com',
     MAIL_PASSWORD='wpimstbi'
 )
+mail = Mail(app)

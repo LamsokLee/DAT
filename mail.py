@@ -1,17 +1,16 @@
-from flask_mail import Mail, Message
-from config import app
-from flask import session, render_template, request, flash
-from database import *
+from config import app,mail,db
+from flask_mail import Message
+from flask import render_template, request, session
 
-mail = Mail(app)
-#Send report to the client.
+
+# Send report to the client.
 @app.route("/mail")
 def sendmail():
     if session['email'] != '':
         # Email: Subject, sender, recipient
         msg = Message('Your report from Traumatic Brain Injury Decision Aid Tool -- Report ID: ' + str(session['id']),
-            sender='mis573wpi@gmail.com',
-            recipients=[session['email']])
+                      sender='mis573wpi@gmail.com',
+                      recipients=[session['email']])
         # Email: Body
         msg.html = render_template('include/textreport.html')
         try:
@@ -21,6 +20,7 @@ def sendmail():
             return render_template("summary.html")
         session['alertmsg'] = 'The report has been sent.'
         return render_template("summary.html")
+
 
 #
 @app.route("/mailid", methods=['POST'])
@@ -36,7 +36,7 @@ def mailid():
                     'Your report ID from Traumatic Brain Injury Decision Aid Tool',
                     sender='mis573wpi@gmail.com',
                     recipients=[request.form.get('input_email')])
-                retrieve_mail.html = render_template("email/forget_mail.html", record = record)
+                retrieve_mail.html = render_template("email/forget_mail.html", record=record)
             mail.send(retrieve_mail)
             alertmsg = 'The Report ID has been sent to your E-mail.'
             print("mail has been sent")
@@ -51,6 +51,7 @@ def mailid():
         return render_template("content/home.html",
                                alertmsg=alertmsg)
 
+
 @app.route('/sendcontact', methods=['POST'])
 def sendcontact():
     msg = Message(
@@ -62,4 +63,5 @@ def sendcontact():
     mail.send(msg)
     # flash("Your feedback has been sent to us, we'll reply you as soon as possible. Thank you!")
     # return ('', 204)
-    return render_template("content/home.html", feedback ="Your feedback has been sent to us, we'll reply you as soon as possible. Thank you!")
+    return render_template("content/home.html",
+                           feedback="Your feedback has been sent to us, we'll reply you as soon as possible. Thank you!")

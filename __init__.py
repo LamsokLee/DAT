@@ -1,16 +1,16 @@
 # -*- coding: utf-8 -*-
-# all the import
-from admin import *
-from mail import *
-from error import *
-from sus import *
-import test
-import data
-import os
+from config import app, db
+from database import commitsus, commitdb
+from flask import session, render_template, redirect, request
+import datetime, os, mail, test, admin
 
 
 # TODO: If session is running, kill it
 # TODO: To test if the session exists.
+
+@app.errorhandler(404)
+def page_not_fount(error):
+    return render_template("error.html", error=error)
 
 
 @app.route('/testportal')
@@ -135,6 +135,33 @@ def getreport():
 @app.route('/about')
 def about():
     return render_template("about.html")
+
+
+@app.route('/sus')
+def sus():
+    return render_template('sus.html')
+
+
+@app.route('/submitsus', methods=['POST'])
+def submitsus():
+    session['sus'] = {}
+    for i in range(1, 11):
+        key = 'sus' + str(i)
+        session['sus'].update({key: 0})
+    session['sus'].update({'sus11': ''})
+    session['sus'].update({'version': session['version']})
+    session['sus'].update({'time': datetime.datetime.now().strftime('%Y-%m-%d %H:%M:%S')})
+
+    print(session['sus'])
+
+    for sus in request.form:
+        value = request.form.get(sus)
+        if value is None and type(value) is not str:
+            session['sus'].update({sus: value})
+        elif type(value) is str:
+            session['sus'].update({sus: value})
+    commitsus()
+    return redirect('/')
 
 
 if __name__ == "__main__":

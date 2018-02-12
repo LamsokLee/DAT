@@ -1,6 +1,5 @@
 from flask import render_template, request
-from database import *
-from config import app
+from config import app,db
 
 
 ###############
