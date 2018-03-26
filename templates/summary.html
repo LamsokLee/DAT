@@ -11,18 +11,12 @@
                     <h1 class="text-center">
                         <mark>{{ session['id'] }}</mark>
                     </h1>
-                    <p>You can use this Report ID to retrieve your answer.</p>
-                    <p>Make sure you remember it or write it down if you want to.</p>
                     <br>
+                    <p>You can use this Report ID to retrieve your report. Make sure you remember it or write it down if
+                        you want to.</p>
                 </h4>
             </div>
             <div class="text-center">
-                <p>Please
-                    <button type="button" class="btn btn-primary btn-md" onclick="printDiv('printable')">
-                        <span class="glyphicon glyphicon-print" aria-hidden="true"></span>Print
-                    </button>
-                    your work sheet.
-                </p>
                 <p>It's very IMPORTANT to bring it to the family meeting with the doctor.</p>
             </div>
             {% if session['email'] != '' %}
@@ -54,11 +48,11 @@
                 <span class="glyphicon glyphicon-list" aria-hidden="true"></span>Take a Survey
             </button>
         </a>
-        <a href="/">
-            <button type="button" class="btn btn-primary btn-lg pull-left" style="margin-bottom: 5%">
-                <span class="glyphicon glyphicon-home" aria-hidden="true"></span>Exit
-            </button>
-        </a>
+        {#        <a href="/">#}
+        {#            <button type="button" class="btn btn-primary btn-lg pull-left" style="margin-bottom: 5%">#}
+        {#                <span class="glyphicon glyphicon-home" aria-hidden="true"></span>Exit#}
+        {#            </button>#}
+        {#        </a>#}
     {% endblock %}
 {% endblock %}
 
@@ -69,13 +63,3 @@
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
 <!-- Include all compiled plugins (below), or include individual files as needed -->
 <script src="static/js/bootstrap.min.js"></script>
-
-<script>
-    function printDiv(printable) {
-        var printContents = document.getElementById(printable).innerHTML;
-        var originalContents = document.body.innerHTML;
-        document.body.innerHTML = printContents;
-        window.print();
-        document.body.innerHTML = originalContents;
-    }
-</script>

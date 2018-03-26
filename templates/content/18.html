@@ -255,30 +255,55 @@
             go
             over the options and questions with you.</p>
         <div class="container well well-lg">
-            <table class="table-bordered table-responsive tabletext">
+            <table class="table-bordered table-responsive tabletext" style="border-color:black">
                 <thead>
                 <tr>
-                    <th class="col-md-4">
+                    <th class="col-md-4" style="border-color:black">
                         <h4><b>Goals of care option</b></h4>
                     </th>
-                    <th class="col-md-4">
+                    <th class="col-md-4" style="border-color:black">
                         <h4><b>Reasons to choose this option</b></h4>
                     </th>
-                    <th class="col-md-4">
+                    <th class="col-md-4" style="border-color:black">
                         <h4><b>Reasons not to choose this option</b></h4>
                     </th>
                 </tr>
                 </thead>
                 <tbody>
                 <tr>
-                    <th class="tabletext">
-                        <b>“Do everything”:
-                            Focus on <u>survival</u></b><br>
+                    <th style="border-color:black; border-bottom-style: hidden"><p><b>“Do everything”:
+                        Focus on <u>survival</u></b><br></th>
+                    <th style="border-color:black; border-bottom-style: hidden">
+                        <div class="checkbox text-center">
+                            {% if session['ans8'] == 1 %}
+                                <label><input type="checkbox" value=1 name="ans8" id="ans8" checked>Check to discuss
+                                    more</label>
+                            {% else %}
+                                <label><input type="checkbox" value=1 name="ans8" id="ans8">Check to discuss
+                                    more</label>
+                            {% endif %}
+                        </div>
+                    </th>
+                    <th style="border-color:black; border-bottom-style: hidden">
+                        <div class="checkbox text-center">
+                            {% if session['ans9'] == 1 %}
+                                <label><input type="checkbox" value=1 name="ans9" checked>Check to discuss
+                                    more</label>
+                            {% else %}
+                                <label><input type="checkbox" value=1 name="ans9">Check to discuss
+                                    more</label>
+                            {% endif %}
+                        </div>
+                    </th>
+                </tr>
+                <tr>
+                    <th class="tabletext" style="border-color:black">
+
                         Tracheostomy and feeding tube placement is done, followed by placement in LTACH or nursing home,
                         sometimes acute rehab when the patient is ready.
                     </th>
-                    <th class="tabletext">
-                        <ul class="tabletext">
+                    <th class="tabletext" style="border-color:black">
+                        <ul class="tabletext" id="ans8text">
                             <li>Best chance to stay alive.
                             <li>Patient will have a quality of life that he/she finds acceptable.
                             <li>Patient has said in the past to keep him/her alive at all cost.
@@ -287,8 +312,8 @@
                                 sessions.
                         </ul>
                     </th>
-                    <th>
-                        <ul class="tabletext">
+                    <th style="border-color:black">
+                        <ul class="tabletext" id="ans9text">
                             <li>Additional treatments can be painful.
                             <li>Patient does not want to be dependent on others to live.
                             <li>Patient does not want a tracheostomy or feeding tube.
@@ -297,73 +322,50 @@
                     </th>
                 </tr>
                 <tr>
-                    <th></th>
-                    <th>
+                    <th style="border-color:black; border-bottom-style: hidden">
+                        <p><b>“No suffering”: Focus on <u>comfort</u></b><br></p>
+                    </th>
+                    <th style="border-color:black; border-bottom-style: hidden">
                         <div class="checkbox text-center">
-                            {% if session['ans8'] == 1 %}
-                                <label><input type="checkbox" value=1 name="ans8" checked>I'd like to talk more about
-                                    <br>the above option</label>
+                            {% if session['ans10'] == 1 %}
+                                <label><input type="checkbox" value=1 name="ans10" checked>Check to discuss
+                                    more</label>
                             {% else %}
-                                <label><input type="checkbox" value=1 name="ans8">I'd like to talk more about
-                                    <br>the above option</label>
+                                <label><input type="checkbox" value=1 name="ans10">Check to discuss
+                                    more</label>
                             {% endif %}
                         </div>
                     </th>
-                    <th>
+                    <th style="border-color:black; border-bottom-style: hidden">
                         <div class="checkbox text-center">
-                            {% if session['ans9'] == 1 %}
-                                <label><input type="checkbox" value=1 name="ans9" checked>I'd like to talk more about
-                                    <br>the above option</label>
+                            {% if session['ans11'] == 1 %}
+                                <label><input type="checkbox" value=1 name="ans11" checked>Check to discuss
+                                    more</label>
                             {% else %}
-                                <label><input type="checkbox" value=1 name="ans9">I'd like to talk more about
-                                    <br>the above option</label>
+                                <label><input type="checkbox" value=1 name="ans11">Check to discuss
+                                    more</label>
                             {% endif %}
                         </div>
                     </th>
                 </tr>
                 <tr>
-                    <th class="tabletext">
-                        <b>“No suffering”: Focus on <u>comfort</u></b><br>
+                    <th class="tabletext" style="border-color:black">
+
                         Transition to comfort care is provided when the family is ready.
                     </th>
-                    <th>
-                        <ul class="tabletext">
+                    <th style="border-color:black">
+                        <ul class="tabletext" id="ans10text">
                             <li>Unlikely that patient will have an acceptable quality of life.
                             <li>Patient has suffered enough; family wants him/her to be comfortable.
                         </ul>
 
                     </th>
-                    <th>
-                        <ul class="tabletext">
+                    <th style="border-color:black">
+                        <ul class="tabletext" id="ans11text">
                             <li>Without life support, the patient will die.
                             <li>Patient would choose to have advanced treatments and live in a nursing home.
                         </ul>
 
-                    </th>
-                </tr>
-                <tr>
-                    <th></th>
-                    <th>
-                        <div class="checkbox text-center">
-                            {% if session['ans10'] == 1 %}
-                                <label><input type="checkbox" value=1 name="ans10" checked>I'd like to talk more about
-                                    <br>the above option</label>
-                            {% else %}
-                                <label><input type="checkbox" value=1 name="ans10">I'd like to talk more about
-                                    <br>the above option</label>
-                            {% endif %}
-                        </div>
-                    </th>
-                    <th>
-                        <div class="checkbox text-center">
-                            {% if session['ans11'] == 1 %}
-                                <label><input type="checkbox" value=1 name="ans11" checked>I'd like to talk more about
-                                    <br>the above option</label>
-                            {% else %}
-                                <label><input type="checkbox" value=1 name="ans11">I'd like to talk more about
-                                    <br>the above option</label>
-                            {% endif %}
-                        </div>
                     </th>
                 </tr>
                 </tbody>
@@ -385,11 +387,28 @@
         </div>
         <input type="submit" id="submit-answer" class="hidden" onclick="reviewpage()">
         <div class="form-group">
-            <label for="email">Please enter your E-mail address to receive your report and retrieve your report
-                after you finished:</label>
+            <label for="email"><h4 class="section-head">Please enter your E-mail address to receive your report and
+                retrieve your report:</h4></label>
             <input type="email" aria-describedby="emailHelp" placeholder="Enter email" class="form-control"
                    name="email" value="{{ session['email'] }}" maxlength="255" id="email">
         </div>
+        <br>
+        <div class="alert alert-info text-center" role="alert"><p>All your information provided will be kept
+            confidential. <br>We will
+            not disclose your personal information to a third party without your consent.</p>
+        </div>
     </form>
+    <script>
+        for (i = 8; i < 12; i++) {
+            document.getElementsByName('ans' + i)[0].addEventListener("click", changeColor);
+        }
+        function changeColor() {
+            if (this.checked) {
+                document.getElementById(this.name + "text").style.color = "#229922";
+            } else {
+                document.getElementById(this.name + "text").style.color = "black";
+            }
+        }
+    </script>
     </body>
 {% endblock %}

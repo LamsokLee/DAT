@@ -66,15 +66,17 @@
             {% endblock %}
         {% endblock %}
     </div>
-    <div class="text-center">Version: {{ session['version'] }} Last Updated: 02/10/2018</div>
+    <div class="text-center">Version: {{ session['version'] }} Last Updated: 03/18/2018</div>
     <div class="text-center">© 2017 University of Massachusetts and Worcester Polytechnic Institute. All Rights
         Reserved.
     </div>
 {% endblock %}
 <br><br>
+{% block script %}
 <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
 <!-- Include all compiled plugins (below), or include individual files as needed -->
 <script src="static/js/bootstrap.min.js"></script>
+{% endblock %}
 </body>
 </html>

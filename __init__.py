@@ -21,7 +21,7 @@ def testhome():
     session['end'] = -1
     session['logged'] = 1
     session['test'] = 1
-    session['version'] = 4.1
+    session['version'] = 4.2
 
     for i in range(1, 12):
         session['ans' + str(i)] = 0
@@ -40,7 +40,7 @@ def home():
     session['end'] = -1
     session['logged'] = 1
     session['test'] = 0
-    session['version'] = 4.1
+    session['version'] = 4.2
 
     for i in range(1, 12):
         session['ans' + str(i)] = 0
@@ -149,8 +149,6 @@ def submitsus():
         key = 'sus' + str(i)
         session['sus'].update({key: 0})
     session['sus'].update({'sus11': ''})
-    session['sus'].update({'version': session['version']})
-    session['sus'].update({'time': datetime.datetime.now().strftime('%Y-%m-%d %H:%M:%S')})
 
     print(session['sus'])
 

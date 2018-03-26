@@ -1,294 +1,303 @@
 <div class="jumbotron">
     <!--the head of this page-->
-    <div class="section-head"><h3 class="text-primary text-center">Report Preview
-    </h3></div>
-    <br>
-    <div class="container">
-        <h4 class="section-head" style="font-weight: bold">1. How sure do you feel about making a decision?</h4>
-        <div class="container well well-lg">
-            {% if session['ans1'] == 0 %}
-                No answer submitted
-            {% elif session['ans1'] == 1 %}
-                Not ready at all
-            {% elif session['ans1'] == 2 %}
-                Somewhat not ready
-            {% elif session['ans1'] == 3 %}
-                Unsure
-            {% elif session['ans1'] == 4 %}
-                Somewhat ready
-            {% elif session['ans1'] == 5 %}
-                Ready
-            {% endif %}
-        </div>
-        <h4 class="section-head" style="font-weight: bold">2. What is important to your loved one?</h4>
-        <div class="container well well-lg">
-            <table class="table-responsive tabletext">
-                <thead>
-                <tr>
-                    <th>
-                    </th>
-                    <th class="col-md-1 text-center">
-                        Not important
-                    </th>
-                    <th class="col-md-1 text-center">
-                    </th>
-                    <th class="col-md-1 text-center">
-                        Very important
-                    </th>
-                </tr>
-                </thead>
-                <tbody>
-                <tr>
-                    <td>My family member wants to live as comfortably as possible.</td>
-                    <td class="text-center">
-                        {% if session['ans2'] == 1 %}
-                            <input type="radio" value=1 name="ans2" checked>
-                        {% else %}
-                            <input type="radio" value=1 name="ans2" disabled>
-                        {% endif %}
-                    </td>
-                    <td class="text-center">
-                        {% if session['ans2'] == 2 %}
-                            <input type="radio" value=2 name="ans2" checked>
-                        {% else %}
-                            <input type="radio" value=2 name="ans2" disabled>
-                        {% endif %}
-                    </td>
-                    <td class="text-center">
-                        {% if session['ans2'] == 3 %}
-                            <input type="radio" value=3 name="ans2" checked>
-                        {% else %}
-                            <input type="radio" value=3 name="ans2" disabled>
-                        {% endif %}
-                    </td>
-                </tr>
-                <tr>
-                    <td>My family member wants to live as long as possible, regardless of the quality of
-                        life.
-                    </td>
-                    <td class="text-center">
-                        {% if session['ans3'] == 1 %}
-                            <input type="radio" value=1 name="ans3" checked>
-                        {% else %}
-                            <input type="radio" value=1 name="ans3" disabled>
-                        {% endif %}
-                    </td>
-                    <td class="text-center">
-                        {% if session['ans3'] == 2 %}
-                            <input type="radio" value=2 name="ans3" checked>
-                        {% else %}
-                            <input type="radio" value=2 name="ans3" disabled>
-                        {% endif %}
-                    </td>
-                    <td class="text-center">
-                        {% if session['ans3'] == 3 %}
-                            <input type="radio" value=3 name="ans3" checked>
-                        {% else %}
-                            <input type="radio" value=3 name="ans3" disabled>
-                        {% endif %}
-                    </td>
-                </tr>
-                <tr>
-                    <td>For my family member a high quality of life is most important.</td>
-                    <td class="text-center">
-                        {% if session['ans4'] == 1 %}
-                            <input type="radio" value=1 name="ans4" checked>
-                        {% else %}
-                            <input type="radio" value=1 name="ans4" disabled>
-                        {% endif %}
-                    </td>
-                    <td class="text-center">
-                        {% if session['ans4'] == 2 %}
-                            <input type="radio" value=2 name="ans4" checked>
-                        {% else %}
-                            <input type="radio" value=2 name="ans4" disabled>
-                        {% endif %}
-                    </td>
-                    <td class="text-center">
-                        {% if session['ans4'] == 3 %}
-                            <input type="radio" value=3 name="ans4" checked>
-                        {% else %}
-                            <input type="radio" value=3 name="ans4" disabled>
-                        {% endif %}
-                    </td>
-                </tr>
-                <tr>
-                    <td>My family member does not want to be dependent on others away from home.</td>
-                    <td class="text-center">
-                        {% if session['ans5'] == 1 %}
-                            <input type="radio" value=1 name="ans5" checked>
-                        {% else %}
-                            <input type="radio" value=1 name="ans5" disabled>
-                        {% endif %}
-                    </td>
-                    <td class="text-center">
-                        {% if session['ans5'] == 2 %}
-                            <input type="radio" value=2 name="ans5" checked>
-                        {% else %}
-                            <input type="radio" value=2 name="ans5" disabled>
-                        {% endif %}
-                    </td>
-                    <td class="text-center">
-                        {% if session['ans5'] == 3 %}
-                            <input type="radio" value=3 name="ans5" checked>
-                        {% else %}
-                            <input type="radio" value=3 name="ans5" disabled>
-                        {% endif %}
-                    </td>
-                </tr>
-                <tr>
-                    <td>My family member would accept a tracheostomy and feeding tube to stay alive.</td>
-                    <td class="text-center">
-                        {% if session['ans6'] == 1 %}
-                            <input type="radio" value=1 name="ans6" checked>
-                        {% else %}
-                            <input type="radio" value=1 name="ans6" disabled>
-                        {% endif %}
-                    </td>
-                    <td class="text-center">
-                        {% if session['ans6'] == 2 %}
-                            <input type="radio" value=2 name="ans6" checked>
-                        {% else %}
-                            <input type="radio" value=2 name="ans6" disabled>
-                        {% endif %}
-                    </td>
-                    <td class="text-center">
-                        {% if session['ans6'] == 3 %}
-                            <input type="radio" value=3 name="ans6" checked>
-                        {% else %}
-                            <input type="radio" value=3 name="ans6" disabled>
-                        {% endif %}
-                    </td>
-                </tbody>
-            </table>
-        </div>
-        <h4 class="section-head" style="font-weight: bold">3. Where do you think your loved one would put
-            themselves on the line
-            below?</h4>
-        <div class="container well well-lg">
-            <table class="table table-responsive" style="margin-bottom: 0px">
-                <thead>
-                <tr>
-                    <th class="col-md-1"><h4>Survival</h4></th>
-                    <th class="col-md-10"><input class="slider" type="range" name="ans7" min="0" max="100" id="ans7"
-                                                 value={{ session['ans7'] }} disabled></th>
-                    <th class="col-md-1"><h4>Comfort</h4></th>
-                </tr>
-                </thead>
-                <tbody>
-                <tr>
-                    <td>
+    <div id="printArea">
+        <div class="section-head"><h3 class="text-primary text-center">Report Preview
+        </h3></div>
+        <br>
+        <div class="container">
+            <h4 class="section-head" style="font-weight: bold">1. How sure do you feel about making a decision?</h4>
+            <div class="container well well-lg">
+                {% if session['ans1'] == 0 %}
+                    No answer submitted
+                {% elif session['ans1'] == 1 %}
+                    Not ready at all
+                {% elif session['ans1'] == 2 %}
+                    Somewhat not ready
+                {% elif session['ans1'] == 3 %}
+                    Unsure
+                {% elif session['ans1'] == 4 %}
+                    Somewhat ready
+                {% elif session['ans1'] == 5 %}
+                    Ready
+                {% endif %}
+            </div>
+            <h4 class="section-head" style="font-weight: bold">2. What is important to your loved one?</h4>
+            <div class="container well well-lg">
+                <table class="table-responsive tabletext">
+                    <thead>
+                    <tr>
+                        <th>
+                        </th>
+                        <th class="col-md-1 text-center">
+                            Not important
+                        </th>
+                        <th class="col-md-1 text-center">
+                        </th>
+                        <th class="col-md-1 text-center">
+                            Very important
+                        </th>
+                    </tr>
+                    </thead>
+                    <tbody>
+                    <tr>
+                        <td>My family member wants to live as comfortably as possible.</td>
+                        <td class="text-center">
+                            {% if session['ans2'] == 1 %}
+                                <input type="radio" value=1 name="ans2" checked>
+                            {% else %}
+                                <input type="radio" value=1 name="ans2" disabled>
+                            {% endif %}
+                        </td>
+                        <td class="text-center">
+                            {% if session['ans2'] == 2 %}
+                                <input type="radio" value=2 name="ans2" checked>
+                            {% else %}
+                                <input type="radio" value=2 name="ans2" disabled>
+                            {% endif %}
+                        </td>
+                        <td class="text-center">
+                            {% if session['ans2'] == 3 %}
+                                <input type="radio" value=3 name="ans2" checked>
+                            {% else %}
+                                <input type="radio" value=3 name="ans2" disabled>
+                            {% endif %}
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>My family member wants to live as long as possible, regardless of the quality of
+                            life.
+                        </td>
+                        <td class="text-center">
+                            {% if session['ans3'] == 1 %}
+                                <input type="radio" value=1 name="ans3" checked>
+                            {% else %}
+                                <input type="radio" value=1 name="ans3" disabled>
+                            {% endif %}
+                        </td>
+                        <td class="text-center">
+                            {% if session['ans3'] == 2 %}
+                                <input type="radio" value=2 name="ans3" checked>
+                            {% else %}
+                                <input type="radio" value=2 name="ans3" disabled>
+                            {% endif %}
+                        </td>
+                        <td class="text-center">
+                            {% if session['ans3'] == 3 %}
+                                <input type="radio" value=3 name="ans3" checked>
+                            {% else %}
+                                <input type="radio" value=3 name="ans3" disabled>
+                            {% endif %}
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>For my family member a high quality of life is most important.</td>
+                        <td class="text-center">
+                            {% if session['ans4'] == 1 %}
+                                <input type="radio" value=1 name="ans4" checked>
+                            {% else %}
+                                <input type="radio" value=1 name="ans4" disabled>
+                            {% endif %}
+                        </td>
+                        <td class="text-center">
+                            {% if session['ans4'] == 2 %}
+                                <input type="radio" value=2 name="ans4" checked>
+                            {% else %}
+                                <input type="radio" value=2 name="ans4" disabled>
+                            {% endif %}
+                        </td>
+                        <td class="text-center">
+                            {% if session['ans4'] == 3 %}
+                                <input type="radio" value=3 name="ans4" checked>
+                            {% else %}
+                                <input type="radio" value=3 name="ans4" disabled>
+                            {% endif %}
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>My family member does not want to be dependent on others away from home.</td>
+                        <td class="text-center">
+                            {% if session['ans5'] == 1 %}
+                                <input type="radio" value=1 name="ans5" checked>
+                            {% else %}
+                                <input type="radio" value=1 name="ans5" disabled>
+                            {% endif %}
+                        </td>
+                        <td class="text-center">
+                            {% if session['ans5'] == 2 %}
+                                <input type="radio" value=2 name="ans5" checked>
+                            {% else %}
+                                <input type="radio" value=2 name="ans5" disabled>
+                            {% endif %}
+                        </td>
+                        <td class="text-center">
+                            {% if session['ans5'] == 3 %}
+                                <input type="radio" value=3 name="ans5" checked>
+                            {% else %}
+                                <input type="radio" value=3 name="ans5" disabled>
+                            {% endif %}
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>My family member would accept a tracheostomy and feeding tube to stay alive.</td>
+                        <td class="text-center">
+                            {% if session['ans6'] == 1 %}
+                                <input type="radio" value=1 name="ans6" checked>
+                            {% else %}
+                                <input type="radio" value=1 name="ans6" disabled>
+                            {% endif %}
+                        </td>
+                        <td class="text-center">
+                            {% if session['ans6'] == 2 %}
+                                <input type="radio" value=2 name="ans6" checked>
+                            {% else %}
+                                <input type="radio" value=2 name="ans6" disabled>
+                            {% endif %}
+                        </td>
+                        <td class="text-center">
+                            {% if session['ans6'] == 3 %}
+                                <input type="radio" value=3 name="ans6" checked>
+                            {% else %}
+                                <input type="radio" value=3 name="ans6" disabled>
+                            {% endif %}
+                        </td>
+                    </tbody>
+                </table>
+            </div>
+            <h4 class="section-head" style="font-weight: bold">3. Where do you think your loved one would put
+                themselves on the line
+                below?</h4>
+            <div class="container well well-lg">
+                <table class="table table-responsive" style="margin-bottom: 0px">
+                    <thead>
+                    <tr>
+                        <th class="col-md-1"><h4>Survival</h4></th>
+                        <th class="col-md-10"><input class="slider" type="range" name="ans7" min="0" max="100" id="ans7"
+                                                     value={{ session['ans7'] }} disabled></th>
+                        <th class="col-md-1"><h4>Comfort</h4></th>
+                    </tr>
+                    </thead>
+                    <tbody>
+                    <tr>
+                        <td>
 
-                    </td>
-                    <td class="text-center">
-                        Drag the slider above at the point you think your loved one would choose
-                    </td>
-                    <td>
+                        </td>
+                        <td class="text-center">
+                            Drag the slider above at the point you think your loved one would choose
+                        </td>
+                        <td>
 
-                    </td>
-                </tr>
-                </tbody>
-            </table>
-        </div>
-        <h4 class="section-head" style="font-weight: bold">4. Your Goals of Care Options</h4>
-        <div class="container well well-lg">
-            <table class="table-bordered table-responsive tabletext">
-                <thead>
-                <tr>
-                    <th class="col-md-4">
-                        <h4><b>Goals of care option</b></h4>
-                    </th>
-                    <th class="col-md-4">
-                        <h4><b>Reasons to choose this option</b></h4>
-                    </th>
-                    <th class="col-md-4">
-                        <h4><b>Reasons not to choose this option</b></h4>
-                    </th>
-                </tr>
-                </thead>
-                <tbody>
-                <tr>
-                    <th class="tabletext">
-                        <b>“Do everything”:
-                            Focus on <u>survival</u></b><br>
-                        Tracheostomy and feeding tube placement is done, followed by placement in LTACH or nursing
-                        home,
-                        sometimes acute rehab when the patient is ready.
-                    </th>
-                    <th class="tabletext">
-                        {% if session['ans8'] == 1 %}
-                            <ul class="tabletext" style="color: #229922;">
-                        {% else %}
-                            <ul class="tabletext">
-                        {% endif %}
-                        <li>Best chance to stay alive.
-                        <li>Patient will have a quality of life that he/she finds acceptable.
-                        <li>Patient has said in the past to keep him/her alive at all cost.
-                        <li>Patient would feel OK with being uncomfortable from lying in bed or working hard
-                            during
-                            therapy
-                            sessions.
-                        </ul>
-                    </th>
-                    <th>
-                        {% if session['ans9'] == 1 %}
-                            <ul class="tabletext" style="color: #229922;">
-                        {% else %}
-                            <ul class="tabletext">
-                        {% endif %}
-                        <li>Additional treatments can be painful.
-                        <li>Patient does not want to be dependent on others to live.
-                        <li>Patient does not want a tracheostomy or feeding tube.
-                        <li>Patient may still die and will have pain from additional treatments.
-                        </ul>
+                        </td>
+                    </tr>
+                    </tbody>
+                </table>
+            </div>
+            <h4 class="section-head" style="font-weight: bold">4. Your Goals of Care Options</h4>
+            <div class="container well well-lg">
+                <table class="table-bordered table-responsive tabletext">
+                    <thead>
+                    <tr>
+                        <th class="col-md-4" ; style="border-color:black">
+                            <h4><b>Goals of care option</b></h4>
+                        </th>
+                        <th class="col-md-4" ; style="border-color:black">
+                            <h4><b>Reasons to choose this option</b></h4>
+                        </th>
+                        <th class="col-md-4" ; style="border-color:black">
+                            <h4><b>Reasons not to choose this option</b></h4>
+                        </th>
+                    </tr>
+                    </thead>
+                    <tbody>
+                    <tr>
+                        <th class="tabletext" ; style="border-color:black">
+                            <b>“Do everything”:
+                                Focus on <u>survival</u></b><br>
+                            Tracheostomy and feeding tube placement is done, followed by placement in LTACH or nursing
+                            home,
+                            sometimes acute rehab when the patient is ready.
+                        </th>
+                        <th class="tabletext" ; style="border-color:black">
+                            {% if session['ans8'] == 1 %}
+                                <ul class="tabletext" style="color: #229922;">
+                            {% else %}
+                                <ul class="tabletext">
+                            {% endif %}
+                            <li>Best chance to stay alive.
+                            <li>Patient will have a quality of life that he/she finds acceptable.
+                            <li>Patient has said in the past to keep him/her alive at all cost.
+                            <li>Patient would feel OK with being uncomfortable from lying in bed or working hard
+                                during
+                                therapy
+                                sessions.
+                            </ul>
+                        </th>
+                        <th style="border-color:black">
+                            {% if session['ans9'] == 1 %}
+                                <ul class="tabletext" style="color: #229922;">
+                            {% else %}
+                                <ul class="tabletext">
+                            {% endif %}
+                            <li>Additional treatments can be painful.
+                            <li>Patient does not want to be dependent on others to live.
+                            <li>Patient does not want a tracheostomy or feeding tube.
+                            <li>Patient may still die and will have pain from additional treatments.
+                            </ul>
 
-                    </th>
-                </tr>
-                <tr>
-                    <th class="tabletext">
-                        <b>“No suffering”: Focus on <u>comfort</u></b><br>
-                        Transition to comfort care is provided when the family is ready.
-                    </th>
-                    <th>
-                        {% if session['ans10'] == 1 %}
-                            <ul class="tabletext" style="color: #229922;">
-                        {% else %}
-                            <ul class="tabletext">
-                        {% endif %}
-                        <li>Unlikely that patient will have an acceptable quality of life.
-                        <li>Patient has suffered enough; family wants him/her to be comfortable.
-                        </ul>
+                        </th>
+                    </tr>
+                    <tr>
+                        <th class="tabletext" ; style="border-color:black">
+                            <b>“No suffering”: Focus on <u>comfort</u></b><br>
+                            Transition to comfort care is provided when the family is ready.
+                        </th>
+                        <th style="border-color:black">
+                            {% if session['ans10'] == 1 %}
+                                <ul class="tabletext" style="color: #229922;">
+                            {% else %}
+                                <ul class="tabletext">
+                            {% endif %}
+                            <li>Unlikely that patient will have an acceptable quality of life.
+                            <li>Patient has suffered enough; family wants him/her to be comfortable.
+                            </ul>
 
-                    </th>
-                    <th>
-                        {% if session['ans11'] == 1 %}
-                            <ul class="tabletext" style="color: #229922; ">
-                        {% else %}
-                            <ul class="tabletext">
-                        {% endif %}
-                        <li>Without life support, the patient will die.
-                        <li>Patient would choose to have advanced treatments and live in a nursing home.
-                        </ul>
-                    </th>
-                </tr>
-                </tbody>
-            </table>
+                        </th>
+                        <th style="border-color:black">
+                            {% if session['ans11'] == 1 %}
+                                <ul class="tabletext" style="color: #229922; ">
+                            {% else %}
+                                <ul class="tabletext">
+                            {% endif %}
+                            <li>Without life support, the patient will die.
+                            <li>Patient would choose to have advanced treatments and live in a nursing home.
+                            </ul>
+                        </th>
+                    </tr>
+                    </tbody>
+                </table>
+            </div>
+            <h4 class="section-head" style="font-weight: bold">5. How do you feel about this choice?</h4>
+            <div class="container well well-lg">
+                {% if session['ans12'] != '' %}
+                    {{ session['ans12'] }}
+                {% else %}
+                    No answer submitted
+                {% endif %}
+            </div>
+            <h4 class="section-head" style="font-weight: bold">6. Other questions you want to ask the doctor</h4>
+            <div class="container well well-lg">
+                {% if session['ans13'] != '' %}
+                    {{ session['ans13'] }}
+                {% else %}
+                    No answer submitted
+                {% endif %}
+            </div>
         </div>
-        <h4 class="section-head" style="font-weight: bold">5. How do you feel about this choice?</h4>
-        <div class="container well well-lg">
-            {% if session['ans12'] != '' %}
-                {{ session['ans12'] }}
-            {% else %}
-                No answer submitted
-            {% endif %}
+        <div class="text-center">
+            <button type="button" class="btn btn-primary btn-lg text-center" onclick="printDiv('printArea')">
+                <span class="glyphicon glyphicon-print" aria-hidden="true"></span>Print report
+            </button>
         </div>
-        <h4 class="section-head" style="font-weight: bold">6. Other questions you want to ask the doctor</h4>
-        <div class="container well well-lg">
-            {% if session['ans13'] != '' %}
-                {{ session['ans13'] }}
-            {% else %}
-                No answer submitted
-            {% endif %}
-        </div>
+
         <!--the dropdown box--></div>
 </div>
+
