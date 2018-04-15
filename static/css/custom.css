@@ -30,6 +30,7 @@
 .section-head {
     /*background-color: #bed6ed;*/
     padding-bottom: 10px;
+    font-weight: bolder;
 }
 
 ul {
@@ -162,4 +163,15 @@ input[type=range].slider:focus::-ms-fill-lower {
 
 input[type=range].slider:focus::-ms-fill-upper {
     background: rgba(48, 113, 169, 0.78);
+}
+
+.info-box{
+    background-color: ghostwhite;
+    border: 5px;
+    border-style: solid;
+    font-size:2rem;
+}
+
+.info-box-text{
+    padding:20px;
 }
