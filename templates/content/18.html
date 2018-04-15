@@ -402,7 +402,6 @@
         for (i = 8; i < 12; i++) {
             document.getElementsByName('ans' + i)[0].addEventListener("click", changeColor);
         }
-
         function changeColor() {
             if (this.checked) {
                 document.getElementById(this.name + "text").style.color = "#229922";
@@ -411,6 +410,5 @@
             }
         }
     </script>
-
     </body>
 {% endblock %}
