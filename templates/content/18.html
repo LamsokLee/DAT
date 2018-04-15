@@ -393,24 +393,29 @@
                    name="email" value="{{ session['email'] }}" maxlength="255" id="email">
         </div>
         <br>
-        <div class="alert alert-info text-center" role="alert"><p>All your information provided will be kept
-            confidential. <br>We will
-            not disclose your personal information to a third party without your consent.</p>
+        <div class="alert alert-info text-center" role="alert"><p>We will not disclose your personal information. <br>
+            We will use your E-mail only to provide you with your written report.</p>
         </div>
     </form>
-    <script>
-        for (i = 8; i < 12; i++) {
-            document.getElementsByName('ans' + i)[0].addEventListener("click", changeColor);
-        }
 
-        function changeColor() {
-            if (this.checked) {
-                document.getElementById(this.name + "text").style.color = "#229922";
-            } else {
-                document.getElementById(this.name + "text").style.color = "black";
-            }
+    <script>
+        for (i = 8; i < 12; i++){
+            document.getElementById('ans'+i+'text').addEventListener("mouseover", function(){
+            this.style.backgroundColor = "#dff0d8";
+            });
+            document.getElementById('ans'+i+'text').addEventListener("mouseout", function(){
+                this.style.backgroundColor = "#f5f5f5";});
+
+            document.getElementsByName('ans' + i)[0].addEventListener("click", function(){
+                if (this.checked) {
+                    document.getElementById(this.name + "text").style.color = "#229922";
+                } else {
+                    document.getElementById(this.name + "text").style.color = "black";
+                }
+            });
         }
     </script>
+
 
     </body>
 {% endblock %}
