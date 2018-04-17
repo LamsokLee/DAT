@@ -2,7 +2,7 @@
 {% block content %}
     <body onbeforeunload="return leavepage()">
     <div class="section-head">
-        <h3 class="text-center">Your own worksheet: How to make a decision for your family member</h3>
+        <h2 class="text-primary text-center">Your own worksheet: How to make a decision for your family member</h2>
     </div>
     <div class="info-box">
         <div class = "info-box-text">
@@ -395,16 +395,16 @@
     <script>
         for (i = 8; i < 12; i++){
             document.getElementById('ans'+i+'text').addEventListener("mouseover", function(){
-            this.style.backgroundColor = "#dff0d8";
+            this.style.backgroundColor = "#229922";
             });
             document.getElementById('ans'+i+'text').addEventListener("mouseout", function(){
                 this.style.backgroundColor = "#f5f5f5";});
 
             document.getElementsByName('ans' + i)[0].addEventListener("click", function(){
                 if (this.checked) {
-                    document.getElementById(this.name + "text").style.color = "#229922";
+                    document.getElementById(this.name + "text").style.backgroundColor = "#229922";
                 } else {
-                    document.getElementById(this.name + "text").style.color = "black";
+                    document.getElementById(this.name + "text").style.backgroundColor = "#f5f5f5";
                 }
             });
         }
