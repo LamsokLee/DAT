@@ -40,7 +40,7 @@ def home():
     session['end'] = -1
     session['logged'] = 1
     session['test'] = 0
-    session['version'] = 4.2
+    session['version'] = 4.3
 
     for i in range(1, 12):
         session['ans' + str(i)] = 0
