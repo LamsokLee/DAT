@@ -5,8 +5,8 @@
         <h2 class="text-primary text-center">Your own worksheet: How to make a decision for your family member</h2>
     </div>
     <div class="info-box">
-        <div class = "info-box-text">
-                    Please complete this worksheet and bring it to the meeting with the doctor.
+        <div class="info-box-text">
+            Please complete this worksheet and bring it to the meeting with the doctor.
         </div>
     </div>
 
@@ -278,18 +278,22 @@
                     <th style="border-color:black; border-bottom-style: hidden">
                         <div class="checkbox">
                             {% if session['ans8'] == 1 %}
-                                <label><input type="checkbox" value=1 name="ans8" id="ans8" checked><b>Check</b> the option(s) which align with your family member’s values and preferences.</label>
+                                <label><input type="checkbox" value=1 name="ans8" id="ans8" checked><b>Check</b> the
+                                    option(s) which align with your family member’s values and preferences.</label>
                             {% else %}
-                                <label><input type="checkbox" value=1 name="ans8" id="ans8"><b>Check</b> the option(s) which align with your family member’s values and preferences.</label>
+                                <label><input type="checkbox" value=1 name="ans8" id="ans8"><b>Check</b> the option(s)
+                                    which align with your family member’s values and preferences.</label>
                             {% endif %}
                         </div>
                     </th>
                     <th style="border-color:black; border-bottom-style: hidden">
                         <div class="checkbox">
                             {% if session['ans9'] == 1 %}
-                                <label><input type="checkbox" value=1 name="ans9" checked><b>Check</b> the option(s) which align with your family member’s values and preferences.</label>
+                                <label><input type="checkbox" value=1 name="ans9" checked><b>Check</b> the option(s)
+                                    which align with your family member’s values and preferences.</label>
                             {% else %}
-                                <label><input type="checkbox" value=1 name="ans9"><b>Check</b> the option(s) which align with your family member’s values and preferences.</label>
+                                <label><input type="checkbox" value=1 name="ans9"><b>Check</b> the option(s) which align
+                                    with your family member’s values and preferences.</label>
                             {% endif %}
                         </div>
                     </th>
@@ -300,18 +304,19 @@
                         Tracheostomy and feeding tube placement is done, followed by placement in LTACH or nursing home,
                         sometimes acute rehab when the patient is ready.
                     </th>
-                    <th class="tabletext" style="border-color:black">
-                        <ul class="tabletext" id="ans8text">
+                    <th class="tabletext" id="ans8text" style="border-color:black">
+                        <ul class="tabletext">
                             <li>Best chance to stay alive.
                             <li>Patient will have a quality of life that he/she finds acceptable.
                             <li>Patient has said in the past to keep him/her alive at all cost.
-                            <li>Patient would feel OK with being uncomfortable from lying in bed or working hard during
+                            <li>Patient would feel OK with being uncomfortable from lying in bed or working hard
+                                during
                                 therapy
                                 sessions.
                         </ul>
                     </th>
-                    <th style="border-color:black">
-                        <ul class="tabletext" id="ans9text">
+                    <th style="border-color:black"  id="ans9text">
+                        <ul class="tabletext">
                             <li>Additional treatments can be painful.
                             <li>Patient does not want to be dependent on others to live.
                             <li>Patient does not want a tracheostomy or feeding tube.
@@ -326,18 +331,22 @@
                     <th style="border-color:black; border-bottom-style: hidden">
                         <div class="checkbox">
                             {% if session['ans10'] == 1 %}
-                                <label><input type="checkbox" value=1 name="ans10" checked><b>Check</b> the option(s) which align with your family member’s values and preferences.</label>
+                                <label><input type="checkbox" value=1 name="ans10" checked><b>Check</b> the option(s)
+                                    which align with your family member’s values and preferences.</label>
                             {% else %}
-                                <label><input type="checkbox" value=1 name="ans10"><b>Check</b> the option(s) which align with your family member’s values and preferences.</label>
+                                <label><input type="checkbox" value=1 name="ans10"><b>Check</b> the option(s) which
+                                    align with your family member’s values and preferences.</label>
                             {% endif %}
                         </div>
                     </th>
                     <th style="border-color:black; border-bottom-style: hidden">
                         <div class="checkbox">
                             {% if session['ans11'] == 1 %}
-                                <label><input type="checkbox" value=1 name="ans11" checked><b>Check</b> the option(s) which align with your family member’s values and preferences.</label>
+                                <label><input type="checkbox" value=1 name="ans11" checked><b>Check</b> the option(s)
+                                    which align with your family member’s values and preferences.</label>
                             {% else %}
-                                <label><input type="checkbox" value=1 name="ans11"><b>Check</b> the option(s) which align with your family member’s values and preferences.</label>
+                                <label><input type="checkbox" value=1 name="ans11"><b>Check</b> the option(s) which
+                                    align with your family member’s values and preferences.</label>
                             {% endif %}
                         </div>
                     </th>
@@ -347,15 +356,15 @@
 
                         Transition to comfort care is provided when the family is ready.
                     </th>
-                    <th style="border-color:black">
-                        <ul class="tabletext" id="ans10text">
+                    <th style="border-color:black" id="ans10text">
+                        <ul class="tabletext" >
                             <li>Unlikely that patient will have an acceptable quality of life.
                             <li>Patient has suffered enough; family wants him/her to be comfortable.
                         </ul>
 
                     </th>
-                    <th style="border-color:black">
-                        <ul class="tabletext" id="ans11text">
+                    <th style="border-color:black" id="ans11text">
+                        <ul class="tabletext" >
                             <li>Without life support, the patient will die.
                             <li>Patient would choose to have advanced treatments and live in a nursing home.
                         </ul>
@@ -387,22 +396,26 @@
                    name="email" value="{{ session['email'] }}" maxlength="255" id="email">
         </div>
         <br>
-        <div class="info-box" role="alert"><p><div class="info-box-text">We will not disclose your personal information. <br>
-            We will use your E-mail only to provide you with your written report.</div></p>
+        <div class="info-box" role="alert"><p>
+            <div class="info-box-text">We will not disclose your personal information. <br>
+                We will use your E-mail only to provide you with your written report.
+            </div>
+            </p>
         </div>
     </form>
 
     <script>
-        for (i = 8; i < 12; i++){
-            document.getElementById('ans'+i+'text').addEventListener("mouseover", function(){
-            this.style.backgroundColor = "#229922";
+        for (i = 8; i < 12; i++) {
+            document.getElementById('ans' + i + 'text').addEventListener("mouseover", function () {
+                this.style.backgroundColor = "#9ed18b";
             });
-            document.getElementById('ans'+i+'text').addEventListener("mouseout", function(){
-                this.style.backgroundColor = "#f5f5f5";});
+            document.getElementById('ans' + i + 'text').addEventListener("mouseout", function () {
+                this.style.backgroundColor = "#f5f5f5";
+            });
 
-            document.getElementsByName('ans' + i)[0].addEventListener("click", function(){
+            document.getElementsByName('ans' + i)[0].addEventListener("click", function () {
                 if (this.checked) {
-                    document.getElementById(this.name + "text").style.backgroundColor = "#229922";
+                    document.getElementById(this.name + "text").style.backgroundColor = "#9ed18b";
                 } else {
                     document.getElementById(this.name + "text").style.backgroundColor = "#f5f5f5";
                 }
