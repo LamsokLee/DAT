@@ -257,7 +257,7 @@
             go
             over the options and questions with you.</p>
         <div class="container well well-lg">
-            <table class="table-bordered table-responsive tabletext" style="border-color:black">
+            <table class="table-bordered table-responsive tabletext">
                 <thead>
                 <tr>
                     <th class="col-md-4" style="border-color:black">
@@ -273,9 +273,15 @@
                 </thead>
                 <tbody>
                 <tr>
-                    <th style="border-color:black; border-bottom-style: hidden"><p><b>“Do everything”:
-                        Focus on <u>survival</u></b><br></th>
-                    <th style="border-color:black; border-bottom-style: hidden">
+                    <th class="tabletext" style="border-color:black">
+                        <div style = "padding: 5%;">
+                        <b>“Do everything”:
+                            Focus on <u>survival</u></b><br>
+                        Tracheostomy and feeding tube placement is done, followed by placement in LTACH or nursing
+                        home,
+                        sometimes acute rehab when the patient is ready.
+                    </div></th>
+                    <th class="tabletext" style="border-color:black">
                         <div class="checkbox">
                             {% if session['ans8'] == 1 %}
                                 <label><input type="checkbox" value=1 name="ans8" id="ans8" checked><b>Check</b> the option(s) which align with your family member’s values and preferences.</label>
@@ -283,8 +289,17 @@
                                 <label><input type="checkbox" value=1 name="ans8" id="ans8"><b>Check</b> the option(s) which align with your family member’s values and preferences.</label>
                             {% endif %}
                         </div>
+                        <ul class="tabletext" id="ans8text">
+                            <li>Best chance to stay alive.
+                            <li>Patient will have a quality of life that he/she finds acceptable.
+                            <li>Patient has said in the past to keep him/her alive at all cost.
+                            <li>Patient would feel OK with being uncomfortable from lying in bed or working hard
+                                during
+                                therapy
+                                sessions.
+                        </ul>
                     </th>
-                    <th style="border-color:black; border-bottom-style: hidden">
+                    <th style="border-color:black">
                         <div class="checkbox">
                             {% if session['ans9'] == 1 %}
                                 <label><input type="checkbox" value=1 name="ans9" checked><b>Check</b> the option(s) which align with your family member’s values and preferences.</label>
@@ -292,38 +307,22 @@
                                 <label><input type="checkbox" value=1 name="ans9"><b>Check</b> the option(s) which align with your family member’s values and preferences.</label>
                             {% endif %}
                         </div>
-                    </th>
-                </tr>
-                <tr>
-                    <th class="tabletext" style="border-color:black">
-
-                        Tracheostomy and feeding tube placement is done, followed by placement in LTACH or nursing home,
-                        sometimes acute rehab when the patient is ready.
-                    </th>
-                    <th class="tabletext" style="border-color:black">
-                        <ul class="tabletext" id="ans8text">
-                            <li>Best chance to stay alive.
-                            <li>Patient will have a quality of life that he/she finds acceptable.
-                            <li>Patient has said in the past to keep him/her alive at all cost.
-                            <li>Patient would feel OK with being uncomfortable from lying in bed or working hard during
-                                therapy
-                                sessions.
-                        </ul>
-                    </th>
-                    <th style="border-color:black">
                         <ul class="tabletext" id="ans9text">
                             <li>Additional treatments can be painful.
                             <li>Patient does not want to be dependent on others to live.
                             <li>Patient does not want a tracheostomy or feeding tube.
                             <li>Patient may still die and will have pain from additional treatments.
                         </ul>
+
                     </th>
                 </tr>
                 <tr>
-                    <th style="border-color:black; border-bottom-style: hidden">
-                        <p><b>“No suffering”: Focus on <u>comfort</u></b><br></p>
-                    </th>
-                    <th style="border-color:black; border-bottom-style: hidden">
+                    <th class="tabletext" style="border-color:black">
+                        <div style = "padding: 5%;">
+                        <b>“No suffering”: Focus on <u>comfort</u></b><br>
+                        Transition to comfort care is provided when the family is ready.
+                        </div></th>
+                    <th style="border-color:black">
                         <div class="checkbox">
                             {% if session['ans10'] == 1 %}
                                 <label><input type="checkbox" value=1 name="ans10" checked><b>Check</b> the option(s) which align with your family member’s values and preferences.</label>
@@ -331,23 +330,6 @@
                                 <label><input type="checkbox" value=1 name="ans10"><b>Check</b> the option(s) which align with your family member’s values and preferences.</label>
                             {% endif %}
                         </div>
-                    </th>
-                    <th style="border-color:black; border-bottom-style: hidden">
-                        <div class="checkbox">
-                            {% if session['ans11'] == 1 %}
-                                <label><input type="checkbox" value=1 name="ans11" checked><b>Check</b> the option(s) which align with your family member’s values and preferences.</label>
-                            {% else %}
-                                <label><input type="checkbox" value=1 name="ans11"><b>Check</b> the option(s) which align with your family member’s values and preferences.</label>
-                            {% endif %}
-                        </div>
-                    </th>
-                </tr>
-                <tr>
-                    <th class="tabletext" style="border-color:black">
-
-                        Transition to comfort care is provided when the family is ready.
-                    </th>
-                    <th style="border-color:black">
                         <ul class="tabletext" id="ans10text">
                             <li>Unlikely that patient will have an acceptable quality of life.
                             <li>Patient has suffered enough; family wants him/her to be comfortable.
@@ -355,11 +337,17 @@
 
                     </th>
                     <th style="border-color:black">
+                        <div class="checkbox">
+                            {% if session['ans11'] == 1 %}
+                                <label><input type="checkbox" value=1 name="ans11" checked><b>Check</b> the option(s) which align with your family member’s values and preferences.</label>
+                            {% else %}
+                                <label><input type="checkbox" value=1 name="ans11"><b>Check</b> the option(s) which align with your family member’s values and preferences.</label>
+                            {% endif %}
+                        </div>
                         <ul class="tabletext" id="ans11text">
                             <li>Without life support, the patient will die.
                             <li>Patient would choose to have advanced treatments and live in a nursing home.
                         </ul>
-
                     </th>
                 </tr>
                 </tbody>
