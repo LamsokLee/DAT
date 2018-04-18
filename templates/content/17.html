@@ -78,6 +78,12 @@
             <input type="submit" id="submit_page_14" class="hidden">
         </div>
         <h4 class="section-head" style="font-weight: bold">2. What is important to your loved one?</h4>
+        <p style="font-size: 16px">Here are some statements that will help you decide which treatment goal is best for
+            your
+            family member. Please
+            circle the number on the scale below to show how important each statement is to your family member if he/she
+            could
+            decide for themselves.</p>
         <div class="container well well-lg">
             <table class="table-responsive tabletext">
                 <thead>
@@ -159,9 +165,8 @@
                 </tbody>
             </table>
         </div>
-        <h4 class="section-head" style="font-weight: bold">3. Where do you think your loved one would put
-            themselves on the line
-            below?</h4>
+        <h4 class="section-head" style="line-height: 160%">3. Imagine a line where the right side is comfort care and
+            the left side is survival at any cost. </h4>
         <div class="container well well-lg">
             <table class="table table-responsive" style="margin-bottom: 0px">
                 <thead>
@@ -187,9 +192,15 @@
                 </tbody>
             </table>
         </div>
-        <h4 class="section-head" style="font-weight: bold">4. Your Goals of Care Options</h4>
+        <h4 class="section-head">4. Your Goals of Care Options</h4>
+        <p style="font-size: 16px">There are 2 goals of care options available. Each option has different benefits and
+            risks and side effects. There is no right or wrong choice. Please read the options below.
+            <br><b>Check</b> the option(s) which align with your family member’s values and preferences. <br>If you have
+            additional
+            questions, please make a list and bring them to the goals of care meeting. Your doctor will go over the
+            options and questions with you.</p>
         <div class="container well well-lg">
-            <table class="table-bordered table-responsive tabletext">
+            <table class="table-bordered table-responsive tabletext" style="border-color:black">
                 <thead>
                 <tr>
                     <th class="col-md-4" style="border-color:black">
@@ -205,14 +216,39 @@
                 </thead>
                 <tbody>
                 <tr>
-                    <th class="tabletext" style="border-color:black">
-                        <b>“Do everything”:
-                            Focus on <u>survival</u></b><br>
-                        Tracheostomy and feeding tube placement is done, followed by placement in LTACH or nursing
-                        home,
-                        sometimes acute rehab when the patient is ready.
+                    <th style="border-color:black; border-bottom-style: hidden"></th>
+                    <th style="border-color:black; border-bottom-style: hidden">
+                        <div class="checkbox">
+                            <label><input type="checkbox" value=1 name="ans8" id="ans8" style="font-size: xx-large"
+                                          disabled>
+                                <div style="font-size: smaller"><b>Check</b> the
+                                    option(s) which align with your family member’s values and preferences.
+                                </div>
+                            </label>
+                        </div>
                     </th>
+                    <th style="border-color:black; border-bottom-style: hidden">
+                        <div class="checkbox">
+                            <label><input type="checkbox" value=1 name="ans9" checked>
+                                <div style="font-size: smaller"><b>Check</b> the
+                                    option(s) which align with your family member’s values and preferences.
+                                </div>
+                            </label>
+                        </div>
+                    </th>
+                </tr>
+                <tr>
                     <th class="tabletext" style="border-color:black">
+                        <div style="padding: 5%">
+                            <b>“Do everything”:
+                                Focus on <u>survival</u></b><br>
+                            Tracheostomy and feeding tube placement is done, followed by placement in LTACH or
+                            nursing home,
+                            sometimes acute rehab when the patient is ready.
+                        </div>
+
+                    </th>
+                    <th class="tabletext" id="ans8text" style="border-color:black">
                         <ul class="tabletext">
                             <li>Best chance to stay alive.
                             <li>Patient will have a quality of life that he/she finds acceptable.
@@ -223,33 +259,58 @@
                                 sessions.
                         </ul>
                     </th>
-                    <th style="border-color:black">
-                        <ul class="tabletext" style="background-color: #229922;">
+                    <th style="border-color:black; background-color: #9ed18b;" id="ans9text">
+                        <ul class="tabletext">
                             <li>Additional treatments can be painful.
                             <li>Patient does not want to be dependent on others to live.
                             <li>Patient does not want a tracheostomy or feeding tube.
                             <li>Patient may still die and will have pain from additional treatments.
                         </ul>
+                    </th>
+                </tr>
+                <tr>
+                    <th style="border-color:black; border-bottom-style: hidden">
+                        <p><b>“No suffering”: Focus on <u>comfort</u></b><br></p>
+                    </th>
+                    <th style="border-color:black; border-bottom-style: hidden">
+                        <div class="checkbox">
+                            <label><input type="checkbox" value=1 name="ans10" checked>
+                                <div style="font-size: smaller"><b>Check</b> the
+                                    option(s) which align with your family member’s values and preferences.
+                                </div>
+                            </label>
 
+                        </div>
+                    </th>
+                    <th style="border-color:black; border-bottom-style: hidden">
+                        <div class="checkbox">
+
+                            <label><input type="checkbox" value=1 name="ans11" disabled>
+                                <div style="font-size: smaller"><b>Check</b> the
+                                    option(s) which align with your family member’s values and preferences.
+                                </div>
+                            </label>
+                        </div>
                     </th>
                 </tr>
                 <tr>
                     <th class="tabletext" style="border-color:black">
-                        <b>“No suffering”: Focus on <u>comfort</u></b><br>
+
                         Transition to comfort care is provided when the family is ready.
                     </th>
-                    <th style="border-color:black">
-                        <ul class="tabletext" style="background-color: #229922;">
+                    <th style="border-color:black;background-color: #9ed18b;" id="ans10text">
+                        <ul class="tabletext">
                             <li>Unlikely that patient will have an acceptable quality of life.
                             <li>Patient has suffered enough; family wants him/her to be comfortable.
                         </ul>
 
                     </th>
-                    <th style="border-color:black">
+                    <th style="border-color:black" id="ans11text">
                         <ul class="tabletext">
                             <li>Without life support, the patient will die.
                             <li>Patient would choose to have advanced treatments and live in a nursing home.
                         </ul>
+
                     </th>
                 </tr>
                 </tbody>
@@ -257,7 +318,8 @@
         </div>
         <h4 class="section-head" style="font-weight: bold">5. How do you feel about this choice?</h4>
         <div class="container well well-lg">
-            <i>"My wife is a very independent person. She would never want to have tubes placed, not even temporarily. It
+            <i>"My wife is a very independent person. She would never want to have tubes placed, not even temporarily.
+                It
                 would make her mad. She has told me she would never want to be in a nursing home, not even for a few
                 weeks, not even to try to get better. It makes me very sad to think about it, but I could never do this
                 to her; I could never allow a trach or feeding tube as it would make her miserable. She’s a fighter, but
