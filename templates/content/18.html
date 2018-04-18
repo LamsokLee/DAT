@@ -247,7 +247,8 @@
         <h4 class="section-head">4. Your Goals of Care Options</h4>
         <p style="font-size: 16px">There are 2 goals of care options available. Each option has different benefits and
             risks and side effects. There is no right or wrong choice. Please read the options below.
-            <br><b>Check</b> the option(s) which align with your family member’s values and preferences. <br>If you have additional
+            <br><b>Check</b> the option(s) which align with your family member’s values and preferences. <br>If you have
+            additional
             questions, please make a list and bring them to the goals of care meeting. Your doctor will go over the
             options and questions with you.</p>
         <div class="container well well-lg">
@@ -267,8 +268,7 @@
                 </thead>
                 <tbody>
                 <tr>
-                    <th style="border-color:black; border-bottom-style: hidden"><p><b>“Do everything”:
-                        Focus on <u>survival</u></b><br></th>
+                    <th style="border-color:black; border-bottom-style: hidden"></th>
                     <th style="border-color:black; border-bottom-style: hidden">
                         <div class="checkbox">
                             {% if session['ans8'] == 1 %}
@@ -307,9 +307,14 @@
                 </tr>
                 <tr>
                     <th class="tabletext" style="border-color:black">
+                        <div style="padding: 5%">
+                            <b>“Do everything”:
+                                Focus on <u>survival</u></b><br>
+                            Tracheostomy and feeding tube placement is done, followed by placement in LTACH or
+                            nursing home,
+                            sometimes acute rehab when the patient is ready.
+                        </div>
 
-                        Tracheostomy and feeding tube placement is done, followed by placement in LTACH or nursing home,
-                        sometimes acute rehab when the patient is ready.
                     </th>
                     <th class="tabletext" id="ans8text" style="border-color:black">
                         <ul class="tabletext">
@@ -416,8 +421,7 @@
         </div>
         <br>
         <div class="info-box" role="alert"><p>
-            <div class="info-box-text">We will not disclose your personal information. <br>
-                We will use your E-mail only to provide you with your written report.
+            <div class="info-box-text">We will not disclose your personal information. We will use your E-mail only to provide you with your written report.
             </div>
             </p>
         </div>
