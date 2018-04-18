@@ -18,7 +18,6 @@
             </div>
             <div class="text-center">
                 <p>It's very IMPORTANT to bring it to the family meeting with the doctor.</p>
-                <p>In addition, please provide your feedback by answering the following questions.</p>
             </div>
             {% if session['email'] != '' %}
                 <div class="text-center">
@@ -31,6 +30,7 @@
                     </p>
                 </div>
             {% endif %}
+            <p>In addition, please provide your feedback by answering the following questions.</p>
 
             {% if session['alertmsg'] %}
                 <div style="padding-bottom: 5%">
@@ -44,18 +44,18 @@
         </div>
     </div>
     {% include 'sus.html' %}
-{#    {% block bottombutton %}#}
-{#        <a href="/sus">#}
-{#            <button type="button" class="btn btn-primary btn-lg pull-right" style="margin-bottom: 5%">#}
-{#                <span class="glyphicon glyphicon-list" aria-hidden="true"></span>Take a Survey#}
-{#            </button>#}
-{#        </a>#}
-        {#        <a href="/">#}
-        {#            <button type="button" class="btn btn-primary btn-lg pull-left" style="margin-bottom: 5%">#}
-        {#                <span class="glyphicon glyphicon-home" aria-hidden="true"></span>Exit#}
-        {#            </button>#}
-        {#        </a>#}
-{#    {% endblock %}#}
+    {#    {% block bottombutton %}#}
+    {#        <a href="/sus">#}
+    {#            <button type="button" class="btn btn-primary btn-lg pull-right" style="margin-bottom: 5%">#}
+    {#                <span class="glyphicon glyphicon-list" aria-hidden="true"></span>Take a Survey#}
+    {#            </button>#}
+    {#        </a>#}
+    {#        <a href="/">#}
+    {#            <button type="button" class="btn btn-primary btn-lg pull-left" style="margin-bottom: 5%">#}
+    {#                <span class="glyphicon glyphicon-home" aria-hidden="true"></span>Exit#}
+    {#            </button>#}
+    {#        </a>#}
+    {#    {% endblock %}#}
 {% endblock %}
 
 {#<div id="printable" style="display: none;">#}
