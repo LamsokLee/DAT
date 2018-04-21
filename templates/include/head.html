@@ -4,8 +4,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
     <title>“Goals of Care” decision aid for families of TBI patients</title>
-    {% if session['test'] == 0 %}
-    <!-- Global Site Tag (gtag.js) - Google Analytics -->
+    <!-- Global site tag (gtag.js) - Google Analytics -->
     <script async src="https://www.googletagmanager.com/gtag/js?id=UA-107793932-1"></script>
     <script>
         window.dataLayer = window.dataLayer || [];
@@ -18,15 +17,9 @@
 
         gtag('config', 'UA-107793932-1');
     </script>
-    {% endif %}
-    <link rel="icon" href="{{ url_for ('static')}}, filename = 'icon/logo_right.png">
-    <!--Bootstrap on server-->
-    <link href="{{ url_for ('static')}}, filename = 'css/bootstrap.min.css" rel="stylesheet">
-    <link href="{{ url_for ('static')}}, filename = 'css/custom.css" rel="stylesheet">
-    <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
-    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
-    <!--[if lt IE 9]>
-    <script src="https://oss.maxcdn.com/html5shiv/3.7.3/html5shiv.min.js"></script>
-    <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
-    <![endif]-->
+    <link rel="icon" href="{{ url_for ('static') }}, filename = 'icon/logo_right.png">
+    <!-- Latest compiled and minified CSS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css"
+          integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+    <link href="{{ url_for ('static') }}, filename = 'css/custom.css" rel="stylesheet">
 </head>
