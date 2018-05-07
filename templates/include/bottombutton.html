@@ -1,29 +1,11 @@
-{% if session['page'] == 1 %}
-    <a href="/2">
-        <button type="button" class="btn btn-primary btn-lg pull-right" style="margin-bottom: 5%">Next
-            <span class="glyphicon glyphicon-menu-right" aria-hidden="true"></span>
-        </button>
-    </a>
-{% elif session['page'] == 18 %}
-    <a href="/17">
-        <button type="button" class="btn btn-primary btn-lg pull-left" style="margin-bottom: 5%">
-            <span class="glyphicon glyphicon-menu-left" aria-hidden="true"></span>Previous
-        </button>
-    </a>
-    <label for="submit-answer" class="btn btn-primary btn-lg pull-right" style="margin-bottom: 5%" id="review_btn">
-        <!--TODO: the icon of submit button -->
-        Save and review
-    </label>
-
-{% else %}
-    <a href="/{{ (session['page']-1)|string}}">
-        <button type="button" class="btn btn-primary btn-lg pull-left" style="margin-bottom: 5%">
-            <span class="glyphicon glyphicon glyphicon-menu-left" aria-hidden="true"></span>Previous
-        </button>
-    </a>
-    <a href="/{{ (session['page']+1)|string}}">
-        <button type="button" class="btn btn-primary btn-lg pull-right" style="margin-bottom: 5%">Next
-            <span class="glyphicon glyphicon glyphicon-menu-right" aria-hidden="true"></span>
-        </button>
-    </a>
-{% endif %}
+<div class="row">
+    <button id="prevBtn2" type="button" class="btn btn-primary btn-lg pull-left" style="margin-bottom: 5%"
+            onclick="prevPage()">
+        <span class="glyphicon glyphicon glyphicon-menu-left" aria-hidden="true"></span>Previous
+    </button>
+    <p id="page"></p>
+    <button id="nextBtn2" type="button" class="btn btn-primary btn-lg pull-right" style="margin-bottom: 5%"
+            onclick="nextPage()">Next
+        <span class="glyphicon glyphicon glyphicon-menu-right" aria-hidden="true"></span>
+    </button>
+</div>

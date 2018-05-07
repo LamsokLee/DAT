@@ -1,7 +1,10 @@
 # -*- coding: utf-8 -*-
-from config import app, db
+import pymongo
+from flask_pymongo import PyMongo
+
+from config import app, db, mongo
 from database import commitsus, commitdb
-from flask import session, render_template, redirect, request
+from flask import session, render_template, redirect, request, json
 import datetime, os, mail, test, admin
 
 
@@ -50,6 +53,11 @@ def home():
     return render_template("content/home.html")
 
 
+@app.route('/DA')
+def da():
+    return render_template('DA.html')
+
+
 @app.route('/page')
 @app.route('/<int:page>')
 def showpage(page):
@@ -58,39 +66,38 @@ def showpage(page):
 
 
 # Report Preview Page
-@app.route('/post', methods=['POST'])
-def post():
-    if 'logged' in session:
-        for item in session:
-            if item in request.form:
-                if type(session[item]) == int:
-                    session[item] = int(request.form.get(item))
-                else:
-                    session[item] = request.form.get(item)
-            elif item in ['ans8', 'ans9', 'ans10', 'ans11']:
-                session[item] = 0
-        return redirect('/report')
-    else:
-        return redirect('/')
+# @app.route('/post', methods=['POST'])
+# def post():
+#     if 'logged' in session:
+#         for item in session:
+#             if item in request.form:
+#                 if type(session[item]) == int:
+#                     session[item] = int(request.form.get(item))
+#                 else:
+#                     session[item] = request.form.get(item)
+#             elif item in ['ans8', 'ans9', 'ans10', 'ans11']:
+#                 session[item] = 0
+#         return redirect('/report')
+#     else:
+#         return redirect('/')
 
-
-@app.route('/report')
-def page_report():
-    if 'logged' in session:
-        return render_template('report.html')
-    else:
-        return redirect('/')
+#
+# @app.route('/report')
+# def page_report():
+#     if 'logged' in session:
+#         return render_template('report.html')
+#     else:
+#         return redirect('/')
 
 
 # Submit the report and commit to database
-@app.route('/summary')
+@app.route('/summary', methods=['POST'])
 def page_summary():
-    if 'logged' in session:
-        commitdb()
-        session.pop('logged')
-        return render_template("summary.html")
-    else:
-        return redirect('/')
+    data = request.form['data']
+    obj = json.loads(data)
+    id = mongo.db.answer.insert_one(obj).inserted_id
+    print(id)
+    return render_template("summary.html", id = id)
 
 
 # if user click the retrieve report button

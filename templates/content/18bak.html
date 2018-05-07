@@ -11,38 +11,58 @@
 <h4 class="section-head">1. After reading the decision aid, how sure do you feel about making a decision?</h4>
 
 <!--the dropdown box-->
-<form id='answerarea' method="post">
+<form action="{{ url_for('post') }}" method="post">
     <div class="container well well-lg">
         <div class="col-md-2 text-center">
             <h4>Please Choose your feeling:</h4>
         </div>
         <div class="col-md-2 text-center">
             <label class="radio-inline">
-                <input type="radio" value=1 name="ans1">
+                {% if session['ans1'] == 1 %}
+                    <input type="radio" value=1 name="ans1" checked>
+                {% else %}
+                    <input type="radio" value=1 name="ans1">
+                {% endif %}
             </label>
             <h5>Not ready at all</h5>
         </div>
         <div class="col-md-2 text-center">
             <label class="radio-inline">
-                <input type="radio" value=2 name="ans1">
+                {% if session['ans1'] == 2 %}
+                    <input type="radio" value=2 name="ans1" checked>
+                {% else %}
+                    <input type="radio" value=2 name="ans1">
+                {% endif %}
             </label>
             <h5>Somewhat not ready</h5>
         </div>
         <div class="col-md-2 text-center">
             <label class="radio-inline">
-                <input type="radio" value=3 name="ans1">
+                {% if session['ans1'] == 3 %}
+                    <input type="radio" value=3 name="ans1" checked>
+                {% else %}
+                    <input type="radio" value=3 name="ans1">
+                {% endif %}
             </label>
             <h5>Unsure</h5>
         </div>
         <div class="col-md-2 text-center">
             <label class="radio-inline">
-                <input type="radio" value=4 name="ans1">
+                {% if session['ans1'] == 4 %}
+                    <input type="radio" value=4 name="ans1" checked>
+                {% else %}
+                    <input type="radio" value=4 name="ans1">
+                {% endif %}
             </label>
             <h5>Somewhat ready</h5>
         </div>
         <div class="col-md-2 text-center">
             <label class="radio-inline">
-                <input type="radio" value=5 name="ans1">
+                {% if session['ans1'] == 5 %}
+                    <input type="radio" value=5 name="ans1" checked>
+                {% else %}
+                    <input type="radio" value=5 name="ans1">
+                {% endif %}
             </label>
             <h5>Ready</h5>
         </div>
@@ -76,61 +96,121 @@
             <tr>
                 <td>My family member wants to live as comfortably as possible.</td>
                 <td class="text-center">
-                    <input type="radio" value=1 name="ans2">
+                    {% if session['ans2'] == 1 %}
+                        <input type="radio" value=1 name="ans2" checked>
+                    {% else %}
+                        <input type="radio" value=1 name="ans2">
+                    {% endif %}
                 </td>
                 <td class="text-center">
-                    <input type="radio" value=2 name="ans2">
+                    {% if session['ans2'] == 2 %}
+                        <input type="radio" value=2 name="ans2" checked>
+                    {% else %}
+                        <input type="radio" value=2 name="ans2">
+                    {% endif %}
                 </td>
                 <td class="text-center">
-                    <input type="radio" value=3 name="ans2">
+                    {% if session['ans2'] == 3 %}
+                        <input type="radio" value=3 name="ans2" checked>
+                    {% else %}
+                        <input type="radio" value=3 name="ans2">
+                    {% endif %}
                 </td>
             </tr>
             <tr>
                 <td>My family member wants to live as long as possible, regardless of the quality of life.</td>
                 <td class="text-center">
-                    <input type="radio" value=1 name="ans3">
+                    {% if session['ans3'] == 1 %}
+                        <input type="radio" value=1 name="ans3" checked>
+                    {% else %}
+                        <input type="radio" value=1 name="ans3">
+                    {% endif %}
                 </td>
                 <td class="text-center">
-                    <input type="radio" value=2 name="ans3">
+                    {% if session['ans3'] == 2 %}
+                        <input type="radio" value=2 name="ans3" checked>
+                    {% else %}
+                        <input type="radio" value=2 name="ans3">
+                    {% endif %}
                 </td>
                 <td class="text-center">
-                    <input type="radio" value=3 name="ans3">
+                    {% if session['ans3'] == 3 %}
+                        <input type="radio" value=3 name="ans3" checked>
+                    {% else %}
+                        <input type="radio" value=3 name="ans3">
+                    {% endif %}
                 </td>
             </tr>
             <tr>
                 <td>For my family member a high quality of life is most important.</td>
                 <td class="text-center">
-                    <input type="radio" value=1 name="ans4">
+                    {% if session['ans4'] == 1 %}
+                        <input type="radio" value=1 name="ans4" checked>
+                    {% else %}
+                        <input type="radio" value=1 name="ans4">
+                    {% endif %}
                 </td>
                 <td class="text-center">
-                    <input type="radio" value=2 name="ans4">
+                    {% if session['ans4'] == 2 %}
+                        <input type="radio" value=2 name="ans4" checked>
+                    {% else %}
+                        <input type="radio" value=2 name="ans4">
+                    {% endif %}
                 </td>
                 <td class="text-center">
-                    <input type="radio" value=3 name="ans4">
+                    {% if session['ans4'] == 3 %}
+                        <input type="radio" value=3 name="ans4" checked>
+                    {% else %}
+                        <input type="radio" value=3 name="ans4">
+                    {% endif %}
                 </td>
             </tr>
             <tr>
                 <td>My family member does not want to be dependent on others away from home.</td>
                 <td class="text-center">
-                    <input type="radio" value=1 name="ans5">
+                    {% if session['ans5'] == 1 %}
+                        <input type="radio" value=1 name="ans5" checked>
+                    {% else %}
+                        <input type="radio" value=1 name="ans5">
+                    {% endif %}
                 </td>
                 <td class="text-center">
-                    <input type="radio" value=2 name="ans5">
+                    {% if session['ans5'] == 2 %}
+                        <input type="radio" value=2 name="ans5" checked>
+                    {% else %}
+                        <input type="radio" value=2 name="ans5">
+                    {% endif %}
                 </td>
                 <td class="text-center">
-                    <input type="radio" value=3 name="ans5">
+                    {% if session['ans5'] == 3 %}
+                        <input type="radio" value=3 name="ans5" checked>
+                    {% else %}
+                        <input type="radio" value=3 name="ans5">
+                    {% endif %}
                 </td>
             </tr>
             <tr>
                 <td>My family member would accept a tracheostomy and feeding tube to stay alive.</td>
                 <td class="text-center">
-                    <input type="radio" value=1 name="ans6">
+                    {% if session['ans6'] == 1 %}
+                        <input type="radio" value=1 name="ans6" checked>
+                    {% else %}
+                        <input type="radio" value=1 name="ans6">
+                    {% endif %}
                 </td>
                 <td class="text-center">
-                    <input type="radio" value=2 name="ans6">
+                    {% if session['ans6'] == 2 %}
+                        <input type="radio" value=2 name="ans6" checked>
+                    {% else %}
+                        <input type="radio" value=2 name="ans6">
+                    {% endif %}
                 </td>
                 <td class="text-center">
-                    <input type="radio" value=3 name="ans6">
+                    {% if session['ans6'] == 3 %}
+                        <input type="radio" value=3 name="ans6" checked>
+                    {% else %}
+                        <input type="radio" value=3 name="ans6">
+                    {% endif %}
                 </td>
             </tbody>
         </table>
@@ -189,20 +269,37 @@
                 <th style="border-color:black; border-bottom-style: hidden"></th>
                 <th style="border-color:black; border-bottom-style: hidden">
                     <div class="checkbox">
-                        <label><input type="checkbox" value=1 name="ans8" id="ans8" style="font-size: xx-large">
-                            <div style="font-size: smaller"><b>Check</b> the
-                                option(s) which align with your family member’s values and preferences.
-                            </div>
-                        </label>
+                        {% if session['ans8'] == 1 %}
+                            <label><input type="checkbox" value=1 name="ans8" id="ans8" checked
+                                          style="font-size: xx-large">
+                                <div style="font-size: smaller"><b>Check</b> the
+                                    option(s) which align with your family member’s values and preferences.
+                                </div>
+                            </label>
+                        {% else %}
+                            <label><input type="checkbox" value=1 name="ans8" id="ans8" style="font-size: xx-large">
+                                <div style="font-size: smaller"><b>Check</b> the
+                                    option(s) which align with your family member’s values and preferences.
+                                </div>
+                            </label>
+                        {% endif %}
                     </div>
                 </th>
                 <th style="border-color:black; border-bottom-style: hidden">
                     <div class="checkbox">
-                        <label><input type="checkbox" value=1 name="ans9">
-                            <div style="font-size: smaller"><b>Check</b> the
-                                option(s) which align with your family member’s values and preferences.
-                            </div>
-                        </label>
+                        {% if session['ans9'] == 1 %}
+                            <label><input type="checkbox" value=1 name="ans9" checked>
+                                <div style="font-size: smaller"><b>Check</b> the
+                                    option(s) which align with your family member’s values and preferences.
+                                </div>
+                            </label>
+                        {% else %}
+                            <label><input type="checkbox" value=1 name="ans9">
+                                <div style="font-size: smaller"><b>Check</b> the
+                                    option(s) which align with your family member’s values and preferences.
+                                </div>
+                            </label>
+                        {% endif %}
                     </div>
                 </th>
             </tr>
@@ -243,23 +340,36 @@
                 </th>
                 <th style="border-color:black; border-bottom-style: hidden">
                     <div class="checkbox">
-
-                        <label><input type="checkbox" value=1 name="ans10">
-                            <div style="font-size: smaller"><b>Check</b> the
-                                option(s) which align with your family member’s values and preferences.
-                            </div>
-                        </label>
+                        {% if session['ans10'] == 1 %}
+                            <label><input type="checkbox" value=1 name="ans10" checked>
+                                <div style="font-size: smaller"><b>Check</b> the
+                                    option(s) which align with your family member’s values and preferences.
+                                </div>
+                            </label>
+                        {% else %}
+                            <label><input type="checkbox" value=1 name="ans10">
+                                <div style="font-size: smaller"><b>Check</b> the
+                                    option(s) which align with your family member’s values and preferences.
+                                </div>
+                            </label>
+                        {% endif %}
                     </div>
                 </th>
                 <th style="border-color:black; border-bottom-style: hidden">
                     <div class="checkbox">
-                        <label><input type="checkbox" value=1 name="ans11">
-                            <div style="font-size: smaller"><b>Check</b> the
-                                option(s) which align with your family member’s values and preferences.
-                            </div>
-                        </label>
-
-
+                        {% if session['ans11'] == 1 %}
+                            <label><input type="checkbox" value=1 name="ans11" checked>
+                                <div style="font-size: smaller"><b>Check</b> the
+                                    option(s) which align with your family member’s values and preferences.
+                                </div>
+                            </label>
+                        {% else %}
+                            <label><input type="checkbox" value=1 name="ans11">
+                                <div style="font-size: smaller"><b>Check</b> the
+                                    option(s) which align with your family member’s values and preferences.
+                                </div>
+                            </label>
+                        {% endif %}
                     </div>
                 </th>
             </tr>
@@ -317,42 +427,24 @@
 </form>
 <div id="page" class="text-hide">18</div>
 <script>
-    $("th .tabletext").hover(function () {
-        $(this.parent).css("background-color", "#9ed18b");
-    }, function () {
-        $(this.parent).css("background-color", "white");
-    });
-</script>
-<script>
-    // set onclick function and get user input
-    var inputs = $("#answerarea :radio, #answerarea :checkbox,#answerarea textarea, #answerarea [type='email'], #answerarea [type = 'range']")
-    inputs.change(function () {
-        if (this.type == "radio") {
-            answers[this.name] = parseInt(this.value);
-        } else if (this.type == 'checkbox') {
-            answers[this.name] = this.checked;
-        } else if (this.type == 'range') {
-            answers[this.name] = parseInt(this.value);
-        } else if (this.type == 'textarea') {
-            answers[this.name] = this.value;
-        } else if (this.type == 'email') {
-            email = this.value;
-        } else {
-            console.log("error");
-        }
-    })
+    for (i = 8; i < 12; i++) {
+        document.getElementById('ans' + i + 'text').addEventListener("mouseover", function () {
+            this.style.backgroundColor = "#9ed18b";
+        });
+        document.getElementById('ans' + i + 'text').addEventListener("mouseout", function () {
+            this.style.backgroundColor = "#f5f5f5";
+        });
 
-    // read user input
-    for (i in answers) {
-        var item = $("[name = " + i + "]")[0];
-        if (item.type == 'radio') {
-            $("[name = " + i + "][value=" + parseInt(answers[i]) + "]").prop('checked', 'checked');
-        } else if (item.type == 'checkbox') {
-            item.checked = answers[i];
-        } else {
-            item.value = answers[i];
-        }
+        document.getElementsByName('ans' + i)[0].addEventListener("click", function () {
+            if (this.checked) {
+                document.getElementById(this.name + "text").style.backgroundColor = "#9ed18b";
+            } else {
+                document.getElementById(this.name + "text").style.backgroundColor = "#f5f5f5";
+            }
+        });
     }
 </script>
+
+
 </body>
 

@@ -1,329 +1,326 @@
-{% extends 'layout.html' %}
-{% block content %}
-    <div class="section-head"><h2 class="text-primary text-center">Example 1</h2></div>
-    <!--the paragraph in this page-->
-    <p>
-        Mr. Alvarez is a 76-year-old man with diabetes who was struck by a car while crossing the road. He has many
-        areas of bleeding located deep inside his brain, and is in a coma. He also has a broken leg and many broken
-        ribs. One of his broken ribs has injured his lungs. While in the hospital, he gets an infection in his lungs
-        (pneumonia). Mr. Alvarez:
-    </p>
-    <ul>
-        <li>
-            Is an older man with some chronic medical problems, which are controlled
-        </li>
-        <li>
-            Has a complicated brain injury
-        </li>
-        <li>
-            Has other injuries to his body, including his lungs
-        </li>
-        <li>
-            Developed an infection while in the ICU
-        </li>
-    </ul>
+<div class="section-head"><h2 class="text-primary text-center">Example 1</h2></div>
+<!--the paragraph in this page-->
+<p>
+    Mr. Alvarez is a 76-year-old man with diabetes who was struck by a car while crossing the road. He has many
+    areas of bleeding located deep inside his brain, and is in a coma. He also has a broken leg and many broken
+    ribs. One of his broken ribs has injured his lungs. While in the hospital, he gets an infection in his lungs
+    (pneumonia). Mr. Alvarez:
+</p>
+<ul>
+    <li>
+        Is an older man with some chronic medical problems, which are controlled
+    </li>
+    <li>
+        Has a complicated brain injury
+    </li>
+    <li>
+        Has other injuries to his body, including his lungs
+    </li>
+    <li>
+        Developed an infection while in the ICU
+    </li>
+</ul>
 
-    <p>
-        The doctor thinks that Mr. Alvarez won’t be able to breathe or eat on his own any time soon, if ever. The
-        doctor expects that his chance of surviving 6 months is low. He may improve to some degree, but will
-        probably never be independent again. Whether he may go home ever again is unclear. It’s unlikely because he
-        lives alone, and his children have their own families and jobs and won’t be able to look after him all day
-        long. The doctor asks the daughter to help decide which goals of care best align with Mr. Alvarez’s values
-        and preferences.
-    </p>
-    <p>
-        The daughter filled out the worksheet to help her decide which goal of care was best for her father:
-    </p>
-    <div class="section-head"><h3 class="text-primary text-center">Worksheet for Example 1, Mr. Alvarez</h3></div>
-    <br>
-    <div class="container">
-        <h4 class="section-head" style="font-weight: bold">1. How sure do you feel about making a decision?</h4>
-        <div class="container well well-lg">
-            <div class="col-md-2 text-center">
-                <h4>Please Choose your feeling:</h4>
-            </div>
-            <div class="col-md-2 text-center">
-                <label class="radio-inline">
-                    <input type="radio" value=1 name="ans1" disabled>
-                </label>
-                <h5>Not ready at all</h5>
-            </div>
-            <div class="col-md-2 text-center">
-                <label class="radio-inline">
-                    <input type="radio" value=2 name="ans1" disabled>
-                </label>
-                <h5>Somewhat not ready</h5>
-            </div>
-            <div class="col-md-2 text-center">
-                <label class="radio-inline">
-                    <input type="radio" value=3 name="ans1" checked>
-                </label>
-                <h5>Unsure</h5>
-            </div>
-            <div class="col-md-2 text-center">
-                <label class="radio-inline">
-                    <input type="radio" value=4 name="ans1" disabled>
-                </label>
-                <h5>Somewhat ready</h5>
-            </div>
-            <div class="col-md-2 text-center">
-                <label class="radio-inline">
-                    <input type="radio" value=5 name="ans1" disabled>
-                </label>
-                <h5>Ready</h5>
-            </div>
-            <!--submit input button for the radio buttons-->
-            <input type="submit" id="submit_page_14" class="hidden">
+<p>
+    The doctor thinks that Mr. Alvarez won’t be able to breathe or eat on his own any time soon, if ever. The
+    doctor expects that his chance of surviving 6 months is low. He may improve to some degree, but will
+    probably never be independent again. Whether he may go home ever again is unclear. It’s unlikely because he
+    lives alone, and his children have their own families and jobs and won’t be able to look after him all day
+    long. The doctor asks the daughter to help decide which goals of care best align with Mr. Alvarez’s values
+    and preferences.
+</p>
+<p>
+    The daughter filled out the worksheet to help her decide which goal of care was best for her father:
+</p>
+<div class="section-head"><h3 class="text-primary text-center">Worksheet for Example 1, Mr. Alvarez</h3></div>
+<br>
+<div class="container">
+    <h4 class="section-head" style="font-weight: bold">1. How sure do you feel about making a decision?</h4>
+    <div class="container well well-lg">
+        <div class="col-md-2 text-center">
+            <h4>Please Choose your feeling:</h4>
         </div>
-        <h4 class="section-head" style="font-weight: bold">2. What is important to your loved one?</h4>
-        <p style="font-size: 16px">Here are some statements that will help you decide which treatment goal is best for
-            your
-            family member. Please
-            circle the number on the scale below to show how important each statement is to your family member if he/she
-            could
-            decide for themselves.</p>
-        <div class="container well well-lg">
-            <table class="table-responsive tabletext">
-                <thead>
-                <tr>
-                    <th>
-                    </th>
-                    <th class="col-md-1 text-center">
-                        Not important
-                    </th>
-                    <th class="col-md-1 text-center">
-                    </th>
-                    <th class="col-md-1 text-center">
-                        Very important
-                    </th>
-                </tr>
-                </thead>
-                <tbody>
-                <tr>
-                    <td>My family member wants to live as comfortably as possible.</td>
-                    <td class="text-center">
-                        <input type="radio" value=1 name="ans2" disabled>
-                    </td>
-                    <td class="text-center">
-                        <input type="radio" value=2 name="ans2" disabled>
-                    </td>
-                    <td class="text-center">
-                        <input type="radio" value=3 name="ans2" checked>
-                    </td>
-                </tr>
-                <tr>
-                    <td>My family member wants to live as long as possible, regardless of the quality of
-                        life.
-                    </td>
-                    <td class="text-center">
-                        <input type="radio" value=1 name="ans3" disabled>
-                    </td>
-                    <td class="text-center">
-                        <input type="radio" value=2 name="ans3" checked>
-                    </td>
-                    <td class="text-center">
-                        <input type="radio" value=3 name="ans3" disabled>
-                    </td>
-                </tr>
-                <tr>
-                    <td>For my family member a high quality of life is most important.</td>
-                    <td class="text-center">
-                        <input type="radio" value=1 name="ans4" disabled>
-                    </td>
-                    <td class="text-center">
-                        <input type="radio" value=2 name="ans4" disabled>
-                    </td>
-                    <td class="text-center">
-                        <input type="radio" value=3 name="ans4" checked>
-                    </td>
-                </tr>
-                <tr>
-                    <td>My family member does not want to be dependent on others away from home.</td>
-                    <td class="text-center">
-                        <input type="radio" value=1 name="ans5" checked>
-                    </td>
-                    <td class="text-center">
-                        <input type="radio" value=2 name="ans5" disabled>
-                    </td>
-                    <td class="text-center">
-                        <input type="radio" value=3 name="ans5" disabled>
-                    </td>
-                </tr>
-                <tr>
-                    <td>My family member would accept a tracheostomy and feeding tube to stay alive.</td>
-                    <td class="text-center">
-                        <input type="radio" value=1 name="ans6" disabled>
-                    </td>
-                    <td class="text-center">
-                        <input type="radio" value=2 name="ans6" disabled>
-                    </td>
-                    <td class="text-center">
-                        <input type="radio" value=3 name="ans6" checked>
-                    </td>
-                </tbody>
-            </table>
+        <div class="col-md-2 text-center">
+            <label class="radio-inline">
+                <input type="radio" value=1 name="ans1" disabled>
+            </label>
+            <h5>Not ready at all</h5>
         </div>
-        <h4 class="section-head" style="line-height: 160%">3. Imagine a line where the right side is comfort care and
-            the left side is survival at any cost. </h4>
-        <div class="container well well-lg">
-            <table class="table table-responsive" style="margin-bottom: 0px">
-                <thead>
-                <tr>
-                    <th class="col-md-1"><h4>Survival</h4></th>
-                    <th class="col-md-10"><input class="slider" type="range" name="ans7" min="0" max="100" id="ans7"
-                                                 value=30 disabled></th>
-                    <th class="col-md-1"><h4>Comfort</h4></th>
-                </tr>
-                </thead>
-                <tbody>
-                <tr>
-                    <td>
-
-                    </td>
-                    <td class="text-center">
-                        Drag the slider above at the point you think your loved one would choose
-                    </td>
-                    <td>
-
-                    </td>
-                </tr>
-                </tbody>
-            </table>
+        <div class="col-md-2 text-center">
+            <label class="radio-inline">
+                <input type="radio" value=2 name="ans1" disabled>
+            </label>
+            <h5>Somewhat not ready</h5>
         </div>
-        <h4 class="section-head" style="font-weight: bold">4. Your Goals of Care Options</h4>
-        <p style="font-size: 16px">There are 2 goals of care options available. Each option has different benefits and
-            risks and side effects. There is no right or wrong choice. Please read the options below.
-            <br><b>Check</b> the option(s) which align with your family member’s values and preferences. <br>If you have
-            additional
-            questions, please make a list and bring them to the goals of care meeting. Your doctor will go over the
-            options and questions with you.</p>
-        <div class="container well well-lg">
-            <table class="table-bordered table-responsive tabletext" style="border-color:black">
-                <thead>
-                <tr>
-                    <th class="col-md-4" style="border-color:black">
-                        <h4><b>Goals of care option</b></h4>
-                    </th>
-                    <th class="col-md-4" style="border-color:black">
-                        <h4><b>Reasons to choose this option</b></h4>
-                    </th>
-                    <th class="col-md-4" style="border-color:black">
-                        <h4><b>Reasons not to choose this option</b></h4>
-                    </th>
-                </tr>
-                </thead>
-                <tbody>
-                <tr>
-                    <th style="border-color:black; border-bottom-style: hidden"></th>
-                    <th style="border-color:black; border-bottom-style: hidden">
-                        <div class="checkbox">
-                            <label><input type="checkbox" value=1 name="ans8" id="ans8" style="font-size: xx-large"
-                                          checked>
-                                <div style="font-size: smaller"><b>Check</b> the
-                                    option(s) which align with your family member’s values and preferences.
-                                </div>
-                            </label>
-                        </div>
-                    </th>
-                    <th style="border-color:black; border-bottom-style: hidden">
-                        <div class="checkbox">
-                            <label><input type="checkbox" value=1 name="ans9" disabled>
-                                <div style="font-size: smaller"><b>Check</b> the
-                                    option(s) which align with your family member’s values and preferences.
-                                </div>
-                            </label>
-                        </div>
-                    </th>
-                </tr>
-                <tr>
-                    <th class="tabletext" style="border-color:black">
-                        <div style="padding: 5%">
-                            <b>“Do everything”:
-                                Focus on <u>survival</u></b><br>
-                            Tracheostomy and feeding tube placement is done, followed by placement in LTACH or
-                            nursing home,
-                            sometimes acute rehab when the patient is ready.
-                        </div>
-
-                    </th>
-                    <th class="tabletext" id="ans8text" style="border-color:black;background-color: #b2dba1">
-                        <ul class="tabletext">
-                            <li>Best chance to stay alive.
-                            <li>Patient will have a quality of life that he/she finds acceptable.
-                            <li>Patient has said in the past to keep him/her alive at all cost.
-                            <li>Patient would feel OK with being uncomfortable from lying in bed or working hard
-                                during
-                                therapy
-                                sessions.
-                        </ul>
-                    </th>
-                    <th style="border-color:black;" id="ans9text">
-                        <ul class="tabletext">
-                            <li>Additional treatments can be painful.
-                            <li>Patient does not want to be dependent on others to live.
-                            <li>Patient does not want a tracheostomy or feeding tube.
-                            <li>Patient may still die and will have pain from additional treatments.
-                        </ul>
-                    </th>
-                </tr>
-                <tr>
-                    <th style="border-color:black; border-bottom-style: hidden">
-                        <p><b>“No suffering”: Focus on <u>comfort</u></b><br></p>
-                    </th>
-                    <th style="border-color:black; border-bottom-style: hidden">
-                        <div class="checkbox">
-                            <label><input type="checkbox" value=1 name="ans10" disabled>
-                                <div style="font-size: smaller"><b>Check</b> the
-                                    option(s) which align with your family member’s values and preferences.
-                                </div>
-                            </label>
-
-                        </div>
-                    </th>
-                    <th style="border-color:black; border-bottom-style: hidden">
-                        <div class="checkbox">
-
-                            <label><input type="checkbox" value=1 name="ans11" disabled>
-                                <div style="font-size: smaller"><b>Check</b> the
-                                    option(s) which align with your family member’s values and preferences.
-                                </div>
-                            </label>
-                        </div>
-                    </th>
-                </tr>
-                <tr>
-                    <th class="tabletext" style="border-color:black">
-
-                        Transition to comfort care is provided when the family is ready.
-                    </th>
-                    <th style="border-color:black;" id="ans10text">
-                        <ul class="tabletext">
-                            <li>Unlikely that patient will have an acceptable quality of life.
-                            <li>Patient has suffered enough; family wants him/her to be comfortable.
-                        </ul>
-
-                    </th>
-                    <th style="border-color:black" id="ans11text">
-                        <ul class="tabletext">
-                            <li>Without life support, the patient will die.
-                            <li>Patient would choose to have advanced treatments and live in a nursing home.
-                        </ul>
-
-                    </th>
-                </tr>
-                </tbody>
-            </table>
+        <div class="col-md-2 text-center">
+            <label class="radio-inline">
+                <input type="radio" value=3 name="ans1" checked>
+            </label>
+            <h5>Unsure</h5>
         </div>
-        <h4 class="section-head" style="font-weight: bold">5. How do you feel about this choice?</h4>
-        <div class="container well well-lg">
-            <i>"I have to choose between survival at all cost and comfort as the main treatment goal for my father. I
-                need to think about what my dad would want. I know he was already limited in how far he could travel due
-                to his diabetes. Now, his quality of life would be even lower. On the other hand, being with us and
-                interacting with his grandchildren was most important to him. It makes me sad, but I think he would
-                accept a lower quality of life to be alive. I still want to talk this choice over with Dad’s doctor and
-                my other siblings."</i>
-
+        <div class="col-md-2 text-center">
+            <label class="radio-inline">
+                <input type="radio" value=4 name="ans1" disabled>
+            </label>
+            <h5>Somewhat ready</h5>
         </div>
+        <div class="col-md-2 text-center">
+            <label class="radio-inline">
+                <input type="radio" value=5 name="ans1" disabled>
+            </label>
+            <h5>Ready</h5>
+        </div>
+        <!--submit input button for the radio buttons-->
+        <input type="submit" id="submit_page_14" class="hidden">
     </div>
-    <!--TODO: Choose bar-->
-{% endblock %}
+    <h4 class="section-head" style="font-weight: bold">2. What is important to your loved one?</h4>
+    <p style="font-size: 16px">Here are some statements that will help you decide which treatment goal is best for
+        your
+        family member. Please
+        circle the number on the scale below to show how important each statement is to your family member if he/she
+        could
+        decide for themselves.</p>
+    <div class="container well well-lg">
+        <table class="table-responsive tabletext">
+            <thead>
+            <tr>
+                <th>
+                </th>
+                <th class="col-md-1 text-center">
+                    Not important
+                </th>
+                <th class="col-md-1 text-center">
+                </th>
+                <th class="col-md-1 text-center">
+                    Very important
+                </th>
+            </tr>
+            </thead>
+            <tbody>
+            <tr>
+                <td>My family member wants to live as comfortably as possible.</td>
+                <td class="text-center">
+                    <input type="radio" value=1 name="ans2" disabled>
+                </td>
+                <td class="text-center">
+                    <input type="radio" value=2 name="ans2" disabled>
+                </td>
+                <td class="text-center">
+                    <input type="radio" value=3 name="ans2" checked>
+                </td>
+            </tr>
+            <tr>
+                <td>My family member wants to live as long as possible, regardless of the quality of
+                    life.
+                </td>
+                <td class="text-center">
+                    <input type="radio" value=1 name="ans3" disabled>
+                </td>
+                <td class="text-center">
+                    <input type="radio" value=2 name="ans3" checked>
+                </td>
+                <td class="text-center">
+                    <input type="radio" value=3 name="ans3" disabled>
+                </td>
+            </tr>
+            <tr>
+                <td>For my family member a high quality of life is most important.</td>
+                <td class="text-center">
+                    <input type="radio" value=1 name="ans4" disabled>
+                </td>
+                <td class="text-center">
+                    <input type="radio" value=2 name="ans4" disabled>
+                </td>
+                <td class="text-center">
+                    <input type="radio" value=3 name="ans4" checked>
+                </td>
+            </tr>
+            <tr>
+                <td>My family member does not want to be dependent on others away from home.</td>
+                <td class="text-center">
+                    <input type="radio" value=1 name="ans5" checked>
+                </td>
+                <td class="text-center">
+                    <input type="radio" value=2 name="ans5" disabled>
+                </td>
+                <td class="text-center">
+                    <input type="radio" value=3 name="ans5" disabled>
+                </td>
+            </tr>
+            <tr>
+                <td>My family member would accept a tracheostomy and feeding tube to stay alive.</td>
+                <td class="text-center">
+                    <input type="radio" value=1 name="ans6" disabled>
+                </td>
+                <td class="text-center">
+                    <input type="radio" value=2 name="ans6" disabled>
+                </td>
+                <td class="text-center">
+                    <input type="radio" value=3 name="ans6" checked>
+                </td>
+            </tbody>
+        </table>
+    </div>
+    <h4 class="section-head" style="line-height: 160%">3. Imagine a line where the right side is comfort care and
+        the left side is survival at any cost. </h4>
+    <div class="container well well-lg">
+        <table class="table table-responsive" style="margin-bottom: 0px">
+            <thead>
+            <tr>
+                <th class="col-md-1"><h4>Survival</h4></th>
+                <th class="col-md-10"><input class="slider" type="range" name="ans7" min="0" max="100" id="ans7"
+                                             value=30 disabled></th>
+                <th class="col-md-1"><h4>Comfort</h4></th>
+            </tr>
+            </thead>
+            <tbody>
+            <tr>
+                <td>
+
+                </td>
+                <td class="text-center">
+                    Drag the slider above at the point you think your loved one would choose
+                </td>
+                <td>
+
+                </td>
+            </tr>
+            </tbody>
+        </table>
+    </div>
+    <h4 class="section-head" style="font-weight: bold">4. Your Goals of Care Options</h4>
+    <p style="font-size: 16px">There are 2 goals of care options available. Each option has different benefits and
+        risks and side effects. There is no right or wrong choice. Please read the options below.
+        <br><b>Check</b> the option(s) which align with your family member’s values and preferences. <br>If you have
+        additional
+        questions, please make a list and bring them to the goals of care meeting. Your doctor will go over the
+        options and questions with you.</p>
+    <div class="container well well-lg">
+        <table class="table-bordered table-responsive tabletext" style="border-color:black">
+            <thead>
+            <tr>
+                <th class="col-md-4" style="border-color:black">
+                    <h4><b>Goals of care option</b></h4>
+                </th>
+                <th class="col-md-4" style="border-color:black">
+                    <h4><b>Reasons to choose this option</b></h4>
+                </th>
+                <th class="col-md-4" style="border-color:black">
+                    <h4><b>Reasons not to choose this option</b></h4>
+                </th>
+            </tr>
+            </thead>
+            <tbody>
+            <tr>
+                <th style="border-color:black; border-bottom-style: hidden"></th>
+                <th style="border-color:black; border-bottom-style: hidden">
+                    <div class="checkbox">
+                        <label><input type="checkbox" value=1 name="ans8" id="ans8" style="font-size: xx-large"
+                                      checked>
+                            <div style="font-size: smaller"><b>Check</b> the
+                                option(s) which align with your family member’s values and preferences.
+                            </div>
+                        </label>
+                    </div>
+                </th>
+                <th style="border-color:black; border-bottom-style: hidden">
+                    <div class="checkbox">
+                        <label><input type="checkbox" value=1 name="ans9" disabled>
+                            <div style="font-size: smaller"><b>Check</b> the
+                                option(s) which align with your family member’s values and preferences.
+                            </div>
+                        </label>
+                    </div>
+                </th>
+            </tr>
+            <tr>
+                <th class="tabletext" style="border-color:black">
+                    <div style="padding: 5%">
+                        <b>“Do everything”:
+                            Focus on <u>survival</u></b><br>
+                        Tracheostomy and feeding tube placement is done, followed by placement in LTACH or
+                        nursing home,
+                        sometimes acute rehab when the patient is ready.
+                    </div>
+
+                </th>
+                <th class="tabletext" id="ans8text" style="border-color:black;background-color: #b2dba1">
+                    <ul class="tabletext">
+                        <li>Best chance to stay alive.
+                        <li>Patient will have a quality of life that he/she finds acceptable.
+                        <li>Patient has said in the past to keep him/her alive at all cost.
+                        <li>Patient would feel OK with being uncomfortable from lying in bed or working hard
+                            during
+                            therapy
+                            sessions.
+                    </ul>
+                </th>
+                <th style="border-color:black;" id="ans9text">
+                    <ul class="tabletext">
+                        <li>Additional treatments can be painful.
+                        <li>Patient does not want to be dependent on others to live.
+                        <li>Patient does not want a tracheostomy or feeding tube.
+                        <li>Patient may still die and will have pain from additional treatments.
+                    </ul>
+                </th>
+            </tr>
+            <tr>
+                <th style="border-color:black; border-bottom-style: hidden">
+                    <p><b>“No suffering”: Focus on <u>comfort</u></b><br></p>
+                </th>
+                <th style="border-color:black; border-bottom-style: hidden">
+                    <div class="checkbox">
+                        <label><input type="checkbox" value=1 name="ans10" disabled>
+                            <div style="font-size: smaller"><b>Check</b> the
+                                option(s) which align with your family member’s values and preferences.
+                            </div>
+                        </label>
+
+                    </div>
+                </th>
+                <th style="border-color:black; border-bottom-style: hidden">
+                    <div class="checkbox">
+
+                        <label><input type="checkbox" value=1 name="ans11" disabled>
+                            <div style="font-size: smaller"><b>Check</b> the
+                                option(s) which align with your family member’s values and preferences.
+                            </div>
+                        </label>
+                    </div>
+                </th>
+            </tr>
+            <tr>
+                <th class="tabletext" style="border-color:black">
+
+                    Transition to comfort care is provided when the family is ready.
+                </th>
+                <th style="border-color:black;" id="ans10text">
+                    <ul class="tabletext">
+                        <li>Unlikely that patient will have an acceptable quality of life.
+                        <li>Patient has suffered enough; family wants him/her to be comfortable.
+                    </ul>
+
+                </th>
+                <th style="border-color:black" id="ans11text">
+                    <ul class="tabletext">
+                        <li>Without life support, the patient will die.
+                        <li>Patient would choose to have advanced treatments and live in a nursing home.
+                    </ul>
+
+                </th>
+            </tr>
+            </tbody>
+        </table>
+    </div>
+    <h4 class="section-head" style="font-weight: bold">5. How do you feel about this choice?</h4>
+    <div class="container well well-lg">
+        <i>"I have to choose between survival at all cost and comfort as the main treatment goal for my father. I
+            need to think about what my dad would want. I know he was already limited in how far he could travel due
+            to his diabetes. Now, his quality of life would be even lower. On the other hand, being with us and
+            interacting with his grandchildren was most important to him. It makes me sad, but I think he would
+            accept a lower quality of life to be alive. I still want to talk this choice over with Dad’s doctor and
+            my other siblings."</i>
+
+    </div>
+</div>
+<div id="page" class="text-hide">16</div>

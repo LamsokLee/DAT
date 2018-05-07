@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="en">
+<!--the head of HTML file-->
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
+    <title>“Goals of Care” decision aid for families of TBI patients</title>
+    <script src="/static/js/data.js"></script>
+    <!-- Global site tag (gtag.js) - Google Analytics -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=UA-107793932-1"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+
+        function gtag() {
+            dataLayer.push(arguments);
+        }
+
+        gtag('js', new Date());
+
+        gtag('config', 'UA-107793932-1');
+    </script>
+    <link rel="icon" href="{{ url_for ('static', filename = 'icon/logo_right.png') }}">
+    <!-- Latest compiled and minified CSS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css"
+          integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u"
+          crossorigin="anonymous">
+    <link rel="stylesheet" href="{{ url_for ('static', filename = 'css/custom.css') }}">
+</head>
+
+<body>
+<!--the head navbar of the website-->
+<nav class="navbar navbar-default">
+    <div class="container-fluid">
+        <!-- Brand and toggle get grouped for better mobile display -->
+        <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar">
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+        </button>
+        <div class="navbar-header">
+            <a href="https://www.umassmed.edu/">
+                <img src="{{ url_for ('static', filename = 'icon/logo-trans.png') }}" class="img-responsive"
+                     width="130"
+                     height="40">
+            </a>
+        </div>
+        <div class="navbar-header">
+            <a href="https://www.wpi.edu/">
+                <img src="{{ url_for ('static', filename = 'icon/logo-wpi.png') }}" class="img-responsive"
+                     width="130"
+                     height="40">
+            </a>
+        </div>
+        <!-- Collect the nav links, forms, and other content for toggling -->
+        <div class="collapse navbar-collapse" id="myNavbar">
+            <ul class="nav navbar-nav">
+                <li><a href="/">Home<span class="sr-only"></span></a></li>
+                <li><a href="/about">About Us</a></li>
+                <li><a data-toggle="modal" data-target="#contact" style="cursor: pointer">Provide Feedback</a></li>
+                {#                <!--<li><a href="{{url_for('admin_login')}}">Admin</a></li>-->#}
+                {% if session['test'] == 1 %}
+                    <li><a href="/test" style="color:red">Debug Mode</a></li>
+                {% endif %}
+            </ul>
+        </div>
+        <!-- /.navbar-collapse -->
+    </div>
+    <div class="modal fade" id="contact" role="dialog">
+        <div class="modal-dialog">
+            <!-- Modal content-->
+            <div class="modal-content">
+                <div class="modal-body">
+                    {% include "include/contact.html" %}
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                </div>
+            </div>
+        </div>
+    </div><!-- /.container-fluid -->
+</nav>
+
+<!--container of the whole content of the tool-->
+<div id="container" class="container">
+    <!--the tabs-->
+    <div class="collapse navbar-collapse">
+        <ul class="nav nav-pills nav-justified" id="tabs">
+            <li id="tab1" role="presentation" onclick="gotoPage(1)"><a href="#">Overview</a></li>
+            <li id="tab2" role="presentation" onclick="gotoPage(3)"><a href="#">Mechanical Ventilator</a></li>
+            <li id="tab3" role="presentation" onclick="gotoPage(4)"><a href="#">The decision to make</a></li>
+            <li id="tab4" role="presentation" onclick="gotoPage(5)"><a href="#">Prognosis</a></li>
+            <li id="tab5" role="presentation" onclick="gotoPage(8)"><a href="#">Two options</a></li>
+            <li id="tab6" role="presentation" onclick="gotoPage(13)"><a href="#">Making the decision</a></li>
+            <li id="tab7" role="presentation" onclick="gotoPage(15)"><a href="#">Patient Examples</a></li>
+            <li id="tab8" role="presentation" onclick="gotoPage(18)"><a href="#">Worksheet</a></li>
+        </ul>
+    </div>
+    <!--the text box to put the main context-->
+    <div class="jumbotron">
+        <!--navigation arrows-->
+        <div class="row">
+            <button id="prevBtn1" type="button" class="btn btn-primary btn-lg pull-left" style="display: none"
+                    onclick="prevPage()">
+                <span class="glyphicon glyphicon glyphicon-menu-left" aria-hidden="true"></span>Previous
+            </button>
+            <button id="nextBtn1" type="button" class="btn btn-primary btn-lg pull-right" style="display: none;"
+                    onclick="nextPage()">Next
+                <span class="glyphicon glyphicon glyphicon-menu-right" aria-hidden="true"></span>
+            </button>
+        </div>
+        <!--the head of this page-->
+        <div id="content">
+            {% include 'content/1.html' %}
+        </div>
+    </div>
+    <!--navigation arrows-->
+    <div class="row">
+        <button id="prevBtn2" type="button" class="btn btn-primary btn-lg pull-left"
+                style="margin-bottom: 5%;display: none"
+                onclick="prevPage()">
+            <span class="glyphicon glyphicon glyphicon-menu-left" aria-hidden="true"></span>Previous
+        </button>
+        <button id="nextBtn2" type="button" class="btn btn-primary btn-lg pull-right" style="margin-bottom: 5%"
+                style="display: none;"
+                onclick="nextPage()">Next
+            <span class="glyphicon glyphicon glyphicon-menu-right" aria-hidden="true"></span>
+        </button>
+    </div>
+</div>
+<div style="margin-bottom: 20px">
+    <div class="text-center">Version: 4.3 Last Updated: 04/18/2018</div>
+    <div class="text-center">© 2018 University of Massachusetts and Worcester Polytechnic Institute. All Rights
+        Reserved.
+    </div>
+</div>
+
+<!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+<!-- Include all compiled plugins (below), or include individual files as needed -->
+<script src="/static/js/bootstrap.min.js"></script>
+<script src="/static/js/navigation.js"></script>
+<script src="/static/js/data.js"></script>
+</body>
+</html>

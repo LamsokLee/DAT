@@ -1,13 +1,23 @@
 from flask import Flask
 from flask_sqlalchemy import SQLAlchemy
 from flask_mail import Mail
+from flask_pymongo import PyMongo
+
 
 app = Flask(__name__)
+
+# configure MongoDB
+app.config['MONGO_DBNAME'] = 'mstbi'
+app.config['MONGO_URI'] = 'mongodb://localhost:27017/mstbi'
+mongo = PyMongo(app)
 
 # configure the SQLAlchemy database
 app.config['SQLALCHEMY_DATABASE_URI'] = 'mysql://root:melomelo@localhost:3306/main'
 app.config['SQLALCHEMY_TRACK_MODIFICATIONS'] = False
+
+
 db = SQLAlchemy(app)
+
 
 # configure the Email server
 app.config.update(

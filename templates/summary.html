@@ -1,63 +1,60 @@
-{% extends 'layout.html' %}
-{% block container %}
-    <div class="container">
-        <div class="jumbotron">
-            <div class="text-center">
-                <h3>
-                    Your worksheet has been saved!
-                </h3>
-                <h4>
-                    Your Report ID is
-                    <h1 class="text-center">
-                        <mark>{{ session['id'] }}</mark>
-                    </h1>
-                    <br>
-                    <p>You can use this Report ID to retrieve your report. Make sure you remember it or write it down if
-                        you want to.</p>
-                </h4>
-            </div>
-            <div class="text-center">
-                <p>It's very IMPORTANT to bring it to the family meeting with the doctor.</p>
-            </div>
-            {% if session['email'] != '' %}
-                <div class="text-center">
-                    <p>We can
-                        <a href="{{ url_for('sendmail') }}">
-                            <button type="button" class="btn btn-primary btn-md">
-                                <span class="glyphicon glyphicon-envelope" aria-hidden="true"></span>Send
-                            </button>
-                        </a>the worksheet to <b>{{ session['email'] }}</b> if you want to.
-                    </p>
-                </div>
-            {% endif %}
-            <div class="text-center">
-                <p>In addition, please provide your feedback by answering the following questions.</p>
-            </div>
-            {% if session['alertmsg'] %}
-                <div style="padding-bottom: 5%">
-                    <div class="col-md-3"></div>
-                    <div class="col-md-6 alert alert-info text-center">
-                        {{ session['alertmsg'] }}
-                    </div>
-                    <div class="col-md-3"></div>
-                </div>
-            {% endif %}
+<div class="container">
+    <div class="jumbotron">
+        <div class="text-center">
+            <h3>
+                Your worksheet has been saved!
+            </h3>
+            <h4>
+                Your Report ID is
+                <h1 class="text-center">
+                    <mark>{{ id }}</mark>
+                </h1>
+                <br>
+                <p>You can use this Report ID to retrieve your report. Make sure you remember it or write it down if
+                    you want to.</p>
+            </h4>
         </div>
+        <div class="text-center">
+            <p>It's very IMPORTANT to bring it to the family meeting with the doctor.</p>
+        </div>
+        {% if session['email'] != '' %}
+            <div class="text-center">
+                <p>We can
+                    <a href="{{ url_for('sendmail') }}">
+                        <button type="button" class="btn btn-primary btn-md">
+                            <span class="glyphicon glyphicon-envelope" aria-hidden="true"></span>Send
+                        </button>
+                    </a>the worksheet to <b>{{ session['email'] }}</b> if you want to.
+                </p>
+            </div>
+        {% endif %}
+        <div class="text-center">
+            <p>In addition, please provide your feedback by answering the following questions.</p>
+        </div>
+        {% if session['alertmsg'] %}
+            <div style="padding-bottom: 5%">
+                <div class="col-md-3"></div>
+                <div class="col-md-6 alert alert-info text-center">
+                    {{ session['alertmsg'] }}
+                </div>
+                <div class="col-md-3"></div>
+            </div>
+        {% endif %}
     </div>
-    {% include 'sus.html' %}
-    {#    {% block bottombutton %}#}
-    {#        <a href="/sus">#}
-    {#            <button type="button" class="btn btn-primary btn-lg pull-right" style="margin-bottom: 5%">#}
-    {#                <span class="glyphicon glyphicon-list" aria-hidden="true"></span>Take a Survey#}
-    {#            </button>#}
-    {#        </a>#}
-    {#        <a href="/">#}
-    {#            <button type="button" class="btn btn-primary btn-lg pull-left" style="margin-bottom: 5%">#}
-    {#                <span class="glyphicon glyphicon-home" aria-hidden="true"></span>Exit#}
-    {#            </button>#}
-    {#        </a>#}
-    {#    {% endblock %}#}
-{% endblock %}
+</div>
+{% include 'sus.html' %}
+{#    {% block bottombutton %}#}
+{#        <a href="/sus">#}
+{#            <button type="button" class="btn btn-primary btn-lg pull-right" style="margin-bottom: 5%">#}
+{#                <span class="glyphicon glyphicon-list" aria-hidden="true"></span>Take a Survey#}
+{#            </button>#}
+{#        </a>#}
+{#        <a href="/">#}
+{#            <button type="button" class="btn btn-primary btn-lg pull-left" style="margin-bottom: 5%">#}
+{#                <span class="glyphicon glyphicon-home" aria-hidden="true"></span>Exit#}
+{#            </button>#}
+{#        </a>#}
+{#    {% endblock %}#}
 
 {#<div id="printable" style="display: none;">#}
 {#    {% include 'printable.html' %}#}

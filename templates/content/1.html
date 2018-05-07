@@ -1,71 +1,43 @@
-{% extends 'layout.html' %}
-{% block content %}
-    <div class="section-head"><h2 class="text-primary text-center">This Decision Aid is Designed to Help You</h2></div>
-    <div class="container text-center">
-{#        <div class="row">#}
-{#            <button type="button" class="btn btn-primary">Font Size#}
-{#                <span class="glyphicon glyphicon glyphicon-menu-down" aria-hidden="true" onclick="sizeUp()"></span>#}
-{#            </button>#}
-{#            <button type="button" class="btn btn-primary">Font Size#}
-{#                <span class="glyphicon glyphicon glyphicon-menu-up" aria-hidden="true" onclick="sizeDown()"></span>#}
-{#            </button>#}
-{#        </div>#}
+<div class="section-head"><h2 class="text-primary text-center">This Decision Aid is Designed to Help You</h2></div>
+<div class="container text-center">
+
+</div>
+
+<p>Your family member has a <b>serious traumatic brain injury (TBI)</b> and has been in the Intensive
+    Care Unit
+    (ICU)
+    for
+    several days. Your family member can't make decisions about his or her medical care. The doctor needs to know
+    soon
+    the goals that should be considered when treating your family member.</p>
+<p>Your family member needs your help in deciding which goals to pursue during treatment. This is known as the "<b>goals
+    of care" decision.</b> This is one of the <b>most important decisions</b> to be made in your family member's
+    medical
+    care.</p>
+<p>Making a decision about your family member's "goals of care" is difficult for most families; that's normal. For
+    that
+    reason, we have created <b>this tool (decision aid) </b>to help you. It will help you understand what is
+    involved in
+    the
+    decision and the choices available to you, so that <b>you can make the <i>best decision</i></b> for your family
+    member. This decision aid was created with input from people like you who had to make this decision for
+    their loved ones.</p>
+<p>This tool will help you when you talk to the doctor about the decision and the choices available. It will help
+    you
+    even if your family member has a living will; these are usually not specific enough to help you in the case of a
+    brain injury.</p>
+<br>
+<div class="info-box" role="alert">
+    <div class="info-box-text">
+        <b>Remember: this tool will <i>not</i> replace a meeting with the doctor.</b>
+        <ul>
+            <li><b>Completing this decision aid will take about 30 minutes</b>. You can take breaks if needed.
+            <li><b><u>Please read every page.</u></b>
+            <li><b><u>Please fill out the worksheet.</u></b> This will help you when you talk with the doctor.
+            <li><b>Submit or print the worksheet and bring it to the meeting with the doctor.</b>
+        </ul>
     </div>
 
-    <p id="testid">Your family member has a <b>serious traumatic brain injury (TBI)</b> and has been in the Intensive
-        Care Unit
-        (ICU)
-        for
-        several days. Your family member can't make decisions about his or her medical care. The doctor needs to know
-        soon
-        the goals that should be considered when treating your family member.</p>
-    <p>Your family member needs your help in deciding which goals to pursue during treatment. This is known as the "<b>goals
-        of care" decision.</b> This is one of the <b>most important decisions</b> to be made in your family member's
-        medical
-        care.</p>
-    <p>Making a decision about your family member's "goals of care" is difficult for most families; that's normal. For
-        that
-        reason, we have created <b>this tool (decision aid) </b>to help you. It will help you understand what is
-        involved in
-        the
-        decision and the choices available to you, so that <b>you can make the <i>best decision</i></b> for your family
-        member. This decision aid was created with input from people like you who had to make this decision for
-        their loved ones.</p>
-    <p>This tool will help you when you talk to the doctor about the decision and the choices available. It will help
-        you
-        even if your family member has a living will; these are usually not specific enough to help you in the case of a
-        brain injury.</p>
-    <br>
-    <div class="info-box" role="alert">
-        <div class="info-box-text">
-            <b>Remember: this tool will <i>not</i> replace a meeting with the doctor.</b>
-            <ul>
-                <li><b>Completing this decision aid will take about 30 minutes</b>. You can take breaks if needed.
-                <li><b><u>Please read every page.</u></b>
-                <li><b><u>Please fill out the worksheet.</u></b> This will help you when you talk with the doctor.
-                <li><b>Submit or print the worksheet and bring it to the meeting with the doctor.</b>
-            </ul>
-        </div>
+</div>
 
-    </div>
-    <script>
-        var texts = document.getElementsByTagName("p");
-        for (i = 0; i < texts.length; i++) {
-            cursize = parseInt(window.getComputedStyle(texts[i], null).getPropertyValue('font-size'));
-        }
-
-        function sizeUp() {
-            for (i = 0; i < texts.length; i++) {
-                texts[i].style.fontSize = (cursize + 1) + "px";
-                cursize++;
-            }
-        }
-
-        function sizeDown() {
-            for (i = 0; i < texts.length; i++) {
-                texts[i].style.fontSize = (cursize - 1) + "px";
-                cursize--;
-            }
-        }
-    </script>
-{% endblock %}
+<div id="page" class="text-hide">1</div>

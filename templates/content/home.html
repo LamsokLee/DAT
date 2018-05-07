@@ -29,7 +29,7 @@
         <br>
 
         <div style="text-align: center; margin-bottom: 5%; margin-left: 20%; margin-right: 20%">
-            <a href="\1" class="text-center">
+            <a href="\DA" class="text-center">
                 <button class="btn btn-primary btn-lg btn-block" type="button">Start 
                     <span class="glyphicon" aria-hidden="true">
                     </span>
@@ -117,17 +117,9 @@
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
     <!-- Include all compiled plugins (below), or include individual files as needed -->
     <script src="static/js/bootstrap.min.js"></script>
-    {% if alertmsg %}
-    <script type="text/javascript">
-        $('#getreport').modal('show');
+    <script>
+        var page = 0;
     </script>
-    {% endif %}
-    {% if feedback %}
-    <script type="text/javascript">
-        $('#contact').modal('show');
-    </script>
-    {% endif %}
-
 </div>
 <div class="text-center" style="padding-top: 20px">© 2018 University of Massachusetts and Worcester Polytechnic
     Institute. All Rights

@@ -51,9 +51,11 @@
                     {% include 'include/navbutton.html' %}
                     <!--the head of this page-->
                 {% endblock %}
-                {% block content %}
-                    <h1>This is the content</h1>
-                {% endblock %}
+                <div id="content">
+                    {% block content %}
+                        <h1>This is the content</h1>
+                    {% endblock %}
+                </div>
             </div>
             {% block bottombutton %}
                 {% include 'include/bottombutton.html' %}
